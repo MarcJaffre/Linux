@@ -17,13 +17,6 @@
 | Mode Console        |	256 Mo     | 512 Mo     | 2 Go     |
 | Mode Graphique      |	1 Go       | 2 Go       | 10 Go    |
 
-
-#### C. Mode de démarrage
-```
-Le démarrage en MBR requiert une partition Boot et le démarrage est actif sur la partition Boot.
-Le démarrage en EFI requiert une partition EFI  et le démarrage est actif sur la partition EFI.
-```
-
 <br />
 
 ---------------------------------------------------------------------------------------------------------------------------
@@ -40,7 +33,8 @@ Le démarrage en EFI requiert une partition EFI  et le démarrage est actif sur 
 <br />
 
 ---------------------------------------------------------------------------------------------------------------------------
-### III. Installation de debian (Partie 1)
+### III. Installation de Debian (Partie 1)
+
 #### A. Définir le mode d'installation
 <p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/02454c7f-72cd-425b-9de0-af42f4f6cdcb' /> </p>
 <br />
@@ -95,8 +89,14 @@ Le démarrage en EFI requiert une partition EFI  et le démarrage est actif sur 
 <br />
 
 ---------------------------------------------------------------------------------------------------------------------------
-### IV. Installation de debian (Partie 2)
-#### A. Présentation du partitionnement
+### IV. Installation de Debian (Partie 2)
+#### A. Fonctionnement du démarrage (MBR, EFI)
+```
+Le démarrage en MBR requiert une partition Boot et le démarrage est actif sur la partition Boot.
+Le démarrage en EFI requiert une partition EFI  et le démarrage est actif sur la partition EFI.
+```
+
+#### B. Présentation du partitionnement
 ##### 1. Base de fonctionnement
 La distribution Linux requiert une partition de démarrage (EFI) puis une partition Système (/) et une partition SWAP pour pouvoir au minimum se lancer.
 
@@ -118,12 +118,10 @@ Gestion du LVM:
 - Le volume Logique X: HOME   | X Go
 ```
 
-
 <br />
 
 
-
-#### B. Création des partitions
+#### C. Création des partitions
 ##### 1. Mode Manuel
 <p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/79986f61-2766-448f-a73c-61f0e7ef42b9' /> </p>
 
@@ -136,7 +134,6 @@ Gestion du LVM:
 <p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/a09a241e-a153-4e5c-b7cb-5ad727d93693' /> </p>
 
 <p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/41ffa333-1906-49bd-840d-861e0fa683ce' /> </p>
-
 
 ##### 4. Création de la partition Boot
 <p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/bc4156e9-eccb-4f95-a216-d267d8edb6c2' /> </p>
@@ -156,7 +153,6 @@ Gestion du LVM:
 
 <p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/755ff8c1-d8ab-418a-b9c6-bafee6b26408' /> </p>
 
-
 ##### 6. Création de la partition  LVM
 
 <p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/3fd1d14a-1943-40a8-b491-56459aada7fe' /> </p>
@@ -166,7 +162,6 @@ Gestion du LVM:
 <p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/6d70924c-5237-407e-91ea-7b99e99fe4bd' /> </p>
 
 <p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/6d5e1f46-a2b4-4d3f-8aa0-56b673d05e29' /> </p>
-
 
 ##### 7. 
 ##### 8. 
