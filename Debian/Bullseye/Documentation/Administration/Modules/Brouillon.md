@@ -9,6 +9,8 @@
 ### II. Gestion des modules
 #### A. Lister les paramètres d'un module
 ```bash 
+modinfo -p <moduile>
+
 ls -la /sys/module/ath10k_core/parameters
 coredump_mask  cryptmode  debug_mask  frame_mode  fw_diag_log  skip_otp  uart_print
 
