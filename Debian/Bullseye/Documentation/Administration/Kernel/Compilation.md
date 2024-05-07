@@ -47,11 +47,41 @@ cp /boot/config-$(uname -r) /root/linux-${VERSION}.${RELEASE}/.config;
 ``` 
 
 #### D. Configurer le Noyau
+##### 1. Via l'outil Config
+```bash
+clear;
+cd /root/linux-${VERSION}.${RELEASE};
+make config
+```
+##### 2. Via l'outil Gconfig
+```bash
+clear;
+cd /root/linux-${VERSION}.${RELEASE};
+make gconfig;
+```
+##### 3. Via l'outil MenuConfig
 ```bash
 clear;
 cd /root/linux-${VERSION}.${RELEASE};
 make menuconfig;
 ```
+
+##### 4. Via l'outil Xconfig
+```bash
+clear;
+cd /root/linux-${VERSION}.${RELEASE};
+make xconfig;
+```
+
+
+
+
+
+
+
+
+
+
 
 #### E. Compiler et ajouter des modules au noyau (Multithread)
 ##### 1. Compiler
