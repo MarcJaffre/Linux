@@ -20,14 +20,38 @@ Le site [Debian.org](https://www.debian.org/distrib/packages) permet de trouver 
 
 
 ##### 2. Recherche par paquet
-Supposons qu'on souhaite installer le paquet `nano` (Éditeur de fichier).
+La recherche de paquet depuis le site est utile pour obtenir le dépôt mais aussi la version d'un paquet.
 
 Dans le champs `Recherche dans les répertoires de paquets` on indiquera `nano`.
 
 <p align='center'> <img src='https://github.com/MarcJaffre/Linux/assets/35907/d337dfa5-63f1-4d52-9be0-20fc70c1f8e3' /> </p>
 
+##### 3. Filtrer le rendu
+Dans le bandeau du site, on peut sélectionner la distribution puis son architecture de paquet pour obtenir le bon résultat.
 
+Pour l'architecture 32 Bits (x86) : i386
 
+Pour l'architecture 64 Bits (x64) : AMD64
+
+Liens de la recherche du paquet : [Bullseye/amd64](https://packages.debian.org/search?suite=bullseye&arch=amd64&searchon=names&keywords=nano)
+
+<p align='center'> <img src='https://github.com/MarcJaffre/Linux/assets/35907/b44808a8-7396-43b8-b02d-404b496b9230' /> </p>
+
+##### 4. Page du paquet
+On peut vérifier si on est sur la bonne version de linux en regardant en haut à droite de la page du paquet [nano](https://packages.debian.org/bullseye/nano). 
+
+<p align='center'> <img src='https://github.com/MarcJaffre/Linux/assets/35907/afff8fcf-72ca-4d6e-8a08-b7bd7934bb8f' /> </p>
+
+Puis on peux voir les dépendances de ce paquet.
+
+<p align='center'> <img src='https://github.com/MarcJaffre/Linux/assets/35907/89281367-d996-4925-94a3-23452402e5c2' /> </p>
+
+On choisis l'architecture qu'on souhaite télécharger le paquet. (amd64)
+
+<p align='center'> <img src='https://github.com/MarcJaffre/Linux/assets/35907/0ff9dc6d-60e5-4e5f-bb0e-db52260b7b7d' /> </p>
+
+##### 5. Page de téléchargement
+La page de téléchargement permet de récupérer le liens du dépôt. ([ici](https://packages.debian.org/bullseye/amd64/nano/download))
 
 
 
