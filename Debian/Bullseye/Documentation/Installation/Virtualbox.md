@@ -18,6 +18,13 @@
 | Mode Console        |	256 Mo     | 512 Mo     | 2 Go     |
 | Mode Graphique      |	1 Go       | 2 Go       | 10 Go    |
 
+
+#### C. Mode de démarrage
+```
+Le démarrage en MBR requiert une partition Boot et le démarrage est actif sur la partition Boot.
+Le démarrage en EFI requiert une partition EFI  et le démarrage est actif sur la partition EFI.
+```
+
 <br />
 
 ------------------------------------------------------------------------------------
