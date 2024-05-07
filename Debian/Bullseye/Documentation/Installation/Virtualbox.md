@@ -34,7 +34,7 @@ Le démarrage en EFI requiert une partition EFI  et le démarrage est actif sur 
 - Système d'exploitation : Debian 12
 - Processeur (CPU)       : 2 Core
 - Mémoire-Vive (RAM)     : 1 Go
-- Stockage (HDD0)        : 10 Go
+- Stockage (HDD0)        : X Go
 - Type de Réseau         : Mode Pont
 ```
 
@@ -95,14 +95,19 @@ La technologie LVM permet de pouvoir redimensionnée à chaud une partition. (Ag
 
 #### 3. Exemple de partitionnement
 ```
-/dev/sda  : Disque-Dur
- > sda1   : La partition primaire EFI pèse 512M et est au format Vfat (ESP)
- > sda2:  : La partition primaire LVM pèse le reste du volume disque 
+Structure Partition:
+- La partition 1: Primaie  | 512 Mo | ESP
+- La partition 2: primaire | XXX Go | LVM
+
+Structure LVM:
+- Le volume Groupe de l'espace total se nommera vg0.
+- Le volume Logique X se nommera SYSTEM et aura comme espace de stockage X Go.
+- Le volume Logique X se nommera SWAP et aura comme espace de stockage X Go.
+- Le volume Logique X se nommera HOME et aura comme espace de stockage X Go.
 ```
 
 ```
-Le volume Groupe de l'espace total se nommera vg0.
-Le volume Logique 1 se nommera SYSTEM et aura comme espace de stockage 6 Go.
+
 Le volume Logique 2 se nommera SWAP et aura comme espace de stockage 2 Go.
 Le volume Logique 3 se nommera HOME et aura comme espace de stockage 2 Go.
 ```
