@@ -59,11 +59,14 @@ make menuconfig;
 clear;
 make -j$(nproc);
 ```
-##### 2. Ajouter un module
+##### 2. Ajouter un module ([Drapeaux](https://www.kernel.org/doc/html/latest/kbuild/kbuild.html))
+Les drapeaux sert à paramétré les modules . 
 ```bash
 clear;
 make modules_install;
+make <Drapeau=valeur> modules_install
 ```
+
 
 
 
