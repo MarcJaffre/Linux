@@ -12,8 +12,13 @@ La commande apt requiet les droits administrateurs pour pouvoir fonctionner.
 
 #### D. Dist-upgrade
 
-#### E. Install
+#### F. Search
 
-#### F. Remove
+#### G. SHOW
 
-#### G. Purge
+#### H. Install
+
+#### I. Remove
+
+#### J. Purge
+
