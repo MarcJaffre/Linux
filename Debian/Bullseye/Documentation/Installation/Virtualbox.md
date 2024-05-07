@@ -75,8 +75,7 @@ Le démarrage en EFI requiert une partition EFI  et le démarrage est actif sur 
 
 ------------------------------------------------------------------------------------
 ### IV. Installation de debian (Partie 2)
-#### A. Démarrage en EFI
-
-
+#### A. Démarrage en EFI (LVM)
+<p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/79986f61-2766-448f-a73c-61f0e7ef42b9' /> </p>
 
 
