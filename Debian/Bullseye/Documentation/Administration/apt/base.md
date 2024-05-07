@@ -2,8 +2,9 @@
 ## <p align='center'> Guide d'utilisation du gestionnaire de paquet APT </p>
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
-### I. Présentation d'APT
-APT est un gestionnaire de paquet Linux, qui utilise des dépôts (bibliothèque logiciel)
+### I. Présentation
+#### A. A quoi sert APT ? 
+APT est un gestionnaire de paquet Linux, qui utilise des dépôts (bibliothèque logiciel) pour installer ou mettre à jour des paquets. (logiciels)
 
 Lorsqu'on lance le paramètre `update` on met à jour la liste des paquets disponibles.
 
@@ -11,7 +12,28 @@ Puis en faisant `upgrade` ont met à niveau les paquets.
 
 Le terme `dist-upgrade` est utilisé pour faire une monté de version d'une distribution . (Debian 11 vers 12 par exemple)
 
+#### B. Debian.org
+##### 1. Site de base
+Le site [Debian.org](https://www.debian.org/distrib/packages) permet de trouver le dépôt pour le logiciel qu'on souhaite installer.
+
+<p align='center'> <img src='https://github.com/MarcJaffre/Linux/assets/35907/deaade3b-7ee6-470e-91c3-9c2e3e483c14' /> </p>
+
+
+##### 2. Recherche par paquet
+Supposons qu'on souhaite installer le paquet `nano` (Éditeur de fichier).
+
+Dans le champs `Recherche dans les répertoires de paquets` on indiquera `nano`.
+
+<p align='center'> <img src='https://github.com/MarcJaffre/Linux/assets/35907/d337dfa5-63f1-4d52-9be0-20fc70c1f8e3' /> </p>
+
+
+
+
+
+
 <br />
+
+
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### II. Fonctionnement de base d'un dépôt
