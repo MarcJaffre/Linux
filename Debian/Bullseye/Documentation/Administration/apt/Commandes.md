@@ -22,3 +22,5 @@ La commande apt requiet les droits administrateurs pour pouvoir fonctionner.
 
 #### J. Purge
 
+#### K. Clean
+
