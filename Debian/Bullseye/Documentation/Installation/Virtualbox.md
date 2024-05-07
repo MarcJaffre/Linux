@@ -36,7 +36,7 @@
 ### III. Installation de Debian (Partie 1)
 
 #### A. Définir le mode d'installation
-<p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/02454c7f-72cd-425b-9de0-af42f4f6cdcb' /> </p>
+<p align='center'> <img src='' /> </p>
 <br />
 
 #### B. Sélectionner la langue de l'installateur
@@ -122,73 +122,27 @@ Gestion du LVM:
 
 #### C. Création des partitions
 ##### 1. Mode Manuel
-<p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/79986f61-2766-448f-a73c-61f0e7ef42b9' /> </p>
 
 ##### 2. Création de la table de partition GPT
-<p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/378abdba-0157-4c18-a750-74f6493d9919' /> </p>
 
-<p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/31d62a99-18dc-43c3-83a3-48a32ad8c4e8' /> </p>
+##### 3. Création de la partition 1 (EFI)
 
-##### 3. Création des partitions
-<p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/a09a241e-a153-4e5c-b7cb-5ad727d93693' /> </p>
-
-<p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/41ffa333-1906-49bd-840d-861e0fa683ce' /> </p>
-
-##### 4. Création de la partition Boot
-<p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/bc4156e9-eccb-4f95-a216-d267d8edb6c2' /> </p>
-
-<p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/3fd1d14a-1943-40a8-b491-56459aada7fe' /> </p>
-
-<p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/c200ad77-6b7b-4432-9d6f-fcf56b857a9e' /> </p>
-
-<p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/9bdfa3d9-8d0b-4cfe-b16d-7ee95320b86d' /> </p>
-
-##### 5. Création de la partition SWAP
-<p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/7a42586f-ab06-4d1e-9648-c07a08ed9399' /> </p>
-
-<p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/3fd1d14a-1943-40a8-b491-56459aada7fe' /> </p>
-
-<p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/c200ad77-6b7b-4432-9d6f-fcf56b857a9e' /> </p>
-
-<p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/755ff8c1-d8ab-418a-b9c6-bafee6b26408' /> </p>
+##### 4. Création de la partition 2 (LVM)
 
 <br />
 
-##### 6. Création de la partition  LVM
+#### D. LVM
+##### 1. Menu de gestion LVM
+Sélectionner le menu `Configurer le gestionnaire de volumes logiques (LVM)`.
 
-<p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/3fd1d14a-1943-40a8-b491-56459aada7fe' /> </p>
+##### 2. Création du Volume Groupe
+Il suffit de sélectionner la partition 2 (LVM) sur le stockage.
 
-<p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/c200ad77-6b7b-4432-9d6f-fcf56b857a9e' /> </p>
+##### 3. Création du Volume Logique SYSTEM
 
-<p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/6d70924c-5237-407e-91ea-7b99e99fe4bd' /> </p>
+##### 4. Création du Volume Logique SWAP
 
-<p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/6d5e1f46-a2b4-4d3f-8aa0-56b673d05e29' /> </p>
-
-##### 7. 
-##### 8. 
-##### 9. 
-##### 10. 
-##### 
-##### 
-##### 
-##### 
-##### 
-##### 
-##### 
-##### 
-##### 
-
-
-
-
-
-
-
-
-
-
-
-
+##### 5. Création du Volume Logique HOME
 
 
 
