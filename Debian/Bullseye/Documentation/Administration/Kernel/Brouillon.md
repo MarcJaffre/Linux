@@ -31,7 +31,7 @@ apt install -y xz-utils
 clear;
 VERSION=6
 RELEASE=8.9
-rm -r linux-${VERSION}.${RELEASE} 2>/dev/null
+rm -r linux-${VERSION}.${RELEASE} 2>/dev/null;
 wget https://cdn.kernel.org/pub/linux/kernel/v${VERSION}.x/linux-${VERSION}.${RELEASE}.tar.xz -O /tmp/kernel-${VERSION}.${RELEASE}.tar.xz;
 ```
 #### B. Extraire le fichier Compresser
@@ -40,10 +40,23 @@ clear;
 tar -xvf /tmp/kernel-${VERSION}.${RELEASE}.tar.xz -C /root;
 ```
 
-#### C. Configurer le Noyau
+#### C. Appliquer la configuration actuelle au nouveau noyaux
 ```bash
 clear;
+cp /boot/config-$(uname -r) /root/linux-${VERSION}.${RELEASE}/.config
+``` 
+
+#### D. Configurer le Noyau
+```bash
+clear;
+cd /root/linux-${VERSION}.${RELEASE};
 make menuconfig;
+```
+
+#### E. Compiler le noyau (Multithread)
+```bash
+clear;
+make -j$(nproc);
 ```
 
 
@@ -55,8 +68,29 @@ make menuconfig;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br />
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#### IV. Sources et liens utiles
+#### XX. Sources et liens utiles
 ```
 - https://www.malekal.com/comment-compiler-noyau-linux/
 - https://www.kernel.org/doc/html/latest/kbuild/kbuild.html
