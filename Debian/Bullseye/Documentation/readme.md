@@ -2,6 +2,8 @@
 
 - Installation
 
+- Pilote
+
 - Configuration
 
 - Utilisateur
