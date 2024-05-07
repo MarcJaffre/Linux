@@ -14,28 +14,30 @@ Chaque unité est décrite par un fichier de configuration spécifique qui défi
 #### C. Unités
 ##### 1. Service
 ```
-Les unités de service sont utilisées pour définir et gérer les services système. Elles peuvent être utilisées pour démarrer, arrêter, redémarrer et surveiller les services.
+Ils sont utilisées pour définir et gérer les services système.
 ```
 
 ##### 2. Socket
 ```
-Les unités de socket sont utilisées pour définir et gérer les sockets réseau ou Unix. Elles peuvent être utilisées pour activer ou désactiver les sockets, ainsi que pour spécifier les options de configuration des sockets.
+Ils sont utilisées pour définir et gérer les sockets réseau ou Unix.
 ```
 
 ##### 4. Device
 ```
-Les unités de périphérique sont utilisées pour définir et gérer les périphériques matériels. Elles peuvent être utilisées pour activer ou désactiver les périphériques, ainsi que pour spécifier les options de configuration des périphériques.
+Ils sont utilisées pour définir et gérer les périphériques matériels.
 ```
 
 ##### 6. Mount
 ```
-Les unités de montage sont utilisées pour définir et gérer les points de montage des systèmes de fichiers. Elles peuvent être utilisées pour monter et démonter les systèmes de fichiers, ainsi que pour spécifier les options de montage.
+Ils sont utilisées pour définir et gérer les points de montage des systèmes de fichiers.
 ```
 
 ##### 7. Target
 ```
-Les unités de cible sont utilisées pour définir et gérer les cibles système. Elles peuvent être utilisées pour regrouper plusieurs unités et les activer ou les désactiver en une seule opération.
+Ils sont utilisées pour définir et gérer les cibles système.
 ```
+
+
 
 ##### 8. Timer
 ```
