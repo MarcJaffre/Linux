@@ -120,7 +120,6 @@ Gestion du LVM:
 
 <br />
 
-
 #### C. Création des partitions
 ##### 1. Mode Manuel
 <p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/79986f61-2766-448f-a73c-61f0e7ef42b9' /> </p>
@@ -152,6 +151,8 @@ Gestion du LVM:
 <p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/c200ad77-6b7b-4432-9d6f-fcf56b857a9e' /> </p>
 
 <p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/755ff8c1-d8ab-418a-b9c6-bafee6b26408' /> </p>
+
+<br />
 
 ##### 6. Création de la partition  LVM
 
