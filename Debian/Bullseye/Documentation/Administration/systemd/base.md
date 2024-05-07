@@ -38,20 +38,19 @@ Ils sont utilisées pour définir et gérer les cibles système.
 ```
 
 
-
 ##### 8. Timer
 ```
-Les unités de timer sont utilisées pour définir et gérer les timers système. Elles peuvent être utilisées pour planifier des tâches à exécuter à des moments spécifiques.
+Ils sont utilisées pour définir et gérer les timers système. Elles peuvent être utilisées pour planifier des tâches à exécuter à des moments spécifiques.
 ```
 
 ##### 9. Path
 ```
-Les unités de chemin sont utilisées pour définir et gérer les chemins de fichiers ou de répertoires. Elles peuvent être utilisées pour surveiller les modifications dans les fichiers ou répertoires spécifiés.
+Ils sont utilisées pour définir et gérer les chemins de fichiers ou de répertoires. Elles peuvent être utilisées pour surveiller les modifications dans les fichiers ou répertoires spécifiés.
 ```
 
 ##### 10. Scope
 ```
-Les unités de scope sont utilisées pour définir et gérer les scopes système. Elles peuvent être utilisées pour isoler les processus dans un environnement contrôlé.
+Ils sont utilisées pour définir et gérer les scopes système. Elles peuvent être utilisées pour isoler les processus dans un environnement contrôlé.
 ```
 
 <br />
