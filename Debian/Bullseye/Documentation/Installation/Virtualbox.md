@@ -9,7 +9,6 @@
 - Version de la distribution : Bullseye (11)
 ```
 
-<br />
 
 #### B. Recommandation (CF. Wikipedia Debian)
 
@@ -26,6 +25,8 @@ Le démarrage en EFI requiert une partition EFI  et le démarrage est actif sur 
 ```
 
 <br />
+<br />
+
 
 ---------------------------------------------------------------------------------------------------------------------------
 ### II. Création de la machine virtuelle
