@@ -156,14 +156,25 @@ Elles peuvent être utilisées pour isoler les processus dans un environnement c
 
 #### A. Lister les Units de SystemD
 Pour pouvoir gérer correctement les services, il est nécessaire d'avoir une vu complète de l'ensemble des services Linux.
+##### 1. Afficher tout (sans filtrage)
 ```bash
 systemctl list-unit-files;
 ```
-
+###### 2. Afficher tout les services
+```bash
+systemctl list-unit-files --type=service
+```
+###### 3. Afficher les Unités actifs
+```bash
+systemctl list-unit-files --state=enabled;
+```
+###### 4. Afficher les Services actifs
 ```bash
 systemctl list-unit-files --type=service --state=enabled;
+```
 
-# --user;
-# --type=<automount,device,mount,path,scope,service,slice,socket,swap,target,timer>
-# --state=<enabled,disabled>;
+```
+--type=<automount,device,mount,path,scope,service,slice,socket,swap,target,timer>
+--state=<enabled,disabled>
+--user
 ``` 
