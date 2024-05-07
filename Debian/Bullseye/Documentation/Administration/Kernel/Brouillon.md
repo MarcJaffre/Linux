@@ -53,13 +53,24 @@ cd /root/linux-${VERSION}.${RELEASE};
 make menuconfig;
 ```
 
-#### E. Compiler le noyau (Multithread)
+#### E. Compiler et ajouter des modules au noyau (Multithread)
+##### 1. Compiler
 ```bash
 clear;
 make -j$(nproc);
 ```
+##### 2. Ajouter un module
+```bash
+clear;
+make modules_install;
+```
 
 
+
+#### F. Déployer le Noyau sur son système
+```bash
+make modules_install,
+```
 
 
 
