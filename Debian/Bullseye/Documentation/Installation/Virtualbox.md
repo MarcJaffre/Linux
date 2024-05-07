@@ -3,20 +3,63 @@
 
 ------------------------------------------------------------------------------------
 ### I. Information Générale
-#### X. Présentation de la distribution
+#### A. Présentation de la distribution
 ```
 - Système d'exploitation     : Debian
-- Version de la distribution : Bookworm (111)
-- Mode d'installation        : MBR / UEFI
+- Version de la distribution : Bullseye (11)
 ```
 
 <br />
 
-#### X. Recommandation (CF. Wikipedia Debian)
+#### B. Recommandation (CF. Wikipedia Debian)
 
 | Type d'installation | RAM (Min.) | RAM (Rec.) | Stockage |
 | ------------------- | ---------- | ---------- | -------- |
 | Mode Console        |	256 Mo     | 512 Mo     | 2 Go     |
 | Mode Graphique      |	1 Go       | 2 Go       | 10 Go    |
+
+<br />
+
+------------------------------------------------------------------------------------
+### II. Création de la machine virtuelle
+
+<br />
+
+------------------------------------------------------------------------------------
+### III. Installation de debian
+#### A. Définir le mode d'installation
+<p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/02454c7f-72cd-425b-9de0-af42f4f6cdcb' /> </p>
+
+#### B. Sélectionner la langue de l'installateur
+<p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/4b7faf28-68d7-4b87-ba0b-c08f13b990ba' /> </p>
+
+#### C. Situation Géographique
+<p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/ca05942d-41ba-483d-9702-ca37aafd2ed6' /> </p>
+
+#### D. Clavier
+<p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/1364a050-a3ad-49ca-83d5-b5fb83363cd0' /> </p>
+
+#### E. Définir le nom de la machine
+<p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/f56498d6-5b0b-4b9e-b10e-0134f1f80026' /> </p>
+
+#### G. Définir le nom de domaine de la machine
+<p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/0036ebf8-a8fd-4860-89cd-c2687a963c41' /> </p>
+
+#### H. Définir le nom de domaine de la machine
+<p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/0036ebf8-a8fd-4860-89cd-c2687a963c41' /> </p>
+
+### I. Définir le mot de passe Root
+<p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/9c779df0-342f-4843-8ff1-c42abb647b4f' /> </p>
+
+<p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/a09b7cb9-a270-486d-a767-90568ce8beb1' /> </p>
+
+
+
+
+
+
+
+
+
 
 
