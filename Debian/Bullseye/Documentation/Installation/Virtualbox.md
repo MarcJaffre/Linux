@@ -29,6 +29,14 @@ Le démarrage en EFI requiert une partition EFI  et le démarrage est actif sur 
 
 ---------------------------------------------------------------------------------------------------------------------------
 ### II. Création de la machine virtuelle
+#### A. Caractéristique de la machine
+```
+- Système d'exploitation : Debian 12
+- Processeur (CPU)       : 2 Core
+- Mémoire-Vive (RAM)     : 1 Go
+- Stockage (HDD0)        : 10 Go
+- Type de Réseau         : Mode Pont
+```
 
 <br />
 
@@ -93,12 +101,13 @@ La technologie LVM permet de pouvoir redimensionnée à chaud une partition. (Ag
 ```
 
 ```
-LVM:
- - SYSTEM : La partition diposera de 8 Go d'espace de stockage, elle sera formater en EXT4 et le point de montage sera la racine (/)
- - SWAP   : La partition de fichier d'échange fera 2 Go et aucun point de montage.
- - HOME   : La partition diposera de 4 Go d'espace de stockage, elle sera formater en EXT4 et le point de montage sera la racine (/home)
-          : La partition HOME est le dossier de l'ensemble des utilisateurs (Hors root)
+Le volume Groupe de l'espace total se nommera vg0.
+Le volume Logique 1 se nommera SYSTEM et aura comme espace de stockage 6 Go.
+Le volume Logique 2 se nommera SWAP et aura comme espace de stockage 2 Go.
+Le volume Logique 3 se nommera HOME et aura comme espace de stockage 2 Go.
 ```
+
+
 
 <br />
 
