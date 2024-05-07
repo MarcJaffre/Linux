@@ -95,7 +95,7 @@ Le démarrage en EFI requiert une partition EFI  et le démarrage est actif sur 
 <p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/41ffa333-1906-49bd-840d-861e0fa683ce' /> </p>
 
 
-##### 4. Boot
+##### 4. Partition Boot
 <p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/bc4156e9-eccb-4f95-a216-d267d8edb6c2' /> </p>
 
 <p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/3fd1d14a-1943-40a8-b491-56459aada7fe' /> </p>
@@ -106,9 +106,27 @@ Le démarrage en EFI requiert une partition EFI  et le démarrage est actif sur 
 
 
 
+##### 5. Partition SWAP
+<p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/7a42586f-ab06-4d1e-9648-c07a08ed9399' /> </p>
 
-##### 5. 
-##### 6. 
+<p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/3fd1d14a-1943-40a8-b491-56459aada7fe' /> </p>
+
+<p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/c200ad77-6b7b-4432-9d6f-fcf56b857a9e' /> </p>
+
+<p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/755ff8c1-d8ab-418a-b9c6-bafee6b26408' /> </p>
+
+
+##### 6. Partition LVM
+
+<p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/3fd1d14a-1943-40a8-b491-56459aada7fe' /> </p>
+
+<p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/c200ad77-6b7b-4432-9d6f-fcf56b857a9e' /> </p>
+
+<p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/6d70924c-5237-407e-91ea-7b99e99fe4bd' /> </p>
+
+<p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/6d5e1f46-a2b4-4d3f-8aa0-56b673d05e29' /> </p>
+
+
 ##### 7. 
 ##### 8. 
 ##### 9. 
