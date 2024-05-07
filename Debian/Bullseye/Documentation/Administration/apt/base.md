@@ -53,6 +53,16 @@ On choisis l'architecture qu'on souhaite télécharger le paquet. (amd64)
 ##### 5. Page de téléchargement
 La page de téléchargement permet de récupérer le liens du dépôt. ([ici](https://packages.debian.org/bullseye/amd64/nano/download))
 
+<p align='center'> <img src='https://github.com/MarcJaffre/Linux/assets/35907/8ebd3029-fca2-4775-a807-8c2eb50b8b31' /> </p>
+
+Si on souhaite ne pas utiliser le dépot allemand (de), on peut remplacer `ftp.de.debian.org/debian` par le depot francais (fr) `ftp.fr.debian.org/debian`.
+
+<p align='center'> <img src='https://github.com/MarcJaffre/Linux/assets/35907/50ff7041-51e6-4722-a3d6-981e764608d1' /> </p>
+
+```
+deb http://ftp.de.debian.org/debian bullseye main 
+deb http://ftp.fr.debian.org/debian bullseye main 
+```
 
 
 <br />
@@ -64,15 +74,14 @@ La page de téléchargement permet de récupérer le liens du dépôt. ([ici](ht
 
 #### A. Sources.list
 ```
-deb http://ftp.fr.debian.org/debian/   bullseye     main contrib non-free
+deb http://ftp.fr.debian.org/debian bullseye main
+```
 
-# deb : Paquet pour Debian
-# http://ftp.fr.debian.org/debian/ : URL de base du dépôt
-# bullseye : version de la distribution
-# main     : Catégorie de paquet. (Logiciel ou pilote Libre uniquement) 
-# contrib  : Catégorie de paquet. (Logiciel ou pilote Libre uniquement) 
-# non-free : Catégorie de paquet. (Logiciel et pilote propriétaire uniquement)
-#          : Pour bookworm les pilotes ont été séparés des logiciels propriétaires !
+```
+deb                              : Paquet pour Debian
+http://ftp.fr.debian.org/debian/ : URL de base du dépôt
+bullseye                         : version de la distribution
+main                             : Catégorie de paquet. (Logiciel ou pilote Libre uniquement) 
 ```
 
 #### B. Arborescence de base
@@ -89,4 +98,20 @@ Si le paquet est dans une catégorie déclarer dans le fichier sources.list il v
 <p align='center'> <img src='https://github.com/MarcJaffre/Linux/assets/35907/6a8bdce0-e5be-46c4-94c1-5fda51e0d2c2' /> </p>
 
 #### D. Les catégories
+##### 1. Présentation
 <p align='center'> <img src='https://github.com/MarcJaffre/Linux/assets/35907/dd066ff0-f2a9-484b-9cfd-aeec63594ae1' /> </p>
+
+##### 2. sources.list
+Les catégories `contrib` et `non-free` ne sont pas présent dans le fichier sources.list.
+
+La catégorie `non-free` contient les logiciels propriétaires qui peuvent être des pilotes. Si aucun pilote libre existe, l'utilisation de la catégorie non-free est indispensable pour que le matériel marche.
+
+
+Avant:
+```
+deb http://ftp.fr.debian.org/debian bullseye main contrib non-free
+```
+Après:
+```
+deb http://ftp.fr.debian.org/debian bullseye main contrib non-free
+```
