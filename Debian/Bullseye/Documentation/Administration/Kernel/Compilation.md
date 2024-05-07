@@ -78,7 +78,7 @@ make install;
 ```bash
 clear;
 update-grub;
-uname -a
+uname -a;
 ```
 
 
