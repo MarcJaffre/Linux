@@ -15,21 +15,29 @@ Chaque unité est décrite par un fichier de configuration spécifique qui défi
 ##### 1. Service
 ```
 Ils sont utilisées pour définir et gérer les services système.
+
+Elles peuvent être utilisées pour démarrer, arrêter, redémarrer et surveiller les services.
 ```
 
 ##### 2. Socket
 ```
 Ils sont utilisées pour définir et gérer les sockets réseau ou Unix.
+
+Elles peuvent être utilisées pour activer ou désactiver les sockets, ainsi que pour spécifier les options de configuration des sockets.
 ```
 
 ##### 4. Device
 ```
 Ils sont utilisées pour définir et gérer les périphériques matériels.
+
+Elles peuvent être utilisées pour activer ou désactiver les périphériques, ainsi que pour spécifier les options de configuration des périphériques.
 ```
 
 ##### 6. Mount
 ```
 Ils sont utilisées pour définir et gérer les points de montage des systèmes de fichiers.
+
+Elles peuvent être utilisées pour monter et démonter les systèmes de fichiers, ainsi que pour spécifier les options de montage.
 ```
 
 ##### 7. Target
@@ -40,17 +48,23 @@ Ils sont utilisées pour définir et gérer les cibles système.
 
 ##### 8. Timer
 ```
-Ils sont utilisées pour définir et gérer les timers système. Elles peuvent être utilisées pour planifier des tâches à exécuter à des moments spécifiques.
+Ils sont utilisées pour définir et gérer les timers système.
+
+Elles peuvent être utilisées pour planifier des tâches à exécuter à des moments spécifiques.
 ```
 
 ##### 9. Path
 ```
-Ils sont utilisées pour définir et gérer les chemins de fichiers ou de répertoires. Elles peuvent être utilisées pour surveiller les modifications dans les fichiers ou répertoires spécifiés.
+Ils sont utilisées pour définir et gérer les chemins de fichiers ou de répertoires.
+
+Elles peuvent être utilisées pour surveiller les modifications dans les fichiers ou répertoires spécifiés.
 ```
 
 ##### 10. Scope
 ```
-Ils sont utilisées pour définir et gérer les scopes système. Elles peuvent être utilisées pour isoler les processus dans un environnement contrôlé.
+Ils sont utilisées pour définir et gérer les scopes système.
+
+Elles peuvent être utilisées pour isoler les processus dans un environnement contrôlé.
 ```
 
 <br />
