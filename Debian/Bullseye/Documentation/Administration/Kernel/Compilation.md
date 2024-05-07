@@ -43,7 +43,7 @@ tar -xvf /tmp/kernel-${VERSION}.${RELEASE}.tar.xz -C /root;
 #### C. Appliquer la configuration actuelle au nouveau noyaux
 ```bash
 clear;
-cp /boot/config-$(uname -r) /root/linux-${VERSION}.${RELEASE}/.config
+cp /boot/config-$(uname -r) /root/linux-${VERSION}.${RELEASE}/.config;
 ``` 
 
 #### D. Configurer le Noyau
