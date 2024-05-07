@@ -60,20 +60,28 @@ clear;
 make -j$(nproc);
 ```
 ##### 2. Ajouter un module ([Drapeaux](https://www.kernel.org/doc/html/latest/kbuild/kbuild.html))
-Les drapeaux sert à paramétré les modules . 
+Les drapeaux sert à paramétré les modules . Cette opération génère et installe les fichiers initrd.img et vmlinuz.
 ```bash
 clear;
 make modules_install;
 make <Drapeau=valeur> modules_install
 ```
 
-
-
-
 #### F. Déployer le Noyau sur son système
 ```bash
-make modules_install,
+clear;
+make install;
 ```
+
+
+#### G. Vérification de bon fonctionnement
+```bash
+clear;
+update-grub;
+uname -a
+```
+
+
 
 
 
