@@ -1,7 +1,7 @@
-------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------
 ## <p align='center'> Installation de Debian 11 </p>
 
-------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------
 ### I. Information Générale
 #### A. Présentation de la distribution
 ```
@@ -27,12 +27,12 @@ Le démarrage en EFI requiert une partition EFI  et le démarrage est actif sur 
 
 <br />
 
-------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------
 ### II. Création de la machine virtuelle
 
 <br />
 
-------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------
 ### III. Installation de debian (Partie 1)
 #### A. Définir le mode d'installation
 <p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/02454c7f-72cd-425b-9de0-af42f4f6cdcb' /> </p>
@@ -73,9 +73,74 @@ Le démarrage en EFI requiert une partition EFI  et le démarrage est actif sur 
 
 <br />
 
-------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
 ### IV. Installation de debian (Partie 2)
 #### A. Démarrage en EFI (LVM)
+##### 1. Mode Manuel
 <p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/79986f61-2766-448f-a73c-61f0e7ef42b9' /> </p>
+
+##### 2. Création de la table de partition GPT
+<p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/378abdba-0157-4c18-a750-74f6493d9919' /> </p>
+
+<p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/31d62a99-18dc-43c3-83a3-48a32ad8c4e8' /> </p>
+
+
+
+##### 3. Création des partitions
+<p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/a09a241e-a153-4e5c-b7cb-5ad727d93693' /> </p>
+
+<p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/41ffa333-1906-49bd-840d-861e0fa683ce' /> </p>
+
+
+##### 4. Boot
+<p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/bc4156e9-eccb-4f95-a216-d267d8edb6c2' /> </p>
+
+<p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/3fd1d14a-1943-40a8-b491-56459aada7fe' /> </p>
+
+<p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/c200ad77-6b7b-4432-9d6f-fcf56b857a9e' /> </p>
+
+<p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/9bdfa3d9-8d0b-4cfe-b16d-7ee95320b86d' /> </p>
+
+
+
+
+##### 5. 
+##### 6. 
+##### 7. 
+##### 8. 
+##### 9. 
+##### 10. 
+##### 
+##### 
+##### 
+##### 
+##### 
+##### 
+##### 
+##### 
+##### 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
