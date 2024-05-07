@@ -146,6 +146,7 @@ uname -a;
 ```
 - https://www.malekal.com/comment-compiler-noyau-linux/
 - https://www.kernel.org/doc/html/latest/kbuild/kbuild.html
+- http://casteyde.christian.free.fr/system/linux/guide/online/x7163.html
 ```
 
 
