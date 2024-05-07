@@ -68,28 +68,25 @@ journalctl -f
 ```
 
 #### 3. Journal avec filtrage des événements
-Les événements du journal sont catégorisés en 3 : Error, Warning et Info
-
-Un Warning est un événement qui s'est mal passé mais qui n'a pas bloqué l'activité.
-
-Une error est un événement qui a planté et qui est bloquant pour l'activité. (Erreur de configuration, permission, fichier indispo ...)
-
-Lorsqu'on définit un niveau de filtre on part de droite à gauche . (ERR <= WARNING <= INFO)
-
-Si on filtre sur Warning, on verra les Warning et les error, donc sa exclus les info par exemple.
+Les événements du journal sont catégorisés en 8 Niveaux: `emerg (0)`, `alert (1)`, `crit (2)`, `err (3)`, `warning (4)`, `notice (5)`, `info (6)` et `debug (7)`
 
 ```bash
-journalctl -p info;
-journalctl -p warning;
-journalctl -p err;
+journalctl -p <emerg,alert,crit,err,warning,notice,info,debug>
+journalctl -p <0,1,2,3,4,5,6,7>;
 ```
 
-#### 3. Journal avec filtrage des événements sur un service
+
+
+
+
+#### 4. Journal avec filtrage des événements sur un service
 Supposons qu'on souhaite les événéments de type d'erreur sur un service.
 
 ```bash
-journalctl -p err -u <monservice.service>;
+journalctl -p3 -u <monservice.service>;
 ```
+
+
 
 <br />
 <br />
