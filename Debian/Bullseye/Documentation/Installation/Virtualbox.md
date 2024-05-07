@@ -76,9 +76,36 @@ Le démarrage en EFI requiert une partition EFI  et le démarrage est actif sur 
 
 
 ---------------------------------------------------------------------------------------------------------------------------
-
 ### IV. Installation de debian (Partie 2)
-#### A. Démarrage en EFI (LVM)
+#### A. Présentation du partitionnement
+##### 1. Base de fonctionnement
+La distribution Linux requiert une partition de démarrage (EFI) puis une partition Système (/) et une partition SWAP pour pouvoir au minimum se lancer.
+
+Le démarrage sera présent dans la partition ESP (EFI) de Linux.
+
+##### 2. LVM
+La technologie LVM permet de pouvoir redimensionnée à chaud une partition. (Agrandir, augmenter)
+
+#### 3. Exemple de partitionnement
+```
+/dev/sda  : Disque-Dur
+ > sda1   : La partition primaire EFI pèse 512M et est au format Vfat (ESP)
+ > sda2:  : La partition primaire LVM pèse le reste du volume disque 
+```
+
+```
+LVM:
+ - SYSTEM : La partition diposera de 8 Go d'espace de stockage, elle sera formater en EXT4 et le point de montage sera la racine (/)
+ - SWAP   : La partition de fichier d'échange fera 2 Go et aucun point de montage.
+ - HOME   : La partition diposera de 4 Go d'espace de stockage, elle sera formater en EXT4 et le point de montage sera la racine (/home)
+          : La partition HOME est le dossier de l'ensemble des utilisateurs (Hors root)
+```
+
+<br />
+
+
+
+#### B. Création des partitions
 ##### 1. Mode Manuel
 <p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/79986f61-2766-448f-a73c-61f0e7ef42b9' /> </p>
 
@@ -86,7 +113,6 @@ Le démarrage en EFI requiert une partition EFI  et le démarrage est actif sur 
 <p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/378abdba-0157-4c18-a750-74f6493d9919' /> </p>
 
 <p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/31d62a99-18dc-43c3-83a3-48a32ad8c4e8' /> </p>
-
 
 ##### 3. Création des partitions
 <p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/a09a241e-a153-4e5c-b7cb-5ad727d93693' /> </p>
@@ -102,8 +128,6 @@ Le démarrage en EFI requiert une partition EFI  et le démarrage est actif sur 
 <p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/c200ad77-6b7b-4432-9d6f-fcf56b857a9e' /> </p>
 
 <p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/9bdfa3d9-8d0b-4cfe-b16d-7ee95320b86d' /> </p>
-
-
 
 ##### 5. Création de la partition SWAP
 <p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/7a42586f-ab06-4d1e-9648-c07a08ed9399' /> </p>
