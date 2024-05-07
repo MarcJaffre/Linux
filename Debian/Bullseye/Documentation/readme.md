@@ -1,13 +1,10 @@
 ### Guide D'utilisation
+#### A. Installation
 
-- Installation
+#### B. Pilote
 
-- Pilote
+#### C. Utilisateur
 
-- Configuration
+#### D. Groupe
 
-- Utilisateur
-
-- Groupe
-
-- Administration
+#### E. Administration
