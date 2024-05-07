@@ -80,9 +80,6 @@
 
 <p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/777e1f78-80eb-40ac-ad06-f2721b9cf6af' /> </p>
 
-
-
-
 <br />
 <br />
 
@@ -109,6 +106,3 @@ La partition système est celle qui correspond à Debian. Un système linux de t
 La partition HOME permet de séparer le système des données utilisateur. L'utilisation de l'espace disque de celle-ci dans le cas d'un serveur est souvent nul.
 
 <p align='center'> <img src='' /> </p>
-
-
-
