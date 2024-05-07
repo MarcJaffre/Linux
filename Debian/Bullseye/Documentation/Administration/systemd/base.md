@@ -42,6 +42,7 @@ systemctl disable <monservice.service>;
 systemctl disable --now <monservice.service>;
 ```
 
+<br />
 
 #### B. Journal d'événement
 La commande `journalctl` permet de consulter les journaux système.
