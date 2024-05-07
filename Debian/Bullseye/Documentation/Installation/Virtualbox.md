@@ -9,7 +9,6 @@
 - Version de la distribution : Bullseye (11)
 ```
 
-
 #### B. Recommandation (CF. Wikipedia Debian)
 
 | Type d'installation | RAM (Min.) | RAM (Rec.) | Stockage |
@@ -34,7 +33,6 @@
 
 ---------------------------------------------------------------------------------------------------------------------------
 ### III. Installation de Debian (Partie 1)
-
 #### A. Définir le mode d'installation
 <p align='center'> <img src='' /> </p>
 <br />
@@ -90,66 +88,27 @@
 
 ---------------------------------------------------------------------------------------------------------------------------
 ### IV. Installation de Debian (Partie 2)
-#### A. Fonctionnement du démarrage (MBR, EFI)
-```
-Le démarrage en MBR requiert une partition Boot et le démarrage est actif sur la partition Boot.
-Le démarrage en EFI requiert une partition EFI  et le démarrage est actif sur la partition EFI.
-```
+#### A. Présentation
+Le partitionnement suivant n'utilise pas la technologie LVM. Sans le LVM, le redimensionnement des partitions à chaud est très compliquer. (requiert arrêt de la machine)
 
-#### B. Présentation du partitionnement
-##### 1. Base de fonctionnement
-La distribution Linux requiert une partition de démarrage (EFI) puis une partition Système (/) et une partition SWAP pour pouvoir au minimum se lancer.
+#### B. Création de la table de partition
 
-Le démarrage sera présent dans la partition ESP (EFI) de Linux.
+#### C. Création de la partition de démarrage
+##### 1. Mode MBR
+<p align='center'> <img src='' /> </p>
 
-##### 2. LVM
-La technologie LVM permet de pouvoir redimensionnée à chaud une partition. (Agrandir, augmenter)
+##### 2. Mode EFI
+<p align='center'> <img src='' /> </p>
 
-#### 3. Exemple de partitionnement
-```
-Partition du Disque-Dur:
-- La partition 1: Primaie  | 512 Mo | ESP
-- La partition 2: primaire | XXX Go | LVM
+#### D. Création de la partition SYSTEM
+La partition système est celle qui correspond à Debian. Un système linux de type serveur sous Debian est très léger, donc il n'est pas nécessaire de lui attribué un espace conséquent.
 
-Gestion du LVM:
-- Le volume Groupe de l'espace total se nommera vg0.
-- Le volume Logique X: SYSTEM | X Go
-- Le volume Logique X: SWAP   | X Go
-- Le volume Logique X: HOME   | X Go
-```
+<p align='center'> <img src='' /> </p>
 
-<br />
+#### E. Création de la partition HOME
+La partition HOME permet de séparer le système des données utilisateur. L'utilisation de l'espace disque de celle-ci dans le cas d'un serveur est souvent nul.
 
-#### C. Création des partitions
-##### 1. Mode Manuel
-
-##### 2. Création de la table de partition GPT
-
-##### 3. Création de la partition 1 (EFI)
-
-##### 4. Création de la partition 2 (LVM)
-
-<br />
-
-#### D. LVM
-##### 1. Menu de gestion LVM
-Sélectionner le menu `Configurer le gestionnaire de volumes logiques (LVM)`.
-
-##### 2. Création du Volume Groupe
-Il suffit de sélectionner la partition 2 (LVM) sur le stockage.
-
-##### 3. Création du Volume Logique SYSTEM
-
-##### 4. Création du Volume Logique SWAP
-
-##### 5. Création du Volume Logique HOME
-
-
-
-
-
-
-
+<p align='center'> <img src='' /> </p>
 
 
 
