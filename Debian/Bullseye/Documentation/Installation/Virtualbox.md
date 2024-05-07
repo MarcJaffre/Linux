@@ -95,23 +95,16 @@ La technologie LVM permet de pouvoir redimensionnée à chaud une partition. (Ag
 
 #### 3. Exemple de partitionnement
 ```
-Structure Partition:
+Partition du Disque-Dur:
 - La partition 1: Primaie  | 512 Mo | ESP
 - La partition 2: primaire | XXX Go | LVM
 
-Structure LVM:
+Gestion du LVM:
 - Le volume Groupe de l'espace total se nommera vg0.
-- Le volume Logique X se nommera SYSTEM et aura comme espace de stockage X Go.
-- Le volume Logique X se nommera SWAP et aura comme espace de stockage X Go.
-- Le volume Logique X se nommera HOME et aura comme espace de stockage X Go.
+- Le volume Logique X: SYSTEM | X Go
+- Le volume Logique X: SWAP   | X Go
+- Le volume Logique X: HOME   | X Go
 ```
-
-```
-
-Le volume Logique 2 se nommera SWAP et aura comme espace de stockage 2 Go.
-Le volume Logique 3 se nommera HOME et aura comme espace de stockage 2 Go.
-```
-
 
 
 <br />
