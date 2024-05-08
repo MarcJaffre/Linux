@@ -75,20 +75,19 @@ make xconfig;
 
 
 
-
-
-
-
-
-
-
-
 #### E. Compiler et ajouter des modules au noyau (Multithread)
+
+Lire l'article [ici](https://www.debian.org/doc/manuals/debian-faq/kernel.fr.html) avant la compilation .
+
 ##### 1. Compiler
 ```bash
 clear;
 make -j$(nproc);
 ```
+
+
+
+
 ##### 2. Ajouter un module ([Drapeaux](https://www.kernel.org/doc/html/latest/kbuild/kbuild.html))
 Les drapeaux sert à paramétré les modules . Cette opération génère et installe les fichiers initrd.img et vmlinuz.
 ```bash
@@ -102,7 +101,6 @@ make <Drapeau=valeur> modules_install
 clear;
 make install;
 ```
-
 
 #### G. Vérification de bon fonctionnement
 ```bash
