@@ -13,16 +13,16 @@ Ce guide n'est pas pour les débutants mais pour les confirmés.
 Pour permettre la construction du Noyaux Linux, il est important d'installer les dépendances pour permettre sa construction.
 
 ```bash
-apt install -y build-essential
-apt install -y bc
-apt install -y bison
-apt install -y fakeroot
-apt install -y flex
-apt install -y git
-apt install -y libelf-dev
-apt install -y libssl-dev
-apt install -y ncurses-dev
-apt install -y xz-utils
+apt install -y build-essential;
+apt install -y bc;
+apt install -y bison;
+apt install -y fakeroot;
+apt install -y flex;
+apt install -y git;
+apt install -y libelf-dev;
+apt install -y libssl-dev;
+apt install -y ncurses-dev;
+apt install -y xz-utils;
 ```
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -75,7 +75,6 @@ make xconfig;
 ```
 
 
-
 #### E. Compiler et ajouter des modules au noyau (Multithread)
 
 Lire l'article [ici](https://www.debian.org/doc/manuals/debian-faq/kernel.fr.html) avant la compilation .
@@ -85,8 +84,6 @@ Lire l'article [ici](https://www.debian.org/doc/manuals/debian-faq/kernel.fr.htm
 clear;
 make -j$(nproc);
 ```
-
-
 
 
 ##### 2. Ajouter un module ([Drapeaux](https://www.kernel.org/doc/html/latest/kbuild/kbuild.html))
