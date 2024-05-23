@@ -82,31 +82,31 @@ apt install -y mariadb-server 1>/dev/null;
 (echo ""; echo "y"; echo "y"; echo "$PASS_ROOT_SQL"; echo "$PASS_ROOT_SQL"; echo "y"; echo "y"; echo "y"; echo "y") | mysql_secure_installation | 1>/dev/null;
 ```
 
-#### 2. Suppression de la base de donnée librenms
+##### 2. Suppression de la base de donnée librenms
 ```bash
 clear;
 mysql -u root -padmin -e "DROP DATABASE IF EXISTS librenms
 ```
 
-#### 2. Suppression de l'utilisateur librenms
+##### 2. Suppression de l'utilisateur librenms
 ```bash
 clear;
 mysql -u root -padmin -e "DROP USER IF EXISTS 'librenms'@'localhost';"
 ```
 
-#### 3. Création de la base de donnée librenms
+##### 3. Création de la base de donnée librenms
 ```bash
 clear;
 mysql -u root -padmin -e "CREATE DATABASE IF NOT EXISTS librenms CHARACTER SET utf8 COLLATE utf8_unicode_ci;"
 ```
 
-#### 4. Création de l'utilisateur librenms
+##### 4. Création de l'utilisateur librenms
 ```bash
 clear;
 mysql -u root -padmin -e "CREATE USER IF NOT EXISTS 'librenms'@'localhost' IDENTIFIED BY 'PASSSWORD123';"
 ```
 
-#### 5. Modification des permissions
+##### 5. Modification des permissions
 ```bash
 clear;
 mysql -u root -padmin -e "GRANT ALL PRIVILEGES ON librenms.* TO 'librenms'@'localhost';"
@@ -120,22 +120,19 @@ mysql -u root -padmin -e "SELECT User FROM mysql.user; SHOW DATABASES;"
 mysql -u librenms -pPASSWORD123 -e "SHOW DATABASES;"
 ```
 
-#### 7. Configuration de MariaDB
+##### 7. Configuration de MariaDB
 Ajouter le contenu après `[mysqld]`.
-
 ```bash
 clear;
 nano /etc/mysql/mariadb.conf.d/50-server.cnf;
 ```
-
-
 ```
 innodb_file_per_table   = 1
 lower_case_table_names  = 0
 ```
 
 
-#### 8. Activation de MariaDB
+##### 8. Activation de MariaDB
 ```bash
 clear;
 systemctl restart mariadb;
@@ -143,4 +140,131 @@ systemctl enable  mariadb;
 systemctl status  mariadb;
 ```
 
+<br />
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+### III. Configuration de PHP
+##### A. Copie de fichier
+```bash
+clear;
+cp /etc/php/8.2/fpm/pool.d/www.conf /etc/php/8.2/fpm/pool.d/librenms.conf;
+```
+
+##### B. Configuration du fichier librenms pour PHP
+```bash
+clear;
+sed -i -e "s/\[www\]/[librenms]/g"                                                           /etc/php/8.2/fpm/pool.d/librenms.conf;
+sed -i -e "s/user \= www-data/user \= librenms/g"                                            /etc/php/8.2/fpm/pool.d/librenms.conf;
+sed -i -e "s/^group \= www-data/group \= librenms/g"                                         /etc/php/8.2/fpm/pool.d/librenms.conf;
+sed -i -e "s/listen \= \/run\/php\/php8.2-fpm.sock/listen \= \/run\/php-fpm-librenms.sock/g" /etc/php/8.2/fpm/pool.d/librenms.conf;
+grep -v "^;"  /etc/php/8.2/fpm/pool.d/librenms.conf;
+```
+
+
+##### C. Configuration de Nginx
+###### 1. Création d'un VirtualHost
+Modifier la valeur `192.168.180.28` par l'adresse utilisable (IP ou DNS)
+```bash
+clear;
+nano /etc/nginx/sites-enabled/librenms.vhost;
+```
+
+```bash
+server {
+ listen       80;
+ server_name  192.168.180.28 _;
+ root         /opt/librenms/html;
+ index        index.php;
+ charset      utf-8;
+ gzip         on;
+ gzip_types   text/css application/javascript text/javascript application/x-javascript image/svg+xml text/plain text/xsd text/xsl text/xml image/x-icon;
+ location / { try_files $uri $uri/ /index.php?$query_string; }
+ location ~ [^/]\.php(/|$) { fastcgi_pass unix:/run/php-fpm-librenms.sock; fastcgi_split_path_info ^(.+\.php)(/.+)$; include fastcgi.conf; }
+ location ~ /\.(?!well-known).* { deny all; }
+}
+```
+
+###### 2. Validation de la configuration
+```bash
+clear;
+nginx -t;
+```
+
+###### 3. Déplacer la configuration par défaut Nginx
+```bash
+clear;
+mv /etc/nginx/sites-enabled/default /etc/nginx/;
+```
+
+##### X. Relance des services
+```bash
+clear;
+systemctl restart php8.2-fpm.service;
+systemctl reload nginx;
+systemctl restart php8.2-fpm;
+```
+
+<br />
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+### IV. LNMS et SNMP
+#### A. Activation du binaire LNMS avec ses dépendances
+```bash
+clear;
+ln -s /opt/librenms/lnms /usr/bin/lnms;
+cp /opt/librenms/misc/lnms-completion.bash /etc/bash_completion.d;
+```
+#### B. SNMP Daemon
+##### 1. Copie de fichier
+```bash
+clear;
+cp /opt/librenms/snmpd.conf.example /etc/snmp/snmpd.conf;
+```
+##### 2. Définir la communauté SNMP
+```bash
+clear;
+sed -i -e "s/RANDOMSTRINGGOESHERE/librenms/g" /etc/snmp/snmpd.conf;
+```
+##### 3. Déployé l'agent LibreNMS
+```bash
+clear;
+curl -o /usr/bin/distro https://raw.githubusercontent.com/librenms/librenms-agent/master/snmp/distro;
+chmod +x /usr/bin/distro;
+```
+##### 4. Activation du service SNMP Daemon
+```bash
+clear;
+systemctl enable snmpd;
+systemctl restart snmpd;
+```
+#### C. Planification de tâche
+```bash
+clear;
+cp /opt/librenms/dist/librenms.cron /etc/cron.d/librenms;
+cp /opt/librenms/misc/librenms.logrotate /etc/logrotate.d/librenms;
+```
+
+#### D. Activation du service LibreNMS Scheduler
+```bash
+clear;
+cp /opt/librenms/dist/librenms-scheduler.service /opt/librenms/dist/librenms-scheduler.timer /etc/systemd/system/
+systemctl enable --now librenms-scheduler.timer;
+```
+
+<br />
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+### V. WebUI
+#### A. Installation du site
+##### 1. WebUI
+```
+http://192.168.180.28
+```
+#### 2. Information de la base de donnée
+```
+Host   : localhost
+Port   : 3306
+User   : librenms
+Pass   : PASSSWORD123
+DBName : librenms
+```
