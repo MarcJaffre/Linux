@@ -268,3 +268,35 @@ User   : librenms
 Pass   : PASSSWORD123
 DBName : librenms
 ```
+
+<br />
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+### VI. Validator LibreNMS
+#### A. A quoi sert Validator ?
+Validator permet de confirmer la bonne installation du site
+
+#### B. Accéder à Validator
+Aller sur la roue en haut à droite puis sur Validator.
+
+#### C. Cliquer sur le bouton vert pour valider le correctif SQL pour le TimeZone
+
+#### D. FAIL: base_url is not set correctly
+Si l'IP du serveur est derrière un pare-feu, ce qui est mon cas, taper la commande suivante. (IP de pfsense côté WAN)
+```
+runuser -l librenms -c "lnms config:set base_url http://192.168.180.28:8083/"
+```
+
+
+
+#### E. Consider adding a device such as localhost
+Ajouter un hôte. L'adresse de mon serveur est 192.168.200.13.
+```
+Hostname or IP        : 192.168.200.13
+SNMP Version          : v2c 
+Port SNMP             : 161
+Type de port          : udp
+Port Association Mode : IfIndex
+Community Name        : librenms
+```
+
