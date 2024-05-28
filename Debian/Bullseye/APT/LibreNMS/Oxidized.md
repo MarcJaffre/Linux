@@ -287,9 +287,7 @@ clear;
 ls -la /home/oxidized/.config/oxidized/;
 ```
 
-########################################################################################################################################################
-# Activation du service #
-#########################
+# Activation du service
 ```bash
 clear;
 systemctl enable oxidized.service;
