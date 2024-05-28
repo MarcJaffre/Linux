@@ -103,7 +103,7 @@ runuser -l oxidized -c 'mkdir -p /home/oxidized/.config/oxidized/configs'
 ```
 
 # Génération de la configuration
-Remplacer `XXXXXXXXXXXXXXXXXXXXXXXX` par la clé API du compte `oxidized`.
+Remplacer `XXXXXXXXXXXXXXXX` par la clé API du compte `oxidized`.
 
 ```bash
 clear;
@@ -193,7 +193,7 @@ source:
       group: group
       ip: ip
     headers:
-      X-Auth-Token: 'XXXXXXXXXXXXXXXXXXXXXXXX'
+      X-Auth-Token: 'XXXXXXXXXXXXXXXX'
   # ================================================================
   csv:
     file: "/home/oxidized/.config/oxidized/router.db"
