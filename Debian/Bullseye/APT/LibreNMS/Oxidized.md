@@ -1,16 +1,13 @@
-########################################################################################################################################################
-# Présentation #
-################
-# Outil pour sauvegarder / Restaurer la configuration d'un routeur
+# Présentation
+Outil pour sauvegarder / Restaurer la configuration d'un routeur
 
-########################################################################################################################################################
-# Documentation #
-#################
-# http://www.arnaud.rabier.info/wp-content/uploads/2020/02/Oxidized.pdf
+# Documentation
+```bash
+http://www.arnaud.rabier.info/wp-content/uploads/2020/02/Oxidized.pdf
+```
 
-########################################################################################################################################################
-# Dépendances #
-###############
+# Dépendances
+```bash
 clear;
 apt update;
 apt install -y cmake;
@@ -24,123 +21,94 @@ apt install -y pkg-config;
 apt install -y ruby ruby-dev;
 apt install -y zlib1g-dev;
 apt install -y -f;
+```
 
-########################################################################################################################################################
-# Installation #
-################
+# Installation
+```bash
+clear;
 gem install oxidized;
 gem install oxidized-script;
 gem install oxidized-web;
 
-# Fix: Error loading config: undefined method `unsafe_load' for Psych:Module
+Fix: Error loading config: undefined method `unsafe_load' for Psych:Module
 gem install psych -v 3.3.2;
+```
 
-########################################################################################################################################################
-# Utilisateur de service #
-##########################
-#
+# Utilisateur de service
 # Creation de compte
+```bash
+clear;
 useradd -s /bin/bash -m oxidized;
-#
+```
+
 # Mot de passe:
+```bash
+clear;
 (echo "oxidized:admin") | chpasswd;
+```
 
-########################################################################################################################################################
-# Création de dossier #
-#######################
+# Création de dossier
+```bash
+clear;
 mkdir /run/oxidized;
+```
 
-########################################################################################################################################################
-# Permission #
-##############
+# Permission
+```bash
+clear;
 chown oxidized:oxidized /run/oxidized;
+```
 
-########################################################################################################################################################
-# Création du service #
-#######################
-cp /var/lib/gems/2.7.0/gems/oxidized-0.26.3/extra/oxidized.service /lib/systemd/system/;
+# Création du service
+```bash
+clear;
+PATH_SERVICE=$(find /var/lib/ -name "oxidized.service" | head -n1)
+cp $PATH_SERVICE /lib/systemd/system/;
+```
 
-########################################################################################################################################################
-# Purge Ruby #
-##############
+# Purge Ruby
+```bash
+clear;
 #gem uninstall -aIx;
 #gem cleanup;
+```
 
+<br />
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# LibeNMS
+Ajouter un Utilisateur : oxidized (admin global)
+Créer une clé API      : Liée au compte oxidized
 
+# Test API 
+```bash
+clear;
+curl -H 'X-Auth-Token: XXXXXXXXXXXXXXXX' 'http://127.0.0.1/api/v0/oxidized'
+```
 
-
-
-########################################################################################################################################################
-# LibeNMS #
-###########
-# Ajouter un Utilisateur : oxidized (admin global)
-# Créer une clé API      : ac55f9df39d89682d2b5efca6d95ec5c (Liée au compte oxidized)
-
-########################################################################################################################################################
-# Test API #
-############
-curl -H 'X-Auth-Token: ac55f9df39d89682d2b5efca6d95ec5c' 'http://127.0.0.1/api/v0/oxidized'
+```
 [
     {
         "hostname": "192.168.200.11",
         "os": "proxmox",
         "ip": "192.168.200.11"
     }
+```
 
-########################################################################################################################################################
-# Configuration #
-#################
-#
+# Configuration
+# Creation de dossier (Backup)
+```bash
+clear;
+runuser -l oxidized -c 'mkdir -p /home/oxidized/.config/oxidized/configs'
+```
+
 # Génération de la configuration
-runuser -l oxidized -c 'rm ~/.config/oxidized/config;oxidized';
-#
-runuser -l oxidized -c 'nano ~/.config/oxidized/config';
-
-
-
-########################################################################################################################################################
-# Redémarrage du service #
-##########################
+```bash
 clear;
 runuser -l oxidized -c 'rm ~/.config/oxidized/config; nano ~/.config/oxidized/config';
-systemctl daemon-reload;
-systemctl restart oxidized.service;
-systemctl status oxidized.service;
-curl -H 'X-Auth-Token: ac55f9df39d89682d2b5efca6d95ec5c' 'http://127.0.0.1/api/v0/oxidized'
-journalctl -f -u oxidized.service;
+```
 
-# 
-
-########################################################################################################################################################
-# Activation du service #
-#########################
-systemctl enable oxidized.service;
-
-
-
-
-########################################################################################################################################################
-# WebUI #
-#########
-Enable Oxidized support                                 : Enable
-URL to your Oxidized API                                : http://127.0.0.1:8888/
-Enable config versioning access                         : Enable
-Enable the return of groups to Oxidized                 : Enable
-Set the default group returned                          : default
-Reload Oxidized nodes list, each time a device is added : Enable
-
-New Map Rule:
-    os = routeros
-    group < mikrotik
-    
-
-Do not backup these OS: proxmox
-
-
-
-
-
+```bash
 ---
 ########################################################################################################################################################
 # Identifiant par defaut #
@@ -149,20 +117,20 @@ Do not backup these OS: proxmox
 #password: admin
 
 ########################################################################################################################################################
-# Models chargés #
+# Models charges #
 ##################
-model: airos, dlink, edgeos, edgeswitch, firelinuxos, firewareos, fortios, ios, linuxgeneric, model, netgear, openwrt, pfsense, routeros, tplink
+model: airos, dlink, edgeos, edgeswitch, firelinuxos, firewareos, fortios, ios, linuxgeneric, model, netgear, openwrt, pfsense, routeros, tplink, zynosgs
 
 ########################################################################################################################################################
 # Global #
 ##########
-resolve_dns: true
+resolve_dns: false
 interval: 3600
 use_syslog: false
 debug: false
-threads: 30
-timeout: 20
-retries: 3
+threads: 5
+timeout: 10
+retries: 1
 prompt: !ruby/regexp /^([\w.@-]+[#>]\s?)$/
 
 ########################################################################################################################################################
@@ -176,14 +144,6 @@ rest: 127.0.0.1:8888
 vars: {}
 
 ########################################################################################################################################################
-# Models #
-##########
-models:
- mikrotik:
-  username: marc
-  password: admin
-
-########################################################################################################################################################
 pid: "/home/oxidized/.config/oxidized/pid"
 
 ########################################################################################################################################################
@@ -192,6 +152,8 @@ crash:
   hostnames: false
 stats:
   history_size: 10
+
+########################################################################################################################################################
 next_adds_job: false
 
 ########################################################################################################################################################
@@ -208,9 +170,8 @@ input:
 
 ########################################################################################################################################################
 output:
-  default: file
-  file:
-    directory: "/home/oxidized/.config/oxidized/configs"
+ file:
+  directory: "/home/oxidized/.config/oxidized/configs/"
 
 ########################################################################################################################################################
 source:
@@ -228,7 +189,7 @@ source:
       group: group
       ip: ip
     headers:
-      X-Auth-Token: 'ac55f9df39d89682d2b5efca6d95ec5c'
+      X-Auth-Token: 'XXXXXXXXXXXXXXXXXXXXXXXX'
   # ================================================================
   csv:
     file: "/home/oxidized/.config/oxidized/router.db"
@@ -239,30 +200,97 @@ source:
     gpg: false
   # ================================================================
 
-
+########################################################################################################################################################
+model_map:
+  # ================================================================
+  cisco: ios
+  # ================================================================
+  juniper: junos
+  # ================================================================
+  mikrotik: routeros
+  # ================================================================
+  proxmox: linuxgeneric
+  # ================================================================
+  #zywall: ios
 
 ########################################################################################################################################################
 groups:
   # =======================================================================
+  blacklist:
+  # =======================================================================
   default:
-     username: root
-     password: admin
+     username: "root"
+     password: "admin"
   # =======================================================================
   mikrotik:
-   username: marc
-   password: admin
+     username: "marc"
+     password: "admin"
+  # =======================================================================
+  mikrotik_vm:
+     username: "marc"
+     password: "admin"
+     
   # =======================================================================
   pfsense:
-     username: admin
-     password: pfsense
+     username: "admin"
+     password: "pfsense"
+  # =======================================================================
+  zyxel:
+     username: "admin"
+     password: "XXXXXXXXX"
 
 ########################################################################################################################################################
-model_map:
-  # ================================================================
-  juniper: junos
-  cisco: ios
-  # ================================================================
-  proxmox: linuxgeneric
-  # ================================================================
-  mikrotik: routeros
-  # ================================================================
+# Models - Acces Equipement #
+#############################
+# Charger les comptes lie au groupe
+models:
+ default:
+ mikrotik:
+ mikrotik_vm:
+ pfsense:
+ zyxel:
+```
+
+# WebUI
+```
+Enable Oxidized support                                 : Enable
+URL to your Oxidized API                                : http://127.0.0.1:8888/
+Enable config versioning access                         : Enable
+Enable the return of groups to Oxidized                 : Enable
+Set the default group returned                          : default
+Do not backup these Oxidized groups                     : blacklist
+Reload Oxidized nodes list, each time a device is added : Enable
+
+New Map Rule:
+    os = routeros        | group < mikrotik
+    ip = 192.168.200.50  | group < mikrotik_vm
+    os = zywall          | group < blacklist
+    ip = XXX.XXX.XXX.XXX | group < blacklist
+
+Do not backup these OS: proxmox
+```
+
+
+
+# Redémarrage du service
+```bash
+clear;
+systemctl daemon-reload;
+systemctl restart oxidized.service;
+systemctl status oxidized.service;
+journalctl -f -u oxidized.service;
+```
+
+# Afficher Backup
+```bash
+clear;
+ls -la /home/oxidized/.config/oxidized/;
+```
+
+########################################################################################################################################################
+# Activation du service #
+#########################
+```bash
+clear;
+systemctl enable oxidized.service;
+```
