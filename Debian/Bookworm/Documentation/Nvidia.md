@@ -10,6 +10,8 @@ GPU=$(lspci | grep "VGA\|3D" | grep NVIDIA | cut -d " " -f 1)
 lspci -vnk -s $GPU;
 ```
 
+![image](https://github.com/MarcJaffre/Linux/assets/35907/a2c955ca-f89e-400b-af76-6e00f0f4d883)
+
 <br />
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -35,9 +37,6 @@ clear;
 ```bash
 nvidia-smi --query-gpu=gpu_name,gpu_uuid --format=csv
 ```
-![image](https://github.com/MarcJaffre/Linux/assets/35907/a2c955ca-f89e-400b-af76-6e00f0f4d883)
-
-
 
 ##### 4. 
 ```bash
