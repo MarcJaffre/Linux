@@ -28,19 +28,20 @@ apt install linux-headers-$(uname -r);
 ##### 2. Nvidia-smi
 ```bash
 clear;
- apt install -y --no-install-recommends --no-install-suggests nvidia-smi;
+apt install -y --no-install-recommends --no-install-suggests nvidia-smi 1>/dev/null;
+```
+
+##### 3. Information
+```bash
+nvidia-smi;
 ```
 ![image](https://github.com/MarcJaffre/Linux/assets/35907/0fad553a-a4ac-457b-b3ef-48b8acf4151f)
 
 
-##### 3. 
-```bash
-nvidia-smi --query-gpu=gpu_name,gpu_uuid --format=csv
-```
-
 ##### 4. 
 ```bash
 clear;
+
 ```
 ##### 5. 
 ```bash
