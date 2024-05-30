@@ -38,10 +38,10 @@ nvidia-smi;
 ![image](https://github.com/MarcJaffre/Linux/assets/35907/0fad553a-a4ac-457b-b3ef-48b8acf4151f)
 
 
-##### 4. 
+##### 4. Charge en temps réel
 ```bash
 clear;
-
+watch -n0.1 nvidia-smi
 ```
 ##### 5. 
 ```bash
