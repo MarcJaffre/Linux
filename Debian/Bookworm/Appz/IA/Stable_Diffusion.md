@@ -14,48 +14,72 @@
 ```bash
 clear;
 apt install -y git libgl1 libglib2.0-0 python3 python3-venv wget;
-``` 
+```
+
 #### 2. Téléchargement
 ```bash
 clear;
-git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git ~/Documents/Stable-diffusion;
-cd ~/Documents/Stable-diffusion;
-```
-#### 3. Permission
-```bash
-clear;
-chmod +x ./webui-macos-env.sh ./webui.sh ./webui-user.sh
-```
-#### 4. Configuration (AMD)
-```bash
-sed -i -e 's/#export COMMANDLINE_ARGS=""/export COMMANDLINE_ARGS="--skip-torch-cuda-test"/g' ./webui-user.sh;
-sed -i -e 's///g' ./webui-user.sh;
-sed -i -e 's///g' ./webui-user.sh;
-sed -i -e 's///g' ./webui-user.sh;
-
-
-# no module 'xformers'. Processing without...
-# Warning: caught exception 'No HIP GPUs are available', memory monitor disabled
+cd $HOME;
+rm -rf ~/Documents/Stable-diffusion 2>/dev/null;
+git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git ~/Documents/Stable-diffusion 2>/dev/null;
+mkdir -p ~/Documents/Stable-diffusion/log
 ```
 
-
-
-
-### C. Lancement
+#### 4. Préparation Environnement
 ```bash
 clear;
 cd ~/Documents/Stable-diffusion;
-./webui.sh
-``` 
-
-
-### D. Panel Web
+python3 -m venv venv;
+source venv/bin/activate;
+python3 -m pip install --upgrade pip wheel;
+bash webui.sh;
 ```
+
+#### 5. Configuration de Stable-diffusion (AMD)
+```bash
+clear;
+sed -i -e 's/\#export COMMANDLINE_ARGS\=\"\"/export COMMANDLINE_ARGS\=\"--skip-torch-cuda-test --precision full --no-half --share\"/g'      ~/Documents/Stable-diffusion/webui-user.sh;
+sed -i '/^export COMMANDLINE_ARGS=*/a export PYTORCH_HIP_ALLOC_CONF="garbage_collection_threshold:0.6,max_split_size_mb:128\"'              ~/Documents/Stable-diffusion/webui-user.sh;
+sed -i '/^export PYTORCH_HIP_ALLOC_CONF\=.*/a export PYTORCH_CUDA_ALLOC_CONF\=\"garbage_collection_threshold\:0.6,max_split_size_mb:128\"'  ~/Documents/Stable-diffusion/webui-user.sh;
+```
+
+#### 6. SystemD
+```bash
+clear;
+echo "[Unit]
+Description=Stable Diffusion AUTOMATIC1111 Web UI service
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=marc
+ExecStart=/usr/bin/env bash /home/marc/Documents/Stable-diffusion/webui.sh
+StandardOutput=append:/home/marc/Documents/Stable-diffusion/log/OK.log
+StandardError=append:/home/marc/Documents/Stable-diffusion/log/KO.log
+
+[Install]
+WantedBy=multi-user.target" > /etc/systemd/system/stable_diffusion.service;
+```
+
+#### 7. Gestion du service
+```bash
+clear;
+systemctl daemon-reload;
+systemctl disable --now stable_diffusion.service;
+systemctl restart stable_diffusion.service;
+systemctl status  stable_diffusion.service;
+systemctl enable  --now stable_diffusion.service;
+```
+
+#### 8. Journal d'événement
+```bash
+tail -f /home/marc/Documents/Stable-diffusion/log/*.log;
+```
+
+#### 9. Panel Web
+```bash
 http://127.0.0.1:7860
-```
-
-### X. Amélioration
-```
-# ./webui.sh
-cannot locate TCMalloc. do you have tcmallow or google-perftool installed on your systel ? (Improves CPU Memory Usage)
-```
+``` 
