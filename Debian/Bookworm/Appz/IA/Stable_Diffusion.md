@@ -94,7 +94,7 @@ clear;
 wget https://civitai.com/api/download/models/30627 -O ~/Documents/Stable-diffusion/models/Lora/XSarchitectural-12NightMoonsci-fi.safetensors;
 ```
 
-### B. Coyote (Kemono Friends) (civitai.com)
+### B. Coyote (Kemono Friends) (civitai.com) | 2 Go
 ```bash
 clear;
 wget https://civitai.com/api/download/models/4980  -O ~/Documents/Stable-diffusion/models/Lora/Sci-Fi_Diffusion_v1.0.safetensors;
