@@ -38,9 +38,9 @@ bash webui.sh;
 #### 5. Configuration de Stable-diffusion (AMD)
 ```bash
 clear;
-sed -i -e 's/\#export COMMANDLINE_ARGS\=\"\"/export COMMANDLINE_ARGS\=\"--skip-torch-cuda-test --precision full --no-half --share\"/g'      ~/Documents/Stable-diffusion/webui-user.sh;
-sed -i '/^export COMMANDLINE_ARGS=*/a export PYTORCH_HIP_ALLOC_CONF="garbage_collection_threshold:0.6,max_split_size_mb:128\"'              ~/Documents/Stable-diffusion/webui-user.sh;
-sed -i '/^export PYTORCH_HIP_ALLOC_CONF\=.*/a export PYTORCH_CUDA_ALLOC_CONF\=\"garbage_collection_threshold\:0.6,max_split_size_mb:128\"'  ~/Documents/Stable-diffusion/webui-user.sh;
+sed -i -e 's/\#export COMMANDLINE_ARGS\=\"\"/export COMMANDLINE_ARGS\=\"--skip-torch-cuda-test --precision full --no-half\"/g'                 ~/Documents/Stable-diffusion/webui-user.sh;
+sed -i -e '/^export COMMANDLINE_ARGS=*/a export PYTORCH_HIP_ALLOC_CONF="garbage_collection_threshold:0.6,max_split_size_mb:128\"'              ~/Documents/Stable-diffusion/webui-user.sh;
+sed -i -e '/^export PYTORCH_HIP_ALLOC_CONF\=.*/a export PYTORCH_CUDA_ALLOC_CONF\=\"garbage_collection_threshold\:0.6,max_split_size_mb:128\"'  ~/Documents/Stable-diffusion/webui-user.sh;
 ```
 
 #### 6. SystemD
