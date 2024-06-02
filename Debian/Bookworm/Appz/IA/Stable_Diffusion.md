@@ -83,3 +83,40 @@ tail -f /home/marc/Documents/Stable-diffusion/log/*.log;
 ```bash
 http://127.0.0.1:7860
 ``` 
+
+<br />
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## II. Complément
+### A. XSarchitectural-12NightMoonsci-fi (civitai.com) | 36 Mo
+```bash
+clear;
+wget https://civitai.com/api/download/models/30627 -O ~/Documents/Stable-diffusion/models/Lora/XSarchitectural-12NightMoonsci-fi.safetensors;
+```
+
+### B. Coyote (Kemono Friends) (civitai.com)
+```bash
+clear;
+wget https://civitai.com/api/download/models/4980  -O ~/Documents/Stable-diffusion/models/Lora/Sci-Fi_Diffusion_v1.0.safetensors;
+```
+
+### C. Furry Girl (civitai.com) | 73 Mo
+```bash
+clear;
+wget https://civitai.com/api/download/models/24691 -O ~/Documents/Stable-diffusion/models/Lora/Furry-girl.safetensors;
+```
+
+### D. Sevens Mix [Furry Model] (civitai.com) | 2 Go
+```bash
+clear;
+wget https://civitai.com/api/download/models/13268 -O ~/Documents/Stable-diffusion/models/Stable-diffusion/sevens-mix-furry-model.safetensors;
+```
+
+### E. FaeTastic (civitai.com) | 2 Go
+```bash
+clear;
+wget https://civitai.com/api/download/models/16553           -O ~/Documents/Stable-diffusion/models/Stable-diffusion/faetastic_.safetensors;
+wget https://civitai.com/api/download/models/16553?type=VAE  -O ~/Documents/Stable-diffusion/models/VAE/kl-f8-anime2.ckpt;
+
+# https://huggingface.co/Deltaadams/HentaiDiffusion/tree/main
+```
