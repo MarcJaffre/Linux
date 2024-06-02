@@ -97,7 +97,7 @@ wget https://civitai.com/api/download/models/30627 -O ~/Documents/Stable-diffusi
 ### B. Coyote (Kemono Friends) (civitai.com) | 2 Go
 ```bash
 clear;
-wget https://civitai.com/api/download/models/4980  -O ~/Documents/Stable-diffusion/models/Lora/Sci-Fi_Diffusion_v1.0.safetensors;
+wget https://civitai.com/api/download/models/4980 -O ~/Documents/Stable-diffusion/models/Lora/Sci-Fi_Diffusion_v1.0.safetensors;
 ```
 
 ### C. Furry Girl (civitai.com) | 73 Mo
@@ -112,11 +112,11 @@ clear;
 wget https://civitai.com/api/download/models/13268 -O ~/Documents/Stable-diffusion/models/Stable-diffusion/sevens-mix-furry-model.safetensors;
 ```
 
-### E. FaeTastic (civitai.com) | 2 Go
+### E. Autres
 ```bash
 clear;
-wget https://civitai.com/api/download/models/16553           -O ~/Documents/Stable-diffusion/models/Stable-diffusion/faetastic_.safetensors;
-wget https://civitai.com/api/download/models/16553?type=VAE  -O ~/Documents/Stable-diffusion/models/VAE/kl-f8-anime2.ckpt;
+wget "https://civitai.com/api/download/models/540181?type=Model&format=SafeTensor&token=b5eb9a6bab84491d049bfa7a5a7fe004"
 
-# https://huggingface.co/Deltaadams/HentaiDiffusion/tree/main
 ```
+
+
