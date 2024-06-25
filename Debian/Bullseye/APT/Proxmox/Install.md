@@ -64,7 +64,7 @@ apt full-upgrade -y;
 ### X. Installation du Noyau PVE
 ```bash
 clear;
-apt install pve-kernel-5.15;
+apt install -y pve-kernel-6.2;
 ```
 
 ### X. Installation des paquets PVE Proxmox
