@@ -15,7 +15,7 @@ La machine Debian dois disposer de la technologie de virtualisation et avoir la 
 ```bash
 clear;
 #############################################################
-IP="192.168.0.200"
+IP="192.168.0.100"
 NAME="Proxmox"
 GW="192.168.0.1"
 DNS="192.168.0.1"
@@ -29,7 +29,7 @@ $IP   $NAME.$DOMAIN $NAME" > /etc/hosts;
 ```
 
 ### X. Vérification de la configuration du HOST
-Le retour de la commande devrait indiquer `192.168.0.200 # should return your IP address here`
+Le retour de la commande devrait indiquer `192.168.0.100 # should return your IP address here`
 ```bash
 clear;
 hostname --ip-address;
@@ -93,13 +93,19 @@ clear;
 apt remove -y os-prober;
 ```
 
-### X.
+### X. Panel d'administration
 ```bash
+clear;
+echo "Le panel d'administration de Proxmox est à l'adresse http://$IP:8006";
 ```
 
-### X.
+### X. Redémarrage de la machine
 ```bash
+clear;
+reboot;
 ```
+
+
 
 ### X.
 ```bash
