@@ -40,7 +40,7 @@ hostname --ip-address;
 ```bash
 clear;
 source /etc/os-release;
-wget https://enterprise.proxmox.com/debian/proxmox-release-$VERSION_CODENAME.gpg -O /etc/apt/trusted.gpg.d/proxmox-release-$VERSION_CODENAME.gpg
+wget https://enterprise.proxmox.com/debian/proxmox-release-$VERSION_CODENAME.gpg -O /etc/apt/trusted.gpg.d/proxmox-release-$VERSION_CODENAME.gpg;
 ```
 #### 2. Dépôt
 ```bash
@@ -61,24 +61,36 @@ clear;
 apt full-upgrade -y;
 ```
 
-### X.
+### X. Installation du Noyau PVE
 ```bash
+clear;
+apt install pve-kernel-5.15;
 ```
 
-### X.
+### X. Installation des paquets PVE Proxmox
 ```bash
+clear;
+apt install -y postfix;
+apt install -y open-iscsi;
+apt install -y proxmox-ve;
 ```
 
-### X.
+### X. Suppresion des anciens Noyaux
 ```bash
+clear;
+apt remove linux-image-amd64 'linux-image-5.10*';
 ```
 
-### X.
+### X. Mise à jour du démarrage
 ```bash
+clear;
+update-grub;
 ```
 
-### X.
+### X. Supprimer Multi-Boot
 ```bash
+clear;
+apt remove -y os-prober;
 ```
 
 ### X.
