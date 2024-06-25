@@ -107,6 +107,8 @@ reboot;
 
 
 
-### X.
+### X. Virtualbox
 ```bash
+clear;
+apt install pve-headers;
 ```
