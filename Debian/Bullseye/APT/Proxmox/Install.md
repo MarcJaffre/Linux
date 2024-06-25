@@ -49,15 +49,16 @@ source /etc/os-release;
 echo "deb [arch=amd64] http://download.proxmox.com/debian/pve $VERSION_CODENAME pve-no-subscription" > /etc/apt/sources.list.d/pve-no-subscription.list;
 ```
 
-
-
-
-### X. 
+### X. Mise à jour de la liste des paquets
 ```bash
+clear;
+apt update;
 ```
 
-### X.
+### X. Mise à niveau
 ```bash
+clear;
+apt full-upgrade -y;
 ```
 
 ### X.
