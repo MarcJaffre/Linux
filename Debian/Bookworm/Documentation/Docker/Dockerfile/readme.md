@@ -54,3 +54,9 @@ RUN : Permet d'exécuter une commande.
 ```
 Permet de définir la commande par défaut qui sera executée lors du lancement du container.
 ```
+
+
+### Sources
+```
+https://blog.eleven-labs.com/fr/comprendre-et-personnaliser-son-environnement-docker/
+```
