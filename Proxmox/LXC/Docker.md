@@ -26,6 +26,38 @@
 - Nom de domaine         : lan.local
 ```
 
+### C. Mise à jour du Debian
+#### 1. Configuration des dépôts
+```bash
+clear;
+source /etc/os-release;
+if [ $VERSION_CODENAME = bookworm ]; then
+echo "deb http://deb.debian.org/debian bookworm          main contrib non-free non-free-firmware
+deb http://deb.debian.org/debian bookworm-updates  main contrib non-free non-free-firmware
+deb http://security.debian.org   bookworm-security main contrib non-free non-free-firmware" > /etc/apt/sources.list;
+fi
+
+if [ $VERSION_CODENAME = bullseye ]; then
+echo "deb http://deb.debian.org/debian bullseye          main contrib non-free
+deb http://deb.debian.org/debian bullseye-updates  main contrib non-free
+deb http://security.debian.org   bullseye-security main contrib non-free" > /etc/apt/sources.list;
+fi
+apt update;
+```
+
+#### 2. Rechercher les mises à jours
+```bash
+clear;
+apt update;
+```
+
+#### 3. Mise à niveau
+```bash
+clear;
+apt upgrade;
+```
+
+
 <br />
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
