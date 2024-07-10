@@ -61,14 +61,14 @@ apt upgrade;
 <br />
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
-## II. Installation de Docker
+## II. Installation de Docker et Docker-compose
 ### A. Installer les dépendances
 ```
 clear;
 apt install ca-certificates curl;
 ```
 
-### B. Ajout des dépôts
+### B. Clé GPG
 ```bash
 clear;
 install -m 0755 -d /etc/apt/keyrings;
@@ -76,6 +76,34 @@ curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/doc
 chmod a+r /etc/apt/keyrings/docker.asc;
 ```
 
+### C. Ajout du dépôt Docker
+```bash
+clear;
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | 
+ tee /etc/apt/sources.list.d/docker.list > /dev/null;
+apt update;
+```
+
+### D. Installation de Docker
+```bash
+clear;
+apt install docker-ce;
+apt install docker-ce-cli;
+apt install containerd.io;
+apt install docker-buildx-plugin;
+apt install docker-compose-plugin;
+```
+
+### E. Installation de Docker-compose
+```bash
+clear;
+```
+
+### F. Vérification
+```
+docker --version;
+docker-compose --version;
+```
 
 
 <br />
