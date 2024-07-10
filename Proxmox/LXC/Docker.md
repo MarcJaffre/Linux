@@ -5,18 +5,26 @@
 ## I. Création du conteneur LXC
 ### A. Information sur le conteneur LXC
 ```
-- Système d'exploitation : Debian 11/12
 - Nom de la Machine      : Docker-LXC01
+- Conteneur privilégié   : Non*
+- Fonctionnalités        : Nesting
+- Système d'exploitation : Debian 11/12
 - Taille du stockage     : 8 Go
 - Processeur(s)          : 2 Core(s)
 - Mémoire-Vive           : 2 Go
 - SWAP                   : 2 Go
-- Conteneur privilégié   : Non*
-- Fonctionnalités        : Nesting, NFS, SMB/CIFS
-
-* : Lors de la création du conteneur Cocher la case 
+- Carte-réseau           : eth0
+- Nom du pont réseau     : vmbr0 (Réseau physique)
 ```
 
+### B. Configuration réseau
+```
+- Adresse IPv4           : 192.168.0.80
+- Passerelle réseau      : 192.168.0.1
+- Masque de Sous-réseau  : 255.255.255.0
+- Adresse DNS            : 192.168.0.1
+- Nom de domaine         : lan.local
+```
 
 <br />
 
