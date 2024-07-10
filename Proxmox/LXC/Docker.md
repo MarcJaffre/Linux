@@ -3,10 +3,18 @@
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## I. Création du conteneur LXC
-### A. Information
+### A. Information sur le conteneur LXC
 ```
-L'applicatif Docker requiert un conteneur non privilégié.
+- Système d'exploitation : Debian 11/12
+- Nom de la Machine      : Docker-LXC01
+- Taille du stockage     : 8 Go
+- Mémoire-Vive           : 2 Go
+- Processeur(s)          : 2 Core
+- Conteneur privilégié   : Non
+- Fonctionnalités        : Nesting, NFS, SMB/CIFS
 ```
+
+
 <br />
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
