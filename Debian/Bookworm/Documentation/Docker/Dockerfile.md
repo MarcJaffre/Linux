@@ -16,9 +16,11 @@ clear;
 nano Dockerfile;
 ```
 ```
+# Image System
 FROM alpine
-RUN apk update
-RUN apk upgrade
+
+# Mise a jour
+RUN apk update && apk upgrade
 ```
 
 ### X. Construire l'image
