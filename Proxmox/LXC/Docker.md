@@ -136,7 +136,7 @@ docker image inspect portainer/portainer-ce | more
 
 ### X. Information sur le conteneur
 ```
-- ExposedPorts: 8000/tcp (HTTP), 9000/tcp (???), 9443/tcp (HTTPS)
+- ExposedPorts: 8000/tcp , 9000/tcp (HTTP), 9443/tcp (HTTPS)
 - Volumes     : /data
 - Hostname    : 
 - Domainname  :
@@ -167,6 +167,13 @@ docker run -d \
   -v Portainer:/data \
   portainer/portainer-ce;
 ```
+
+### X. Relancer le conteneur
+```bash
+clear;
+docker container restart Portainer;
+```
+
 
 ### X. Mettre à jour l'image Portainer
 #### 1. Détruire le conteneur
