@@ -168,17 +168,34 @@ docker run -d \
   portainer/portainer-ce;
 ```
 
-### X. 
+### X. Mettre à jour l'image Portainer
+#### 1. Détruire le conteneur
 ```bash
 clear;
-```
-
-### X. 
-```bash
-clear;
-```
-
 docker container rm -f Portainer;
+```
+#### 1. Mise à jour de l'image
+```bash
+clear;
+docker pull portainer/portainer-ce:latest;
+```
+
+#### 2. Lancer le conteneur
+```bash
+clear;
+docker run -d \
+  -p 8000:8000 \
+  -p 9000:9000 \
+  -p 9443:9443 \
+  --name=Portainer \
+  --restart=always \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v /etc/localtime:/etc/localtime:ro \
+  -v Portainer:/data \
+  portainer/portainer-ce;
+```
+
+
 
 
 
