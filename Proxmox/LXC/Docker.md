@@ -11,8 +11,8 @@
 - Système d'exploitation : Debian 11/12
 - Taille du stockage     : 8 Go
 - Processeur(s)          : 2 Core(s)
-- Mémoire-Vive           : 2 Go
-- SWAP                   : 2 Go
+- Mémoire-Vive           : 512 Mo
+- SWAP                   : 512 Mo
 - Carte-réseau           : eth0
 - Nom du pont réseau     : vmbr0 (Réseau physique)
 ```
