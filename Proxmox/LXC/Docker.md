@@ -97,9 +97,11 @@ apt install docker-compose-plugin;
 ### E. Installation de Docker-compose
 ```bash
 clear;
+wget "https://github.com/docker/compose/releases/download/v2.28.1/docker-compose-$(uname -s)-$(uname -m)" -O /usr/local/bin/docker-compose 2>/dev/null;
+chmod +x /usr/local/bin/docker-compose;
 ```
 
-### F. Vérification
+### F. Vérification de Docker
 ```
 docker --version;
 docker-compose --version;
