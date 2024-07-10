@@ -62,7 +62,7 @@ apt upgrade;
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## II. Installation de Docker
-### A. Dépendances
+### A. Installer les dépendances
 ```
 clear;
 apt install ca-certificates curl;
