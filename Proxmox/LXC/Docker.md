@@ -175,6 +175,7 @@ docker run -d \
   -p 9443:9443 \
   --name=Portainer \
   --restart=always \
+  --label Cacher="Oui" \
   -v /var/run/docker.sock:/var/run/docker.sock \
   -v /etc/localtime:/etc/localtime:ro \
   -v Portainer:/data \
@@ -208,6 +209,7 @@ docker run -d \
   -p 9443:9443 \
   --name=Portainer \
   --restart=always \
+  --label Cacher="Oui" \
   -v /var/run/docker.sock:/var/run/docker.sock \
   -v /etc/localtime:/etc/localtime:ro \
   -v Portainer:/data \
