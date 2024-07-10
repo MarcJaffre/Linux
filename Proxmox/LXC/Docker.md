@@ -57,6 +57,16 @@ clear;
 apt upgrade;
 ```
 
+### D. Information sur la consommation du stockage
+```
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/loop0      7.8G  1.2G  6.2G  17% /
+none            492K  4.0K  488K   1% /dev
+udev             16G     0   16G   0% /dev/tty
+tmpfs            16G     0   16G   0% /dev/shm
+tmpfs           6.3G   96K  6.3G   1% /run
+tmpfs           5.0M     0  5.0M   0% /run/lock
+```
 
 <br />
 
@@ -112,6 +122,42 @@ docker-compose --version;
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## III. Déploiement de Portainer-CE
+### X. Téléchargement de l'image Portainer-CE
+```bash
+clear;
+docker pull portainer/portainer-ce:latest;
+
+```
+
+### X. 
+```bash
+clear;
+```
+
+### X. 
+```bash
+clear;
+```
+
+### X. 
+```bash
+clear;
+```
+
+docker container rm -f Portainer;
+docker volume create Portainer;
+
+docker run -d \
+  -p 8000:8000 \
+  -p 9000:9000 \
+  -p 9443:9443 \
+  --label Cacher="Oui" \
+  --name=Portainer \
+  --restart=always \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v Portainer:/data \
+  -v /etc/localtime:/etc/localtime:ro \
+  portainer/portainer-ce;
 
 
 
