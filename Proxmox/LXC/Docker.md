@@ -10,8 +10,10 @@
 - Taille du stockage     : 8 Go
 - Mémoire-Vive           : 2 Go
 - Processeur(s)          : 2 Core
-- Conteneur privilégié   : Non
+- Conteneur privilégié   : Non*
 - Fonctionnalités        : Nesting, NFS, SMB/CIFS
+
+* : Lors de la création du conteneur Cocher la case 
 ```
 
 
