@@ -22,4 +22,9 @@ RUN apk update
 RUN apk upgrade
 ```
 
-docker build .
+
+### X. Construire l'image
+```bash
+clear;
+docker build -f Dokerfile . -t Alpine:0.1;
+```
