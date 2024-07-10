@@ -19,7 +19,7 @@
 
 ### B. Configuration réseau
 ```
-- Adresse IPv4           : 192.168.0.80
+- Adresse IPv4 (CIDR)    : 192.168.0.80/24
 - Passerelle réseau      : 192.168.0.1
 - Masque de Sous-réseau  : 255.255.255.0
 - Adresse DNS            : 192.168.0.1
