@@ -23,6 +23,13 @@ Permet de définir des variables qui seront utilisables par l'utilisateur depuis
 Permet de modifier le répertoire de travail en cours.
 ```
 
+
+### VOLUME
+```
+Permet de définir les Volumes de données qui seront dynamique
+```
+
+
 ### ADD
 ```
 Permet de copier des fichiers, des dossiers ou des fichiers distants en utilisant des URLs et de les ajouter au système de fichiers de l'image.
