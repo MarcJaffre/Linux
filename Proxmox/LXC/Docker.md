@@ -241,3 +241,35 @@ tmpfs           5.0M     0  5.0M   0% /run/lock
 ```
 ### X. Charge Machine (Btop)
 ![image](https://github.com/MarcJaffre/Linux/assets/35907/727d0784-a89f-48c1-bdf5-71bcddd5e9be)
+
+
+
+
+
+<br />
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+## V. Unless Root (Expérimental // EN COURS )
+https://jclegras.github.io/posts/le-user-namespace-dans-docker/
+
+```
+# Add Group
+groupadd -g 5000 dockremap
+groupadd -g 5010 dockremap-user
+
+# Add User
+useradd -u 5000 -g dockremap -s      /bin/false dockremap
+useradd -u 5010 -g dockremap-user -s /bin/false dockremap-user
+
+# Remapping User
+echo "dockremap:5000:65536" >> /etc/subuid
+echo "dockremap:5000:65536" >> /etc/subgid
+
+echo '{ "userns-remap": "default" }' > /etc/docker/daemon.json;
+
+systemctl daemon-reload && systemctl restart docker
+
+
+dockerd --userns-remap="dockremap:dockremap"
+```
+
