@@ -212,9 +212,15 @@ docker run -d \
 - Indiquer l'adresse IP dans le champs "Public IP"
 ```
 
-
-
-
-
-
-
+### X. Information sur la consommation du stockage
+```
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/loop0      7.8G  1.5G  5.9G  20% /
+none            492K  4.0K  488K   1% /dev
+udev             16G     0   16G   0% /dev/tty
+tmpfs            16G     0   16G   0% /dev/shm
+tmpfs           6.3G  176K  6.3G   1% /run
+tmpfs           5.0M     0  5.0M   0% /run/lock
+```
+### X. Charge Machine (Btop)
+![image](https://github.com/MarcJaffre/Linux/assets/35907/727d0784-a89f-48c1-bdf5-71bcddd5e9be)
