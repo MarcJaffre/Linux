@@ -68,6 +68,13 @@ tmpfs           6.3G   96K  6.3G   1% /run
 tmpfs           5.0M     0  5.0M   0% /run/lock
 ```
 
+### E. Fonctionnalité du Conteneur
+```
+- Fuse       : Permet la prise en charge de FUSE
+- NFS        : Permet la prise en charge de NFS
+- SMB / CIFS : Permet la prise en charge de Samba et de CIFS
+```
+
 ### Z. Basculement Priviégié / Déprivilégié
 ```bash
 clear;
