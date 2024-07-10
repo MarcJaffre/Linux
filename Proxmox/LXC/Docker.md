@@ -126,17 +126,25 @@ docker-compose --version;
 ```bash
 clear;
 docker pull portainer/portainer-ce:latest;
-
 ```
 
-### X. 
+### X. Inspecter l'image
 ```bash
 clear;
+docker image inspect portainer/portainer-ce | more
 ```
 
-### X. 
-```bash
-clear;
+### X. Information sur le conteneur
+```
+- ExposedPorts: 8000/tcp, 9000/tcp, 9443/tcp
+- Volumes     : /data
+- Hostname    : 
+- Domainname  :
+
+- User        :
+- Tty         : false
+- OpenStdin   : false
+- StdinOnce   : false
 ```
 
 ### X. 
