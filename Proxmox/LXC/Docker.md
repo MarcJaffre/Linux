@@ -15,6 +15,7 @@
 - SWAP                   : 512 Mo
 - Carte-réseau           : eth0
 - Nom du pont réseau     : vmbr0 (Réseau physique)
+- Trafic réseau limité   : 5 Mb/s
 ```
 
 ### B. Configuration réseau
