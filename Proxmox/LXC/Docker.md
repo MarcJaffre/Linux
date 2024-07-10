@@ -6,7 +6,7 @@
 ### A. Information sur le conteneur LXC
 ```
 - Nom de la Machine      : Docker-LXC01
-- Conteneur privilégié   : Non*
+- Conteneur privilégié   : Non (Décocher)
 - Fonctionnalités        : Nesting
 - Système d'exploitation : Debian 11/12
 - Taille du stockage     : 8 Go
