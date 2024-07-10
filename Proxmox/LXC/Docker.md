@@ -9,6 +9,7 @@
 - Nom de la Machine      : Docker-LXC01
 - Taille du stockage     : 8 Go
 - Mémoire-Vive           : 2 Go
+- Paginatation           : 2 Go
 - Processeur(s)          : 2 Core
 - Conteneur privilégié   : Non*
 - Fonctionnalités        : Nesting, NFS, SMB/CIFS
