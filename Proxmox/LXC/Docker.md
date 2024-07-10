@@ -136,7 +136,7 @@ docker image inspect portainer/portainer-ce | more
 
 ### X. Information sur le conteneur
 ```
-- ExposedPorts: 8000/tcp, 9000/tcp, 9443/tcp
+- ExposedPorts: 8000/tcp (HTTP), 9000/tcp (???), 9443/tcp (HTTPS)
 - Volumes     : /data
 - Hostname    : 
 - Domainname  :
@@ -147,25 +147,40 @@ docker image inspect portainer/portainer-ce | more
 - StdinOnce   : false
 ```
 
+### X. Création du Volume de stockage de Portainer
+```bash
+clear;
+docker volume create Portainer;
+```
+
+### X. Lancement de Portainer
+```bash
+clear;
+docker run -d \
+  -p 8000:8000 \
+  -p 9000:9000 \
+  -p 9443:9443 \
+  --name=Portainer \
+  --restart=always \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v /etc/localtime:/etc/localtime:ro \
+  -v Portainer:/data \
+  portainer/portainer-ce;
+```
+
+### X. 
+```bash
+clear;
+```
+
 ### X. 
 ```bash
 clear;
 ```
 
 docker container rm -f Portainer;
-docker volume create Portainer;
 
-docker run -d \
-  -p 8000:8000 \
-  -p 9000:9000 \
-  -p 9443:9443 \
-  --label Cacher="Oui" \
-  --name=Portainer \
-  --restart=always \
-  -v /var/run/docker.sock:/var/run/docker.sock \
-  -v Portainer:/data \
-  -v /etc/localtime:/etc/localtime:ro \
-  portainer/portainer-ce;
+
 
 
 
