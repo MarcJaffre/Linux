@@ -8,9 +8,9 @@
 - Système d'exploitation : Debian 11/12
 - Nom de la Machine      : Docker-LXC01
 - Taille du stockage     : 8 Go
+- Processeur(s)          : 2 Core(s)
 - Mémoire-Vive           : 2 Go
-- Paginatation           : 2 Go
-- Processeur(s)          : 2 Core
+- SWAP                   : 2 Go
 - Conteneur privilégié   : Non*
 - Fonctionnalités        : Nesting, NFS, SMB/CIFS
 
