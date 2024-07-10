@@ -117,7 +117,6 @@ docker --version;
 docker-compose --version;
 ```
 
-
 <br />
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -174,7 +173,6 @@ clear;
 docker container restart Portainer;
 ```
 
-
 ### X. Mettre à jour l'image Portainer
 #### 1. Détruire le conteneur
 ```bash
@@ -200,6 +198,18 @@ docker run -d \
   -v /etc/localtime:/etc/localtime:ro \
   -v Portainer:/data \
   portainer/portainer-ce;
+```
+
+<br />
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+## IV. Configuration de Portainer-CE
+### X. Définir l'environnement
+```
+- Sélectionner Local
+- Onglet environments
+- Sélectionner local
+- Indiquer l'adresse IP dans le champs "Public IP"
 ```
 
 
