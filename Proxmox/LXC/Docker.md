@@ -15,6 +15,8 @@
 - SWAP                   : 512 Mo
 - Carte-réseau           : eth0
 - Nom du pont réseau     : vmbr0 (Réseau physique)
+
+Si le conteneur est privilégier, il suffit de le sauvegarder et de le restaurer en décochant privilégié .
 ```
 
 ### B. Configuration réseau
