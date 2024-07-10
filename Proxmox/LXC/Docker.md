@@ -15,8 +15,6 @@
 - SWAP                   : 512 Mo
 - Carte-réseau           : eth0
 - Nom du pont réseau     : vmbr0 (Réseau physique)
-
-Si le conteneur est privilégier, il suffit de le sauvegarder et de le restaurer en décochant privilégié .
 ```
 
 ### B. Configuration réseau
@@ -70,6 +68,13 @@ tmpfs           6.3G   96K  6.3G   1% /run
 tmpfs           5.0M     0  5.0M   0% /run/lock
 ```
 
+### Z. Basculement Priviégié / Déprivilégié
+```bash
+clear;
+VMID=""
+sed -i -e "s/unprivileged: 0/unprivileged: 1/g" /etc/pve/lxc/$VMID.conf
+sed -i -e "s/unprivileged: 1/unprivileged: 0/g" /etc/pve/lxc/$VMID.conf
+```
 <br />
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
