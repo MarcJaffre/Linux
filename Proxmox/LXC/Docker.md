@@ -217,6 +217,55 @@ docker run -d \
   portainer/portainer-ce;
 ```
 
+
+
+### X. Maintenance du conteneur
+#### 1. Détailler l'espace consommées
+```bash
+clear;
+docker system df
+```
+
+#### 2. Nettoyer les images non consommées
+`AVERTISSEMENT! Cela supprimera toutes les images sans au moins un conteneur qui leur est associé.`
+
+```bash
+clear;
+docker image prune --all
+```
+
+#### X. 
+`AVERTISSEMENT! Cela supprimera :
+ - Tous les conteneurs arrêtés
+ - Tous les réseaux non utilisés par au moins un conteneur
+ - Toutes les images sans au moins un conteneur qui leur est associé
+ - Tout le cache de construction
+`
+
+```bash
+clear;
+docker system prune --all
+```
+
+#### X.
+```bash
+clear;
+```
+
+#### X.
+```bash
+clear;
+```
+
+#### X.
+```bash
+clear;
+```
+
+
+
+
+
 <br />
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -241,9 +290,6 @@ tmpfs           5.0M     0  5.0M   0% /run/lock
 ```
 ### X. Charge Machine (Btop)
 ![image](https://github.com/MarcJaffre/Linux/assets/35907/727d0784-a89f-48c1-bdf5-71bcddd5e9be)
-
-
-
 
 
 <br />
