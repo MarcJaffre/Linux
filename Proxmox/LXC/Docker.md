@@ -223,44 +223,46 @@ docker run -d \
 #### 1. Détailler l'espace consommées
 ```bash
 clear;
-docker system df
+docker system df;
 ```
 
-#### 2. Nettoyer les images non consommées
-`AVERTISSEMENT! Cela supprimera toutes les images sans au moins un conteneur qui leur est associé.`
-
+#### 2. Nettoyer les images inutilisées
 ```bash
 clear;
-docker image prune --all
+docker image prune -f;
 ```
 
-#### X. 
-`AVERTISSEMENT! Cela supprimera :
+#### X. Nettoyer les conteneur arrêtés
+```bash
+clear;
+docker container prune -f;
+```
+
+#### X. Nettoyer les volumes inutilisés
+AVERTISSEMENT: Perte de donnée si un conteneur critique arrêter  !
+```bash
+clear;
+docker volume prune -f
+```
+
+
+#### X. Nettoyage complet
+AVERTISSEMENT! Cela supprimera :
  - Tous les conteneurs arrêtés
  - Tous les réseaux non utilisés par au moins un conteneur
  - Toutes les images sans au moins un conteneur qui leur est associé
  - Tout le cache de construction
-`
 
 ```bash
 clear;
 docker system prune --all
 ```
 
-#### X.
-```bash
-clear;
-```
 
-#### X.
-```bash
-clear;
-```
 
-#### X.
-```bash
-clear;
-```
+
+
+
 
 
 
