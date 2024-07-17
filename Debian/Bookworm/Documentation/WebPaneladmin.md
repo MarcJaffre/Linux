@@ -153,17 +153,14 @@ tar -xf /tmp/backup.tar.gz -C /tmp 1>/dev/null;
 ################################################################################
 # Docker #
 ##########
-if [ $DATE != "" ];then
- mv $DESTINATION $DESTINATION.${DATE);
- mv /tmp/var/lib/docker $DESTINATION;
-fi
+mv $DESTINATION $DESTINATION.${DATE};
+mv /tmp/var/lib/docker $DESTINATION;
 
 ################################################################################
 # Demarrage du service Docker localement #
 ##########################################
 systemctl start docker.socket;
 systemctl start docker.service;
-
 ```
 
 
