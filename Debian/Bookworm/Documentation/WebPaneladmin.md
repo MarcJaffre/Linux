@@ -148,7 +148,7 @@ sshpass -p $PASS scp $USER@$IP:$SOURCE/${DATE}.tar.gz /tmp/backup.tar.gz;
 ################################################################################
 # Extraction #
 ##############
-tar -xvf /tmp/backup.tar.gz -C /tmp;
+tar -xf /tmp/backup.tar.gz -C /tmp 1>/dev/null;
 
 ################################################################################
 # Docker #
