@@ -112,6 +112,7 @@ systemctl start docker.service;
 
 
 #### X. Script de Restauration
+Le script de restauration arrête docker pendant la restauration. Il renommer l'ancien dossier Docker en `Docker.DATE` puis restaure docker depuis la sauvegarde.
 ```bash
 #!/usr/bin/bash
 
