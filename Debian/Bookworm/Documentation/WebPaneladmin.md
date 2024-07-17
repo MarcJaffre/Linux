@@ -58,10 +58,11 @@ Le script sauvegarde arrête docker pendant la création de la sauvegarde compre
 ```bash
 #!/usr/bin/bash
 
+
 ################################################################################
 # Pre-requis #
 ##############
-# scp, ssh, sshpass et tar 
+# apt install -y sshpass tar
 
 ################################################################################
 # Variables #
@@ -115,6 +116,12 @@ systemctl start docker.service;
 Le script de restauration arrête docker pendant la restauration. Il renommer l'ancien dossier Docker en `Docker.DATE` puis restaure docker depuis la sauvegarde.
 ```bash
 #!/usr/bin/bash
+
+################################################################################
+# Pre-requis #
+##############
+# apt install -y sshpass tar
+
 
 ################################################################################
 # Variables #
