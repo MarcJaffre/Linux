@@ -31,8 +31,6 @@ username: 5az28mg0
 password: 59fa48b8
 ```
 
-
-
 #### X. Gestion du service
 ```bash
 clear;
