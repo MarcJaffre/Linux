@@ -54,8 +54,14 @@ cat /www/server/panel/data/port.pl
 ```
 
 #### X. Script de Sauvegarde
+Le script sauvegarde arrête docker pendant la création de la sauvegarde compresser puis le transfert sur le serveur. A la fin du transfert, docker est démarrer.
 ```bash
 #!/usr/bin/bash
+
+################################################################################
+# Pre-requis #
+##############
+# scp, ssh, sshpass et tar 
 
 ################################################################################
 # Variables #
@@ -119,8 +125,6 @@ SOURCE="/mnt/Media_5/Test/"
 DESTINATION="/var/lib/docker"
 DATE="2024-07-18_001914"
 
-
-
 ################################################################################
 # Arret du service Docker localement #
 ######################################
@@ -141,9 +145,10 @@ tar -xvf /tmp/backup.tar.gz -C /tmp;
 ################################################################################
 # Docker #
 ##########
-# Ancien Docker
-mv $DESTINATION $DESTINATION.${DATE);
-mv /tmp/var/lib/docker $DESTINATION;
+if [ $DATE != "" ];then
+ mv $DESTINATION $DESTINATION.${DATE);
+ mv /tmp/var/lib/docker $DESTINATION;
+fi
 
 ################################################################################
 # Demarrage du service Docker localement #
