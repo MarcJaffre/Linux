@@ -57,12 +57,12 @@ cat /www/server/panel/data/port.pl
 
 ```bash
 #!/usr/bin/bash
-clear;
-IP=""
-USER=""
-PASS=""
+
+IP="192.168.20.3"
+USER="marc"
+PASS="admin"
 SOURCE="/var/lib/docker/"
-DESTINATION="/mnt/Media_5/"
+DESTINATION="/mnt/Media_5/Test/"
 DATE=$(date '+%Y-%m-%d_%H%M%S')
 
 #######################################################################
@@ -74,24 +74,29 @@ systemctl stop docker.service;
 #######################################################################
 # Creation du Dossier DATE #
 ############################
-sshpass -p admin ssh $USER@$IP mkdir $DESTINATION/$DATE
-
+sshpass -p admin ssh  $USER@$IP rm -r $DESTINATION/${DATE}*;
+sshpass -p admin ssh $USER@$IP mkdir $DESTINATION/$DATE 1>/dev/null 21>/dev/null;
 
 #######################################################################
 # Sauvegarde de Docker #
-########################
-sshpass -p admin rsync -avz $SOURCE $USER@$IP:$DESTINATION/$DATE
+####################
+sshpass -p admin rsync -avz $SOURCE $USER@$IP:$DESTINATION/$DATE 1>/dev/null 21>/dev/null;
 
+#######################################################################
+# Compression #
+###############
+sshpass -p admin ssh  $USER@$IP tar czvf $DESTINATION/${DATE}.tar.gz $DESTINATION/$DATE
+sshpass -p admin ssh  $USER@$IP rm $DESTINATION/$DATE
 
 #######################################################################
 # Demarrage du service Docker localement #
-##########################################
+#################################
 systemctl start docker.socket;
 systemctl start docker.service;
 
 #######################################################################
 # Verification #
-################
+###########
 sshpass -p admin ssh $USER@$IP ls $DESTINATION/
 sshpass -p admin ssh $USER@$IP ls $DESTINATION/$DATE
 
