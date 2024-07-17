@@ -67,8 +67,17 @@ if [ -f /usr/bin/curl ]; then
  curl -ksSO "$URL";
 else
  wget --no-check-certificate -O install.sh "$URL";
+ # Fix Erreur
+ sed -i -e "s/\$PYTHON3 -m pip install -U pip wheel setuptools/\$PYTHON3 -m pip install -U pip wheel setuptools --break-system-packages/g"  ./install.sh
+ sed -i -e "s/\$PYTHON3 -m pip uninstall -y gevent-socketio gevent-socketio-hartwork/\$PYTHON3 -m pip uninstall -y gevent-socketio gevent-socketio-hartwork --break-system-packages/g"  ./install.sh
+ sed -i -e "s/ajenti.plugin.packages ajenti.plugin.services/ajenti.plugin.packages ajenti.plugin.services --break-system-packages/g"  ./install.sh
 fi;
 bash install.sh;
+```
+
+```
+Ajenti will be listening at https://192.168.0.28:8000
+Log in with your root password or another OS user
 ```
 
 <br />
