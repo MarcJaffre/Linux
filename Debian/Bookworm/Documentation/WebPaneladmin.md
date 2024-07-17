@@ -24,9 +24,26 @@ fi;
 bash install.sh aapanel;
 ```
 
-<br />
+```
+==================================================================
+Congratulations! Installed successfully!
+==================================================================
+aaPanel Internet Address: https://92.132.218.220:24084/53dfbb0a
+aaPanel Internal Address: https://192.168.0.55:24084/53dfbb0a
+username: w3yoat0r
+password: 2af6bc98
+```
 
-![image](https://github.com/user-attachments/assets/416129a9-856f-4c85-9c66-ae5e23e6596b)
+#### X. Nginx Reverse Proxy (Optionnel)
+```
+Edit Proxy Host
+ - Customs Locations
+  > Define Location : /
+ - Scheme:
+  > HTTPS 192.168.0.55/53dfbb0a 24084
+```
+
+<br />
 
 
 #### X. Gestion du service
