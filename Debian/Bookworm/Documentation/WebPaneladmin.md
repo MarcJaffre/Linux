@@ -24,6 +24,7 @@ fi;
 bash install.sh aapanel;
 ```
 
+<br />
 
 ![image](https://github.com/user-attachments/assets/416129a9-856f-4c85-9c66-ae5e23e6596b)
 
