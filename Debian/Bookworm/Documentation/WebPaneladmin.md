@@ -57,6 +57,9 @@ cat /www/server/panel/data/port.pl
 ```bash
 #!/usr/bin/bash
 
+################################################################################
+# Variables #
+#############
 IP="192.168.20.3"
 USER="marc"
 PASS="admin"
@@ -100,6 +103,56 @@ systemctl start docker.service;
 
 ################################################################################
 ```
+
+
+#### X. Script de Restauration
+```bash
+#!/usr/bin/bash
+
+################################################################################
+# Variables #
+#############
+IP="192.168.20.3"
+USER="marc"
+PASS="admin"
+SOURCE="/mnt/Media_5/Test/"
+DESTINATION="/var/lib/docker"
+DATE="2024-07-18_001914"
+
+
+
+################################################################################
+# Arret du service Docker localement #
+######################################
+systemctl stop docker.socket;
+systemctl stop docker.service;
+
+
+################################################################################
+# Telecharger Backup #
+######################
+sshpass -p $PASS scp $USER@$IP:$SOURCE/${DATE}.tar.gz /tmp/backup.tar.gz;
+
+################################################################################
+# Extraction #
+##############
+tar -xvf /tmp/backup.tar.gz -C /tmp;
+
+################################################################################
+# Docker #
+##########
+# Ancien Docker
+mv $DESTINATION $DESTINATION.${DATE);
+mv /tmp/var/lib/docker $DESTINATION;
+
+################################################################################
+# Demarrage du service Docker localement #
+##########################################
+systemctl start docker.socket;
+systemctl start docker.service;
+
+```
+
 
 
 
