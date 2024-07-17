@@ -12,10 +12,18 @@ Pour la gestion des environnements Linux, il est fort utile un outil Web pour l'
 ------------------------------------------------------------------------------------------------------------------------------------------------
 ## II. Outils Web
 ### A. AaPanel
+
 ### B. Ajenti
-### C. Cockpit
-### D. Froxlor
-### E. ISPConfig
-### F. Sentroa
-### G. VestaCP
-### H. Webmin
+### C. cPanel
+### X. Cockpit
+### X. Froxlor
+### X. ISPConfig
+### X. Sentroa
+### X. VestaCP
+### X. Virtualmin
+### X. Webmin
+
+<br />
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+## II. 
