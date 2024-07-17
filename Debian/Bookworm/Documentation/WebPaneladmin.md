@@ -58,9 +58,17 @@ cat /www/server/panel/data/port.pl
 <br />
 
 ### B. Ajenti
-#### X. XXXX
+#### X. Installation
 ```bash
 clear;
+URL=https://raw.githubusercontent.com/ajenti/ajenti/master/scripts/install.sh;
+
+if [ -f /usr/bin/curl ]; then
+ curl -ksSO "$URL";
+else
+ wget --no-check-certificate -O install.sh "$URL";
+fi;
+bash install.sh;
 ```
 
 <br />
@@ -113,13 +121,6 @@ apt install -y /tmp/cockpit-file-sharing.deb 1>/dev/null;
 wget https://github.com/45Drives/cockpit-identities/releases/download/v0.1.12/cockpit-identities_0.1.12-1focal_all.deb -O /tmp/cockpit-identities.deb 2>/dev/null;
 apt install -y /tmp/cockpit-identities.deb 1>/dev/null;
 ```
-
-
-
-
-
-
-
 
 
 <br />
