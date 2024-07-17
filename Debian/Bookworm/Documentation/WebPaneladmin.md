@@ -53,8 +53,7 @@ clear;
 cat /www/server/panel/data/port.pl
 ```
 
-#### X. 
-
+#### X. Script de Sauvegarde
 ```bash
 #!/usr/bin/bash
 
@@ -63,45 +62,46 @@ USER="marc"
 PASS="admin"
 SOURCE="/var/lib/docker/"
 DESTINATION="/mnt/Media_5/Test/"
-DATE=$(date '+%Y-%m-%d_%H%M%S')
+DATE=$(date '+%Y%m%d_%H%M%S')
 
-#######################################################################
+################################################################################
 # Arret du service Docker localement #
 ######################################
 systemctl stop docker.socket;
 systemctl stop docker.service;
 
-#######################################################################
-# Creation du Dossier DATE #
-############################
-sshpass -p admin ssh  $USER@$IP rm -r $DESTINATION/${DATE}*;
-sshpass -p admin ssh $USER@$IP mkdir $DESTINATION/$DATE 1>/dev/null 21>/dev/null;
+################################################################################
+# Sauvegarde #
+##############
+rm /tmp/${DATE}.tar.gz 2>/dev/null;
+tar czvf /tmp/${DATE}.tar.gz $SOURCE;
 
-#######################################################################
-# Sauvegarde de Docker #
-####################
-sshpass -p admin rsync -avz $SOURCE $USER@$IP:$DESTINATION/$DATE 1>/dev/null 21>/dev/null;
+################################################################################
+# Securite #
+############
+sshpass -p $PASS ssh $USER@$IP rm -r $DESTINATION/${DATE}* 2>/dev/null;
 
-#######################################################################
-# Compression #
-###############
-sshpass -p admin ssh  $USER@$IP tar czvf $DESTINATION/${DATE}.tar.gz $DESTINATION/$DATE
-sshpass -p admin ssh  $USER@$IP rm $DESTINATION/$DATE
+################################################################################
+# Transfert de la sauvegarde #
+##############################
+sshpass -p $PASS  scp /tmp/${DATE}.tar.gz $USER@$IP:$DESTINATION/${DATE}.tar.gz;
 
-#######################################################################
+################################################################################
+# Verification #
+################
+sshpass -p $PASS ssh $USER@$IP ls $DESTINATION/
+sshpass -p $PASS ssh $USER@$IP ls $DESTINATION/${DATE}.tar.gz;
+
+################################################################################
 # Demarrage du service Docker localement #
-#################################
+##########################################
 systemctl start docker.socket;
 systemctl start docker.service;
 
-#######################################################################
-# Verification #
-###########
-sshpass -p admin ssh $USER@$IP ls $DESTINATION/
-sshpass -p admin ssh $USER@$IP ls $DESTINATION/$DATE
-
-#######################################################################
+################################################################################
 ```
+
+
 
 <br />
 
