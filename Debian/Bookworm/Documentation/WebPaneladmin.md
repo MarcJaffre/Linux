@@ -24,13 +24,6 @@ fi;
 bash install.sh aapanel;
 ```
 
-```
-aaPanel Internet Address: https://92.132.218.220:34546/2712cca5
-aaPanel Internal Address: https://192.168.0.55:34546/2712cca5
-username: 5az28mg0
-password: 59fa48b8
-```
-
 
 ![image](https://github.com/user-attachments/assets/416129a9-856f-4c85-9c66-ae5e23e6596b)
 
