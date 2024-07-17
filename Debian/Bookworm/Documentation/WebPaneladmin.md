@@ -34,14 +34,7 @@ username: w3yoat0r
 password: 2af6bc98
 ```
 
-#### X. Nginx Reverse Proxy (Optionnel)
-```
-Edit Proxy Host
- - Customs Locations
-  > Define Location : /
- - Scheme:
-  > HTTPS 192.168.0.55/53dfbb0a 24084
-```
+
 
 <br />
 
