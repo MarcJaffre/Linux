@@ -37,7 +37,6 @@ password: 2af6bc98
 
 <br />
 
-
 #### X. Gestion du service
 ```bash
 clear;
@@ -52,6 +51,51 @@ systemctl restart bt;
 ```bash
 clear;
 cat /www/server/panel/data/port.pl
+```
+
+#### X. 
+
+```bash
+#!/usr/bin/bash
+clear;
+IP=""
+USER=""
+PASS=""
+SOURCE="/var/lib/docker/"
+DESTINATION="/mnt/Media_5/"
+DATE=$(date '+%Y-%m-%d_%H%M%S')
+
+#######################################################################
+# Arret du service Docker localement #
+######################################
+systemctl stop docker.socket;
+systemctl stop docker.service;
+
+#######################################################################
+# Creation du Dossier DATE #
+############################
+sshpass -p admin ssh $USER@$IP mkdir $DESTINATION/$DATE
+
+
+#######################################################################
+# Sauvegarde de Docker #
+########################
+sshpass -p admin rsync -avz $SOURCE $USER@$IP:$DESTINATION/$DATE
+
+
+#######################################################################
+# Demarrage du service Docker localement #
+##########################################
+systemctl start docker.socket;
+systemctl start docker.service;
+
+#######################################################################
+# Verification #
+################
+sshpass -p admin ssh $USER@$IP ls $DESTINATION/
+sshpass -p admin ssh $USER@$IP ls $DESTINATION/$DATE
+
+#######################################################################
 ```
 
 <br />
