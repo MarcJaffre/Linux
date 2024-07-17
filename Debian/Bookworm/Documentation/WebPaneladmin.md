@@ -31,6 +31,10 @@ username: 5az28mg0
 password: 59fa48b8
 ```
 
+
+![image](https://github.com/user-attachments/assets/416129a9-856f-4c85-9c66-ae5e23e6596b)
+
+
 #### X. Gestion du service
 ```bash
 clear;
