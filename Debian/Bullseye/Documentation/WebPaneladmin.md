@@ -22,11 +22,15 @@ clear;
 clear;
 ```
 
+<br />
+
 ### B. Ajenti
 #### X. XXXX
 ```bash
 clear;
 ```
+
+<br />
 
 ### C. cPanel
 #### X. XXXX
@@ -34,11 +38,15 @@ clear;
 clear;
 ```
 
+<br />
+
 ### X. Cockpit
 #### X. XXXX
 ```bash
 clear;
 ```
+
+<br />
 
 ### X. Froxlor
 #### X. XXXX
@@ -52,11 +60,15 @@ clear;
 clear;
 ```
 
+<br />
+
 ### X. Sentroa
 #### X. XXXX
 ```bash
 clear;
 ```
+
+<br />
 
 ### X. VestaCP
 #### X. XXXX
@@ -64,15 +76,18 @@ clear;
 clear;
 ```
 
+<br />
+
 ### X. Virtualmin
 #### X. XXXX
 ```bash
 clear;
 ```
 
+<br />
+
 ### X. Webmin
 #### X. XXXX
 ```bash
 clear;
 ```
-
