@@ -35,7 +35,6 @@ password: 2af6bc98
 ```
 
 
-
 <br />
 
 
@@ -57,7 +56,9 @@ cat /www/server/panel/data/port.pl
 
 <br />
 
-### B. Ajenti
+### B. Ajenti (KO)
+17-07-2024 : Installation de plugin buggué !
+
 #### X. Installation
 ```bash
 clear;
