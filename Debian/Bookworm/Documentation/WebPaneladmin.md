@@ -53,7 +53,7 @@ clear;
 cat /www/server/panel/data/port.pl
 ```
 
-#### X. Script de Sauvegarde
+#### X. Script de Sauvegarde (BUG RECOVERY)
 Le script sauvegarde arrête docker pendant la création de la sauvegarde compresser puis le transfert sur le serveur. A la fin du transfert, docker est démarrer.
 ```bash
 #!/usr/bin/bash
@@ -112,7 +112,7 @@ systemctl start docker.service;
 ```
 
 
-#### X. Script de Restauration
+#### X. Script de Restauration (BUG RECOVERY)
 Le script de restauration arrête docker pendant la restauration. Il renommer l'ancien dossier Docker en `Docker.DATE` puis restaure docker depuis la sauvegarde.
 ```bash
 #!/usr/bin/bash
