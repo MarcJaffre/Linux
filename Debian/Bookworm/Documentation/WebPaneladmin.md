@@ -238,7 +238,7 @@ apt install -y cockpit-sosreport      1>/dev/null;
 apt install -y cockpit-storaged       1>/dev/null;
 apt install -y cockpit-system         1>/dev/null;
 apt install -y cockpit-tests          1>/dev/null;
-apt install -y cockpit-ws             1>/dev/null;
+#apt install -y cockpit-ws             1>/dev/null;
 ```
 
 #### X. Extensions
@@ -257,13 +257,14 @@ wget $COCKPIT_IDENTITIES -O /tmp/cockpit-identities.deb   2>/dev/null; apt insta
 
 #### X. Démarrage du service
 ```bash
-systemctl restart cockpit.service
+/usr/lib/cockpit/cockpit-certificate-ensure;
+systemctl restart cockpit.service;
 ```
 
+
+
+
 <br />
-
-
-
 
 
 ### X. Froxlor
