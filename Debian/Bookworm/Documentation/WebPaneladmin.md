@@ -207,11 +207,12 @@ clear;
 #### X. Installation des dépendances
 ```bash
 clear;
-apt install -y git          1>/dev/null;
-apt install -y nfs-common   1>/dev/null;
-apt install -y realmd       1>/dev/null;
-apt install -y tuned        1>/dev/null;
-apt install -y udisks2-lvm2 1>/dev/null;
+apt install -y build-essential 1>/dev/null;
+apt install -y git             1>/dev/null;
+apt install -y nfs-common      1>/dev/null;
+apt install -y realmd          1>/dev/null;
+apt install -y tuned           1>/dev/null;
+apt install -y udisks2-lvm2    1>/dev/null;
 ```
 
 
