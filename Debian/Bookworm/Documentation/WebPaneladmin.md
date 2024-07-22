@@ -15,7 +15,9 @@ Pour la gestion des environnements Linux, il est fort utile un outil Web pour l'
 #### X. Installation du paquet
 ```bash
 clear;
-URL=https://www.aapanel.com/script/install_7.0_en.sh;
+
+URL=https://www.aapanel.com/script/install_7.0_en.sh
+
 if [ -f /usr/bin/curl ]; then
  curl -ksSO "$URL";
 else
