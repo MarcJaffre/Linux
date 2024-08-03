@@ -50,13 +50,11 @@ apt install --no-install-recommends -y gnome-text-editor;
 apt install --no-install-recommends -y gnome-terminal;
 apt install --no-install-recommends -y gnupg2;
 apt install --no-install-recommends -y gparted;
-
 apt install --no-install-recommends -y gvfs;
 apt install --no-install-recommends -y gvfs-common;
 apt install --no-install-recommends -y gvfs-daemons;
 apt install --no-install-recommends -y gvfs-fuse;
 apt install --no-install-recommends -y gvfs-libs;
-
 apt install --no-install-recommends -y krita krita-l10n;
 apt install --no-install-recommends -y lightdm;
 apt install --no-install-recommends -y linux-headers-$(uname -r);
@@ -83,9 +81,11 @@ apt install --no-install-recommends -y seahorse;
 apt install --no-install-recommends -y smbclient;
 apt install --no-install-recommends -y smplayer;
 apt install --no-install-recommends -y software-properties-common;
+apt install --no-install-recommends -y sudo;
 apt install --no-install-recommends -y timeshift;
 apt install --no-install-recommends -y unzip;
 apt install --no-install-recommends -y wget;
+apt install --no-install-recommends -y xdg-user-dirs;
 apt install --no-install-recommends -y xserver-xorg;
 apt install --no-install-recommends -y xinit;
 ```
