@@ -127,39 +127,45 @@ apt install -y -f;
 ### A. 
 ```bash
 clear;
-apt install -y gtk2-engines;
-apt install -y gtk2-engines-murrine;
+apt install --no-install-recommends -y gtk2-engines;
+apt install --no-install-recommends -y gtk2-engines-murrine;
 ```
 
-### 
+### B. 
 ```bash
 clear;
-apt install -y breeze-cursor-theme;
-apt install -y chameleon-cursor-theme;
-apt install -y dmz-cursor-theme;
-apt install -y xcursor-themes;
+apt install --no-install-recommends -y breeze-cursor-theme;
+apt install --no-install-recommends -y chameleon-cursor-theme;
+apt install --no-install-recommends -y dmz-cursor-theme;
+apt install --no-install-recommends -y xcursor-themes;
 ```
 
-### 
+### C. 
 ```bash
 clear;
 cd;
 rm -r /tmp/wallpaper 2>/dev/null;
-git clone https://github.com/dracula/wallpaper.git /tmp/wallpaper; mkdir -p /home/$(id -n -u 1000)/Images/Dracula; mv /tmp/wallpaper/*  /home/$(id -n -u 1000)/Images/Dracula; chown -R $(id -n -u 1000):$(id -n -g 1000) /home/$(id -n -u 1000)/Images;
+git clone https://github.com/dracula/wallpaper.git /tmp/wallpaper;
+mkdir -p /home/$(id -n -u 1000)/Images/Dracula;
+mv /tmp/wallpaper/* /home/$(id -n -u 1000)/Images/Dracula;
+chown -R $(id -n -u 1000):$(id -n -g 1000) /home/$(id -n -u 1000)/Images;
 ```
 
 
-### 
+### D. 
 ```bash
 clear;
 apt install -y papirus-icon-theme;
-wget https://github.com/dracula/gtk/files/5214870/Dracula.zip -O /tmp/Dracula_icon.zip; unzip /tmp/Dracula_icon.zip -d /usr/share/icons;
+wget https://github.com/dracula/gtk/files/5214870/Dracula.zip -O /tmp/Dracula_icon.zip;
+unzip /tmp/Dracula_icon.zip -d /usr/share/icons;
 ```
 
-### 
+### E. 
 ```bash
 clear;
-wget https://github.com/dracula/gtk/archive/master.zip -O /tmp/Dracula_theme.zip; unzip /tmp/Dracula_theme.zip -d /usr/share/themes; mv /usr/share/themes/gtk-master /usr/share/themes/Dracula;
+wget https://github.com/dracula/gtk/archive/master.zip -O /tmp/Dracula_theme.zip;
+unzip /tmp/Dracula_theme.zip -d /usr/share/themes;
+mv /usr/share/themes/gtk-master /usr/share/themes/Dracula;
 ```
 
 ### 
