@@ -30,8 +30,47 @@ apt upgrade -y -f;
 ```bash
 clear;
 apt install -y locales locales-all 1>/dev/null;
-
 dpkg-reconfigure keyboard-configuration;
 dpkg-reconfigure tzdata;
 dpkg-reconfigure locales;
+```
+
+### D. Installation de Xorg
+```bash
+clear;
+```
+
+### E. Installation des paquets
+```bash
+clear;
+apt install --no-install-recommends -y apt-file;
+apt install --no-install-recommends -y apt-transport-https;
+apt install --no-install-recommends -y ca-certificates;
+apt install --no-install-recommends -y bash-completion;
+apt install --no-install-recommends -y cinnamon;
+apt install --no-install-recommends -y curl;
+apt install --no-install-recommends -y lightdm;
+apt install --no-install-recommends -y mugshot;
+apt install --no-install-recommends -y network-manager network-manager-dev network-manager-gnome network-manager-config-connectivity-debian;
+apt install --no-install-recommends -y numlockx;
+apt install --no-install-recommends -y pavucontrol;
+apt install --no-install-recommends -y pulseaudio;
+apt install --no-install-recommends -y smbclient;
+apt install --no-install-recommends -y software-properties-common;
+apt install --no-install-recommends -y
+apt install --no-install-recommends -y
+apt install --no-install-recommends -y
+apt install --no-install-recommends -y
+apt install --no-install-recommends -y 
+apt install --no-install-recommends -y
+apt install --no-install-recommends -y
+apt install --no-install-recommends -y wget;
+
+apt install --no-install-recommends -y 
+apt install --no-install-recommends -y 
+apt install --no-install-recommends -y
+apt install --no-install-recommends -y 
+
+apt install --no-install-recommends -y xserver-xorg 1>/dev/null;
+apt install --no-install-recommends -y xinit        1>/dev/null;
 ```
