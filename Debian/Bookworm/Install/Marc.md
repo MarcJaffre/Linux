@@ -211,8 +211,7 @@ mv /usr/share/themes/gtk-master /usr/share/themes/Dracula;
 ## IV. Configuration de l'environnement Utilisateur
 
 ### A. SMPlayer
-```bash
-clear;
+```
 Préférences > Options
   > Général:
    - Moteur Multimédia: mplayer (mpv: BUG !)
