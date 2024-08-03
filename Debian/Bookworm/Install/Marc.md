@@ -38,8 +38,10 @@ apt install --no-install-recommends -y cifs-utils;
 apt install --no-install-recommends -y cinnamon;
 apt install --no-install-recommends -y curl;
 apt install --no-install-recommends -y git;
+apt install --no-install-recommends -y gnome-disk-utility;
 apt install --no-install-recommends -y gnome-text-editor;
 apt install --no-install-recommends -y gnome-terminal;
+apt install --no-install-recommends -y gparted;
 apt install --no-install-recommends -y krita krita-l10n;
 apt install --no-install-recommends -y lightdm;
 apt install --no-install-recommends -y linux-headers-$(uname -r);
@@ -59,9 +61,6 @@ apt install --no-install-recommends -y seahorse;
 apt install --no-install-recommends -y smbclient;
 apt install --no-install-recommends -y software-properties-common;
 apt install --no-install-recommends -y wget;
-
-apt install --no-install-recommends -y 
-apt install --no-install-recommends -y 
 apt install --no-install-recommends -y 
 apt install --no-install-recommends -y
 apt install --no-install-recommends -y 
