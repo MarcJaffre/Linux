@@ -33,7 +33,6 @@ apt install --no-install-recommends -y apt-file;
 apt install --no-install-recommends -y apt-transport-https;
 
 apt install --no-install-recommends -y avahi-daemons;
-apt install --no-install-recommends -y avahi-discover;
 
 apt install --no-install-recommends -y btop;
 apt install --no-install-recommends -y ca-certificates;
@@ -119,15 +118,14 @@ dpkg-reconfigure locales;
 ```
 ### D.
 ```bash
-clear;
-echo "# This file describes the network interfaces available on your system
-# and how to activate them. For more information, see interfaces(5).
-
-source /etc/network/interfaces.d/*
+echo "source /etc/network/interfaces.d/*
 
 # The loopback network interface
 auto lo
 iface lo inet loopback" > /etc/network/interfaces;
+
+systemctl restart networking.service;
+systemctl restart NetworkManager;
 ```
 
 <br />
@@ -206,9 +204,34 @@ unzip /tmp/Dracula_theme.zip -d /usr/share/themes;
 mv /usr/share/themes/gtk-master /usr/share/themes/Dracula;
 ```
 
-### 
+
+<br />
+
+----------------------------------------------------------------------------------------------------------------------------------------
+## IV. Configuration de l'environnement Utilisateur
+
+### A. SMPlayer
 ```bash
 clear;
+Préférences > Options
+  > Général:
+   - Moteur Multimédia: mplayer (mpv: BUG !)
+  > Performance:
+   - Thread: 4
+   - Décodage matériel: Auto
+   - Filtre Anti-bloc: Passer Toujours (CPU ne prend pas en charge H.264)
+  > Interface
+   - GUI   : Interface Mpc 
+   - Icône : Papirus
+  > Liste de Lecture
+   - Commencer à lire après le chargement d'une liste de lecture ==> Décoché
+   - Ajouter des fichiers du répertoire: Fichiers Vidéos
+   - Ajouter les fichiers des répertoires récursivement
+  > Avancés
+   - Format de l'écran: 16:9
+-----------------------
+La liste de lecture:
+Clique droit dans le blanc > Décocher les cases
 ```
 
 ### 
@@ -225,6 +248,3 @@ clear;
 ```bash
 clear;
 ```
-
-
-
