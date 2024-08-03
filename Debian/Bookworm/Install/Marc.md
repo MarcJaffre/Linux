@@ -31,6 +31,9 @@ apt upgrade -y -f;
 clear;
 apt install --no-install-recommends -y apt-file;
 apt install --no-install-recommends -y apt-transport-https;
+
+apt install --no-install-recommends -y avahi-daemons;
+
 apt install --no-install-recommends -y btop;
 apt install --no-install-recommends -y ca-certificates;
 apt install --no-install-recommends -y bash-completion;
@@ -58,11 +61,13 @@ apt install --no-install-recommends -y gnome-text-editor;
 apt install --no-install-recommends -y gnome-terminal;
 apt install --no-install-recommends -y gnupg2;
 apt install --no-install-recommends -y gparted;
+
 apt install --no-install-recommends -y gvfs;
 apt install --no-install-recommends -y gvfs-common;
 apt install --no-install-recommends -y gvfs-daemons;
 apt install --no-install-recommends -y gvfs-fuse;
 apt install --no-install-recommends -y gvfs-libs;
+
 apt install --no-install-recommends -y krita krita-l10n;
 apt install --no-install-recommends -y lightdm;
 #apt install --no-install-recommends -y lightdm-autologin-greeter;
