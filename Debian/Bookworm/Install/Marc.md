@@ -25,3 +25,13 @@ clear;
 apt update 1>/dev/null;
 apt upgrade -y -f;
 ```
+
+### C. Configuration du système
+```bash
+clear;
+apt install -y locales locales-all 1>/dev/null;
+
+dpkg-reconfigure keyboard-configuration;
+dpkg-reconfigure tzdata;
+dpkg-reconfigure locales;
+```
