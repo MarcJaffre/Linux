@@ -98,6 +98,7 @@ apt install --no-install-recommends -y samba samba-common;
 apt install --no-install-recommends -y seahorse;
 apt install --no-install-recommends -y smbclient;
 apt install --no-install-recommends -y smplayer;
+apt install --no-install-recommends -y smplayer-l10n;
 apt install --no-install-recommends -y software-properties-common;
 apt install --no-install-recommends -y sudo;
 apt install --no-install-recommends -y timeshift;
