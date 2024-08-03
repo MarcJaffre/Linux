@@ -34,26 +34,34 @@ apt install --no-install-recommends -y apt-transport-https;
 apt install --no-install-recommends -y ca-certificates;
 apt install --no-install-recommends -y bash-completion;
 apt install --no-install-recommends -y build-essential;
+apt install --no-install-recommends -y cifs-utils;
 apt install --no-install-recommends -y cinnamon;
 apt install --no-install-recommends -y curl;
 apt install --no-install-recommends -y git;
+apt install --no-install-recommends -y gnome-terminal;
 apt install --no-install-recommends -y lightdm;
 apt install --no-install-recommends -y linux-headers-$(uname -r);
 apt install --no-install-recommends -y lsb-release;
 apt install --no-install-recommends -y mugshot;
 apt install --no-install-recommends -y neofetch;
+apt install --no-install-recommends -y man;
+apt install --no-install-recommends -y net-tools;
 apt install --no-install-recommends -y network-manager network-manager-dev network-manager-gnome network-manager-config-connectivity-debian;
+apt install --no-install-recommends -y ntfs-3g;
 apt install --no-install-recommends -y numlockx;
+apt install --no-install-recommends -y openssh-server;
 apt install --no-install-recommends -y pavucontrol;
 apt install --no-install-recommends -y pulseaudio;
 apt install --no-install-recommends -y smbclient;
 apt install --no-install-recommends -y software-properties-common;
-apt install --no-install-recommends -y
-apt install --no-install-recommends -y 
-apt install --no-install-recommends -y
-apt install --no-install-recommends -y
 apt install --no-install-recommends -y wget;
 
+apt install --no-install-recommends -y
+apt install --no-install-recommends -y 
+apt install --no-install-recommends -y 
+apt install --no-install-recommends -y 
+apt install --no-install-recommends -y
+apt install --no-install-recommends -y 
 apt install --no-install-recommends -y 
 apt install --no-install-recommends -y 
 apt install --no-install-recommends -y
