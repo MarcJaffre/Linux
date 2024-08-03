@@ -2,7 +2,7 @@
 ## <p align='center'> Installation du poste Marc </p>
 
 ----------------------------------------------------------------------------------------------------------------------------------------
-## I. Configuration basique du système
+## I.  Configuration du système (Partie 1)
 ### A. Dépôt Linux
 ```bash
 clear;
@@ -52,11 +52,11 @@ apt install --no-install-recommends -y numlockx;
 apt install --no-install-recommends -y openssh-server;
 apt install --no-install-recommends -y pavucontrol;
 apt install --no-install-recommends -y pulseaudio;
+apt install --no-install-recommends -y seahorse;
 apt install --no-install-recommends -y smbclient;
 apt install --no-install-recommends -y software-properties-common;
 apt install --no-install-recommends -y wget;
 
-apt install --no-install-recommends -y
 apt install --no-install-recommends -y 
 apt install --no-install-recommends -y 
 apt install --no-install-recommends -y 
@@ -79,3 +79,23 @@ dpkg-reconfigure keyboard-configuration;
 dpkg-reconfigure tzdata;
 dpkg-reconfigure locales;
 ```
+
+
+----------------------------------------------------------------------------------------------------------------------------------------
+## II. Configuration du système (Partie 2)
+### A Anydesk
+```bash
+clear;
+VERSION=$(curl https://download.anydesk.com/linux/ | grep deb | head -n 1 | cut -d "." -f 2-4 |cut -d "/" -f 2-5)
+wget https://download.anydesk.com/linux/${VERSION}.deb -O /tmp/anydesk.deb;
+dpkg -i /tmp/anydesk.deb;
+apt install -y -f;
+```
+
+### B Discord
+```bash
+clear;
+wget "https://discord.com/api/download?platform=linux&format=deb" -O /tmp/discord.deb;
+dpkg -i /tmp/discord.deb;
+```
+
