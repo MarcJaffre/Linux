@@ -204,7 +204,11 @@ wget https://github.com/dracula/gtk/archive/master.zip -O /tmp/Dracula_theme.zip
 unzip /tmp/Dracula_theme.zip -d /usr/share/themes;
 mv /usr/share/themes/gtk-master /usr/share/themes/Dracula;
 
-#
+
+apt install --no-install-recommends -y git;
+apt install --no-install-recommends -y make;
+apt install --no-install-recommends -y librsvg2-bin;
+apt install --no-install-recommends -y qtbase5-dev-tools;
 wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-smplayer-theme/master/install.sh | sh
 ```
 
