@@ -98,6 +98,18 @@ dpkg-reconfigure keyboard-configuration;
 dpkg-reconfigure tzdata;
 dpkg-reconfigure locales;
 ```
+### D.
+```bash
+clear;
+echo "# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+source /etc/network/interfaces.d/*
+
+# The loopback network interface
+auto lo
+iface lo inet loopback" > /etc/network/interfaces;
+```
 
 <br />
 
