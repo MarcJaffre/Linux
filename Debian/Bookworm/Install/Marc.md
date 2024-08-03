@@ -31,6 +31,7 @@ apt upgrade -y -f;
 clear;
 apt install --no-install-recommends -y apt-file;
 apt install --no-install-recommends -y apt-transport-https;
+apt install --no-install-recommends -y btop;
 apt install --no-install-recommends -y ca-certificates;
 apt install --no-install-recommends -y bash-completion;
 apt install --no-install-recommends -y build-essential;
@@ -40,6 +41,7 @@ apt install --no-install-recommends -y curl;
 apt install --no-install-recommends -y file-roller;
 apt install --no-install-recommends -y git;
 apt install --no-install-recommends -y gnome-disk-utility;
+apt install --no-install-recommends -y gnome-system-monitor;
 apt install --no-install-recommends -y gnome-text-editor;
 apt install --no-install-recommends -y gnome-terminal;
 apt install --no-install-recommends -y gparted;
@@ -64,9 +66,24 @@ apt install --no-install-recommends -y smbclient;
 apt install --no-install-recommends -y software-properties-common;
 apt install --no-install-recommends -y unzip;
 apt install --no-install-recommends -y wget;
-apt install --no-install-recommends -y 
-apt install --no-install-recommends -y 
 apt install --no-install-recommends -y
+apt install --no-install-recommends -y 
+apt install --no-install-recommends -y 
+apt install --no-install-recommends -y 
+apt install --no-install-recommends -y 
+apt install --no-install-recommends -y 
+apt install --no-install-recommends -y 
+apt install --no-install-recommends -y 
+apt install --no-install-recommends -y 
+apt install --no-install-recommends -y 
+apt install --no-install-recommends -y 
+apt install --no-install-recommends -y 
+apt install --no-install-recommends -y 
+apt install --no-install-recommends -y 
+apt install --no-install-recommends -y 
+apt install --no-install-recommends -y 
+apt install --no-install-recommends -y 
+apt install --no-install-recommends -y 
 apt install --no-install-recommends -y 
 
 apt install --no-install-recommends -y xserver-xorg 1>/dev/null;
