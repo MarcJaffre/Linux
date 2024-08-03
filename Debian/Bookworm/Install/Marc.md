@@ -48,6 +48,7 @@ apt install --no-install-recommends -y gnome-software;
 apt install --no-install-recommends -y gnome-system-monitor;
 apt install --no-install-recommends -y gnome-text-editor;
 apt install --no-install-recommends -y gnome-terminal;
+apt install --no-install-recommends -y gnupg2;
 apt install --no-install-recommends -y gparted;
 apt install --no-install-recommends -y krita krita-l10n;
 apt install --no-install-recommends -y lightdm;
