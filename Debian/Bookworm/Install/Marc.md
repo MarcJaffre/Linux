@@ -161,14 +161,14 @@ apt install -y -f;
 
 ----------------------------------------------------------------------------------------------------------------------------------------
 ## III. Configuration du système (Partie 3)
-### A. 
+### A. Moteur GTK
 ```bash
 clear;
 apt install --no-install-recommends -y gtk2-engines;
 apt install --no-install-recommends -y gtk2-engines-murrine;
 ```
 
-### B. 
+### B. Curseur
 ```bash
 clear;
 apt install --no-install-recommends -y breeze-cursor-theme;
@@ -177,7 +177,7 @@ apt install --no-install-recommends -y dmz-cursor-theme;
 apt install --no-install-recommends -y xcursor-themes;
 ```
 
-### C. 
+### C. Fond d'écran
 ```bash
 clear;
 cd;
@@ -189,7 +189,7 @@ chown -R $(id -n -u 1000):$(id -n -g 1000) /home/$(id -n -u 1000)/Images;
 ```
 
 
-### D. 
+### D. Icônes
 ```bash
 clear;
 apt install -y papirus-icon-theme;
@@ -197,12 +197,15 @@ wget https://github.com/dracula/gtk/files/5214870/Dracula.zip -O /tmp/Dracula_ic
 unzip /tmp/Dracula_icon.zip -d /usr/share/icons;
 ```
 
-### E. 
+### E. Thème Dracula
 ```bash
 clear;
 wget https://github.com/dracula/gtk/archive/master.zip -O /tmp/Dracula_theme.zip;
 unzip /tmp/Dracula_theme.zip -d /usr/share/themes;
 mv /usr/share/themes/gtk-master /usr/share/themes/Dracula;
+
+#
+wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-smplayer-theme/master/install.sh | sh
 ```
 
 
