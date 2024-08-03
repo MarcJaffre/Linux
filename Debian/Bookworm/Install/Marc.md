@@ -37,6 +37,7 @@ apt install --no-install-recommends -y build-essential;
 apt install --no-install-recommends -y cifs-utils;
 apt install --no-install-recommends -y cinnamon;
 apt install --no-install-recommends -y curl;
+apt install --no-install-recommends -y file-roller;
 apt install --no-install-recommends -y git;
 apt install --no-install-recommends -y gnome-disk-utility;
 apt install --no-install-recommends -y gnome-text-editor;
@@ -58,12 +59,11 @@ apt install --no-install-recommends -y pavucontrol;
 apt install --no-install-recommends -y pulseaudio;
 apt install --no-install-recommends -y ristretto;
 apt install --no-install-recommends -y seahorse;
+apt install --no-install-recommends -y samba samba-common;
 apt install --no-install-recommends -y smbclient;
 apt install --no-install-recommends -y software-properties-common;
+apt install --no-install-recommends -y unzip;
 apt install --no-install-recommends -y wget;
-apt install --no-install-recommends -y 
-apt install --no-install-recommends -y
-apt install --no-install-recommends -y 
 apt install --no-install-recommends -y 
 apt install --no-install-recommends -y 
 apt install --no-install-recommends -y
