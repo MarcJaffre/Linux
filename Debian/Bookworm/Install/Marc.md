@@ -91,6 +91,7 @@ dpkg-reconfigure tzdata;
 dpkg-reconfigure locales;
 ```
 
+<br />
 
 ----------------------------------------------------------------------------------------------------------------------------------------
 ## II. Configuration du système (Partie 2)
@@ -102,20 +103,82 @@ echo 'deb [signed-by=/usr/share/keyrings/microsoft-edge.gpg] https://packages.mi
 apt update;
 apt install -y microsoft-edge-stable;
 ```
-### B Discord
+### B. Discord
 ```bash
 clear;
 wget "https://discord.com/api/download?platform=linux&format=deb" -O /tmp/discord.deb;
 dpkg -i /tmp/discord.deb;
 ```
 
-### C Anydesk
+### C. Anydesk
 ```bash
 clear;
 VERSION=$(curl https://download.anydesk.com/linux/ | grep deb | head -n 1 | cut -d "." -f 2-4 |cut -d "/" -f 2-5)
 wget https://download.anydesk.com/linux/${VERSION}.deb -O /tmp/anydesk.deb;
 dpkg -i /tmp/anydesk.deb;
 apt install -y -f;
+```
+
+<br />
+
+----------------------------------------------------------------------------------------------------------------------------------------
+## III. Configuration du système (Partie 3)
+### A. 
+```bash
+clear;
+apt install -y gtk2-engines;
+apt install -y gtk2-engines-murrine;
+```
+
+### 
+```bash
+clear;
+apt install -y breeze-cursor-theme;
+apt install -y chameleon-cursor-theme;
+apt install -y dmz-cursor-theme;
+apt install -y xcursor-themes;
+```
+
+### 
+```bash
+clear;
+cd;
+rm -r /tmp/wallpaper 2>/dev/null;
+git clone https://github.com/dracula/wallpaper.git /tmp/wallpaper; mkdir -p /home/$(id -n -u 1000)/Images/Dracula; mv /tmp/wallpaper/*  /home/$(id -n -u 1000)/Images/Dracula; chown -R $(id -n -u 1000):$(id -n -g 1000) /home/$(id -n -u 1000)/Images;
+```
+
+
+### 
+```bash
+clear;
+apt install -y papirus-icon-theme;
+wget https://github.com/dracula/gtk/files/5214870/Dracula.zip -O /tmp/Dracula_icon.zip; unzip /tmp/Dracula_icon.zip -d /usr/share/icons;
+```
+
+### 
+```bash
+clear;
+wget https://github.com/dracula/gtk/archive/master.zip -O /tmp/Dracula_theme.zip; unzip /tmp/Dracula_theme.zip -d /usr/share/themes; mv /usr/share/themes/gtk-master /usr/share/themes/Dracula;
+```
+
+### 
+```bash
+clear;
+```
+
+### 
+```bash
+clear;
+```
+
+### 
+```bash
+clear;
+```
+
+### 
+```bash
+clear;
 ```
 
 
