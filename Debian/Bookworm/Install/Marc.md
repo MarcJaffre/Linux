@@ -39,8 +39,12 @@ apt install --no-install-recommends -y cifs-utils;
 apt install --no-install-recommends -y cinnamon;
 apt install --no-install-recommends -y curl;
 apt install --no-install-recommends -y file-roller;
+apt install --no-install-recommends -y gdebi;
 apt install --no-install-recommends -y git;
 apt install --no-install-recommends -y gnome-disk-utility;
+apt install --no-install-recommends -y gnome-calculator;
+apt install --no-install-recommends -y gnome-calendar;
+apt install --no-install-recommends -y gnome-software;
 apt install --no-install-recommends -y gnome-system-monitor;
 apt install --no-install-recommends -y gnome-text-editor;
 apt install --no-install-recommends -y gnome-terminal;
@@ -52,42 +56,30 @@ apt install --no-install-recommends -y lsb-release;
 apt install --no-install-recommends -y mugshot;
 apt install --no-install-recommends -y neofetch;
 apt install --no-install-recommends -y man;
+apt install --no-install-recommends -y mplayer;
 apt install --no-install-recommends -y net-tools;
-apt install --no-install-recommends -y network-manager network-manager-dev network-manager-gnome network-manager-config-connectivity-debian;
+apt install --no-install-recommends -y network-manager;
+apt install --no-install-recommends -y network-manager-dev;
+apt install --no-install-recommends -y network-manager-gnome;
+apt install --no-install-recommends -y network-manager-config-connectivity-debian;
 apt install --no-install-recommends -y ntfs-3g;
 apt install --no-install-recommends -y numlockx;
 apt install --no-install-recommends -y openssh-server;
 apt install --no-install-recommends -y pavucontrol;
 apt install --no-install-recommends -y pulseaudio;
+apt install --no-install-recommends -y rhythmbox;
+apt install --no-install-recommends -y rhythmbox-plugins;
 apt install --no-install-recommends -y ristretto;
-apt install --no-install-recommends -y seahorse;
 apt install --no-install-recommends -y samba samba-common;
+apt install --no-install-recommends -y seahorse;
 apt install --no-install-recommends -y smbclient;
+apt install --no-install-recommends -y smplayer;
 apt install --no-install-recommends -y software-properties-common;
+apt install --no-install-recommends -y timeshift;
 apt install --no-install-recommends -y unzip;
 apt install --no-install-recommends -y wget;
-apt install --no-install-recommends -y
-apt install --no-install-recommends -y 
-apt install --no-install-recommends -y 
-apt install --no-install-recommends -y 
-apt install --no-install-recommends -y 
-apt install --no-install-recommends -y 
-apt install --no-install-recommends -y 
-apt install --no-install-recommends -y 
-apt install --no-install-recommends -y 
-apt install --no-install-recommends -y 
-apt install --no-install-recommends -y 
-apt install --no-install-recommends -y 
-apt install --no-install-recommends -y 
-apt install --no-install-recommends -y 
-apt install --no-install-recommends -y 
-apt install --no-install-recommends -y 
-apt install --no-install-recommends -y 
-apt install --no-install-recommends -y 
-apt install --no-install-recommends -y 
-
-apt install --no-install-recommends -y xserver-xorg 1>/dev/null;
-apt install --no-install-recommends -y xinit        1>/dev/null;
+apt install --no-install-recommends -y xserver-xorg;
+apt install --no-install-recommends -y xinit;
 ```
 
 ### C. Configuration du système
@@ -102,7 +94,22 @@ dpkg-reconfigure locales;
 
 ----------------------------------------------------------------------------------------------------------------------------------------
 ## II. Configuration du système (Partie 2)
-### A Anydesk
+### A. Microsoft Edge
+```bash
+clear;
+curl -fSsL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor |  tee /usr/share/keyrings/microsoft-edge.gpg > /dev/null;
+echo 'deb [signed-by=/usr/share/keyrings/microsoft-edge.gpg] https://packages.microsoft.com/repos/edge stable main' |  tee /etc/apt/sources.list.d/microsoft-edge.list;
+apt update;
+apt install -y microsoft-edge-stable;
+```
+### B Discord
+```bash
+clear;
+wget "https://discord.com/api/download?platform=linux&format=deb" -O /tmp/discord.deb;
+dpkg -i /tmp/discord.deb;
+```
+
+### C Anydesk
 ```bash
 clear;
 VERSION=$(curl https://download.anydesk.com/linux/ | grep deb | head -n 1 | cut -d "." -f 2-4 |cut -d "/" -f 2-5)
@@ -111,10 +118,5 @@ dpkg -i /tmp/anydesk.deb;
 apt install -y -f;
 ```
 
-### B Discord
-```bash
-clear;
-wget "https://discord.com/api/download?platform=linux&format=deb" -O /tmp/discord.deb;
-dpkg -i /tmp/discord.deb;
-```
+
 
