@@ -176,11 +176,11 @@ echo "/Partages /etc/auto.cifs --ghost,--timeout=30 browse" >> /etc/auto.master;
 cat > /etc/auto.cifs << EOF
 ##############################################################################################################################################################
 #<Point de montage> -fstype=<type>,<options>                                                                  ://<ip_serveur>:/<Partage>
-#Media_1 -fstype=cifs,username=marc,password=admin,user=marc,uid=1000,gid=100,x-gvfs-show,x-gvfs-name=Media_1  ://192.168.20.3/Media_1
-#Media_2 -fstype=cifs,username=marc,password=admin,user=marc,uid=1000,gid=100,x-gvfs-show,x-gvfs-name=Media_2  ://192.168.20.3/Media_2
-#Media_3 -fstype=cifs,username=marc,password=admin,user=marc,uid=1000,gid=100,x-gvfs-show,x-gvfs-name=Media_3  ://192.168.20.3/Media_3
-#Media_4 -fstype=cifs,username=marc,password=admin,user=marc,uid=1000,gid=100,x-gvfs-show,x-gvfs-name=Media_4  ://192.168.20.3/Media_4
-#Media_5 -fstype=cifs,username=marc,password=admin,user=marc,uid=1000,gid=100,x-gvfs-show,x-gvfs-name=Media_5  ://192.168.20.3/Media_5
+Media_1 -fstype=cifs,username=marc,password=admin,user=marc,uid=1000,gid=100,x-gvfs-show,x-gvfs-name=Serie_1  ://192.168.20.3/Media_1
+Media_2 -fstype=cifs,username=marc,password=admin,user=marc,uid=1000,gid=100,x-gvfs-show,x-gvfs-name=Serie_2  ://192.168.20.3/Media_2
+Media_3 -fstype=cifs,username=marc,password=admin,user=marc,uid=1000,gid=100,x-gvfs-show,x-gvfs-name=Media_3  ://192.168.20.3/Media_3
+Media_4 -fstype=cifs,username=marc,password=admin,user=marc,uid=1000,gid=100,x-gvfs-show,x-gvfs-name=Media_4  ://192.168.20.3/Media_4
+Media_5 -fstype=cifs,username=marc,password=admin,user=marc,uid=1000,gid=100,x-gvfs-show,x-gvfs-name=Media_5  ://192.168.20.3/Media_5
 ##############################################################################################################################################################
 EOF
 systemctl restart autofs;
