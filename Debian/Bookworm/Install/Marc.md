@@ -155,6 +155,10 @@ systemctl restart NetworkManager;
 Il suffira d'accéder au dossier `/Partages` pour y accéder. Une fois ouvert, les montages se font. (A LA DEMANDE !)
 ```bash
 clear;
+LOCAL_USER="marc"
+LOCAL_UID=$(id -u $LOCAL_USER)
+
+
 CIFS_IP=192.168.20.3
 CIFS_USER="marc"
 CIFS_PASS="admin"
@@ -165,22 +169,19 @@ SHARE_3="Media_3"
 SHARE_4="Media_4"
 SHARE_5="Media_5"
 
-LOCAL_USER="marc"
-LOCAL_UID=$(id -u $LOCAL_USER)
-
 mkdir /Partages 2>/dev/null;
 
-
-echo "/Partages /etc/auto.cifs --ghost,--timeout=30 browse" >> /etc/auto.master;
+echo "/Partages /etc/auto.cifs --ghost,--timeout=30" >> /etc/auto.master;
+#echo "/Partages /etc/auto.cifs --ghost,--timeout=30 browse" >> /etc/auto.master;
 
 cat > /etc/auto.cifs << EOF
 ##############################################################################################################################################################
-#<Point de montage> -fstype=<type>,<options>                                                                  ://<ip_serveur>:/<Partage>
-Media_1 -fstype=cifs,username=marc,password=admin,user=marc,uid=1000,gid=100,x-gvfs-show,x-gvfs-name=Serie_1  ://192.168.20.3/Media_1
-Media_2 -fstype=cifs,username=marc,password=admin,user=marc,uid=1000,gid=100,x-gvfs-show,x-gvfs-name=Serie_2  ://192.168.20.3/Media_2
-Media_3 -fstype=cifs,username=marc,password=admin,user=marc,uid=1000,gid=100,x-gvfs-show,x-gvfs-name=Media_3  ://192.168.20.3/Media_3
-Media_4 -fstype=cifs,username=marc,password=admin,user=marc,uid=1000,gid=100,x-gvfs-show,x-gvfs-name=Media_4  ://192.168.20.3/Media_4
-Media_5 -fstype=cifs,username=marc,password=admin,user=marc,uid=1000,gid=100,x-gvfs-show,x-gvfs-name=Media_5  ://192.168.20.3/Media_5
+#<Point de montage> -fstype=<type>,<options>                                              ://<ip_serveur>:/<Partage>
+Media_1             -fstype=cifs,username=$CIFS_USER,password=$CIFS_PASS,user=$LOCAL_USER,uid=$LOCAL_UID,gid=100  ://$CIFS_IP/$SHARE_1
+Media_2             -fstype=cifs,username=$CIFS_USER,password=$CIFS_PASS,user=$LOCAL_USER,uid=$LOCAL_UID,gid=100  ://$CIFS_IP/$SHARE_2
+Media_3             -fstype=cifs,username=$CIFS_USER,password=$CIFS_PASS,user=$LOCAL_USER,uid=$LOCAL_UID,gid=100  ://$CIFS_IP/$SHARE_3
+Media_4             -fstype=cifs,username=$CIFS_USER,password=$CIFS_PASS,user=$LOCAL_USER,uid=$LOCAL_UID,gid=100  ://$CIFS_IP/$SHARE_4
+Media_5             -fstype=cifs,username=$CIFS_USER,password=$CIFS_PASS,user=$LOCAL_USER,uid=$LOCAL_UID,gid=100  ://$CIFS_IP/$SHARE_5
 ##############################################################################################################################################################
 EOF
 systemctl restart autofs;
