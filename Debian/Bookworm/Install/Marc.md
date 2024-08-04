@@ -33,6 +33,8 @@ clear;
 apt install --no-install-recommends -y apt-file;
 apt install --no-install-recommends -y apt-transport-https;
 # ========================================================================================
+apt install --no-install-recommends -y autofs;
+# ========================================================================================
 apt install --no-install-recommends -y avahi-daemons;
 apt install --no-install-recommends -y btop;
 apt install --no-install-recommends -y ca-certificates;
@@ -147,6 +149,27 @@ iface lo inet loopback" > /etc/network/interfaces;
 systemctl restart networking.service;
 systemctl restart NetworkManager;
 ```
+
+
+### E. AutoFS
+```bash
+# Declarer le gestionnaires de montage CIFS
+# --timeout=30
+echo "/Partages /etc/auto.cifs --ghost browse" >> /etc/auto.master;
+
+cat > /etc/auto.cifs << EOF
+##############################################################################################################################################################
+#<Point de montage> -fstype=<type>,<options>                                  ://<ip_serveur>:/<Partage>
+Media_1 -fstype=cifs,username=marc,password=admin,user=marc,uid=1000,gid=100  ://192.168.20.3/Media_1
+Media_2 -fstype=cifs,username=marc,password=admin,user=marc,uid=1000,gid=100  ://192.168.20.3/Media_2
+Media_3 -fstype=cifs,username=marc,password=admin,user=marc,uid=1000,gid=100  ://192.168.20.3/Media_3
+Media_4 -fstype=cifs,username=marc,password=admin,user=marc,uid=1000,gid=100  ://192.168.20.3/Media_4
+Media_5 -fstype=cifs,username=marc,password=admin,user=marc,uid=1000,gid=100  ://192.168.20.3/Media_5
+##############################################################################################################################################################
+EOF
+systemctl restart autofs
+```
+
 
 <br />
 
