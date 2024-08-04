@@ -1,21 +1,21 @@
-----------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## <p align='center'> Installation du poste Marc </p>
 
-----------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## I.  Configuration du système (Partie 1)
 ### A. Dépôt Linux
 ```bash
 clear;
 source /etc/os-release;
 echo "################################################################################################################################
-deb     http://deb.debian.org/debian/              $VERSION_CODENAME            main non-free non-free-firmware
-deb-src http://deb.debian.org/debian/              $VERSION_CODENAME            main non-free non-free-firmware
+deb     http://deb.debian.org/debian/              $VERSION_CODENAME            main contrib non-free non-free-firmware
+deb-src http://deb.debian.org/debian/              $VERSION_CODENAME            main contrib non-free non-free-firmware
 ################################################################################################################################
-deb     http://security.debian.org/debian-security $VERSION_CODENAME-security   main non-free non-free-firmware
-deb-src http://security.debian.org/debian-security $VERSION_CODENAME-security   main non-free non-free-firmware
+deb     http://security.debian.org/debian-security $VERSION_CODENAME-security   main contrib non-free non-free-firmware
+deb-src http://security.debian.org/debian-security $VERSION_CODENAME-security   main contrib non-free non-free-firmware
 ################################################################################################################################
-deb     http://deb.debian.org/debian/              $VERSION_CODENAME-updates    main non-free non-free-firmware
-deb-src http://deb.debian.org/debian/              $VERSION_CODENAME-updates    main non-free non-free-firmware
+deb     http://deb.debian.org/debian/              $VERSION_CODENAME-updates    main contrib non-free non-free-firmware
+deb-src http://deb.debian.org/debian/              $VERSION_CODENAME-updates    main contrib non-free non-free-firmware
 ################################################################################################################################" > /etc/apt/sources.list;
 ```
 
@@ -31,9 +31,7 @@ apt upgrade -y -f;
 clear;
 apt install --no-install-recommends -y apt-file;
 apt install --no-install-recommends -y apt-transport-https;
-
 apt install --no-install-recommends -y avahi-daemons;
-
 apt install --no-install-recommends -y btop;
 apt install --no-install-recommends -y ca-certificates;
 apt install --no-install-recommends -y bash-completion;
@@ -61,20 +59,22 @@ apt install --no-install-recommends -y gnome-text-editor;
 apt install --no-install-recommends -y gnome-terminal;
 apt install --no-install-recommends -y gnupg2;
 apt install --no-install-recommends -y gparted;
-
 apt install --no-install-recommends -y gvfs;
 apt install --no-install-recommends -y gvfs-common;
 apt install --no-install-recommends -y gvfs-daemons;
 apt install --no-install-recommends -y gvfs-fuse;
 apt install --no-install-recommends -y gvfs-libs;
-
 apt install --no-install-recommends -y krita krita-l10n;
+apt install --no-install-recommends -y locales
+apt install --no-install-recommends -y locales-all;
 apt install --no-install-recommends -y lightdm;
+# ======================================================================
 #apt install --no-install-recommends -y lightdm-autologin-greeter;
 #apt install --no-install-recommends -y lightdm-gtk-greeter;
 #apt install --no-install-recommends -y lightdm-gtk-greeter-settings;
 #apt install --no-install-recommends -y lightdm-settings;
 #apt install --no-install-recommends -y lightdm-vala;
+# ======================================================================
 apt install --no-install-recommends -y linux-headers-$(uname -r);
 apt install --no-install-recommends -y lsb-release;
 apt install --no-install-recommends -y mugshot;
@@ -112,12 +112,13 @@ apt install --no-install-recommends -y xinit;
 ### C. Configuration du système
 ```bash
 clear;
-apt install -y locales locales-all 1>/dev/null;
+usermod -aG sudo $(id -n -u 1000);
 dpkg-reconfigure keyboard-configuration;
 dpkg-reconfigure tzdata;
 dpkg-reconfigure locales;
 ```
-### D.
+
+### D. NetworkManager
 ```bash
 echo "source /etc/network/interfaces.d/*
 
@@ -131,7 +132,7 @@ systemctl restart NetworkManager;
 
 <br />
 
-----------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## II. Configuration du système (Partie 2)
 ### A. Microsoft Edge
 ```bash
@@ -159,8 +160,8 @@ apt install -y -f;
 
 <br />
 
-----------------------------------------------------------------------------------------------------------------------------------------
-## III. Configuration du système (Partie 3)
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## III. Expérience Utilisateur (Partie 1)
 ### A. Moteur GTK
 ```bash
 clear;
@@ -188,7 +189,6 @@ mv /tmp/wallpaper/* /home/$(id -n -u 1000)/Images/Dracula;
 chown -R $(id -n -u 1000):$(id -n -g 1000) /home/$(id -n -u 1000)/Images;
 ```
 
-
 ### D. Icônes
 ```bash
 clear;
@@ -215,8 +215,8 @@ wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-smpla
 
 <br />
 
-----------------------------------------------------------------------------------------------------------------------------------------
-## IV. Configuration de l'environnement Utilisateur
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## IV. Expérience Utilisateur (Partie 2)
 
 ### A. SMPlayer
 ```
@@ -240,6 +240,17 @@ Préférences > Options
 La liste de lecture:
 Clique droit dans le blanc > Décocher les cases
 ```
+
+<br />
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## V. Expérience Jeux-Vidéo
+### A.  Amazon Games, Epic Games, GOG sous Linux
+Télécharger la dernière version d'[Heroic Games Launcher](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/releases/) puis permet à ce programme de ce lancer. (chmod +x)
+
+Ensuite il suffit de le lancer.
+
+
 
 ### 
 ```bash
