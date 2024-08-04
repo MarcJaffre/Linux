@@ -172,7 +172,6 @@ SHARE_5="Media_5"
 mkdir /Partages 2>/dev/null;
 
 echo "/Partages /etc/auto.cifs --ghost,--timeout=30" >> /etc/auto.master;
-#echo "/Partages /etc/auto.cifs --ghost,--timeout=30 browse" >> /etc/auto.master;
 
 cat > /etc/auto.cifs << EOF
 ##############################################################################################################################################################
@@ -185,6 +184,8 @@ Media_5             -fstype=cifs,username=$CIFS_USER,password=$CIFS_PASS,user=$L
 ##############################################################################################################################################################
 EOF
 systemctl restart autofs;
+
+#echo "/Partages /etc/auto.cifs --ghost,--timeout=30 browse" >> /etc/auto.master;
 ```
 
 
