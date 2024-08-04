@@ -252,14 +252,25 @@ Ensuite il suffit de le lancer.
 
 
 
-### 
+### B. Wine
 ```bash
 clear;
+dpkg --add-architecture i386;
+mkdir -pm755 /etc/apt/keyrings;
+wget -O /etc/apt/keyrings/winehq-archive.key https://dl.winehq.org/wine-builds/winehq.key 2>/dev/null;
+wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/debian/dists/bookworm/winehq-bookworm.sources 2>/dev/null;
+apt update;
+apt install --no-install-recommends -y ttf-mscorefonts-installer;
+apt install --no-install-recommends -y q4wine;
+apt install --no-install-recommends -y winehq-staging;
 ```
 
-### 
+### C. Winetricks
 ```bash
 clear;
+rm /usr/bin/winetricks 2>/dev/null;
+wget https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks -O /usr/bin/winetricks;
+chmod +x /usr/bin/winetricks;
 ```
 
 ### 
