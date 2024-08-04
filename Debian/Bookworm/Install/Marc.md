@@ -154,6 +154,9 @@ systemctl restart NetworkManager;
 ### E. AutoFS
 Il suffira d'accéder au dossier `/Partages` pour y accéder. Une fois ouvert, les montages se font. (A LA DEMANDE !)
 ```bash
+# Creation du dossier
+mkdir /Partages
+
 # Maitre des CIFS (Demontage après 30 secondes)
 echo "/Partages /etc/auto.cifs --ghost,--timeout=30 browse" >> /etc/auto.master;
 
