@@ -269,7 +269,7 @@ apt install --no-install-recommends -y winehq-staging;
 ```bash
 clear;
 rm /usr/bin/winetricks 2>/dev/null;
-wget https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks -O /usr/bin/winetricks;
+wget https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks -O /usr/bin/winetricks 2>/dev/null;
 chmod +x /usr/bin/winetricks;
 ```
 
