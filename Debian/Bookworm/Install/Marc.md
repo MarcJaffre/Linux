@@ -357,8 +357,8 @@ runuser -l marc -c "chmod +x .Xclients"
 ```bash
 clear;
 w
-pkill -t ttyX
-pkill -t pts/X
+pkill -t tty7
+pkill -t pts/2
 ```
 
 #### 3. Désactiver l'auto-connect
