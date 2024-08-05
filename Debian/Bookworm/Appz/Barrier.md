@@ -3,5 +3,5 @@
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### I. Présentation
-Le clavier Français pose problèm, il est nécessaire de choisir `Français (obsolètes,^variante)` pour que sa marche sans aucun bug.
+La langue du clavier en `Français` pose problème sur des tou^ches, il est nécessaire de modifier en `Français (obsolètes,^variante)` pour que sa marche sans aucun bug.
 
