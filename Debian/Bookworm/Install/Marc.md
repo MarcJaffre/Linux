@@ -356,9 +356,9 @@ runuser -l marc -c "chmod +x .Xclients"
 #### 4. Tuer Session (TTY / PTS)
 ```bash
 clear;
+#pkill -t pts/2;
+pkill -t tty7;
 w
-pkill -t tty7
-pkill -t pts/2
 ```
 
 #### 3. Désactiver l'auto-connect
