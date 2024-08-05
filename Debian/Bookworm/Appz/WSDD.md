@@ -45,17 +45,15 @@ Nous souhaitons que WSDD écoute sur les interfaces `eth0` et `wlan0` via le pro
 ##### 1. Application du correctif
 ```bash
 clear;
-sed -i -e "s/WSDD_PARAMS\=\"\"/WSDD_PARAMS\=\" -i eth0 -4 -i wlan0 -4\"/g" /etc/default/wsdd;
-systemctl enable wsdd;
-systemctl stop wsdd;
-systemctl start wsdd;
-systemctl status wsdd;
+sed -i -e "s/WSDD_PARAMS\=\"\"/WSDD_PARAMS\=\"-i eth0 -4 -i wlan0 -4\"/g" /etc/default/wsdd;
+systemctl restart wsdd;
+systemctl is-active wsdd;
 ```
 
 ##### 2. Retour en arrière
 ```bash
 clear;
-sed -i -e "s/WSDD_PARAMS\=\" -i eth0 -4 -i wlan0 -4\"/WSDD_PARAMS\=\"\"/g" /etc/default/wsdd;
+sed -i -e "s/WSDD_PARAMS\=\"-i eth0 -4 -i wlan0 -4\"/WSDD_PARAMS\=\"\"/g" /etc/default/wsdd;
 systemctl restart wsdd;
-systemctl status wsdd;
+systemctl is-active wsdd;
 ```
