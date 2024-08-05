@@ -20,6 +20,8 @@ clear;
 systemctl status wsdd.service
 ```
 
+<br />
+
 ```
 WARNING: no interface given, using all interfaces
 ERROR: error while sending packet on docker0: [Errno 101] Network is unreachable
