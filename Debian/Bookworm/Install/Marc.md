@@ -338,19 +338,20 @@ chmod +x /usr/bin/winetricks;
 #### 1. Installation
 ```bash
 clear;
-apt install --no-install-recommends -y xrdp 1>/dev/null;
+apt install -y xrdp;
 adduser xrdp ssl-cert;
 ```
 
 
 #### 2. Cinnamon sous XRDP
+Ne pas utilise `--no-install-recommends` sinon sa plante !
 ```bash
 clear;
 runuser -l marc -c "cat > .Xclients<< EOF
 cinnamon
 EOF"
-
 runuser -l marc -c "chmod +x .Xclients"
+runuser -l marc -c "cat .Xclients"
 ```
 
 #### 4. Tuer Session (TTY / PTS)
