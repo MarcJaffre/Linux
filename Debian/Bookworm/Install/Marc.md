@@ -360,4 +360,3 @@ w
 pkill -t ttyX
 pkill -t pts/X
 ```
-
