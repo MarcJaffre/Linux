@@ -339,6 +339,11 @@ chmod +x /usr/bin/winetricks;
 clear;
 apt install --no-install-recommends -y xrdp;
 adduser xrdp ssl-cert;
+runuser -l marc -c "cat > .Xclients<< EOF
+cinnamon
+EOF"
+
+runuser -l marc -c "chmod +x .Xclients;"
 
 # Kill tty:
 # whoami
