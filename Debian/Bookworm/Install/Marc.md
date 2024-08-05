@@ -350,7 +350,7 @@ runuser -l marc -c "cat > .Xclients<< EOF
 cinnamon
 EOF"
 
-runuser -l marc -c "chmod +x .Xclients;"
+runuser -l marc -c "chmod +x .Xclients"
 ```
 
 #### 3. Tuer Session (TTY / PTS)
