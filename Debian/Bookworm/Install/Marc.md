@@ -335,18 +335,29 @@ chmod +x /usr/bin/winetricks;
 ```
 
 ### D. XRDP
+#### 1. Installation
 ```bash
 clear;
 apt install --no-install-recommends -y xrdp;
 adduser xrdp ssl-cert;
+```
+
+
+#### 2. Cinnamon sous XRDP
+```bash
+clear;
 runuser -l marc -c "cat > .Xclients<< EOF
 cinnamon
 EOF"
 
 runuser -l marc -c "chmod +x .Xclients;"
+```
 
-# Kill tty:
-# whoami
-# pkill -t ttyX
+#### 3. Tuer Session (TTY / PTS)
+```bash
+clear;
+w
+pkill -t ttyX
+pkill -t pts/X
 ```
 
