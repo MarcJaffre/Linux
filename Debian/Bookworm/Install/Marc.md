@@ -339,4 +339,9 @@ chmod +x /usr/bin/winetricks;
 clear;
 apt install --no-install-recommends -y xrdp;
 adduser xrdp ssl-cert;
+
+# Kill tty:
+# whoami
+# pkill -t ttyX
 ```
+
