@@ -369,3 +369,13 @@ AUTOCONNECT=$(id -n -u 1000)
 sed -i -e "s/^autologin\-user\=$AUTOCONNECT/autologin\-user\=/g" /etc/lightdm/lightdm.conf;
 systemctl restart lightdm;
 ```
+
+### E. Configurer un Jeu Steam via WineCFG
+Installer le jeu depuis steam, activer le mode protonDB et le lancer ce qui génère son fichier pfx.
+
+L'ID `1975440` correspond au jeu `Under the Waves`.
+
+```bash
+clear;
+env WINEPREFIX="/Data/Jeux/Steam/steamapps/compatdata/1975440/pfx" winecfg
+```
