@@ -40,13 +40,13 @@ Le protocole WSDD n'aime pas docker, il faut indiquer à WSDD de ne pas écouter
 
 Le paramètre `WSDD_PARAMS=""` du fichier `/etc/default/wsdd` est à modifier.
 
-Nous souhaitons que WSDD écoute sur les interfaces `eth0` et `wlan0` via le protocole ipv4 uniquement. (`WSDD_PARAMS="-i eth0 wlan0 -4"`)
+Nous souhaitons que WSDD écoute sur les interfaces `eth0` et `wlan0` via le protocole ipv4 uniquement. (`WSDD_PARAMS="-i eth0 -i wlan0 -4"`)
 
 ##### 1. Application du correctif
 ```bash
 clear;
 sed -i -e "s/WSDD_PARAMS\=\"\"/WSDD_PARAMS\=\"-i eth0 -i wlan0 -4\"/g" /etc/default/wsdd;
-systemctl disable wsdd;
+systemctl enable wsdd;
 systemctl stop wsdd;
 systemctl start wsdd;
 systemctl status wsdd;
