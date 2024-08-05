@@ -353,10 +353,18 @@ EOF"
 runuser -l marc -c "chmod +x .Xclients"
 ```
 
-#### 3. Tuer Session (TTY / PTS)
+#### 4. Tuer Session (TTY / PTS)
 ```bash
 clear;
 w
 pkill -t ttyX
 pkill -t pts/X
+```
+
+#### 3. Désactiver l'auto-connect
+```bash
+clear;
+AUTOCONNECT=$(id -n -u 1000)
+sed -i -e "s/^autologin\-user\=$AUTOCONNECT/autologin\-user\=/g" /etc/lightdm/lightdm.conf;
+systemctl restart lightdm;
 ```
