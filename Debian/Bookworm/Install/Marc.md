@@ -338,7 +338,7 @@ chmod +x /usr/bin/winetricks;
 #### 1. Installation
 ```bash
 clear;
-apt install --no-install-recommends -y xrdp;
+apt install --no-install-recommends -y xrdp 1>/dev/null;
 adduser xrdp ssl-cert;
 ```
 
