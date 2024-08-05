@@ -125,8 +125,10 @@ apt install --no-install-recommends -y timeshift;
 apt install --no-install-recommends -y unzip;
 apt install --no-install-recommends -y wget;
 apt install --no-install-recommends -y xdg-user-dirs;
+# ========================================================================================
 apt install --no-install-recommends -y xserver-xorg;
 apt install --no-install-recommends -y xinit;
+# ========================================================================================
 ```
 
 ### C. Configuration du système
@@ -332,7 +334,9 @@ wget https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetric
 chmod +x /usr/bin/winetricks;
 ```
 
-### 
+### D. XRDP
 ```bash
 clear;
+apt install --no-install-recommends -y xrdp;
+adduser xrdp ssl-cert;
 ```
