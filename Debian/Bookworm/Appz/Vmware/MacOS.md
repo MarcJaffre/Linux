@@ -19,4 +19,7 @@ cpuid.1.edx = "0000:0111:1000:1011:1111:1011:1111:1111"
 
 ```
 - [Interessent] https://stackoverflow.com/questions/67025805/vmware-macos-bigsur-in-win10
+ > smbios.reflectHost = TRUE
 ```
+
+
