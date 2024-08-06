@@ -1,5 +1,10 @@
-### Fix AMD Boot
-Editer le fichier vmx et ajoute ce code suivant à la fin.
+-------------------------------------------------------------------------------------------------------------------------
+## <p align='center'> Installation de MacOS sur Vmware </p>
+
+-------------------------------------------------------------------------------------------------------------------------
+## I. CPU AMD
+### A. Fichier VMX
+Editer le fichier vmx avec le bloc-note.
 ```
 board-id = "Mac-A61BADE1FDAD7B05"
 hw.model = "MacBookPro16,4"
@@ -15,10 +20,21 @@ cpuid.1.ecx = "1000:0010:1001:1000:0010:0010:0000:0011"
 cpuid.1.edx = "0000:0111:1000:1011:1111:1011:1111:1111"
 ```
 
+<br />
+
+-------------------------------------------------------------------------------------------------------------------------
+### II. Réseau
+Pour qu'internet fonctionne, remplacer `e1000e` par le nom du réseau (Exemple: `vmxnet3`)
+```
+ethernet0.virtualDev = "e1000e"
+```
+
+
 
 ```
-- [Interessent] https://stackoverflow.com/questions/67025805/vmware-macos-bigsur-in-win10
+- https://stackoverflow.com/questions/67025805/vmware-macos-bigsur-in-win10
  > smbios.reflectHost = TRUE
+- https://forums.developer.apple.com/forums/thread/681787
 ```
 
 
