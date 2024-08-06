@@ -1,5 +1,7 @@
-```
+### Fix AMD Boot
+Editer le fichier vmx.
 
+```
 hw.model = "MacBookPro16,4"
 board-id = "Mac-A61BADE1FDAD7B05"
 smc.version = "0"
