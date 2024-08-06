@@ -28,7 +28,7 @@ https://mrmacintosh.com/list-of-mac-boardid-deviceid-model-identifiers-machine-m
 
 <br />
 
--------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
 ### II. Réseau
 Pour qu'internet fonctionne, remplacer `e1000e` par le nom du réseau (Exemple: `vmxnet3`)
 ```
@@ -44,4 +44,8 @@ ethernet0.virtualDev = "e1000e"
 - https://forums.developer.apple.com/forums/thread/681787
 ```
 
-![image](https://github.com/user-attachments/assets/81a92f69-2a3c-4ecb-83de-6aa6933f2e33)
+---------------------------------------------------------------------------------------------------------------
+### IV. Vmware Tools
+
+
+![image](https://github.com/user-attachments/assets/9aa7feee-a4ca-4ae9-ac20-14ad424ca080)
