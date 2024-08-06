@@ -34,6 +34,7 @@ ethernet0.virtualDev = "e1000e"
 ```
 - https://stackoverflow.com/questions/67025805/vmware-macos-bigsur-in-win10
  > smbios.reflectHost = TRUE
+- https://www.geekrar.com/how-to-fix-the-cpu-has-been-disabled-by-the-guest-os/#comment-21413
 - https://forums.developer.apple.com/forums/thread/681787
 ```
 
