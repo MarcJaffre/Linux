@@ -45,3 +45,6 @@ ethernet0.virtualDev = "e1000e"
 ```
 
 
+![Vmware_Tools_Autoriser](https://github.com/user-attachments/assets/b343ae64-b186-4818-922f-33534cd94016)
+
+
