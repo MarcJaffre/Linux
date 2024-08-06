@@ -20,6 +20,12 @@ cpuid.1.ecx = "1000:0010:1001:1000:0010:0010:0000:0011"
 cpuid.1.edx = "0000:0111:1000:1011:1111:1011:1111:1111"
 ```
 
+### B. Liste des Mac (BoardID, DeviceID, Model Identifiers & Machine Models)
+
+```
+https://mrmacintosh.com/list-of-mac-boardid-deviceid-model-identifiers-machine-models/
+```
+
 <br />
 
 -------------------------------------------------------------------------------------------------------------------------
