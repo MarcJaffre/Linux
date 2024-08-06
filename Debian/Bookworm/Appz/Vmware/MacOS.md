@@ -44,7 +44,4 @@ ethernet0.virtualDev = "e1000e"
 - https://forums.developer.apple.com/forums/thread/681787
 ```
 
-
-![Vmware_Tools_Autoriser](https://github.com/user-attachments/assets/b343ae64-b186-4818-922f-33534cd94016)
-
-
+![image](https://github.com/user-attachments/assets/81a92f69-2a3c-4ecb-83de-6aa6933f2e33)
