@@ -276,7 +276,6 @@ wget https://github.com/dracula/gtk/archive/master.zip -O /tmp/Dracula_theme.zip
 unzip /tmp/Dracula_theme.zip -d /usr/share/themes;
 mv /usr/share/themes/gtk-master /usr/share/themes/Dracula;
 
-
 apt install --no-install-recommends -y git;
 apt install --no-install-recommends -y make;
 apt install --no-install-recommends -y librsvg2-bin;
@@ -287,7 +286,26 @@ wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-smpla
 <br />
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-## IV. Expérience Utilisateur (Partie 2)
+## IV. Expérience Utilisateur (Partie 3)
+### A. WinAPP
+```
+https://github.com/Fmstrat/winapps
+```
+
+### B. Nuclear
+Lecteur de musique en ligne avec possibilité de télécharger gratuitement les médias.
+
+```bash
+clear;
+mkdir $HOME/AppImage;
+
+wget https://github.com/nukeop/nuclear/releases/download/v0.6.36/nuclear-v0.6.36-x86_64.AppImage -O $HOME/AppImage/Nuclear.AppImage;
+chmod +x $HOME/AppImage/*.AppImage;
+```
+<br />
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## V. Expérience Utilisateur (Partie 3)
 
 ### A. SMPlayer
 ```
@@ -313,18 +331,7 @@ Clique droit dans le blanc > Décocher les cases
 ```
 
 
-
 <br />
-
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-## IV. Expérience Utilisateur (Partie 3)
-### A. WinAPP
-```
-https://github.com/Fmstrat/winapps
-```
-
-
-
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## VI. Expérience Jeux-Vidéo
@@ -332,7 +339,6 @@ https://github.com/Fmstrat/winapps
 Télécharger la dernière version d'[Heroic Games Launcher](https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/releases/) puis permet à ce programme de ce lancer. (chmod +x)
 
 Ensuite il suffit de le lancer.
-
 
 
 ### B. Wine
