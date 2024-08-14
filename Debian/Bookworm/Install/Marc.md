@@ -313,6 +313,9 @@ Clique droit dans le blanc > Décocher les cases
 https://github.com/Fmstrat/winapps
 ```
 
+
+
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## VI. Expérience Jeux-Vidéo
 ### A.  Amazon Games, Epic Games, GOG sous Linux
