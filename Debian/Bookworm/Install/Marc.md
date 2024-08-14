@@ -90,6 +90,15 @@ apt install --no-install-recommends -y lightdm;
 apt install --no-install-recommends -y linux-headers-$(uname -r);
 apt install --no-install-recommends -y lsb-release;
 apt install --no-install-recommends -y mugshot;
+# ========================================================================================
+apt install --no-install-recommends -y nemo-data;
+apt install --no-install-recommends -y nemo-fileroller;
+apt install --no-install-recommends -y nemo-font-manager;
+apt install --no-install-recommends -y nemo-gtkhash;
+#apt install --no-install-recommends -y nemo-nextcloud;
+#apt install --no-install-recommends -y nemo-owncloud;
+#apt install --no-install-recommends -y nemo-python;
+# ========================================================================================
 apt install --no-install-recommends -y neofetch;
 apt install --no-install-recommends -y man;
 apt install --no-install-recommends -y mplayer;
