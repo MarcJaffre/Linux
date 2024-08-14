@@ -220,6 +220,16 @@ dpkg -i /tmp/anydesk.deb;
 apt install -y -f;
 ```
 
+### C. Blivet-GUI
+```bash
+clear;
+echo 'deb http://download.opensuse.org/repositories/home:/vtrefny/Debian_12/ /' | tee /etc/apt/sources.list.d/home:vtrefny.list;
+curl -fsSL https://download.opensuse.org/repositories/home:vtrefny/Debian_12/Release.key | gpg --dearmor | tee /etc/apt/trusted.gpg.d/home_vtrefny.gpg > /dev/null;
+apt update;
+apt install -y blivet-gui;
+apt install -y -f;
+```
+
 <br />
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
