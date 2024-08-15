@@ -170,7 +170,6 @@ clear;
 LOCAL_USER="marc"
 LOCAL_UID=$(id -u $LOCAL_USER)
 
-
 CIFS_IP=192.168.20.3
 CIFS_USER="marc"
 CIFS_PASS="admin"
