@@ -44,7 +44,7 @@ La configuration suivante sera la version définitive de Proxmox.
 ```
 
 ```bash
-cat > /etc/networking/interfaces << EOF
+cat > /etc/network/interfaces << EOF
 ##############################################################################
 # LoopBack #
 ############
