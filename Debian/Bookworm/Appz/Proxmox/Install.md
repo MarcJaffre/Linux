@@ -129,7 +129,7 @@ EOF
 ```
  
 #### 3. /etc/hosts
-La commande ` hostname --ip-address` permettra de confirmer la configuration.
+La commande  `hostname --ip-address`   permettra de confirmer la configuration.
 ```bash
 clear;
 cat > /etc/hosts << EOF
