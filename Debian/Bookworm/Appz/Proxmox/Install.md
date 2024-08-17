@@ -59,19 +59,66 @@ iface enp3s0 inet manual
 ##############################################################################
 # Pont Virtuel #
 ################
-auto vmbr0                        # Nom du pont
-iface vmbr0 inet static           # Mode static
-        address 192.168.0.2/24    # IPv4
-        gateway 192.168.0.1       # Passerelle
-        bridge-ports enp3s0       # Ports attache au pont
-        bridge-stp off            # Activation de la fonction STP
-        bridge-fd 0               # Delais de mise en ligne interface
+# Nom du pont
+auto vmbr0
+
+# Mode static
+iface vmbr0 inet static
+        # =====================================
+        # IPv4
+        address 192.168.0.2/24
+        # =====================================
+        # Passerelle
+        gateway 192.168.0.1
+        # =====================================
+        # Ports attache au pont
+        bridge-ports enp3s0
+        # =====================================
+        # Activation de la fonction STP
+        bridge-stp off
+        # =====================================
+        # Delais de mise en ligne interface
+        bridge-fd 0
+        # =====================================
 ##############################################################################
 EOF
 
-systemctl stop NetworkManager.service;
+systemctl disable --now NetworkManager.service;
 systemctl restart networking;
 ```
+
+```
+# =================================================================================================================
+root@Drthrax-PC:~#  ip address show enp3s0 
+#X: enp3s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq master vmbr0 state UP group default qlen 1000
+#           link/ether 04:d9:f5:82:2c:96 brd ff:ff:ff:ff:ff:ff
+
+root@Drthrax-PC:~#  ip address show vmbr0 
+#X: vmbr0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether 72:76:dd:82:98:6e brd ff:ff:ff:ff:ff:ff
+    inet 192.168.0.2/24 brd 192.168.0.255 scope global vmbr0
+
+# =================================================================================================================
+root@Drthrax-PC:~# ifconfig | grep "enp3s0\|vmbr0" -A7
+enp3s0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        ether 04:d9:f5:82:2c:96  txqueuelen 1000  (Ethernet)
+        RX packets 896563  bytes 1155899318 (1.0 GiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 220239  bytes 47505240 (45.3 MiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device memory 0xfc900000-fc91ffff
+--
+vmbr0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.0.2  netmask 255.255.255.0  broadcast 192.168.0.255
+        inet6 fe80::7076:ddff:fe82:986e  prefixlen 64  scopeid 0x20<link>
+        ether 72:76:dd:82:98:6e  txqueuelen 1000  (Ethernet)
+        RX packets 9576  bytes 10342265 (9.8 MiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 2659  bytes 477541 (466.3 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+```
+
+
 
 #### 2. Configuration du Hostname
 ```bash
