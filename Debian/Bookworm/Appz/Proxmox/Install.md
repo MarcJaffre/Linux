@@ -24,13 +24,53 @@
 - Serveur DNS        : 192.168.0.1 (Primaire) 8.8.8.8 (secondaire)
 ```
 
-
-### B. Pré-requis
+### X. Pré-requis
 #### 1. Paquets nécessaire
 ```bash
 clear;
 apt install -y curl;
+apt install -y bridge-utils;
 apt install -y wget;
+```
+
+
+### X. Configuration du Réseau
+La configuration suivante sera la version définitive de Proxmox.
+```
+- L'interface physique est mise en mode manual (UP)
+- Le pont se lance, il à une ipv4 et attache l'interface physique.
+- Le paquet resolvconf (ipv4) et rdnssd (ipv6) semble poser problème.
+- Le service NetworkManager devra être désactivé dans le cas d'une interface physique.
+```
+
+```bash
+cat > /etc/networking/interfaces << EOF
+##############################################################################
+# LoopBack #
+############
+auto lo
+iface lo inet loopback
+
+##############################################################################
+# Interface Physique #
+######################
+iface enp3s0 inet manual
+
+##############################################################################
+# Pont Virtuel #
+################
+auto vmbr0                        # Nom du pont
+iface vmbr0 inet static           # Mode static
+        address 192.168.0.2/24    # IPv4
+        gateway 192.168.0.1       # Passerelle
+        bridge-ports enp3s0       # Ports attache au pont
+        bridge-stp off            # Activation de la fonction STP
+        bridge-fd 0               # Delais de mise en ligne interface
+##############################################################################
+EOF
+
+systemctl stop NetworkManager.service;
+systemctl restart networking;
 ```
 
 #### 2. Configuration du Hostname
@@ -40,7 +80,6 @@ cat > /etc/hostname << EOF
 Proxmox
 EOF
 ```
-
  
 #### 3. /etc/hosts
 La commande ` hostname --ip-address` permettra de confirmer la configuration.
@@ -77,7 +116,6 @@ Le dépôt Proxmox est signé électroniquement et requiert une clé sécurisée
 ```bash
 wget https://enterprise.proxmox.com/debian/proxmox-release-bookworm.gpg -O /etc/apt/trusted.gpg.d/proxmox-release-bookworm.gpg 
 ```
-
 
 #### 5. Mise à niveau du Système
 ```bash
@@ -129,7 +167,9 @@ apt remove linux-image-amd64;
 update-grub;
 ```
 
-
-
-
-
+#### X. Suppression de OS-Prober
+OS-Prober est un outil de détection multi-démarrage, Proxmox n'est pas compatible avec cette outil.
+```bash
+clear;
+apt remove os-prober;
+```
