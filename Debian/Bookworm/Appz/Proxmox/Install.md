@@ -11,7 +11,8 @@
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## II. Installation de Proxmox
 ### A. Information
-> Dans le cas d'une installation de Proxmox sur une machine ayant une interface graphique, il sera nécessaire de réaliser quelque action en amont pour ensuite le déployer.
+> Dans le cas d'une installation de Proxmox sur une machine ayant une interface graphique, il sera nécessaire de désactiver le service NetworkManager qui permet la gestion de l'interface réseau via une interface Utilisateur. (Perte de GUI pour la configuration réseau)
+
 
 ### B. Présentation de la configuration de mon environnement
 ```
