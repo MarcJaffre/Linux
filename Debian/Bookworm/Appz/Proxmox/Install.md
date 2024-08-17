@@ -41,8 +41,13 @@ La configuration suivante sera la version définitive de Proxmox.
 - L'interface physique est mise en mode manual (UP)
 - Le pont se lance, il à une ipv4 et attache l'interface physique.
 - Le paquet resolvconf (ipv4) et rdnssd (ipv6) semble poser problème.
-- Le service NetworkManager devra être désactivé dans le cas d'une interface physique.
+- Le service NetworkManager est arrêté et désactivé.
+- Relance du service networking.
+ > NetworkManager tenait l'interface réseau.
+ > En l'arrêtant sa permit de libérer l'interface.
+ > Networking lors de la relance du processus reprend la main sur l'interface.
 ```
+
 
 ```bash
 cat > /etc/network/interfaces << EOF
