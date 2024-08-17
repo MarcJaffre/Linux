@@ -25,15 +25,19 @@
 - Serveur DNS        : 192.168.0.1 (Primaire) 8.8.8.8 (secondaire)
 ```
 
+<br />
+
 ### X. Pré-requis
 #### 1. Paquets nécessaire
 ```bash
 clear;
 apt install -y curl;
 apt install -y bridge-utils;
+apt install -y lvm2;
 apt install -y wget;
 ```
 
+<br />
 
 ### X. Configuration du Réseau
 La configuration suivante sera la version définitive de Proxmox.
@@ -47,7 +51,6 @@ La configuration suivante sera la version définitive de Proxmox.
  > En l'arrêtant sa permit de libérer l'interface.
  > Networking lors de la relance du processus reprend la main sur l'interface.
 ```
-
 
 ```bash
 cat > /etc/network/interfaces << EOF
@@ -125,7 +128,6 @@ vmbr0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
 ```
 
 
-
 #### 2. Configuration du Hostname
 ```
 - Configuration du nom de la machine
@@ -169,7 +171,6 @@ EOF
 echo "L'adresse IP de la machine est $(hostname --ip-address)";
 ```
 
-
 #### 4. Dépôt Proxmox
 ```bash
 clear 
@@ -179,24 +180,26 @@ EOF
 ```
 
 
-#### 4. Clé GPG
+#### 5. Clé GPG
 Le dépôt Proxmox est signé électroniquement et requiert une clé sécurisée.
 ```bash
 wget https://enterprise.proxmox.com/debian/proxmox-release-bookworm.gpg -O /etc/apt/trusted.gpg.d/proxmox-release-bookworm.gpg 
 ```
 
-#### 5. Mise à niveau du Système
+#### 6. Mise à niveau du Système
 ```bash
 clear;
 apt update;
 apt full-upgrade;
 ```
 
+
 #### X. Instation du Noyau Proxmox
 ```bash
 clear;
 apt install -y proxmox-default-kernel;
 ```
+
 
 #### X. Redémarrage
 Le redémarrage permet de basculer sur le noyau `Standart` au noyau `Proxmox` qui inclus de nombreux patch. 
@@ -205,12 +208,14 @@ clear;
 systemctl reboot;
 ```
 
+
 #### X. Vérification du Noyau
 La commande devrait retourner une ligne qui se termine avec `PVE`. 
 ```bash
 clear;
 uname -r;
 ```
+
 
 #### X. Installation des paquets
 ```bash
