@@ -6,6 +6,53 @@
 ### A. Information Générale
 >Proxmox Virtual Environnement est une solution de virtualisation libre basée sur l'hyperviseur Linux KVM, et offre aussi une solution de conteneurs avec LXC. Elle propose un support payant.
 
+### La technologie LVM
+La technologie LVM permet la gestion à chaud d'un serveur au niveau de ses partitions.
+
+> Le Volume Physique : PV
+>
+> Le Volume Groupe   : VG
+> 
+> Le Volume Logique  : LV
+
+
+### C. Installation de Debian
+#### 1. Présentation
+```
+root@Proxmox:~# lsblk 
+sda                 8:0    0   1,8T  0 disk 
+├─sda1              8:1    0   487M  0 part /boot/efi
+└─sda2              8:2    0   1,8T  0 part 
+  ├─vg0-HOME      254:0    0  93,1G  0 lvm  /home
+  ├─vg0-SYSTEM    254:1    0    30G  0 lvm  /
+  ├─vg0-SWAP      254:2    0   3,7G  0 lvm  [SWAP]
+  ├─vg0-DATA      254:3    0 931,3G  0 lvm  /Data
+
+root@Proxmox:~# pvs
+  PV         VG  Fmt  Attr PSize  PFree   
+  /dev/sda2  vg0 lvm2 a--  <1,82t <774,37g
+
+root@Proxmox:~# vgs
+  VG  #PV #LV #SN Attr   VSize  VFree   
+  vg0   1   5   0 wz--n- <1,82t <774,37g
+
+root@Proxmox:~# pvs
+```
+
+#### 2. Explication
+```
+Le disque-dur sda de 1.8 To est partitionnée en 2.
+ > La partition 1 (sda1) est le démarrage EFI.
+ > La partition 2 (sda2) est une partition LVM
+
+La partition 2 (LVM) est dans le groupe de volume vg0
+Le groupe vg0 dispose de plusieurs volume logique (HOME, SYSTEM, SWAP, DATA)
+L'espace disponible dans vg0 n'est pas totalement consommée pour permettre d'étendre à la demande les volumes logiques.
+``` 
+
+
+
+
 <br />
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -98,17 +145,17 @@ systemctl restart networking;
 
 ```
 # =================================================================================================================
-root@Drthrax-PC:~#  ip address show enp3s0 
+root@Proxmox:~#  ip address show enp3s0 
 #X: enp3s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq master vmbr0 state UP group default qlen 1000
 #           link/ether 04:d9:f5:82:2c:96 brd ff:ff:ff:ff:ff:ff
 
-root@Drthrax-PC:~#  ip address show vmbr0 
+root@Proxmox:~#  ip address show vmbr0 
 #X: vmbr0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
     link/ether 72:76:dd:82:98:6e brd ff:ff:ff:ff:ff:ff
     inet 192.168.0.2/24 brd 192.168.0.255 scope global vmbr0
 
 # =================================================================================================================
-root@Drthrax-PC:~# ifconfig | grep "enp3s0\|vmbr0" -A7
+root@Proxmox:~# ifconfig | grep "enp3s0\|vmbr0" -A7
 enp3s0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
         ether 04:d9:f5:82:2c:96  txqueuelen 1000  (Ethernet)
         RX packets 896563  bytes 1155899318 (1.0 GiB)
