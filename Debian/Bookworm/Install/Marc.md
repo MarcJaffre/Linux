@@ -212,6 +212,14 @@ echo 'deb [signed-by=/usr/share/keyrings/microsoft-edge.gpg] https://packages.mi
 apt update;
 apt install -y microsoft-edge-stable;
 ```
+
+En cas de problème:
+```bash
+clear;
+find $HOME/.config/microsoft-edge/ -name "Single*" -exec rm -r {} \;
+```
+
+
 ### B. Discord
 ```bash
 clear;
