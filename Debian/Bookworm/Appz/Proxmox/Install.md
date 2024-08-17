@@ -259,7 +259,7 @@ systemctl reboot;
 
 
 #### X. Vérification du Noyau
-La commande retourne la version et le type de noyau `PVE`. 
+La commande retourne la version et le type de noyau et celui-ci devrait se terminé en `XXXXXXXXXXX-PVE`. 
 ```bash
 clear;
 uname -r;
