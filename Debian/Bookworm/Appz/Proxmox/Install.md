@@ -307,7 +307,7 @@ apt remove os-prober;
 #### X. Suppression du dépôt Proxmox (Payant)
 ```bash
 clear;
-rm /etc/apt/sources.list.d/pve-enterprise.list
+rm /etc/apt/sources.list.d/pve-enterprise.list;
 ```
 
 #### X. Panel d'administation
