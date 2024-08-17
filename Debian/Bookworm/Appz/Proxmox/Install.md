@@ -36,7 +36,12 @@ root@Proxmox:~# vgs
   VG  #PV #LV #SN Attr   VSize  VFree   
   vg0   1   5   0 wz--n- <1,82t <774,37g
 
-root@Proxmox:~# pvs
+root@Proxmox:~# lvs
+  LV        VG  Attr       LSize   Pool Origin Data%  Meta%  Move Log Cpy%Sync Convert
+  DATA      vg0 -wi-ao---- 931,32g                                                    
+  HOME      vg0 -wi-ao---- <93,13g                                                    
+  SWAP      vg0 -wi-ao----   3,72g                                                    
+  SYSTEM    vg0 -wi-ao----  30,00g                                                    
 ```
 
 #### 2. Explication
@@ -49,9 +54,6 @@ La partition 2 (LVM) est dans le groupe de volume vg0
 Le groupe vg0 dispose de plusieurs volume logique (HOME, SYSTEM, SWAP, DATA)
 L'espace disponible dans vg0 n'est pas totalement consommée pour permettre d'étendre à la demande les volumes logiques.
 ``` 
-
-
-
 
 <br />
 
