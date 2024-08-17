@@ -202,7 +202,7 @@ apt install -y proxmox-default-kernel;
 
 
 #### X. Redémarrage
-Le redémarrage permet de basculer sur le noyau `Standart` au noyau `Proxmox` qui inclus de nombreux patch. 
+Le redémarrage permet de basculer du noyau `Debian` au noyau `Proxmox` qui celui-ci inclus de nombreux patch. 
 ```bash
 clear;
 systemctl reboot;
