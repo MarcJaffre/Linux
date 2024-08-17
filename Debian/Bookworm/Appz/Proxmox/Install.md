@@ -121,17 +121,29 @@ vmbr0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
 
 
 #### 2. Configuration du Hostname
+```
+- Configuration du nom de la machine
+- Prise en compte du nom de la machine à chaud.
+```
 ```bash
 clear;
+##################################################
 cat > /etc/hostname << EOF
 Proxmox
 EOF
-```
- 
+
+##################################################
+hostnamectl set-hostname Proxmox;
+``` 
+
 #### 3. /etc/hosts
-La commande  `hostname --ip-address`   permettra de confirmer la configuration.
+```
+- Configuration du nom de la machine avec les liens DNS (IP <=> NOM)
+- Message retour, si on voit l'IPv4 c'est que c'est bon.
+```
 ```bash
 clear;
+
 cat > /etc/hosts << EOF
 ##############################################
 # IPv4 #
@@ -147,7 +159,10 @@ ff02::1 ip6-allnodes
 ff02::2 ip6-allrouters
 ##############################################
 EOF
+
+echo "L'adresse IP de la machine est $(hostname --ip-address)";
 ```
+
 
 #### 4. Dépôt Proxmox
 ```bash
