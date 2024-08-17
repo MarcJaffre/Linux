@@ -53,7 +53,15 @@ Le disque-dur sda de 1.8 To est partitionnée en 2.
 La partition 2 (LVM) est dans le groupe de volume vg0
 Le groupe vg0 dispose de plusieurs volume logique (HOME, SYSTEM, SWAP, DATA)
 L'espace disponible dans vg0 n'est pas totalement consommée pour permettre d'étendre à la demande les volumes logiques.
-``` 
+```
+
+
+
+### D. Sources
+```
+- https://pve.proxmox.com/wiki/Install_Proxmox_VE_on_Debian_12_Bookworm
+- https://pve.proxmox.com/wiki/Network_Configuration#_default_configuration_using_a_bridge
+```
 
 <br />
 
@@ -176,7 +184,6 @@ vmbr0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 ```
 
-
 #### 2. Configuration du Hostname
 ```
 - Configuration du nom de la machine
@@ -198,9 +205,9 @@ hostnamectl set-hostname Proxmox;
 - Configuration du nom de la machine avec les liens DNS (IP <=> NOM)
 - Message retour, si on voit l'IPv4 c'est que c'est bon.
 ```
+
 ```bash
 clear;
-
 cat > /etc/hosts << EOF
 ##############################################
 # IPv4 #
