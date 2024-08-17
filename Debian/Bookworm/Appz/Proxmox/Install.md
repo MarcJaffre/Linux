@@ -304,7 +304,13 @@ OS-Prober est un outil de détection multi-démarrage, Proxmox n'est pas compati
 clear;
 apt remove os-prober;
 ```
-#### X. Pane d'administation
+#### X. Suppression du dépôt Proxmox (Payant)
+```bash
+clear;
+rm /etc/apt/sources.list.d/pve-enterprise.list
+```
+
+#### X. Panel d'administation
 ```bash
 clear;
 echo "Le panel Web est accessible à l'adresse https://$(hostname --ip-address):8006";
