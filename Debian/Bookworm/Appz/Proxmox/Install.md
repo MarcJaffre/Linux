@@ -273,7 +273,7 @@ uname -r;
 ```
 
 #### X. Installation des paquets
-Lors de l'installation, le menu ` Postfix Configuration` apparaît, choisir ` Pas de configuration` ou `Local uniquement`. 
+Lors de l'installation, le menu `Postfix Configuration` apparaît, choisir `Pas de configuration` ou `Local uniquement`. 
 ```bash
 clear;
 if [ $(uname -r | cut -d "-" -f3) = pve ];then 
