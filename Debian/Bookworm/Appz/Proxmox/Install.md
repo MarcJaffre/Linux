@@ -261,7 +261,7 @@ apt install -y proxmox-default-kernel;
 Le redémarrage permet de basculer du noyau `Debian` (6.1.0-23-amd64)  au noyau `Proxmox` qui celui-ci inclus de nombreux patch.
 ```bash
 clear;
-systemctl reboot;
+if [ ! $(uname -r | cut -d "-" -f3) = pve ];then systemctl reboot; fi
 ```
 
 
@@ -273,12 +273,15 @@ uname -r;
 ```
 
 #### X. Installation des paquets
+Lors de l'installation, le menu ` Postfix Configuration` apparaît, choisir ` Pas de configuration` ou `Local uniquement`. 
 ```bash
 clear;
-apt install -y proxmox-ve; # Paquet de base
-apt install -y postfix;    # Mail
-apt install -y open-iscsi; # Prise en charge Iscsi
-apt install -y chrony;     # Synchronisation de Temps
+if [ $(uname -r | cut -d "-" -f3) = pve ];then 
+ apt install -y proxmox-ve; # Paquet de base
+ apt install -y postfix;    # Mail
+ apt install -y open-iscsi; # Prise en charge Iscsi
+ apt install -y chrony;     # Synchronisation de Temps
+fi
 ```
 
 #### X. Suppression du Noyau Debian
