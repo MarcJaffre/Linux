@@ -239,7 +239,7 @@ EOF
 #### 5. Clé GPG
 Le dépôt Proxmox est signé électroniquement et requiert une clé sécurisée.
 ```bash
-wget https://enterprise.proxmox.com/debian/proxmox-release-bookworm.gpg -O /etc/apt/trusted.gpg.d/proxmox-release-bookworm.gpg 
+wget https://enterprise.proxmox.com/debian/proxmox-release-bookworm.gpg -O /etc/apt/trusted.gpg.d/proxmox-release-bookworm.gpg; 
 ```
 
 #### 6. Mise à niveau du Système
