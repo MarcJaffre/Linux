@@ -1,5 +1,4 @@
 ## Audio
 ```
-- Cadmus     : Retirer le bruit de fond d’en enregistrement en temps réel.
-- NoiseTorch : Retirer le bruit de fond d’en enregistrement en temps réel.
+Retirer le bruit de fond en temps réel : Cadmus, NoiseTorch
 ```
