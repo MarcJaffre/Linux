@@ -23,7 +23,8 @@ Chaque `Connection` dispose d'`Nom`, d' un `UID`, un `Type` et un `Device` pour 
 #### A. Présentation de NMCLI
 NMCLI permet l'édition des fichiers de script en modifiant les fichiers ifcfg-`<INTERFACE>`
 
-#### B. Lister les périphériques
+#### B. Les périphériques
+##### 1. Afficher les Périphériques
 ```bash
 clear;
 nmcli device status;
@@ -31,10 +32,7 @@ nmcli device status;
 
 ![image](https://github.com/user-attachments/assets/f8bf74a5-9ddd-427b-b906-018e65151663)
 
-<br />
-
-#### C. Afficher la configuration des périphériques
-##### 1. Afficher l'ensemble des périphériques
+##### 2. Afficher l'ensemble des périphériques
 ```bash
 clear;
 nmcli device show;
@@ -42,7 +40,7 @@ nmcli device show;
 
 ![image](https://github.com/user-attachments/assets/46b4e3c7-dfd4-4134-9629-ec0d1f6ceb2c)
 
-##### 2. Afficher un périphérique
+##### 3. Afficher un périphérique
 ```bash
 clear;
 nmcli device show <interfaces>;
@@ -53,7 +51,8 @@ nmcli device show <interfaces>;
 
 <br />
 
-#### D. Afficher les connexions
+#### D. Les connexions
+##### 1. Afficher les connexions
 Ceci permet d'afficher les connexions . (Nom, UUID, Type et Périphérîque)
 ```bash
 clear;
