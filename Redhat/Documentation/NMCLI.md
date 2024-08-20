@@ -73,7 +73,7 @@ nmcli connection add type ethernet con-name <NAME_CUSTOM> ifname <INTERFACE>;
 
 ![image](https://github.com/user-attachments/assets/6c2ea1db-a934-4bbd-b6e5-b96596a1f7a3)
 
-##### 4. Afficher les configurations
+##### 4. Lister les fichiers de configuration
 ```bash
 clear;
 ls /etc/NetworkManager/system-connections/
@@ -134,6 +134,13 @@ clear;
 nmcli connection add type bridge-slave con-name <NOM_INTERFACE_BRIDGE>-port<X> ifname <INTERFACE_ATTACHER> master <NOM_DU_BRIDGE>;
 nmcli connection show <NOM_INTERFACE_BRIDGE>-port<X>;
 nmcli connection up <NOM_DU_BRIDGE>;
+```
+
+
+#### D. Lister les fichiers de configuration
+```bash
+clear;
+ls /etc/NetworkManager/system-connections/
 ```
 
 <br />
