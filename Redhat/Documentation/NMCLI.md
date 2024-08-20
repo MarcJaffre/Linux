@@ -1,5 +1,5 @@
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-## <p align='center'> Gestîons des interfaces réseaux </p>
+## <p align='center'> Gestions des interfaces réseaux </p>
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### I. NetworkManager
@@ -19,7 +19,7 @@ Chaque `Connection` dispose d'`Nom`, d' un `UID`, un `Type` et un `Device` pour 
 <br />
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-### II. NMCLI
+### II. NMCLI (Base)
 #### A. Présentation de NMCLI
 NMCLI permet l'édition des fichiers de script en modifiant les fichiers ifcfg-`<INTERFACE>`
 
@@ -107,9 +107,41 @@ clear;
 nmcli connection edit <NAME_CUSTOM>;
 ```
 
+<br />
+<br />
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+### III. NMCLI (Avancés)
+#### A. Création d'un Bridge
+```bash
+clear;
+nmcli connection delete bridge0;
+nmcli connection add type bridge con-name bridge0 ifname br0;
+nmcli connection modify bridge0 ipv4.addresses 192.168.200.143/24;
+nmcli connection modify bridge0 ipv4.gateway 192.168.200.1;
+nmcli connection modify bridge0 ipv4.dns 192.168.200.1;
+nmcli connection modify bridge0 ipv4.method manual;
+```
+#### B. Afficher les informations du Bridge
+```bash
+clear;
+nmcli connection show bridge0 | grep -v "\--" | grep "connection\|ipv4";  
+```
+
+#### C. Attacher des ports au bridge0
+```bash
+clear;
+nmcli connection add type bridge-slave con-name bridge0-p1
+
+nmcli connection add type bridge-slave con-name bridge0-port1 ifname ens18 master br0;
+nmcli connection show bridge0-port1;
+nmcli connection show bridge0;
+
 
 <br />
 <br />
+
+
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### III. Autres
