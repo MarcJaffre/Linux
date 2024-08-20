@@ -17,7 +17,18 @@ Chaque `Connection` dispose d'`Nom`, d' un `UID`, un `Type` et un `Device` pour 
 
 <br />
 
-#### C. Exemple
+#### C. NMCLI
+NMCLI permet l'édition des fichiers de script en modifiant les fichiers ifcfg-`<INTERFACE>`
+
+
+
+#### D.
+#### E.
+#### F.
+
+
+
+#### G. Scripts
 ```bash
 clear;
 cat /etc/sysconfig/network-script;
@@ -37,13 +48,6 @@ GATEWAY=192.168.0.1
 DNS1=192.168.0.1
 DNS2=8.8.8.8
 ```
-
-
-
-#### D.
-#### E.
-#### F.
-#### G
 
 
 
