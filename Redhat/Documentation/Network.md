@@ -17,41 +17,6 @@ Chaque `Connection` dispose d'`Nom`, d' un `UID`, un `Type` et un `Device` pour 
 
 <br />
 
-
-#### A. Scripts
-```bash
-clear;
-cat /etc/sysconfig/network-script;
-```
-
-```
-TYPE=Ethernet
-BOOTPROTO=NONE
-DEFROUTE=yes
-NAME=eth0
-UUID=
-DEVICE=eth0
-ONBOOT=yes
-IPADDR=192.168.0.100
-PREFIX=24
-GATEWAY=192.168.0.1
-DNS1=192.168.0.1
-DNS2=8.8.8.8
-```
-
-
-<br />
-
-#### D.
-#### E.
-#### F.
-
-
-
-
-
-<br />
-
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### II. NMCLI
 #### A. Présentation de NMCLI
@@ -70,16 +35,23 @@ nmcli dev status
 ```bash
 clear;
 nmcli dev show;
-nmcli dev show <interfaces>
 ```
 
-##### 1. Afficher un périphérique
+![image](https://github.com/user-attachments/assets/46b4e3c7-dfd4-4134-9629-ec0d1f6ceb2c)
+
+##### 2. Afficher un périphérique
 ```bash
 clear;
 nmcli dev show <interfaces>
 ```
 
 ![image](https://github.com/user-attachments/assets/8e70b094-f636-4df0-bf90-f2251590bd1c)
+
+#### D.
+#### E.
+#### F.
+
+
 
 
 
