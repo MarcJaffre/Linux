@@ -78,19 +78,19 @@ nmcli connection add type ethernet con-name <NAME_CUSTOM> ifname <INTERFACE>;
 clear;
 ls /etc/NetworkManager/system-connections/
 ```
-##### 5a. Modification de la connexion (DHCP)
+##### 5a. Configurer la connexion (DHCP)
 ```bash
 clear;
 nmcli connection modify <NAME_CUSTOM> ipv4.method auto;
 ```
 
-##### 5b. Modification de la connexion (Disabled)
+##### 5b. Configurer la connexion (Disabled)
 ```bash
 clear;
 nmcli connection modify <NAME_CUSTOM> ipv4.method disabled;
 ```
 
-##### 5c. Modification de la connexion (Static)
+##### 5c. Configurer la connexion (Static)
 ```bash
 clear;
 nmcli connection down <NAME_CUSTOM>;
@@ -101,18 +101,60 @@ nmcli connection modify <NAME_CUSTOM> ipv4.method manual;
 nmcli connection up <NAME_CUSTOM>;
 ```
 
-
-#### E.
-#### F.
-
-
-
-
-
+##### 6. Editer la configuration
+```bash
+clear;
+nmcli connection edit <NAME_CUSTOM>;
+```
 
 ```
 - nmcli
 - nm-tool
 - nmtui
 - nmgui
+```
+
+
+<br />
+<br />
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+### III. Hostname
+#### A. Aficher le nom de la machine
+```bash
+clear;
+hostname
+```
+#### B. Affîcher les informations
+```bash
+clear;
+hostnamectl status
+```
+
+#### C. Définir le nom de la machine
+```bash
+clear;
+hostnamectl set-hostname PRX-REDHAT01;
+```
+
+#### D. Définir le Chassis
+```bash
+clear;
+hostnamectl chassis container
+hostnamectl chassis desktop
+hostnamectl chassis laptop
+hostnamectl chassis server
+hostnamectl chassis vm
+```
+
+#### E. Définir XXXXXX
+```bash
+clear;
+hostnamectl 
+```
+
+#### F. Définir XXXXXX
+```bash
+clear;
+hostnamectl 
 ```
