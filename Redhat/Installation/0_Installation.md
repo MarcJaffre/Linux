@@ -69,50 +69,7 @@ Puis cliquer sur `Commencer l'installation`.
 <br />
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-## III. Interface réseau
-### A. Afficher les devices et connections
-```bash
-clear;
-nmcli connection show;
-nmcli device show;
-```
-
-### B. Configuration du réseau
-```
-nmcli connection delete ens18;
-nmcli connection add type ethernet con-name ens18-new ifname ens18;
-
-nmcli connection modify ens18-new ipv4.addresses 192.168.0.190/24;
-nmcli connection modify ens18-new ipv4.gateway   192.168.0.1;
-nmcli connection modify ens18-new ipv4.dns       192.168.0.1;
-nmcli connection modify ens18-new ipv4.method    manual;
-
-nmcli connection up ens18-new;
-```
-
-### C. Vérification
-#### 1. Afficher le périphérique
-Ce mode d'affichage permet de la configuration de manière simple.
-```bash
-clear;
-nmcli device show ens18;
-```
-
-#### 2. Afficher la connexion
-Ce mode d'affichage permet de voir chaque paramètres de la connection
-```bash
-clear;
-nmcli connection show ens18-new;
-```
-
-
-
-
-<br />
-
-
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-## IV. Subscription
+## III. Subscription
 ### A. Panel de subscription
 ```
 https://access.redhat.com/management/subscriptions
@@ -176,7 +133,3 @@ subscription-manager unregister
 ![image](https://github.com/Drthrax74/Linux/assets/35907/8ff6d8bf-9a36-4e36-a309-7ab56af0c5ad)
 
 ![Website System RedHat](https://github.com/Drthrax74/Linux/assets/35907/9378387f-b79d-4700-86a8-dca1454b132d)
-
-
-
-
