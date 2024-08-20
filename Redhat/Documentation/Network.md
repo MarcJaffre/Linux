@@ -8,12 +8,12 @@ RedHat utilise des scripts pour la configuration des interfaces réseaux.
 
 <br />
 
-#### B. Qu'est qu'une interface ?
-Un `device` est une interface réseau
+#### B. Qu'est qu'une interface réseau ?
+Une interface réseau correspond à un `device`. 
 
-La `Connection` un ensemble de pararmètres afin de configurer un `Device`
+Le `Device` contient un ensemble de paramètres de configuration qu'on nomme `Connction`.
 
-Chaque `Connection` porte un `Nom`, `UID`, un `Type` et un `Device`.
+Chaque `Connection` dispose d'`Nom`, d' un `UID`, un `Type` et un `Device` pour permettre son identification.
 
 <br />
 
