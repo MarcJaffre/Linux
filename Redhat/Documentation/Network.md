@@ -63,13 +63,41 @@ nmcli connection delete <UUID>;
 ```
 
 ##### 3. Ajouter une connexion de type Ethernet
+
 ```bash
 clear;
-nmcli connection add type ethernet con-name <NÄME_CUSTOM> ifname <INTERFACE>;
+nmcli connection add type ethernet con-name <NAME_CUSTOM> ifname <INTERFACE>;
 ```
 
 ![image](https://github.com/user-attachments/assets/918bc729-24af-4a9c-a37e-856d705e102d)
 
+![image](https://github.com/user-attachments/assets/6c2ea1db-a934-4bbd-b6e5-b96596a1f7a3)
+
+##### 4. Afficher les configurations
+```bash
+clear;
+ls /etc/NetworkManager/system-connections/
+```
+##### 5a. Modification de la connexion (DHCP)
+```bash
+clear;
+nmcli connection modify <NAME_CUSTOM> ipv4.method auto;
+```
+
+##### 5b. Modification de la connexion (Disabled)
+```bash
+clear;
+nmcli connection modify <NAME_CUSTOM> ipv4.method disabled;
+```
+
+##### 5c. Modification de la connexion (Static)
+```bash
+clear;
+nmcli connection modify <NAME_CUSTOM> ipv4.addresses <CIDR>
+nmcli connection modify <NAME_CUSTOM> ipv4.gateway <IP>
+nmcli connection modify <NAME_CUSTOM> ipv4.dns <DNS1> <DNS2>
+nmcli connection modify <NAME_CUSTOM> ipv4.method manual
+```
 
 #### E.
 #### F.
