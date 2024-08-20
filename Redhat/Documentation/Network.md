@@ -93,11 +93,14 @@ nmcli connection modify <NAME_CUSTOM> ipv4.method disabled;
 ##### 5c. Modification de la connexion (Static)
 ```bash
 clear;
-nmcli connection modify <NAME_CUSTOM> ipv4.addresses <CIDR>
-nmcli connection modify <NAME_CUSTOM> ipv4.gateway <IP>
-nmcli connection modify <NAME_CUSTOM> ipv4.dns <DNS1> <DNS2>
-nmcli connection modify <NAME_CUSTOM> ipv4.method manual
+nmcli connection modify <NAME_CUSTOM> ipv4.addresses <CIDR>;
+nmcli connection modify <NAME_CUSTOM> ipv4.gateway <IP>^;
+nmcli connection modify <NAME_CUSTOM> ipv4.dns;
+nmcli connection modify <NAME_CUSTOM> ipv4.method manual;
+nmcli connection up <NAME_CUSTOM> 
 ```
+
+
 
 #### E.
 #### F.
