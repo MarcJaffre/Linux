@@ -41,7 +41,7 @@ nmcli device show;
 ##### 3. Afficher un périphérique
 ```bash
 clear;
-nmcli device show <interfaces>;
+nmcli device show ens18;
 ```
 ![image](https://github.com/user-attachments/assets/8e70b094-f636-4df0-bf90-f2251590bd1c)
 
@@ -53,10 +53,22 @@ Ceci permet d'afficher les connexions . (Nom, UUID, Type et Périphérîque)
 clear;
 nmcli connection show;
 ```
-
 ![image](https://github.com/user-attachments/assets/cf16a6bd-0616-41b4-91ab-751aa3f6cd43)
 
+##### 2. Supprimer une connexion
+```bash
+clear;
+nmcli connection delete <NOM>;
+nmcli connection delete <UUID>;
+```
 
+##### 3. Ajouter une connexion de type Ethernet
+```bash
+clear;
+nmcli connection add type ethernet con-name <NÄME_CUSTOM> ifname <INTERFACE>;
+```
+
+![image](https://github.com/user-attachments/assets/918bc729-24af-4a9c-a37e-856d705e102d)
 
 
 #### E.
