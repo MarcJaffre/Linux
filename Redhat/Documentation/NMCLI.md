@@ -115,26 +115,25 @@ nmcli connection edit <NAME_CUSTOM>;
 #### A. Création d'un Bridge
 ```bash
 clear;
-nmcli connection delete bridge0;
-nmcli connection add type bridge con-name bridge0 ifname br0;
-nmcli connection modify bridge0 ipv4.addresses 192.168.200.143/24;
-nmcli connection modify bridge0 ipv4.gateway 192.168.200.1;
-nmcli connection modify bridge0 ipv4.dns 192.168.200.1;
-nmcli connection modify bridge0 ipv4.method manual;
+nmcli connection delete <NOMDUBRIDGE>;
+nmcli connection add type bridge con-name <NOM_DU_BRIDGE> ifname <NOM_INTERFACE_BRIDGE>;
+nmcli connection modify <NOM_DU_BRIDGE> ipv4.addresses <XXX.XXX.XXX.XXX/YY>;
+nmcli connection modify <NOM_DU_BRIDGE> ipv4.gateway   <XXX.XXX.XXX.XXX>;
+nmcli connection modify <NOM_DU_BRIDGE> ipv4.dns       <XXX.XXX.XXX.XXX>;
+nmcli connection modify <NOM_DU_BRIDGE> ipv4.method    manual;
 ```
 #### B. Afficher les informations du Bridge
 ```bash
 clear;
-nmcli connection show bridge0 | grep -v "\--" | grep "connection\|ipv4";  
+nmcli connection show <NOM_DU_BRIDGE> | grep -v "\--" | grep "connection\|ipv4";  
 ```
 
 #### C. Attacher des ports au bridge0
 ```bash
 clear;
-nmcli connection add type bridge-slave con-name bridge0-p1
-nmcli connection add type bridge-slave con-name bridge0-port1 ifname ens18 master br0;
-nmcli connection show bridge0-port1;
-nmcli connection up bridge0;
+nmcli connection add type bridge-slave con-name <NOM_INTERFACE_BRIDGE>-port<X> ifname <INTERFACE_ATTACHER> master <NOM_DU_BRIDGE>;
+nmcli connection show <NOM_INTERFACE_BRIDGE>-port<X>;
+nmcli connection up <NOM_DU_BRIDGE>;
 ```
 
 <br />
