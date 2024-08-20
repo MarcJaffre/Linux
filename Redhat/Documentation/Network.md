@@ -25,7 +25,7 @@ NMCLI permet l'édition des fichiers de script en modifiant les fichiers ifcfg-`
 #### B. Lister les périphériques
 ```bash
 clear;
-nmcli dev status
+nmcli device status
 ```
 
 ![image](https://github.com/user-attachments/assets/f8bf74a5-9ddd-427b-b906-018e65151663)
@@ -34,7 +34,7 @@ nmcli dev status
 ##### 1. Afficher l'ensemble des périphériques
 ```bash
 clear;
-nmcli dev show;
+nmcli device show;
 ```
 
 ![image](https://github.com/user-attachments/assets/46b4e3c7-dfd4-4134-9629-ec0d1f6ceb2c)
@@ -42,7 +42,7 @@ nmcli dev show;
 ##### 2. Afficher un périphérique
 ```bash
 clear;
-nmcli dev show <interfaces>
+nmcli device show <interfaces>
 ```
 
 ![image](https://github.com/user-attachments/assets/8e70b094-f636-4df0-bf90-f2251590bd1c)
