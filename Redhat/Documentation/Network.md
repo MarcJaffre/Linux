@@ -29,7 +29,6 @@ NMCLI permet l'édition des fichiers de script en modifiant les fichiers ifcfg-`
 clear;
 nmcli device status;
 ```
-
 ![image](https://github.com/user-attachments/assets/f8bf74a5-9ddd-427b-b906-018e65151663)
 
 ##### 2. Afficher l'ensemble des périphériques
@@ -37,7 +36,6 @@ nmcli device status;
 clear;
 nmcli device show;
 ```
-
 ![image](https://github.com/user-attachments/assets/46b4e3c7-dfd4-4134-9629-ec0d1f6ceb2c)
 
 ##### 3. Afficher un périphérique
@@ -45,11 +43,8 @@ nmcli device show;
 clear;
 nmcli device show <interfaces>;
 ```
-
 ![image](https://github.com/user-attachments/assets/8e70b094-f636-4df0-bf90-f2251590bd1c)
 
-
-<br />
 
 #### D. Les connexions
 ##### 1. Afficher les connexions
