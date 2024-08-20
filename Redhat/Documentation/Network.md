@@ -7,7 +7,7 @@
 RedHat utilise des scripts pour la configuration des interfaces réseaux.
 ```bash
 clear;
-cat /etc/sysconfig/network-script
+cat /etc/sysconfig/network-script;
 ```
 
 ```
@@ -15,7 +15,7 @@ TYPE=Ethernet
 BOOTPROTO=NONE
 DEFROUTE=yes
 NAME=eth0
-UUÏD=
+UUID=
 DEVICE=eth0
 ONBOOT=yes
 IPADDR=192.168.0.100
