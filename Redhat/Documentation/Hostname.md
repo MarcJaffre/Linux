@@ -30,10 +30,10 @@ hostnamectl chassis server
 hostnamectl chassis vm
 ```
 
-#### E. Définir XXXXXX
+#### E. Définir Icône
 ```bash
 clear;
-hostnamectl 
+hostnamectl icon-name
 ```
 
 #### F. Définir XXXXXX
