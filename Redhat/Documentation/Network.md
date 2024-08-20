@@ -16,6 +16,7 @@ Le `Device` contient un ensemble de paramètres de configuration qu'on nomme `Co
 Chaque `Connection` dispose d'`Nom`, d' un `UID`, un `Type` et un `Device` pour permettre son identification.
 
 <br />
+<br />
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### II. NMCLI
@@ -29,6 +30,8 @@ nmcli device status;
 ```
 
 ![image](https://github.com/user-attachments/assets/f8bf74a5-9ddd-427b-b906-018e65151663)
+
+<br />
 
 #### C. Afficher la configuration des périphériques
 ##### 1. Afficher l'ensemble des périphériques
@@ -47,7 +50,21 @@ nmcli device show <interfaces>;
 
 ![image](https://github.com/user-attachments/assets/8e70b094-f636-4df0-bf90-f2251590bd1c)
 
-#### D.
+
+<br />
+
+#### D. Afficher les connexions
+Ceci permet d'afficher les connexions . (Nom, UUID, Type et Périphérîque)
+```bash
+clear;
+nmcli connection show;
+```
+
+![image](https://github.com/user-attachments/assets/cf16a6bd-0616-41b4-91ab-751aa3f6cd43)
+
+
+
+
 #### E.
 #### F.
 
