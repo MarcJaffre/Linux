@@ -20,24 +20,25 @@ clear;
 hostnamectl set-hostname PRX-REDHAT01;
 ```
 
-#### D. Définir le Chassis
+#### D. Définir la localité
 ```bash
 clear;
-hostnamectl chassis container
+hostnamectl location Paris;
+```
+
+#### E. Définir la date de déploiement
+```bash
+clear;
+hostnamectl deployment $(date +"%d-%m-%y-%HH%m")
+```
+
+#### F. Définir le Chassis
+```bash
+clear;
 hostnamectl chassis desktop
 hostnamectl chassis laptop
 hostnamectl chassis server
+
+hostnamectl chassis container
 hostnamectl chassis vm
-```
-
-#### E. Définir Icône
-```bash
-clear;
-hostnamectl icon-name
-```
-
-#### F. Définir XXXXXX
-```bash
-clear;
-hostnamectl 
 ```
