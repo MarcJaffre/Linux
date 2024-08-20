@@ -82,9 +82,9 @@ nmcli device show;
 nmcli connection delete ens18;
 nmcli connection add type ethernet con-name ens18-new ifname ens18;
 
-nmcli connection modify ens18-new ipv4.addresses 192.168.200.43/24;
-nmcli connection modify ens18-new ipv4.gateway   192.168.200.1;
-nmcli connection modify ens18-new ipv4.dns       192.168.200.1;
+nmcli connection modify ens18-new ipv4.addresses 192.168.0.190/24;
+nmcli connection modify ens18-new ipv4.gateway   192.168.0.1;
+nmcli connection modify ens18-new ipv4.dns       192.168.0.1;
 nmcli connection modify ens18-new ipv4.method    manual;
 
 nmcli connection up ens18-new;
