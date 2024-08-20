@@ -18,8 +18,19 @@ Chaque `Connection` dispose d'`Nom`, d' un `UID`, un `Type` et un `Device` pour 
 <br />
 <br />
 
+<br />
+<br />
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-### II. NMCLI (Base)
+### II. NMTUI
+#### A. Présentation
+Le binraire `nmtui` permet la configuration réseau depuis un menu intéractif.
+
+![image](https://github.com/user-attachments/assets/2ebae93e-8686-42f8-853f-e69d833fc660)
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+### III. NMCLI (Base)
 #### A. Présentation de NMCLI
 NMCLI permet l'édition des fichiers de script en modifiant les fichiers ifcfg-`<INTERFACE>`
 
@@ -111,7 +122,7 @@ nmcli connection edit <NAME_CUSTOM>;
 <br />
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-### III. NMCLI (Avancés)
+### IV. NMCLI (Avancés)
 #### A. Création d'un Bridge
 ```bash
 clear;
