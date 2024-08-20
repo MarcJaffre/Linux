@@ -132,11 +132,10 @@ nmcli connection show bridge0 | grep -v "\--" | grep "connection\|ipv4";
 ```bash
 clear;
 nmcli connection add type bridge-slave con-name bridge0-p1
-
 nmcli connection add type bridge-slave con-name bridge0-port1 ifname ens18 master br0;
 nmcli connection show bridge0-port1;
-nmcli connection show bridge0;
-
+nmcli connection up bridge0;
+```
 
 <br />
 <br />
