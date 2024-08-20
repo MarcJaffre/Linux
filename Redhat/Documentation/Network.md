@@ -5,6 +5,8 @@
 ### I. NetworkManager
 #### A. Présentation
 RedHat utilise des scripts pour la configuration des interfaces réseaux.
+
+#### B. Exemple
 ```bash
 clear;
 cat /etc/sysconfig/network-script;
@@ -25,9 +27,9 @@ DNS1=192.168.0.1
 DNS2=8.8.8.8
 ```
 
-
-#### B.
 #### C.
+
+
 #### D.
 #### E.
 #### F.
@@ -40,3 +42,9 @@ DNS2=8.8.8.8
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### II. NMCLI
 
+```
+- nmcli
+- nm-tool
+- nmtui
+- nmgui
+```
