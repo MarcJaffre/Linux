@@ -6,7 +6,15 @@
 #### A. Présentation
 RedHat utilise des scripts pour la configuration des interfaces réseaux.
 
-#### B. Exemple
+#### B. Qu'est qu'une interface ?
+> Un`device` est une interface réseau
+> 
+> La `Connection` un ensemble de pararmètres afin de configurer un `Device`
+>
+> Chaque `Connection` porte un `Nom`, `UID`, un `Type` et un `Device`.
+
+
+#### C. Exemple
 ```bash
 clear;
 cat /etc/sysconfig/network-script;
@@ -27,7 +35,6 @@ DNS1=192.168.0.1
 DNS2=8.8.8.8
 ```
 
-#### C.
 
 
 #### D.
