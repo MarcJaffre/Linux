@@ -1,0 +1,166 @@
+#!/usr/bin/bash
+
+
+###########################################################################################################################################################################################
+# Description
+# - Creation d-un BOND (Reliée plusieurs interfaces en 1)
+# - Nommage de la machine en proxmox (FQDN: proxmox.lan.local)
+# - Ajout du depot Proxmox
+# - Telechargement de la cle GPG 
+# - Installation du Noyau Proxmox
+# - Mise a jour du systeme
+# - Redemarrage du systeme pour basculer du noyau debian W.X.Y.Z-amd64 vers W.X.Y.Z-PVE
+# - Installation de Proxmox et ses dependances.
+# - Purge du Noyau Debian W.X.Y.Z-amd64.
+# - Suppression du paquet OS-Prober
+# - Suppression du depot Payant de Proxmox
+# - Message dans la console qui affiche l-url de Proxmox
+# - Installation Termine
+###########################################################################################################################################################################################
+
+Clear;
+
+apt install -y bridge-utils 1>/dev/null;
+apt install -y ifenslave    1>/dev/null;
+apt install -y ifupdown2    1>/dev/null;
+apt install -y resolvconf   1>/dev/null;
+
+
+cat > /etc/network/interfaces << EOF
+######################################################
+# Loopback #
+############
+auto lo
+iface lo inet loopback
+
+######################################################
+# Ethernet 1 #
+##############
+auto  enp6s0
+iface enp6s0 inet manual
+
+######################################################
+# Ethernet 2 #
+##############
+auto enp7s0
+iface enp7s0 inet manual
+
+######################################################
+# Aggregation #
+###############
+auto bond0
+iface bond0 inet manual
+        bond-slaves enp6s0 enp7s0
+        bond-miimon 202
+        bond-mode balance-rr
+        dns-nameservers   192.168.1.254 8.8.8.8
+        bond_downdelay    200
+        bond_updelay      200
+######################################################
+# Bridge #
+##########
+auto vmbr0
+iface vmbr0 inet static
+        address 192.168.1.114/24
+        gateway 192.168.1.254
+        bridge-ports bond0
+        bridge-stp off
+        bridge-fd 0
+######################################################
+EOF
+systemctl restart NetworkManager.service;
+systemctl restart networking.service;
+
+cat /proc/net/bonding/bond0;
+
+
+
+# ==============================================================================================================================
+# Outils
+apt install -y curl;
+apt install -y bridge-utils;
+apt install -y lvm2;
+apt install -y wget;
+
+
+# ==============================================================================================================================
+##################################################
+cat > /etc/hostname << EOF
+Proxmox
+EOF
+hostnamectl set-hostname Proxmox;
+
+
+# ==============================================================================================================================
+cat > /etc/hosts << EOF
+##############################################
+# IPv4 #
+########
+127.0.0.1       localhost
+192.168.1.114   Proxmox.lan.local Proxmox
+
+##############################################
+# IPv6 #
+########
+::1     localhost ip6-localhost ip6-loopback
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+##############################################
+EOF
+echo "L'adresse IP de la machine est $(hostname --ip-address)";
+
+
+# ==============================================================================================================================
+clear 
+cat > /etc/apt/sources.list.d/pve-install-repo.list << EOF
+deb [arch=amd64] http://download.proxmox.com/debian/pve bookworm pve-no-subscription
+EOF
+
+# ==============================================================================================================================
+wget https://enterprise.proxmox.com/debian/proxmox-release-bookworm.gpg -O /etc/apt/trusted.gpg.d/proxmox-release-bookworm.gpg; 
+
+
+# ==============================================================================================================================
+apt update;
+apt full-upgrade -y;
+
+
+# ==============================================================================================================================
+apt install -y proxmox-default-kernel;
+
+# ==============================================================================================================================
+if [ ! $(uname -r | cut -d "-" -f3) = pve ];then systemctl reboot; fi
+
+# ==============================================================================================================================
+if [ $(uname -r | cut -d "-" -f3) = pve ];then 
+ apt install -y proxmox-ve; # Paquet de base
+ apt install -y postfix;    # Mail
+ apt install -y open-iscsi; # Prise en charge Iscsi
+ apt install -y chrony;     # Synchronisation de Temps
+fi
+
+# ==============================================================================================================================
+# Suppression des paquets linux-image-W.X.Y-ZZ-amd64
+for IMAGE in $(dpkg --list | grep linux-image | cut -c "5-24" | grep -v "linux-image-amd64");do apt remove $IMAGE-amd64; done;
+
+# Suppression du paquet linux-image-amd64
+apt remove linux-image-amd64;
+
+# Mise a jour de la liste des noyaux
+update-grub;
+
+# ==============================================================================================================================
+apt remove os-prober;
+
+# ==============================================================================================================================
+rm /etc/apt/sources.list.d/pve-enterprise.list;
+
+# ==============================================================================================================================
+clear;
+echo "########################################################################";
+echo "#  Le panel Web est accessible à l'adresse https://$(hostname --ip-address):8006  #";
+echo "########################################################################";
+
+
+# Proxmox :
+# systemctl restart pveproxies
