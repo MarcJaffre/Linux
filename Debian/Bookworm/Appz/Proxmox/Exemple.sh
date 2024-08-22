@@ -3,6 +3,7 @@
 ###########################################################################################################################################################################################
 # Description
 # - Creation d-un BOND (Reliée plusieurs interfaces en 1)
+# - Attachement du Bond sur un Pont
 # - Nommage de la machine en proxmox (FQDN: proxmox.lan.local)
 # - Ajout du depot Proxmox
 # - Telechargement de la cle GPG 
