@@ -155,8 +155,11 @@ dpkg-reconfigure locales;
 clear;
 apt install --no-install-recommends -y firmware-brcm80211;
 apt install --no-install-recommends -y wireless-tools;
+
+apt install --no-install-recommends -y broadcom-sta-dkms;
 dpkg-reconfigure broadcom-sta-dkms;
 modprobe wl;
+
 ```
 
 
