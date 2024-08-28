@@ -150,7 +150,17 @@ dpkg-reconfigure tzdata;
 dpkg-reconfigure locales;
 ```
 
-### D. NetworkManager
+### D. Catte-Wifi BCM4352
+```bash
+clear;
+apt install --no-install-recommends -y firmware-brcm80211;
+apt install --no-install-recommends -y wireless-tools;
+dpkg-reconfigure broadcom-sta-dkms;
+modprobe wl;
+```
+
+
+### E. NetworkManager
 ```bash
 echo "source /etc/network/interfaces.d/*
 
@@ -163,7 +173,7 @@ systemctl restart NetworkManager;
 ```
 
 
-### E. AutoFS
+### F. AutoFS
 Il suffira d'accéder au dossier `/Partages` pour y accéder. Une fois ouvert, les montages se font. (A LA DEMANDE !)
 ```bash
 clear;
@@ -198,7 +208,6 @@ systemctl restart autofs;
 
 #echo "/Partages /etc/auto.cifs --ghost,--timeout=30 browse" >> /etc/auto.master;
 ```
-
 
 <br />
 
