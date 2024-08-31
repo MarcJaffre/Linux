@@ -17,6 +17,7 @@ apt install -y git libgl1 libglib2.0-0 python3 python3-venv wget;
 ```
 
 #### 2. Téléchargement
+
 ```bash
 clear;
 cd $HOME;
@@ -34,6 +35,8 @@ source venv/bin/activate;
 python3 -m pip install --upgrade pip wheel;
 bash webui.sh;
 ```
+
+` Cannot locate TCMalloc. Do you have tcmalloc or google-perftool installed on your system? (improves CPU memory usage)` 
 
 #### 5. Configuration de Stable-diffusion (AMD)
 ```bash
