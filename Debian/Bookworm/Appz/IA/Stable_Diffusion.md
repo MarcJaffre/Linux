@@ -33,8 +33,6 @@ cd ~/Documents/Stable-diffusion;
 python3 -m venv venv;
 source venv/bin/activate;
 python3 -m pip install --upgrade pip wheel;
-chmod +x webui.sh;
-bash webui.sh;
 ```
 
 `Cannot locate TCMalloc. Do you have tcmalloc or google-perftool installed on your system? (improves CPU memory usage)` 
@@ -47,7 +45,14 @@ clear;
 sed -i -e 's/\#export COMMANDLINE_ARGS\=\"\"/export COMMANDLINE_ARGS\=\"--skip-torch-cuda-test --precision full --no-half\"/g'                 ~/Documents/Stable-diffusion/webui-user.sh;
 sed -i -e '/^export COMMANDLINE_ARGS=*/a export PYTORCH_HIP_ALLOC_CONF="garbage_collection_threshold:0.6,max_split_size_mb:128\"'              ~/Documents/Stable-diffusion/webui-user.sh;
 sed -i -e '/^export PYTORCH_HIP_ALLOC_CONF\=.*/a export PYTORCH_CUDA_ALLOC_CONF\=\"garbage_collection_threshold\:0.6,max_split_size_mb:128\"'  ~/Documents/Stable-diffusion/webui-user.sh;
+
+chmod +x webui.sh;
+bash webui.sh;
 ```
+
+
+
+
 
 #### 6. SystemD
 ```bash
