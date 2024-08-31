@@ -51,6 +51,10 @@ sed -i -e '/^export PYTORCH_HIP_ALLOC_CONF\=.*/a export PYTORCH_CUDA_ALLOC_CONF\
 #### 6. SystemD
 ```bash
 clear;
+
+MYUSER=$(id -u -n 1000)
+
+
 echo "[Unit]
 Description=Stable Diffusion AUTOMATIC1111 Web UI service
 After=network.target
@@ -60,10 +64,10 @@ StartLimitIntervalSec=0
 Type=simple
 Restart=always
 RestartSec=1
-User=marc
-ExecStart=/usr/bin/env bash /home/marc/Documents/Stable-diffusion/webui.sh
-StandardOutput=append:/home/marc/Documents/Stable-diffusion/log/OK.log
-StandardError=append:/home/marc/Documents/Stable-diffusion/log/KO.log
+User=$MYUSER
+ExecStart=/usr/bin/env bash /home/$MYUSER/Documents/Stable-diffusion/webui.sh
+StandardOutput=append:/home/$MYUSER/Documents/Stable-diffusion/log/OK.log
+StandardError=append:/home/$MYUSER/Documents/Stable-diffusion/log/KO.log
 
 [Install]
 WantedBy=multi-user.target" > /etc/systemd/system/stable_diffusion.service;
@@ -81,7 +85,7 @@ systemctl enable  --now stable_diffusion.service;
 
 #### 8. Journal d'événement
 ```bash
-tail -f /home/marc/Documents/Stable-diffusion/log/*.log;
+tail -f /home/$MYUSER/Documents/Stable-diffusion/log/*.log;
 ```
 
 #### 9. Panel Web
