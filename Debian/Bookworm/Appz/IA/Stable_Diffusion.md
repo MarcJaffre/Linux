@@ -36,7 +36,9 @@ python3 -m pip install --upgrade pip wheel;
 bash webui.sh;
 ```
 
-` Cannot locate TCMalloc. Do you have tcmalloc or google-perftool installed on your system? (improves CPU memory usage)` 
+`Cannot locate TCMalloc. Do you have tcmalloc or google-perftool installed on your system? (improves CPU memory usage)` 
+
+<br />
 
 #### 5. Configuration de Stable-diffusion (AMD)
 ```bash
