@@ -33,6 +33,7 @@ cd ~/Documents/Stable-diffusion;
 python3 -m venv venv;
 source venv/bin/activate;
 python3 -m pip install --upgrade pip wheel;
+chmod +x webui.sh;
 bash webui.sh;
 ```
 
