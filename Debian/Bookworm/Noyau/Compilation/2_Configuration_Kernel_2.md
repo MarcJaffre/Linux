@@ -3,4 +3,5 @@
 
 ------------------------------------------------------------------------------------------------------------------------------------------
 ## I. Configuration du Noyau
-### A. Présentation
+### A. Accéder au menu de configuration
+Aller dans le dossier du Noyau et taper la commande `make menuconfig` .
