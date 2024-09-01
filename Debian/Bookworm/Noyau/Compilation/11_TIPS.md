@@ -1,4 +1,5 @@
-
+### A. BTF
+#### 1. Erreur
 ```
 BTF: .tmp_vmlinux1: pahole (pahole) is not available
 Failed to generate BTF for vmlinux
@@ -7,6 +8,10 @@ make[2]: *** [scripts/Makefile.vmlinux:34 : vmlinux] Erreur 1
 make[1]: *** [/Data/linux-6.10.7/Makefile:1171 : vmlinux] Erreur 2
 make[1]: *** Attente des tâches non terminées....
 ```
+#### 2. Solutions
+Installer le paquet Pahole ou configurer la valeur `DEBUG_INFO_BTF` sur N.
 
-Mettre la valeur `DEBUG_INFO_BTF` sur N. (Toujours retiré le terme CONFIG_ lors de la recherche)
-
+```bash
+clear;
+apt install -y pahole;
+```
