@@ -177,23 +177,68 @@ restore -r checkpoint_file
 
 <br />
 
-#### 25. Automatic process group scheduling
+#### 25. Automatic process group scheduling [Y]
 Cette option permet d'activer ou de désactiver la planification automatique des groupes de processus.
 
 <br />
 
-#### 26. Kernel -> user space relay support
+#### 26. Kernel -> user space relay support [Y] (Utile pour le debuggage)
 Cette option permet d'activer ou de désactiver la prise en charge du relais entre le kernel et l'espace utilisateur.
 
 <br />
 
-#### 27. Initial Ram filesystem and RAM disk (initramfs/initrd) support
+#### 27. Initial Ram filesystem and RAM disk (initramfs/initrd) support [Y] (Mitigé)
 Cette option permet de compiler le support pour les systèmes de fichiers et les disques RAM initiaux (initramfs/initrd). Un système de fichiers RAM initial est une archive compressée qui contient les fichiers nécessaires pour démarrer le système, tandis qu'un disque RAM est un espace de stockage temporaire utilisé pendant le démarrage. Si vous activez cette option, vous pourrez utiliser des systèmes de fichiers et des disques RAM initiaux pour démarrer votre système.
 
 <br />
 
-#### 28. Boot config support 
+#### 28. Boot config support [Y]
 Cette option permet de compiler le support pour les configurations de démarrage. Les configurations de démarrage définissent les paramètres de démarrage du système, tels que les options de noyau, les paramètres de l'interface réseau, etc. Si vous activez cette option, vous pourrez utiliser des configurations de démarrage personnalisées pour démarrer votre système.
+
+
+**/boot/bootconfig**
+```
+# Fichier bootconfig exemple
+
+# Options de démarrage CPU
+cpu.max_cstate=1
+cpu.min_cstate=0
+cpu.governor=performance
+cpu.energy_performance_preference=balance_performance
+
+# Options de démarrage de la gestion de l'énergie
+power.management.enabled=1
+power.management.policy=balance_performance
+
+# Options de démarrage de la planification des tâches
+sched.sched_latency_ns=100000
+sched.sched_migration_cost_ns=500000
+```
+
+| Parametre                          | Valeur              | Description                                                                                |
+| ---------------------------------- | ------------------- | ------------------------------------------------------------------------------------------ |
+| cpu.max_cstate                     | 0                   | Désactive la mise en veille                                                                |
+| cpu.max_cstate                     | 1                   | Niveau de mise en veille léger (C1)                                                        |
+| cpu.max_cstate                     | 2                   | Niveau de mise en veille moyen (C2)                                                        |
+| cpu.max_cstate                     | 3                   | Niveau de mise en veille profond (C3)                                                      |
+| cpu.max_cstate                     | 4                   | Niveau de mise en veille très profond (C4)                                                 |
+| ---------------------------------- | ------------------- | ------------------------------------------------------------------------------------------ |
+| cpu.min_cstate                     | 0                   | niveau minimal de mise en veille du CPU                                                    |
+| ---------------------------------- | ------------------- | ------------------------------------------------------------------------------------------ |
+| cpu.governor                       | performance         | Priorise les performances et maintient la fréquence d'horloge la plus élevée possible      |
+| cpu.governor                       | powersave           | Priorise la consommation d'énergie et réduit la fréquence d'horloge                        |
+| cpu.governor                       | ondemand            | Ajuste la fréquence d'horloge en fonction de la charge du système                          |
+| cpu.governor                       | conservative        | Ajuste la fréquence d'horloge en fonction de la charge du système. (Meilleur cons.)        |
+| ---------------------------------- | ------------------- | ------------------------------------------------------------------------------------------ |
+| cpu.energy_performance_preference  | balance_performance | Equilibre entre les performances et la consommation d'énergie                              |
+| cpu.energy_performance_preference  | performance         | Priorise les performances                                                                  |
+| cpu.energy_performance_preference  | power               | Priorise la consommation d'énergie                                                         |
+| ---------------------------------- | ------------------- | ------------------------------------------------------------------------------------------ |
+| power.management.enabled           | 0                   | Désactive la gestion de l'énergie                                                          |
+| power.management.enabled           | 1                   | Active la gestion de l'énergie                                                             |
+| ---------------------------------- | ------------------- | ------------------------------------------------------------------------------------------ |
+
+
 
 <br />
 
