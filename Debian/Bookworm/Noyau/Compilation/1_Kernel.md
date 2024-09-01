@@ -19,7 +19,7 @@ cd linux-${VERSION}
 ```
 
 ### B. Menu de configuration
-La configuration du Noyau se fera à la fin de la page
+La configuration ne sera pas présenté.
 ```bash
 clear;
 make menuconfig;
