@@ -2,7 +2,7 @@
 # <p align='center'> Présentation de la configuration d'un Noyau Debian </p>
 
 ------------------------------------------------------------------------------------------------------------------------------------------
-## I. Configuration
+## I. Information Générique
 ### A. Présentation
 La configuration du noyau Linux est une étape importante dans la compilation d'un noyau personnalisé. Voici une explication détaillée de la configuration du noyau :
 
