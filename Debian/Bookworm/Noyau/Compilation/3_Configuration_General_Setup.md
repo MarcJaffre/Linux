@@ -146,6 +146,8 @@ Si vous activez cette option, vous pourrez utiliser des outils de profilage pour
 #### 4. High Resolution Timer Support
 #### 5. ClockSource Watchdog maximum allowable skew (in ms)
 
+<br />
+
 ### D. CPU/Task time and stats accounting
 <br />
 
