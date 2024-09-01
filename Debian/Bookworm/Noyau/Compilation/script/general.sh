@@ -62,8 +62,9 @@ INSTALL_SYSTEM_UPDATE_GRUB(){
 }
 
 UNINSTALL_NEW_KERNEL(){
- rm -rf /lib/modules/${VERSION};
- rm -rf /boot/vmlinuz-custom;
+ rm -rf /lib/modules/${VERSION}  2>/dev/null;
+ rm -rf /boot/vmlinuz-custom     2>/dev/null;
+ rm -rf /boot/vmlinuz-${VERSION} 2>/dev/null;
 }
 
 GUIDE(){
