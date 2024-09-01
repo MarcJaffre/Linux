@@ -260,9 +260,13 @@ Cette option permet de définir le niveau d'optimisation du compilateur pour la 
 Les niveaux d'optimisation définissent la quantité d'optimisation effectuée par le compilateur pour améliorer les performances du code généré. 
 
 Les niveaux d'optimisation les plus courants sont :
+
 -O0 : pas d'optimisation
+
 -O1 : optimisation légère
+
 -O2 : optimisation moyenne
+
 -O3 : optimisation élevée
 
 <br />
