@@ -16,7 +16,7 @@ KERNEL="https://cdn.kernel.org/pub/linux/kernel/v${BRANCHE}.x/linux-${VERSION}.t
 #############
 KERNEL_PURGE(){
  cd $DOSSIER;
- rm -rf $DOSSIER/linux-${VERSION}* 2>/dev/null;
+ rm -rf $DOSSIER/linux-${VERSION} 2>/dev/null;
 }
 
 DOWNLOAD_KERNEL(){
@@ -24,6 +24,7 @@ DOWNLOAD_KERNEL(){
  if [ ! -f $DOSSIER/linux-${VERSION}.tar.xz ];then
    wget $KERNEL $DOSSIER/linux-${VERSION}.tar.xz             2>/dev/null;
    tar xf       $DOSSIER/linux-${VERSION}.tar.xz -C $DOSSIER 1>/dev/null;
+   rm $KERNEL $DOSSIER/linux-${VERSION}.tar.xz;
  fi
 }
 
