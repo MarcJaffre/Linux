@@ -18,7 +18,7 @@ cd linux-${VERSION};
 ```
 
 ### B. Menu de configuration
-La configuration ne sera pas présenté.
+La configuration ne sera pas présenté. (Nouvelle configuration)
 ```bash
 clear;
 make menuconfig;
@@ -41,6 +41,7 @@ make install;
 ```
 
 ### F. Durée de compilation
+
 ```
 Démarrage: 5H10
 ```
