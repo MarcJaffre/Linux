@@ -74,4 +74,10 @@ apt install -y libglade2-dev
 apt install -y libgtk2.0-dev
 ```
 
+### F. Dépendance
+```bash
+apt install -y pahole; #
+```
+
+
 <br />
