@@ -13,7 +13,7 @@ VERSION="$BRANCHE.10.7"
 cd /Data;
 rm -r linux-${VERSION}* 2>/dev/null
 wget https://cdn.kernel.org/pub/linux/kernel/v${BRANCHE}.x/linux-${VERSION}.tar.xz 2>/dev/null;
-tar -xvf linux-${VERSION}.tar.xz;
+tar -xf linux-${VERSION}.tar.xz;
 cd linux-${VERSION};
 ```
 
