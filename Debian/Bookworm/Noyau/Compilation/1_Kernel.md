@@ -31,6 +31,12 @@ Si on souhaite `X` Core, il suffit de remplacer `$(nproc)` par le nombre de core
 make -j $(nproc);
 ```
 
-### D. Durée de compilation
+### D. Installer les modules
+```bash
+make modules_install;
+```
+
+
+### X. Durée de compilation
 ```
 Démarrage: 4h25
