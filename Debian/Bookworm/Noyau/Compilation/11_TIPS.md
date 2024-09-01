@@ -4,6 +4,7 @@
 ----------------------------------------------------------------------------------------------------------------
 ### A. BTF
 #### 1. Erreur
+L'erreur lors de la compilation :
 ```
 BTF: .tmp_vmlinux1: pahole (pahole) is not available
 Failed to generate BTF for vmlinux
