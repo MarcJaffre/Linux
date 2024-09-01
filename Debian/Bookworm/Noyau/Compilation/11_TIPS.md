@@ -2,10 +2,13 @@
 # <p align='center'> Résolution des problèmes </p>
 
 ----------------------------------------------------------------------------------------------------------------
-### Make Menuconfig
+### A. Menuconfig
 Pour recherche une variable, il suffit de taper la touche `/` .
 
-### B. BTF
+### B. Compilation
+Créer un fichier log pour permettre d'avoir le message d'erreur car la console limite la quantité de message visible. (Indispensable)
+
+### C. BTF
 #### 1. Erreur (Compilation du Kernel)
 ```
 BTF: .tmp_vmlinux1: pahole (pahole) is not available
