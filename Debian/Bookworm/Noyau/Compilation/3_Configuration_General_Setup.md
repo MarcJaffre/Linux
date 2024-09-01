@@ -25,7 +25,7 @@ Cette option permet d'ajouter une chaîne de caractères personnalisée à la ve
 #### 4. Build ID Salt [???]
 Cette option permet de spécifier une valeur de "salt" pour le Build ID du kernel. Le Build ID est une valeur unique qui identifie une version spécifique du kernel.
 
-#### 5. Kernel compression mode
+#### 5. Kernel compression mode [Zstd]
 Cette option permet de choisir le mode de compression du kernel. 
 
 Les options disponibles sont : 
@@ -42,18 +42,16 @@ Les options disponibles sont :
 | Gzip        | 2.5 Sec                  | 1.2 Sec                    |
 
 
-
-
-#### 6. Default init path
+#### 6. Default init path [/sbin/init]
 Cette option permet de spécifier le chemin d'accès par défaut pour les fichiers d'initialisation du système.
 
-#### 7. Default Hostname
+#### 7. Default Hostname [Debian]
 Cette option permet de spécifier le nom d'hôte par défaut pour le système.
 
-#### 8. System V IPC
+#### 8. System V IPC [Y]
 Cette option permet d'activer ou de désactiver les fonctionnalités de communication inter-processus (IPC) de System V.
 
-#### 9. POSIX Message queues
+#### 9. POSIX Message queues [Y]
 Cette option permet d'activer ou de désactiver les files d'attente de messages POSIX.
 
 #### 10. General notification queue
