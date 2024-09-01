@@ -126,33 +126,40 @@ Cette option permet d'activer ou de désactiver l'isolation des processeurs.
 
 <br />
 
-#### 18. Kernel .config support
+#### 18. Kernel .config support [M + Y]
 Cette option permet d'activer ou de désactiver la prise en charge du fichier de configuration du kernel.
+
+> Enable Access to .config throught /proc/config/gz : Permet de créer un fichier compresser contenant le paramétrage du Kernel.
+
 
 <br />
 
-#### 19. Enable kernel headers throught /sys/kernel/kheaders.tar.xz
+#### 19. Enable kernel headers throught /sys/kernel/kheaders.tar.xz [N]
 Cette option permet d'activer ou de désactiver l'accès aux en-têtes du kernel à travers le fichier /sys/kernel/kheaders.tar.xz.
 
 <br />
 
-#### 20. Kernel log buffer size 
+#### 20. Kernel log buffer size [12] (Valeur par défaut: 17)
 Cette option permet de spécifier la taille du tampon de journalisation du kernel.
+
+[ChatGPT] : Pour une journée de log théorique, mettre la valeur sur 12.
 
 <br />
 
-#### 21. CPU Kernel log buffer size contribution
+#### 21. CPU Kernel log buffer size contribution [12]
 Cette option permet de spécifier la contribution de chaque processeur à la taille du tampon de journalisation du kernel.
 
 <br />
 
-#### 22. Printk indexing debugfs interface
+#### 22. Printk indexing debugfs interface [Y] (Message Kernel !)
 Cette option permet d'activer ou de désactiver l'interface de débogage printk.
 
 <br />
 
-#### 23. Memory placement award NUMA scheduler
+#### 23. Memory placement award NUMA scheduler [Y + Y]
 Cette option permet d'activer ou de désactiver la prise en compte de la placement de la mémoire pour les planificateurs NUMA.
+
+> Automatically enable NUMA aware memory/task placement
 
 <br />
 
