@@ -249,25 +249,25 @@ sched.sched_migration_cost_ns=500000
 
 <br />
 
-#### 29. Preserve cpio archive mtimes in intiramfs
+#### 29. Preserve cpio archive mtimes in intiramfs [Y]
 Cette option permet de conserver les dates de modification (mtimes) des archives cpio dans les systèmes de fichiers RAM initiaux (initramfs). Les archives cpio sont utilisées pour stocker les fichiers dans les systèmes de fichiers RAM initiaux. Si vous activez cette option, les dates de modification des archives cpio seront conservées dans les systèmes de fichiers RAM initiaux.
 
 <br />
 
-#### 30. Compiler optimieation level
+#### 30. Compiler optimisation level [-o2]
 Cette option permet de définir le niveau d'optimisation du compilateur pour la compilation du noyau. 
 
 Les niveaux d'optimisation définissent la quantité d'optimisation effectuée par le compilateur pour améliorer les performances du code généré. 
 
 Les niveaux d'optimisation les plus courants sont :
 
--O0 : pas d'optimisation
+-O0 : pas d'optimisation   : Débogage
 
--O1 : optimisation légère
+-O1 : optimisation légère  : Compressé
 
--O2 : optimisation moyenne
+-O2 : optimisation moyenne : Stabilité
 
--O3 : optimisation élevée
+-O3 : optimisation élevée  : Performance
 
 <br />
 
@@ -277,6 +277,15 @@ Cette option permet de compiler le support pour le profilage.
 Le profilage est une technique qui permet de mesurer les performances du code en cours d'exécution.
 
 Si vous activez cette option, vous pourrez utiliser des outils de profilage pour analyser les performances de votre noyau.
+
+```
+Oprofile : Oprofile est un outil de profilage qui permet de collecter des informations sur les performances du kernel. Lorsque Oprofile est activé, le kernel collecte des informations sur les fonctions et les lignes de code qui sont exécutées, ainsi que sur le temps passé dans chaque fonction.
+
+Kprobes : Kprobes est un outil de profilage qui permet de collecter des informations sur les performances du kernel en utilisant des sondes de profilage. Les sondes de profilage sont des points d'entrée dans le code qui permettent de collecter des informations sur les performances du kernel.
+
+Ftrace : Ftrace est un outil de profilage qui permet de collecter des informations sur les performances du kernel en utilisant des traces de fonction. Les traces de fonction permettent de suivre l'exécution des fonctions dans le kernel et de collecter des informations sur les performances du kernel.
+```
+
 
 <br />
 <br />
