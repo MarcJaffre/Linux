@@ -10,7 +10,7 @@
 clear;
 BRANCHE="6"
 VERSION="$BRANCHE.10.7"
-cd $HOME;
+cd /Data;
 rm -r linux-${VERSION}* 2>/dev/null
 wget https://cdn.kernel.org/pub/linux/kernel/v${BRANCHE}.x/linux-${VERSION}.tar.xz 2>/dev/null;
 tar -xvf linux-${VERSION}.tar.xz;
@@ -42,5 +42,5 @@ make install;
 
 ### F. Durée de compilation
 ```
-Démarrage: 4h25
+Démarrage: 5HXX
 ```
