@@ -70,7 +70,18 @@ UNINSTALL_NEW_KERNEL(){
  rm -rf /boot/vmlinuz-custom;
 }
 
-GUIDE(){}
+GUIDE(){
+ echo "#############################################################################";
+ echo " # bash general.sh <parm>                                                   #";
+ echo " # - purge       : Suppression des sources du systeme                       #";
+ echo " # - download    : Telecharge et extrait les sources                        #";
+ echo " # - edit        : Edite la configuration du Noyau                          #";
+ echo " # - clean       : Purge les fichiers lors de compilation                   #";
+ echo " # - compilation : Lancement de la compilation Multi-thread                 #";
+ echo " # - install     : Installation des modules et du Kernel sur le systeme     #";
+ echo " # - uninstall   : Desinstallation des modules et du Kernel sur le systeme  #";
+ echo "#############################################################################";
+}
 
 ######################################################################################################################################################
 # Conditionnement #
