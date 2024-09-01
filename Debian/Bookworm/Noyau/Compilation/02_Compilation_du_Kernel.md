@@ -77,11 +77,3 @@ sudo cp /usr/src/linux/arch/<architecture>/boot/bzImage /boot/vmlinuz-<version>
 cp /Data/linux-*/arch/x86_64/boot/bzImage /boot/vmlinuz-marc;
 update-grub
 ```
-
-
-
-### F. Durée de compilation
-
-```
-Démarrage: 7h30
-```
