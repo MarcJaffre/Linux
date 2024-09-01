@@ -74,15 +74,15 @@ Les options suivants ont étés relevés sur le Kernel 6.10.7 de Kernel.org
 <br />
 
 ### H. Namespaces support
+<br />
 
 ### I. Configure standard kernel features
 <br />
-
  
 ### J. Kernel Performance Events And Counters
+<br />
 
 ### K. Kexec and crash features
-
 <br />
 
 ### 
