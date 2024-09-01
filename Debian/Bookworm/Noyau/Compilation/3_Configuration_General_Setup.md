@@ -237,7 +237,9 @@ sched.sched_migration_cost_ns=500000
 | power.management.enabled           | 0                   | Désactive la gestion de l'énergie                                                          |
 | power.management.enabled           | 1                   | Active la gestion de l'énergie                                                             |
 | ---------------------------------- | ------------------- | ------------------------------------------------------------------------------------------ |
-
+| power.management.policy            | balance_performance | Equilibre entre les performances et la consommation d'énergie                              |
+| power.management.policy            | performance         | Priorise les performances                                                                  |
+| power.management.policy            | power               | Priorise la consommation d'énergie                                                         |
 
 
 <br />
