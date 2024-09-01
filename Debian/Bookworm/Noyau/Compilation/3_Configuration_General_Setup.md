@@ -14,9 +14,17 @@ Aller dans le dossier du Noyau et taper la commande `make xconfig` .
 Les options suivants ont étés relevés sur le Kernel 6.10.7 de Kernel.org
 ### A. Genetal Setup (+30 options)
 #### 1. Compile also drivers which will not load
+Cette option permet de compiler les pilotes qui ne seront pas chargés par défaut. Cela peut être utile pour les développeurs de pilotes ou pour les utilisateurs qui veulent avoir accès à des pilotes expérimentaux.
+
 #### 2. Compile the kernel with warnings as errors
+Cette option permet de traiter les avertissements de compilation comme des erreurs. Cela signifie que si un avertissement est détecté pendant la compilation, la compilation sera arrêtée.
+
 #### 3. Local Version - apprend to kernel release
+Cette option permet d'ajouter une chaîne de caractères personnalisée à la version du kernel. Cela peut être utile pour identifier une version personnalisée du kernel.
+
 #### 4. Build ID Salt
+Cette option permet de spécifier une valeur de "salt" pour le Build ID du kernel. Le Build ID est une valeur unique qui identifie une version spécifique du kernel.
+
 #### 5. Kernel compression mode
 #### 6. Default init path
 #### 7. Default Hostname
@@ -25,7 +33,7 @@ Les options suivants ont étés relevés sur le Kernel 6.10.7 de Kernel.org
 #### 10. General notification queue
 #### 11. Enable process_vm_readv/writev_syscalls
 #### 12. uselib syscall (for libc5 and earlier)
-#### 13. Auditing support### 
+#### 13. Auditing support
 #### 14. Preemption Model
 #### 15. Preemption behaviour defined on boor
 #### 16. Core Scheduling for SMT
@@ -50,7 +58,6 @@ Les options suivants ont étés relevés sur le Kernel 6.10.7 de Kernel.org
 ### B. IRQ subsystem
 #### 1. Expose irq internals in debugfs
 
-
 <br />
 
 ### C. Timers subsystem
@@ -59,7 +66,6 @@ Les options suivants ont étés relevés sur le Kernel 6.10.7 de Kernel.org
 #### 3. Old Idle dynticks config
 #### 4. High Resolution Timer Support
 #### 5. ClockSource Watchdog maximum allowable skew (in ms)
-
 
 ### D. CPU/Task time and stats accounting
 <br />
@@ -84,11 +90,3 @@ Les options suivants ont étés relevés sur le Kernel 6.10.7 de Kernel.org
 
 ### K. Kexec and crash features
 <br />
-
-### 
-### 
-
-
-### 
-```
-```
