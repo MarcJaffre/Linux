@@ -36,36 +36,36 @@ apt install -y libcairo2-dev 1>/dev/null;
 ### X. XXXXXXXXXXX
 ```bash
 clear;
-apt install -y llibpango1.0-dev;
+apt install -y libpango1.0-dev;
 ```
 
 ### X. XXXXXXXXXXX
 ```bash
 clear;
-apt install -y llibgdk-pixbuf2.0-dev;
-```
-
-
-### X. XXXXXXXXXXX
-```bash
-clear;
-apt install -y llibatk1.0-dev;
+apt install -y libgdk-pixbuf2.0-dev;
 ```
 
 
 ### X. XXXXXXXXXXX
 ```bash
 clear;
-apt install -y llibatk-bridge2.0-dev;
+apt install -y libatk1.0-dev;
+```
+
+
+### X. XXXXXXXXXXX
+```bash
+clear;
+apt install -y libatk-bridge2.0-dev;
 ```
 
 ### X. XXXXXXXXXXX
 ```bash
 clear;
-apt install -y llibgstreamer1.0-dev;
-apt install -y llibgstreamer-plugins-base1.0-dev;
-apt install -y llibgstreamer-plugins-good1.0-dev;
-apt install -y llibgstreamer-plugins-bad1.0-dev;
-apt install -y llibgstreamer-plugins-ugly1.0-dev;
+apt install -y libgstreamer1.0-dev;
+apt install -y libgstreamer-plugins-base1.0-dev;
+apt install -y libgstreamer-plugins-good1.0-dev;
+apt install -y libgstreamer-plugins-bad1.0-dev;
+apt install -y libgstreamer-plugins-ugly1.0-dev;
 ```
 
