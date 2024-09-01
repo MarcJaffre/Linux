@@ -173,8 +173,6 @@ checkpoint -c 1234 checkpoint_file
 # Sauvegarde du processus avec l'ID 1234 (Ferme le processus à la fin)
 checkpoint -c my_checkpoint -k 1234
 
-
-
 # Restauration du processus à partir du fichier de sauvegarde
 restore -r checkpoint_file
 ```
