@@ -86,36 +86,44 @@ GUIDE(){
 case $1 in
  # ====================================
  purge)
+  clear;
   KERNEL_PURGE;
   ;;
  # ====================================
  download)
+  clear;
   DOWNLOAD_KERNEL;
   ;;
  # ====================================
  edit)
+  clear;
   KERNEL_EDIT;
   ;;
  # ====================================
  clean)
+  clear;
   KERNEL_CLEAN;
   ;;
  # ====================================
  compilation)
+  clear;
   KERNEL_COMPILATION;
   ;;
  # ====================================
  install)
+  clear;
   INSTALL_SYSTEM_MODULE;
   INSTALL_SYSTEM_KERNEL;
   INSTALL_SYSTEM_UPDATE_GRUB;
   ;;
  # ====================================
  uninstall)
+  clear;
   UNINSTALL_NEW_KERNEL;
   ;;
  # ====================================
  *)
+  clear;
   GUIDE;
   ;;
  # ====================================
