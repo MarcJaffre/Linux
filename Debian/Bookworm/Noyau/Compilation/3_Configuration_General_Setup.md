@@ -4,22 +4,22 @@
 ------------------------------------------------------------------------------------------------------------------------------------------
 ## I. Configuration du Noyau
 ### A. Accéder au menu de configuration
-Aller dans le dossier du Noyau et taper la commande `make menuconfig` .
+Aller dans le dossier du Noyau et taper la commande `make xconfig` .
+
 
 <br />
 
 ------------------------------------------------------------------------------------------------------------------------------------------
-## II. General
-
-### 
+## II. General Setup
+### Compile also drivers which will not load
 ```
 ```
 
-### 
+### Compile the kernel with warnings as errors
 ```
 ```
 
-### 
+### Local Version - apprend to kernel release
 ```
 ```
 
