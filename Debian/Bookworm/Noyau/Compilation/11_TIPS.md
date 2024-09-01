@@ -1,3 +1,7 @@
+----------------------------------------------------------------------------------------------------------------
+# <p align='center'> Résolution des problèmes </p>
+
+----------------------------------------------------------------------------------------------------------------
 ### A. BTF
 #### 1. Erreur
 ```
@@ -8,10 +12,17 @@ make[2]: *** [scripts/Makefile.vmlinux:34 : vmlinux] Erreur 1
 make[1]: *** [/Data/linux-6.10.7/Makefile:1171 : vmlinux] Erreur 2
 make[1]: *** Attente des tâches non terminées....
 ```
-#### 2. Solutions
+#### 2. Présentation
+Le paquet pahole est un outil de ligne de commande qui permet d'analyser et de modifier les informations de débogage des fichiers objets et des bibliothèques partagées. 
+
+Il est principalement utilisé pour inspecter et modifier les informations de débogage DWARF (Debug With Arbitrary Record Format) dans les fichiers objets et les bibliothèques partagées.
+
+
+#### 3. Solutions
 Installer le paquet Pahole ou configurer la valeur `DEBUG_INFO_BTF` sur N.
 
 ```bash
 clear;
 apt install -y pahole;
 ```
+
