@@ -20,34 +20,6 @@ Aller dans le dossier du Noyau et taper la commande `make menuconfig` .
 
 <br />
 
-
-
-------------------------------------------------------------------------------------------------------------------------------------------
-## V. Entrées/Sorties
-CONFIG_PCI : Support des périphériques PCI
-CONFIG_PCI_DOMAINS : Support des domaines PCI
-CONFIG_PCI_ATS : Support de la technologie ATS
-CONFIG_PCI_MSI : Support des interruptions MSI
-CONFIG_PCI_MSI_IRQ_DOMAIN : Support des interruptions MSI pour les domaines IRQ
-CONFIG_PCI_PRI : Support de la technologie PRI
-CONFIG_PCI_PASID : Support de la technologie PASID
-
-<br />
-
-------------------------------------------------------------------------------------------------------------------------------------------
-## VI.Réseau
-CONFIG_INET : Support du protocole IPv4
-CONFIG_INET_DIAG : Support du diagnostic pour IPv4
-CONFIG_INET_LRO : Support de la réception de paquets large pour IPv4
-CONFIG_INET_RAW_DIAG : Support du diagnostic pour les sockets raw IPv4
-CONFIG_INET_TCP_DIAG : Support du diagnostic pour TCP/IPv4
-CONFIG_INET_UDP_DIAG : Support du diagnostic pour UDP/IPv4
-CONFIG_INET_XFRM_MODE_BEET : Support du mode BEET pour IPv4
-CONFIG_INET_XFRM_MODE_TRANSPORT : Support du mode transport pour IPv4
-CONFIG_INET_XFRM_MODE_TUNNEL : Support du mode tunnel pour IPv4
-
-<br />
-
 ------------------------------------------------------------------------------------------------------------------------------------------
 ## VII. Système de fichiers
 CONFIG_BTRFS_FS : Support du système de fichiers Btrfs
