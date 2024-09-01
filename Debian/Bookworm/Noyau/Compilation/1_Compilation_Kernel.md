@@ -3,7 +3,6 @@
 
 # <p align='center'>  Expiremental </p>
 
-
 --------------------------------------------------------------------------------------
 ## I. Construction du Noyau
 ### A. Preparation Environnement du Noyau
@@ -15,7 +14,7 @@ cd $HOME;
 rm -r linux-${VERSION}* 2>/dev/null
 wget https://cdn.kernel.org/pub/linux/kernel/v${BRANCHE}.x/linux-${VERSION}.tar.xz 2>/dev/null;
 tar -xvf linux-${VERSION}.tar.xz;
-cd linux-${VERSION}
+cd linux-${VERSION};
 ```
 
 ### B. Menu de configuration
