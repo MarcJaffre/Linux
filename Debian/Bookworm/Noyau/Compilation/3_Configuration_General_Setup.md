@@ -127,6 +127,8 @@ Cette option permet d'activer ou de désactiver l'isolation des processeurs.
 #### 18. Kernel .config support
 Cette option permet d'activer ou de désactiver la prise en charge du fichier de configuration du kernel.
 
+<br />
+
 #### 19. Enable kernel headers throught /sys/kernel/kheaders.tar.xz
 Cette option permet d'activer ou de désactiver l'accès aux en-têtes du kernel à travers le fichier /sys/kernel/kheaders.tar.xz.
 
@@ -180,7 +182,6 @@ Cette option permet de compiler le support pour les configurations de démarrage
 #### 29. Preserve cpio archive mtimes in intiramfs
 Cette option permet de conserver les dates de modification (mtimes) des archives cpio dans les systèmes de fichiers RAM initiaux (initramfs). Les archives cpio sont utilisées pour stocker les fichiers dans les systèmes de fichiers RAM initiaux. Si vous activez cette option, les dates de modification des archives cpio seront conservées dans les systèmes de fichiers RAM initiaux.
 
-
 <br />
 
 #### 30. Compiler optimieation level
@@ -202,7 +203,6 @@ Cette option permet de compiler le support pour le profilage.
 Le profilage est une technique qui permet de mesurer les performances du code en cours d'exécution.
 
 Si vous activez cette option, vous pourrez utiliser des outils de profilage pour analyser les performances de votre noyau.
-
 
 <br />
 <br />
