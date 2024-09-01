@@ -71,4 +71,13 @@ apt install -y libz-dev 1>/dev/null;
 apt install -y liblz4-dev 1>/dev/null;
 apt install -y liblzma-dev 1>/dev/null;
 apt install -y libbpf-dev 1>/dev/null;
-``` 
+```
+
+<br />
+
+-------------------------------------------------------------------------------------------------------
+## II. Patch
+Pour le Noyau 5, il faut appliquer le dernier patch. (Exemple: Kernel 5.0 et patch 5.0.4)
+
+Pour un kernel 5.0.2 et un patch 5.0.3 : Il faut annulé le patchage des versions précédente puis repatché.
+
