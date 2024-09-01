@@ -10,15 +10,15 @@
 case $1 in
  # ====================================
  purge)
-  KERNEL_PURGE
+  KERNEL_PURGE;
   ;;
  # ====================================
  download)
-  DOWNLOAD_KERNEL
+  DOWNLOAD_KERNEL;
   ;;
  # ====================================
  edit)
-  KERNEL_EDIT
+  KERNEL_EDIT;
   ;;
  # ====================================
  clean)
@@ -26,20 +26,20 @@ case $1 in
   ;;
  # ====================================
  compilation)
-  KERNEL_COMPILATION
+  KERNEL_COMPILATION;
   ;;
  # ====================================
  install)
-  KERNEL_INSTALL_MODULE
-  KERNEL_COPY
-  KERNEL_UPDATE_GRUB
+  KERNEL_INSTALL_MODULE;
+  KERNEL_COPY;
+  KERNEL_UPDATE_GRUB;
   ;;
  # ====================================
  uninstall)
-  KERNEL_UNINSTALL_MODULE
+  KERNEL_UNINSTALL_MODULE;
   ;;
  # ====================================
  *)
-  GUIDE
+  GUIDE;
   ;;
 esac
