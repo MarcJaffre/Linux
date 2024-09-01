@@ -68,13 +68,13 @@ Cette option permet d'activer ou de désactiver la prise en charge de l'audit.
 
 Recommandation: uselib à désactiver !
 
-#### 14. Preemption Model
+#### 14. Preemption Model [Preemptible Kernel]
 Cette option permet de choisir le modèle de préemption du kernel. 
 
 Les options disponibles sont : 
-* No Forced Preemption (Server)
-* Voluntary Kernel Preemption (Desktop)
-* Preemptible Kernel (Low-Latency Desktop)
+- Preemptible Kernel (Low-Latency Desktop)
+- Voluntary Kernel Preemption (Desktop)
+- No Forced Preemption (Server)
 
 #### 15. Preemption behaviour defined on boot
 Cette option permet de spécifier le comportement de préemption à l'amorçage.
