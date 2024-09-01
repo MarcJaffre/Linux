@@ -44,6 +44,8 @@ Le patch "io_uring" réduit les temps de chargement en permettant aux jeux vidé
 
 <br />
 
+
+
 ### D. AMD P-State
 Améliore la gestion de la fréquence d'horloge des processeurs AMD, ce qui permet une meilleure performance énergétique et une réduction de la consommation d'énergie.
 #### 1. Amélioration de la gestion de la fréquence d'horloge :
