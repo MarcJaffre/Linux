@@ -74,8 +74,9 @@ apt install -y libz-dev 1>/dev/null;
 apt install -y linux-headers-$(uname -r) 1>/dev/null;
 apt install -y linux-source-$(uname -r | cut -d "." -f 1-2) 1>/dev/null;
 apt install -y ncurses-dev 1>/dev/null;
-
 ```
+
+<br />
 
 ### F. Dépendance
 ```bash
