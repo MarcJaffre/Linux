@@ -16,6 +16,8 @@ La configuration du noyau Linux est une étape importante dans la compilation d'
 <br />
 
 #### C. Les options de compilation
+Les options de compilation du noyau Linux sont divisées en plusieurs catégories :
+
 ##### 1. Général
 Cette section permet de configurer les options générales du noyau, telles que le nom du noyau, la version du noyau, etc.
 
@@ -37,6 +39,7 @@ Cette section permet de configurer les options liées au système de fichiers, t
 #### 7. Sécurité
 Cette section permet de configurer les options liées à la sécurité, telles que les mécanismes de sécurité, les options de chiffrement, etc.
 
+<br />
 
 #### D. Les types de configuration
 Il existe plusieurs types de configuration :
