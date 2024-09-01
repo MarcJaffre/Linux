@@ -76,7 +76,7 @@ Les options disponibles sont :
 - Voluntary Kernel Preemption (Desktop)
 - No Forced Preemption (Server)
 
-#### 15. Preemption behaviour defined on boot
+#### 15. Preemption behaviour defined on boot [Y]
 Cette option permet de spécifier le comportement de préemption à l'amorçage.
 
 
@@ -86,13 +86,9 @@ Cette option permet de spécifier le comportement de préemption à l'amorçage.
 - rt        : active la préemption en temps réel (Preempt-RT)
 
 
-
-
-
-
-
-#### 16. Core Scheduling for SMT
+#### 16. Core Scheduling for SMT [Y]
 Cette option permet d'activer ou de désactiver la planification des cœurs pour les processeurs SMT.
+
 
 #### 17. CPU Isolation
 Cette option permet d'activer ou de désactiver l'isolation des processeurs.
