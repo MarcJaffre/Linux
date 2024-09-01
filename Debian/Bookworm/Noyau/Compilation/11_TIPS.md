@@ -8,4 +8,5 @@ make[1]: *** [/Data/linux-6.10.7/Makefile:1171 : vmlinux] Erreur 2
 make[1]: *** Attente des tâches non terminées....
 ```
 
-Mettre la valeur `CONFIG_DEBUG_INFO_BTF` sur N.
+Mettre la valeur `DEBUG_INFO_BTF` sur N. (Toujours retiré le terme CONFIG_ lors de la recherche)
+
