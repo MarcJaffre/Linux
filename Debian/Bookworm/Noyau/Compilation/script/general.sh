@@ -1,9 +1,13 @@
 #!/usr/bin/bash
 
 ######################################################################################################################################################
-# Chargement Configuration #
-############################
-source settings;
+# Configuration #
+#################
+DOSSIER="/Data"
+BRANCHE="6"
+VERSION="$BRANCHE.10.7"
+KERNEL="https://cdn.kernel.org/pub/linux/kernel/v${BRANCHE}.x/linux-${VERSION}.tar.xz"
+
 
 ######################################################################################################################################################
 # Fonctions #
@@ -30,8 +34,16 @@ KERNEL_CLEAN(){
 }
 
 KERNEL_COMPILATION(){
+ # =====================================
+ START_DATE=$(date +'%Y/%m/%d')
+ START_HORAIRE=$(date +'%H H %M')
+ # =====================================
  cd $DOSSIER/linux-${VERSION};
  make -j$(nproc) ARCH=$(arch);
+ # =====================================
+ END_DATE=$(date +'%Y/%m/%d')
+ END_HORAIRE=$(date +'%H H %M')
+ # =====================================
 }
 
 INSTALL_SYSTEM_MODULE(){
