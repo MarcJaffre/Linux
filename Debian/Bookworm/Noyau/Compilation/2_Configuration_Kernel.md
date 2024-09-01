@@ -36,3 +36,16 @@ Cette section permet de configurer les options liées au système de fichiers, t
 
 #### 7. Sécurité
 Cette section permet de configurer les options liées à la sécurité, telles que les mécanismes de sécurité, les options de chiffrement, etc.
+
+
+#### D. Les types de configuration
+Il existe plusieurs types de configuration :
+
+#### 1. CONFIG_*
+Ces options sont utilisées pour activer ou désactiver des fonctionnalités spécifiques du noyau.
+
+#### 2. CONFIG_*_MODULE
+Ces options sont utilisées pour compiler des modules qui peuvent être chargés dynamiquement.
+
+#### 3. CONFIG_*_BUILTIN
+Ces options sont utilisées pour compiler des fonctionnalités directement dans le noyau.
