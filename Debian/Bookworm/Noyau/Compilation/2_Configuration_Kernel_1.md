@@ -52,3 +52,19 @@ Ces options sont utilisées pour compiler des modules qui peuvent être chargés
 
 #### 3. CONFIG_*_BUILTIN
 Ces options sont utilisées pour compiler des fonctionnalités directement dans le noyau.
+
+
+### E. Optimisation du noyau
+#### 1. Matériel
+Pour optimiser le noyau, vous pouvez utiliser les techniques suivantes :
+- Optimisation de la fréquence d'horloge : Configurez la fréquence d'horloge du processeur pour optimiser les performances.
+- Optimisation de la mémoire : Configurez la taille de la mémoire et la gestion de la mémoire pour optimiser les performances.
+- Optimisation du réseau : Configurez les protocoles réseau et les cartes réseau pour optimiser les performances.
+- Optimisation du système de fichiers : Configurez les systèmes de fichiers supportés et les options de montage pour optimiser les performances.
+- Optimisation de la sécurité : Configurez les mécanismes de sécurité et les options de chiffrement pour optimiser la sécurité.
+
+#### 2. Outils d'optimisation
+Il existe plusieurs outils d'optimisation qui peuvent aider à optimiser le noyau, tels que :
+- sysctl : Un outil qui permet de configurer les paramètres du noyau en temps réel.
+- tuned : Un outil qui permet de configurer les paramètres du noyau pour optimiser les performances.
+- powertop : Un outil qui permet de configurer les paramètres du noyau pour optimiser la consommation d'énergie. 
