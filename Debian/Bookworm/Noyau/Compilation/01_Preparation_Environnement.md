@@ -43,6 +43,7 @@ Pour Debian 12 (Bookworm), voici la liste de paquets mise à jour pour compiler 
 - **liblzma-dev**   : fournit les bibliothèques de développement pour la compression de données LZMA
 - **libbpf-dev**    : fournit les bibliothèques de développement pour les programmes de filtrage de paquets (BPF)
 
+<br />
 
 ### E. Installer les paquets
 ```bash
