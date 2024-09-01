@@ -79,6 +79,18 @@ Les options disponibles sont :
 #### 15. Preemption behaviour defined on boot
 Cette option permet de spécifier le comportement de préemption à l'amorçage.
 
+
+- none      : désactive la préemption
+- voluntary : active la préemption volontaire (No Forced Preemption)
+- forced    : active la préemption forcée (Preemptible Kernel)
+- rt        : active la préemption en temps réel (Preempt-RT)
+
+
+
+
+
+
+
 #### 16. Core Scheduling for SMT
 Cette option permet d'activer ou de désactiver la planification des cœurs pour les processeurs SMT.
 
