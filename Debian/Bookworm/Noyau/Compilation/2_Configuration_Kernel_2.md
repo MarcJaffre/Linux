@@ -84,3 +84,42 @@ Aller dans le dossier du Noyau et taper la commande `make menuconfig` .
 ### K. XXXX
 ```
 ```
+
+### L. XXXX
+```
+```
+
+### M. XXXX
+```
+```
+
+### N. XXXX
+```
+```
+
+
+### O. XXXX
+```
+```
+
+### P. XXXX
+```
+```
+
+### Q. XXXX
+```
+```
+
+### R. XXXX
+```
+```
+
+
+### S. XXXX
+```
+```
+
+
+### T. XXXX
+```
+```
