@@ -1,5 +1,5 @@
 ------------------------------------------------------------------------------------------------------------------------------------------
-# <p align='center'> Configuration d'un Noyau Debian - General </p>
+# <p align='center'> Configuration d'un Noyau Debian - General Setup </p>
 
 ------------------------------------------------------------------------------------------------------------------------------------------
 ## I. Configuration du Noyau
@@ -10,7 +10,9 @@ Aller dans le dossier du Noyau et taper la commande `make xconfig` .
 <br />
 
 ------------------------------------------------------------------------------------------------------------------------------------------
-## II. General Setup
+## II. General Setup 
+Les options suivants ont étés relevés sur le Kernel 6.10.7 de Kernel.org
+
 ### Compile also drivers which will not load
 ### Compile the kernel with warnings as errors
 ### Local Version - apprend to kernel release
@@ -28,20 +30,20 @@ Aller dans le dossier du Noyau et taper la commande `make xconfig` .
 ### Preemption behaviour defined on boor
 ### Core Scheduling for SMT
 ### CPU Isolation
-### 
-### 
-### 
-### 
-### 
-### 
-### 
-### 
-### 
-### 
-### 
-### 
-### 
-### 
+### Kernel .config support
+### Enable kernel headers throught /sys/kernel/kheaders.tar.xz
+### Kernel log buffer size 
+### CPU Kernel log buffer size contribution
+### Printk indexing debugfs interface
+### Memory placement award NUMA scheduler
+### Checkpoint/restore support
+### Automatic process group scheduling
+### Kernel -> user space relay support
+### Initial Ram filesystem and RAM disk (initramfs/initrd) support
+### Boot config support 
+### Preserve cpio archive mtimes in intiramfs
+### Compiler optimieation level
+### Profiling support
 ### 
 ### 
 ### 
