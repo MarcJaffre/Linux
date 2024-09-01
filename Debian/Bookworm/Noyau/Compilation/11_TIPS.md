@@ -19,7 +19,7 @@ Il est principalement utilis√© pour inspecter et modifier les informations de d√
 
 
 #### 3. Solutions
-Installer le paquet Pahole ou configurer la valeur `DEBUG_INFO_BTF` sur N.
+Installer le paquet Pahole ou configurer la valeur `Kernel Hacking\Compile-time Checks and compiler optiond\ Generate BTF Type info` sur N. (DEBUG_INFO_BTF)
 
 ```bash
 clear;
