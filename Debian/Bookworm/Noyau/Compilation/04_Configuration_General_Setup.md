@@ -167,17 +167,21 @@ Cette option permet d'activer ou de désactiver la prise en compte de la placeme
 Cette option permet d'activer ou de désactiver la prise en charge de la sauvegarde et de la restauration des processus.
 
 ```bash
+clear;
+
+DATE=$(date +'%Y%m%d%H%M%S')
+
 # Sauvegarde du processus avec l'ID 1234 (Ne ferme pas le processus)
-checkpoint -c 1234 checkpoint_file
-checkpoint -c 1234 CHECKPOINT=$(date +'%Y%m%d%H%M%S')
+checkpoint -c 1234 checkpoint_file;
+checkpoint -c 1234 $DATE;
 
 # Sauvegarde du processus avec l'ID 1234 (Ferme le processus à la fin)
-checkpoint -c my_checkpoint -k 1234
-checkpoint -c CHECKPOINT=$(date +'%Y%m%d%H%M%S') -k 1234
+checkpoint -c my_checkpoint -k 1234;
+checkpoint -c $DATE -k 1234;
 
 # Restauration du processus à partir du fichier de sauvegarde
-restore -r checkpoint_file
-restore -r CHECKPOINT=$(date +'%Y%m%d%H%M%S')
+restore -r checkpoint_file;
+restore -r $DATE;
 ```
 
 
