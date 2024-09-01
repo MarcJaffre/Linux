@@ -73,42 +73,51 @@ Cette option permet d'activer ou de désactiver l'isolation des processeurs.
 Cette option permet d'activer ou de désactiver la prise en charge du fichier de configuration du kernel.
 
 #### 19. Enable kernel headers throught /sys/kernel/kheaders.tar.xz
-
+Cette option permet d'activer ou de désactiver l'accès aux en-têtes du kernel à travers le fichier /sys/kernel/kheaders.tar.xz.
 
 #### 20. Kernel log buffer size 
-
+Cette option permet de spécifier la taille du tampon de journalisation du kernel.
 
 #### 21. CPU Kernel log buffer size contribution
-
+Cette option permet de spécifier la contribution de chaque processeur à la taille du tampon de journalisation du kernel.
 
 #### 22. Printk indexing debugfs interface
-
+Cette option permet d'activer ou de désactiver l'interface de débogage printk.
 
 #### 23. Memory placement award NUMA scheduler
-
+Cette option permet d'activer ou de désactiver la prise en compte de la placement de la mémoire pour les planificateurs NUMA.
 
 #### 24. Checkpoint/restore support
-
-
+Cette option permet d'activer ou de désactiver la prise en charge de la sauvegarde et de la restauration des processus.
 
 #### 25. Automatic process group scheduling
-
+Cette option permet d'activer ou de désactiver la planification automatique des groupes de processus.
 
 #### 26. Kernel -> user space relay support
+Cette option permet d'activer ou de désactiver la prise en charge du relais entre le kernel et l'espace utilisateur.
+
 
 
 #### 27. Initial Ram filesystem and RAM disk (initramfs/initrd) support
-
+Cette option permet de compiler le support pour les systèmes de fichiers et les disques RAM initiaux (initramfs/initrd). Un système de fichiers RAM initial est une archive compressée qui contient les fichiers nécessaires pour démarrer le système, tandis qu'un disque RAM est un espace de stockage temporaire utilisé pendant le démarrage. Si vous activez cette option, vous pourrez utiliser des systèmes de fichiers et des disques RAM initiaux pour démarrer votre système.
 
 #### 28. Boot config support 
-
+Cette option permet de compiler le support pour les configurations de démarrage. Les configurations de démarrage définissent les paramètres de démarrage du système, tels que les options de noyau, les paramètres de l'interface réseau, etc. Si vous activez cette option, vous pourrez utiliser des configurations de démarrage personnalisées pour démarrer votre système.
 
 #### 29. Preserve cpio archive mtimes in intiramfs
-
+Cette option permet de conserver les dates de modification (mtimes) des archives cpio dans les systèmes de fichiers RAM initiaux (initramfs). Les archives cpio sont utilisées pour stocker les fichiers dans les systèmes de fichiers RAM initiaux. Si vous activez cette option, les dates de modification des archives cpio seront conservées dans les systèmes de fichiers RAM initiaux.
 
 
 #### 30. Compiler optimieation level
+Cette option permet de définir le niveau d'optimisation du compilateur pour la compilation du noyau. 
 
+Les niveaux d'optimisation définissent la quantité d'optimisation effectuée par le compilateur pour améliorer les performances du code généré. 
+
+Les niveaux d'optimisation les plus courants sont :
+-O0 : pas d'optimisation
+-O1 : optimisation légère
+-O2 : optimisation moyenne
+-O3 : optimisation élevée
 
 #### 31. Profiling support
 
