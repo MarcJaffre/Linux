@@ -30,3 +30,7 @@ Si on souhaite `X` Core, il suffit de remplacer `$(nproc)` par le nombre de core
 ```bash
 make -j $(nproc);
 ```
+
+### D. Durée de compilation
+```
+Démarrage: 4h25
