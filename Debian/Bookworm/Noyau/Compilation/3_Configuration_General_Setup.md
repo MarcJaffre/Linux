@@ -207,15 +207,6 @@ Si vous activez cette option, vous pourrez utiliser des outils de profilage pour
 <br />
 <br />
 
-
-
-
-
-
-
-
-<br />
-
 ### B. IRQ subsystem
 #### 1. Expose irq internals in debugfs
 
@@ -223,12 +214,22 @@ Si vous activez cette option, vous pourrez utiliser des outils de profilage pour
 
 ### C. Timers subsystem
 #### 1. Timer tick handling
+<br />
+
 #### 2. Force user context tracking
+<br />
+
 #### 3. Old Idle dynticks config
+<br />
+
 #### 4. High Resolution Timer Support
+<br />
+
 #### 5. ClockSource Watchdog maximum allowable skew (in ms)
 
 <br />
+<br />
+
 
 ### D. CPU/Task time and stats accounting
 <br />
