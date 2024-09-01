@@ -240,6 +240,11 @@ sched.sched_migration_cost_ns=500000
 | power.management.policy            | balance_performance | Equilibre entre les performances et la consommation d'énergie                              |
 | power.management.policy            | performance         | Priorise les performances                                                                  |
 | power.management.policy            | power               | Priorise la consommation d'énergie                                                         |
+| ---------------------------------- | ------------------- | ------------------------------------------------------------------------------------------ |
+| sched.sched_latency_ns             | 100000              | Définit la latence de planification des tâches en nanosecondes.                            |
+| sched.sched_migration_cost_ns      | 500000              | Définit le coût de migration des tâches en nanosecondes.                                   |
+| ---------------------------------- | ------------------- | ------------------------------------------------------------------------------------------ |
+
 
 
 <br />
