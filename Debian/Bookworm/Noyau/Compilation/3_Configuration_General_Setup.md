@@ -63,7 +63,7 @@ Cette option permet d'activer ou de désactiver les appels système process_vm_r
 #### 12. uselib syscall (for libc5 and earlier) [N] (Risque de sécurité)
 Cette option permet d'activer ou de désactiver l'appel système uselib pour les versions de libc antérieures à la 5.
 
-#### 13. Auditing support
+#### 13. Auditing support [???]
 Cette option permet d'activer ou de désactiver la prise en charge de l'audit.
 
 Recommandation: uselib à désactiver !
