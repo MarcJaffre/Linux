@@ -27,8 +27,9 @@ make menuconfig;
 ### C. Compilation en Multi-Core
 Si on souhaite `X` Core, il suffit de remplacer `$(nproc)` par le nombre de core qui compilerons.
 ```bash
-make ARCH=$(arch) -j$(nproc)
+make ARCH=$(arch) -j$(nproc)  CONFIG_DEBUG_INFO_BTF=n;
 ```
+
 
 ### D. Installer les modules
 ```bash
