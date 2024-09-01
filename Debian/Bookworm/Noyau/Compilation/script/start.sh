@@ -61,7 +61,7 @@ if [ -d $DOSSIER/linux-${VERSION} ]; then
    echo ""                                                                              >> $DOSSIER/linux-${VERSION}/Build.log;
    echo "-----------------------------------------------------------------------------" >> $DOSSIER/linux-${VERSION}/Build.log;
    echo "Demarrage du script : $START_DATE à $START_HORAIRE";                           >> $DOSSIER/linux-${VERSION}/Build.log;
-   echo "Fn du script        : $END_DATE à $END_HORAIRE";                               >> $DOSSIER/linux-${VERSION}/Build.log;
+   echo "Fin du script       : $END_DATE à $END_HORAIRE";                               >> $DOSSIER/linux-${VERSION}/Build.log;
    mv                          $DOSSIER/linux-${VERSION}/Build.log                         $DOSSIER/linux-${VERSION}/Build_$START_DATE_$START_HORAIRE.log;
    #########################################################################################################################################################
 fi
