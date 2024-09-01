@@ -163,8 +163,17 @@ Cette option permet d'activer ou de désactiver la prise en compte de la placeme
 
 <br />
 
-#### 24. Checkpoint/restore support
+#### 24. Checkpoint/restore support [Y] (Permet de capturer un proces pour le relancer)
 Cette option permet d'activer ou de désactiver la prise en charge de la sauvegarde et de la restauration des processus.
+
+```bash
+# Sauvegarde du processus avec l'ID 1234
+checkpoint -c 1234 checkpoint_file
+
+# Restauration du processus à partir du fichier de sauvegarde
+restore -r checkpoint_file
+```
+
 
 <br />
 
