@@ -36,10 +36,11 @@ Les options disponibles sont :
 - Lzo   :
 - Zstd  : Est très rapide pour compresser les données, ce qui est important pour les applications où la compression est effectuée en temps réel.
 
-| Algo | Zip 1 Go | Unzip 1 Go |
-| ---- | -------- | ---------- |
-| ZSTD | 1.3 Sec  | 0.5 Sec    |
-[ Gzip | 2.5 Sec  | 1.2 Sec    |
+| Algorithme  | Temps de compression (s) | Temps de décompression (s) |
+| ----------- | ------------------------ | -------------------------- |
+| ZSTD        | 1.3 Sec                  | 0.5 Sec                    |
+| Gzip        | 2.5 Sec                  | 1.2 Sec                    |
+
 
 
 
