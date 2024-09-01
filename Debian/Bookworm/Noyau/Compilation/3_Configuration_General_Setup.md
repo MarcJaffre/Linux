@@ -96,8 +96,6 @@ Cette option permet d'activer ou de désactiver la planification automatique des
 #### 26. Kernel -> user space relay support
 Cette option permet d'activer ou de désactiver la prise en charge du relais entre le kernel et l'espace utilisateur.
 
-
-
 #### 27. Initial Ram filesystem and RAM disk (initramfs/initrd) support
 Cette option permet de compiler le support pour les systèmes de fichiers et les disques RAM initiaux (initramfs/initrd). Un système de fichiers RAM initial est une archive compressée qui contient les fichiers nécessaires pour démarrer le système, tandis qu'un disque RAM est un espace de stockage temporaire utilisé pendant le démarrage. Si vous activez cette option, vous pourrez utiliser des systèmes de fichiers et des disques RAM initiaux pour démarrer votre système.
 
@@ -120,9 +118,11 @@ Les niveaux d'optimisation les plus courants sont :
 -O3 : optimisation élevée
 
 #### 31. Profiling support
+Cette option permet de compiler le support pour le profilage.
 
+Le profilage est une technique qui permet de mesurer les performances du code en cours d'exécution.
 
-
+Si vous activez cette option, vous pourrez utiliser des outils de profilage pour analyser les performances de votre noyau.
 
 
 
