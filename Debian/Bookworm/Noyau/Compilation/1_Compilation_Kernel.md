@@ -42,5 +42,5 @@ make install;
 
 ### F. Durée de compilation
 ```
-Démarrage: 5HXX
+Démarrage: 5H10
 ```
