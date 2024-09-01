@@ -45,14 +45,25 @@ Les options suivants ont étés relevés sur le Kernel 6.10.7 de Kernel.org
 #### Compiler optimieation level
 #### Profiling support
 
+<br />
+<br />
+
 ------------------------------------------------------------------------------------------------------------------------------------------
 ## II. Autres
-### B. IRQ subsystem
+### A. IRQ subsystem
 #### 1. Expose irq internals in debugfs
 
-### 
-### 
-### 
+
+### B. Timers subsystem
+#### 1. Timer tick handling
+#### 2. Force user context tracking
+#### 3. Old Idle dynticks config
+#### 4. High Resolution Timer Support
+#### 5. ClockSource Watchdog maximum allowable skew (in ms)
+
+####
+####
+
 ### 
 ### 
 ### 
