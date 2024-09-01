@@ -90,7 +90,7 @@ Cette option permet de spécifier le comportement de préemption à l'amorçage.
 Cette option permet d'activer ou de désactiver la planification des cœurs pour les processeurs SMT.
 
 
-#### 17. CPU Isolation
+#### 17. CPU Isolation [Y] (Amélioration Gain de performance significativement)
 Cette option permet d'activer ou de désactiver l'isolation des processeurs.
 
 #### 18. Kernel .config support
