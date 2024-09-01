@@ -1,5 +1,5 @@
 --------------------------------------------------------------------------------------
-# <p align='center'> Compilation du Noyau (EXPIRMENTAL) </p>
+# <p align='center'> Compilation du Noyau (Expiremental) </p>
 
 --------------------------------------------------------------------------------------
 ## I. Construction du Noyau
