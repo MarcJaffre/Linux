@@ -71,10 +71,8 @@ cp $SOURCE/bzImage /boot/$KERNEL_NAME;
 ```
 
 
-### E. Installer le Noyau
+### E. Mettre à jour grub
 ```bash
 clear;
-sudo cp /usr/src/linux/arch/<architecture>/boot/bzImage /boot/vmlinuz-<version>
-cp /Data/linux-*/arch/x86_64/boot/bzImage /boot/vmlinuz-marc;
-update-grub
+update-grub;
 ```
