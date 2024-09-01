@@ -12,37 +12,24 @@ Pour Debian 12 (Bookworm), voici la liste de paquets mise à jour pour compiler 
 
 ### A. Paquets de base
 - build-essential : fournit les outils de base pour la compilation, tels que gcc, make, etc.
-
 - libncurses6-dev : fournit les bibliothèques de développement pour les interfaces utilisateur en mode texte
-
 - libssl-dev : fournit les bibliothèques de développement pour les fonctionnalités de sécurité SSL/TLS
-
 - libelf-dev : fournit les bibliothèques de développement pour les fichiers ELF (Executable and Linkable Format)
 Paquets pour la compilation du noyau
-
 - linux-headers-$(uname -r) : fournit les en-têtes de noyau pour la version actuelle du noyau
-
 - linux-source-$(uname -r) : fournit le code source du noyau pour la version actuelle du noyau
-
 - libgcc-$(gcc -v 2>&1 | grep '^gcc version' | cut -d' ' -f3)-dev : fournit les bibliothèques de développement pour la version actuelle de GCC
 
 <br />
 
 ### B. Paquets pour les dépendances du noyau
-
 - libpci-dev : fournit les bibliothèques de développement pour les périphériques PCI
-
 - libusb-dev : fournit les bibliothèques de développement pour les périphériques USB
-
 - libieee1275-dev : fournit les bibliothèques de développement pour les périphériques IEEE 1275 (Open Firmware)
-
 - libdevmapper-dev : fournit les bibliothèques de développement pour les gestionnaires de disques logiques (LVM, etc.)
 Paquets pour les outils de développement
-
 - git : fournit le système de gestion de version Git
-
 - fakeroot : fournit un environnement de compilation avec des droits d'accès élevés
-
 - ncurses-dev : fournit les bibliothèques de développement pour les interfaces utilisateur en mode texte
 
 <br />
