@@ -35,52 +35,93 @@ Cette option permet de spécifier le chemin d'accès par défaut pour les fichie
 Cette option permet de spécifier le nom d'hôte par défaut pour le système.
 
 #### 8. System V IPC
+Cette option permet d'activer ou de désactiver les fonctionnalités de communication inter-processus (IPC) de System V.
 
 #### 9. POSIX Message queues
+Cette option permet d'activer ou de désactiver les files d'attente de messages POSIX.
 
 #### 10. General notification queue
+Cette option permet d'activer ou de désactiver la file d'attente de notifications générales.
 
 #### 11. Enable process_vm_readv/writev_syscalls
+Cette option permet d'activer ou de désactiver les appels système process_vm_readv et process_vm_writev.
 
 #### 12. uselib syscall (for libc5 and earlier)
+Cette option permet d'activer ou de désactiver l'appel système uselib pour les versions de libc antérieures à la 5.
 
 #### 13. Auditing support
+Cette option permet d'activer ou de désactiver la prise en charge de l'audit.
 
 #### 14. Preemption Model
+Cette option permet de choisir le modèle de préemption du kernel. 
+
+Les options disponibles sont : 
+* No Forced Preemption (Server)
+* Voluntary Kernel Preemption (Desktop)
+* Preemptible Kernel (Low-Latency Desktop)
 
 #### 15. Preemption behaviour defined on boor
+Cette option permet de spécifier le comportement de préemption à l'amorçage.
 
 #### 16. Core Scheduling for SMT
+Cette option permet d'activer ou de désactiver la planification des cœurs pour les processeurs SMT.
 
 #### 17. CPU Isolation
+Cette option permet d'activer ou de désactiver l'isolation des processeurs.
 
 #### 18. Kernel .config support
+Cette option permet d'activer ou de désactiver la prise en charge du fichier de configuration du kernel.
 
 #### 19. Enable kernel headers throught /sys/kernel/kheaders.tar.xz
 
+
 #### 20. Kernel log buffer size 
+
 
 #### 21. CPU Kernel log buffer size contribution
 
+
 #### 22. Printk indexing debugfs interface
+
 
 #### 23. Memory placement award NUMA scheduler
 
+
 #### 24. Checkpoint/restore support
+
+
 
 #### 25. Automatic process group scheduling
 
+
 #### 26. Kernel -> user space relay support
+
 
 #### 27. Initial Ram filesystem and RAM disk (initramfs/initrd) support
 
+
 #### 28. Boot config support 
+
 
 #### 29. Preserve cpio archive mtimes in intiramfs
 
+
+
 #### 30. Compiler optimieation level
 
+
 #### 31. Profiling support
+
+
+
+
+
+
+
+
+
+
+
 
 <br />
 
