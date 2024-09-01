@@ -1,0 +1,39 @@
+#!/usr/bin/bash
+
+
+case $1 in
+ # ====================================
+ purge)
+  KERNEL_PURGE
+  ;;
+ # ====================================
+ download)
+  DOWNLOAD_KERNEL
+  ;;
+ # ====================================
+ edit)
+  KERNEL_EDIT
+  ;;
+ # ====================================
+ clean)
+  KERNEL_CLEAN
+  ;;
+ # ====================================
+ compilation)
+  KERNEL_COMPILATION
+  ;;
+ # ====================================
+ install)
+  KERNEL_INSTALL_MODULE
+  KERNEL_COPY
+  KERNEL_UPDATE_GRUB
+  ;;
+ # ====================================
+ uninstall)
+  KERNEL_UNINSTALL_MODULE
+  ;;
+ # ====================================
+ *)
+  GUIDE
+  ;;
+esac
