@@ -62,13 +62,14 @@ make modules_install;
 
 <br />
 
-### E. Installer le Noyau
+### E. Déployer le Noyau
 ```bash
 clear;
 SOURCE="/Data/linux-*/arch/x86_64/boot"
 KERNEL_NAME="vmlinuz-marc"
 cp $SOURCE/bzImage /boot/$KERNEL_NAME;
 ```
+
 
 ### E. Installer le Noyau
 ```bash
