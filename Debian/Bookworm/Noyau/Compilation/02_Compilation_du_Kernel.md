@@ -62,18 +62,10 @@ make modules_install;
 
 <br />
 
-### E. Création d'un package Debian
+### E. Installer le Noyau
 ```bash
 clear;
-make deb-pkg;
-```
-
-<br />
-
-### F. Installer le Noyau
-```bash
-dpkg -i *.deb;
-update-grub;
+make install;
 ```
 
 
