@@ -78,8 +78,8 @@ if [ -d $DOSSIER/linux-${VERSION} ]; then
    echo "-----------------------------------------------------------------------------" >> $DOSSIER/linux-${VERSION}/Build.log;
 
    # Écriture des dates et heures de début et de fin dans le fichier de log
-   echo "Demarrage du script : $START_DATE à $START_HORAIRE";                           >> $DOSSIER/linux-${VERSION}/Build.log;
-   echo "Fin du script       : $END_DATE à $END_HORAIRE";                               >> $DOSSIER/linux-${VERSION}/Build.log;
+   echo "Demarrage du script : $START_DATE à $START_HORAIRE"                            >> $DOSSIER/linux-${VERSION}/Build.log;
+   echo "Fin du script       : $END_DATE à $END_HORAIRE"                                >> $DOSSIER/linux-${VERSION}/Build.log;
 
    # Renommage de la log de compilation
    mv                          $DOSSIER/linux-${VERSION}/Build.log                         $DOSSIER/linux-${VERSION}/Build_$START_DATE_$START_HORAIRE.log;
