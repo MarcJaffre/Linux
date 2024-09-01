@@ -16,14 +16,22 @@ Les options suivants ont étés relevés sur le Kernel 6.10.7 de Kernel.org
 #### 1. Compile also drivers which will not load [N]
 Cette option permet de compiler les pilotes qui ne seront pas chargés par défaut. Cela peut être utile pour les développeurs de pilotes ou pour les utilisateurs qui veulent avoir accès à des pilotes expérimentaux.
 
+<br />
+
 #### 2. Compile the kernel with warnings as errors [N]
 Cette option permet de traiter les avertissements de compilation comme des erreurs. Cela signifie que si un avertissement est détecté pendant la compilation, la compilation sera arrêtée.
+
+<br />
 
 #### 3. Local Version - apprend to kernel release [Custom]
 Cette option permet d'ajouter une chaîne de caractères personnalisée à la version du kernel. Cela peut être utile pour identifier une version personnalisée du kernel.
 
+<br />
+
 #### 4. Build ID Salt [???]
 Cette option permet de spécifier une valeur de "salt" pour le Build ID du kernel. Le Build ID est une valeur unique qui identifie une version spécifique du kernel.
+
+<br />
 
 #### 5. Kernel compression mode [zstd]
 Cette option permet de choisir le mode de compression du kernel. 
@@ -41,32 +49,49 @@ Les options disponibles sont :
 | ZSTD        | 1.3 Sec                  | 0.5 Sec                    |
 | Gzip        | 2.5 Sec                  | 1.2 Sec                    |
 
+<br />
 
 #### 6. Default init path [/sbin/init]
 Cette option permet de spécifier le chemin d'accès par défaut pour les fichiers d'initialisation du système.
 
+<br />
+
 #### 7. Default Hostname [Debian]
 Cette option permet de spécifier le nom d'hôte par défaut pour le système.
+
+<br />
 
 #### 8. System V IPC [Y]
 Cette option permet d'activer ou de désactiver les fonctionnalités de communication inter-processus (IPC) de System V.
 
+<br />
+
 #### 9. POSIX Message queues [Y]
 Cette option permet d'activer ou de désactiver les files d'attente de messages POSIX.
+
+<br />
 
 #### 10. General notification queue [N]
 Cette option permet d'activer ou de désactiver la file d'attente de notifications générales.
 
+<br />
+
 #### 11. Enable process_vm_readv/writev_syscalls [Y]
 Cette option permet d'activer ou de désactiver les appels système process_vm_readv et process_vm_writev.
 
+<br />
+
 #### 12. uselib syscall (for libc5 and earlier) [N] (Risque de sécurité)
 Cette option permet d'activer ou de désactiver l'appel système uselib pour les versions de libc antérieures à la 5.
+
+<br />
 
 #### 13. Auditing support [???]
 Cette option permet d'activer ou de désactiver la prise en charge de l'audit.
 
 Recommandation: uselib à désactiver !
+
+<br />
 
 #### 14. Preemption Model [Preemptible Kernel]
 Cette option permet de choisir le modèle de préemption du kernel. 
@@ -75,6 +100,8 @@ Les options disponibles sont :
 - Preemptible Kernel (Low-Latency Desktop)
 - Voluntary Kernel Preemption (Desktop)
 - No Forced Preemption (Server)
+
+<br />
 
 #### 15. Preemption behaviour defined on boot [Y]
 Cette option permet de spécifier le comportement de préemption à l'amorçage.
@@ -85,13 +112,17 @@ Cette option permet de spécifier le comportement de préemption à l'amorçage.
 - forced    : active la préemption forcée (Preemptible Kernel)
 - rt        : active la préemption en temps réel (Preempt-RT)
 
+<br />
 
 #### 16. Core Scheduling for SMT [Y]
 Cette option permet d'activer ou de désactiver la planification des cœurs pour les processeurs SMT.
 
+<br />
 
 #### 17. CPU Isolation [Y] (Amélioration Gain de performance significativement)
 Cette option permet d'activer ou de désactiver l'isolation des processeurs.
+
+<br />
 
 #### 18. Kernel .config support
 Cette option permet d'activer ou de désactiver la prise en charge du fichier de configuration du kernel.
@@ -99,36 +130,58 @@ Cette option permet d'activer ou de désactiver la prise en charge du fichier de
 #### 19. Enable kernel headers throught /sys/kernel/kheaders.tar.xz
 Cette option permet d'activer ou de désactiver l'accès aux en-têtes du kernel à travers le fichier /sys/kernel/kheaders.tar.xz.
 
+<br />
+
 #### 20. Kernel log buffer size 
 Cette option permet de spécifier la taille du tampon de journalisation du kernel.
+
+<br />
 
 #### 21. CPU Kernel log buffer size contribution
 Cette option permet de spécifier la contribution de chaque processeur à la taille du tampon de journalisation du kernel.
 
+<br />
+
 #### 22. Printk indexing debugfs interface
 Cette option permet d'activer ou de désactiver l'interface de débogage printk.
+
+<br />
 
 #### 23. Memory placement award NUMA scheduler
 Cette option permet d'activer ou de désactiver la prise en compte de la placement de la mémoire pour les planificateurs NUMA.
 
+<br />
+
 #### 24. Checkpoint/restore support
 Cette option permet d'activer ou de désactiver la prise en charge de la sauvegarde et de la restauration des processus.
+
+<br />
 
 #### 25. Automatic process group scheduling
 Cette option permet d'activer ou de désactiver la planification automatique des groupes de processus.
 
+<br />
+
 #### 26. Kernel -> user space relay support
 Cette option permet d'activer ou de désactiver la prise en charge du relais entre le kernel et l'espace utilisateur.
+
+<br />
 
 #### 27. Initial Ram filesystem and RAM disk (initramfs/initrd) support
 Cette option permet de compiler le support pour les systèmes de fichiers et les disques RAM initiaux (initramfs/initrd). Un système de fichiers RAM initial est une archive compressée qui contient les fichiers nécessaires pour démarrer le système, tandis qu'un disque RAM est un espace de stockage temporaire utilisé pendant le démarrage. Si vous activez cette option, vous pourrez utiliser des systèmes de fichiers et des disques RAM initiaux pour démarrer votre système.
 
+<br />
+
 #### 28. Boot config support 
 Cette option permet de compiler le support pour les configurations de démarrage. Les configurations de démarrage définissent les paramètres de démarrage du système, tels que les options de noyau, les paramètres de l'interface réseau, etc. Si vous activez cette option, vous pourrez utiliser des configurations de démarrage personnalisées pour démarrer votre système.
+
+<br />
 
 #### 29. Preserve cpio archive mtimes in intiramfs
 Cette option permet de conserver les dates de modification (mtimes) des archives cpio dans les systèmes de fichiers RAM initiaux (initramfs). Les archives cpio sont utilisées pour stocker les fichiers dans les systèmes de fichiers RAM initiaux. Si vous activez cette option, les dates de modification des archives cpio seront conservées dans les systèmes de fichiers RAM initiaux.
 
+
+<br />
 
 #### 30. Compiler optimieation level
 Cette option permet de définir le niveau d'optimisation du compilateur pour la compilation du noyau. 
@@ -148,6 +201,9 @@ Le profilage est une technique qui permet de mesurer les performances du code en
 
 Si vous activez cette option, vous pourrez utiliser des outils de profilage pour analyser les performances de votre noyau.
 
+
+<br />
+<br />
 
 
 
