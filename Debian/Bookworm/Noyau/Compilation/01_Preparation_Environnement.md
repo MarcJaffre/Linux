@@ -76,7 +76,8 @@ apt install -y libgtk2.0-dev
 
 ### F. Dépendance
 ```bash
-apt install -y pahole; #
+# Requis si variable DEBUG_INFO_BTF = Y
+apt install -y pahole;
 ```
 
 
