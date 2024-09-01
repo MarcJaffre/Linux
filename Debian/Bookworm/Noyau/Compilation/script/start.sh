@@ -45,6 +45,7 @@ if [ ! -d $DOSSIER/linux-${VERSION} ]; then
    # si la valeur de la purge est sur ON alors
    if [ $PURGE = ON ];then
       # Telecharger et extraire le kernel
+      echo "Lancement du telechargement du Kernel";
       wget $KERNEL -O $DOSSIER/linux-${VERSION}.tar.xz  2>/dev/null;
       tar -xf         $DOSSIER/linux-${VERSION}.tar.xz -C $DOSSIER/;
    fi
@@ -61,7 +62,6 @@ if [ -d $DOSSIER/linux-${VERSION} ]; then
    cd $DOSSIER/linux-${VERSION};
    # Generer le fichier de configuration
    make menuconfig;
-
    echo "-----------------------------------------------------------------------------" >  $DOSSIER/linux-${VERSION}/Build.log;
    echo "# Nettoyage du KERNEL "                                                        >> $DOSSIER/linux-${VERSION}/Build.log;
    make clean                                                                           >> $DOSSIER/linux-${VERSION}/Build.log;
