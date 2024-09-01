@@ -2,20 +2,20 @@
 # <p align='center'> Configuration d'un Noyau Debian </p>
 
 ------------------------------------------------------------------------------------------------------------------------------------------
-### I. Configuration
-#### A. Présentation
+## I. Configuration
+### A. Présentation
 La configuration du noyau Linux est une étape importante dans la compilation d'un noyau personnalisé. Voici une explication détaillée de la configuration du noyau :
 
 <br />
 
-#### B. make menuconfig
+### B. make menuconfig
 
 - L'outil `make menuconfig` est un utilitaire qui permet de configurer les options de compilation du noyau Linux.
 - Il présente une interface de menu qui permet de sélectionner les options de compilation.
 
 <br />
 
-#### C. Les options de compilation
+### C. Les options de compilation
 Les options de compilation du noyau Linux sont divisées en plusieurs catégories :
 
 ##### 1. Général
@@ -41,7 +41,7 @@ Cette section permet de configurer les options liées à la sécurité, telles q
 
 <br />
 
-#### D. Les types de configuration
+### D. Les types de configuration
 Il existe plusieurs types de configuration :
 
 #### 1. CONFIG_*
