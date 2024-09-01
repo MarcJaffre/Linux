@@ -36,7 +36,12 @@ make -j $(nproc);
 make modules_install;
 ```
 
+### E. Installer le Noyau
+```bash
+make install;
+```
 
-### X. Durée de compilation
+### F. Durée de compilation
 ```
 Démarrage: 4h25
+```
