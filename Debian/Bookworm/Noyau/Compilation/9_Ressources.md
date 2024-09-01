@@ -7,6 +7,7 @@
 Améliore la gestion des processeurs et des threads, ce qui permet une meilleure utilisation des ressources système pour les jeux vidéo.
 
 C'est une mise à jour du gestionnaire de processeur (CPU) qui améliore la gestion des processeurs et des threads pour les jeux vidéo.
+
 ##### 1. Amélioration de la gestion des processeurs
 Le patch "schedutil" permet au noyau de mieux gérer les processeurs et les threads, ce qui signifie que les jeux vidéo peuvent utiliser plus efficacement les ressources système. Cela se traduit par une amélioration de la fréquence d'images (FPS) et une réduction de la latence.
 
