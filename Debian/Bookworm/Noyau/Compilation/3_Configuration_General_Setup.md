@@ -25,7 +25,7 @@ Cette option permet d'ajouter une chaîne de caractères personnalisée à la ve
 #### 4. Build ID Salt [???]
 Cette option permet de spécifier une valeur de "salt" pour le Build ID du kernel. Le Build ID est une valeur unique qui identifie une version spécifique du kernel.
 
-#### 5. Kernel compression mode [Zstd]
+#### 5. Kernel compression mode [zstd]
 Cette option permet de choisir le mode de compression du kernel. 
 
 Les options disponibles sont : 
@@ -54,17 +54,19 @@ Cette option permet d'activer ou de désactiver les fonctionnalités de communic
 #### 9. POSIX Message queues [Y]
 Cette option permet d'activer ou de désactiver les files d'attente de messages POSIX.
 
-#### 10. General notification queue
+#### 10. General notification queue [N]
 Cette option permet d'activer ou de désactiver la file d'attente de notifications générales.
 
-#### 11. Enable process_vm_readv/writev_syscalls
+#### 11. Enable process_vm_readv/writev_syscalls [Y]
 Cette option permet d'activer ou de désactiver les appels système process_vm_readv et process_vm_writev.
 
-#### 12. uselib syscall (for libc5 and earlier)
+#### 12. uselib syscall (for libc5 and earlier) [N] (Risque de sécurité)
 Cette option permet d'activer ou de désactiver l'appel système uselib pour les versions de libc antérieures à la 5.
 
 #### 13. Auditing support
 Cette option permet d'activer ou de désactiver la prise en charge de l'audit.
+
+Recommandation: uselib à désactiver !
 
 #### 14. Preemption Model
 Cette option permet de choisir le modèle de préemption du kernel. 
@@ -74,7 +76,7 @@ Les options disponibles sont :
 * Voluntary Kernel Preemption (Desktop)
 * Preemptible Kernel (Low-Latency Desktop)
 
-#### 15. Preemption behaviour defined on boor
+#### 15. Preemption behaviour defined on boot
 Cette option permet de spécifier le comportement de préemption à l'amorçage.
 
 #### 16. Core Scheduling for SMT
