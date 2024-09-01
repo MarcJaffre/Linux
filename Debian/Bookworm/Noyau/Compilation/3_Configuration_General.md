@@ -23,24 +23,24 @@ Aller dans le dossier du Noyau et taper la commande `make menuconfig` .
 
 ------------------------------------------------------------------------------------------------------------------------------------------
 ## VIII. Sécurité
-CONFIG_SECURITY : Support de la sécurité
-CONFIG_SECURITY_APPARMOR : Support d'AppArmor
-CONFIG_SECURITY_NETWORK : Support du réseau de sécurité
-CONFIG_SECURITY_NETWORK_XFRM : Support du réseau de sécurité pour les transformations
-CONFIG_SECURITY_PATH : Support du chemin de sécurité
-CONFIG_SECURITY_SELINUX : Support de SELinux
-CONFIG_SECURITY_SMACK : Support de Smack
-CONFIG_SECURITY_TOMOYO : Support de TOMOYO
-CONFIG_SECURITY_YAMA : Support de Yama
-CONFIG_SECURITYFS : Support du système de fichiers de sécurité
+- CONFIG_SECURITY : Support de la sécurité
+- CONFIG_SECURITY_APPARMOR : Support d'AppArmor
+- CONFIG_SECURITY_NETWORK : Support du réseau de sécurité
+- CONFIG_SECURITY_NETWORK_XFRM : Support du réseau de sécurité pour les transformations
+- CONFIG_SECURITY_PATH : Support du chemin de sécurité
+- CONFIG_SECURITY_SELINUX : Support de SELinux
+- CONFIG_SECURITY_SMACK : Support de Smack
+- CONFIG_SECURITY_TOMOYO : Support de TOMOYO
+- CONFIG_SECURITY_YAMA : Support de Yama
+- CONFIG_SECURITYFS : Support du système de fichiers de sécurité
 
 <br />
 
 ------------------------------------------------------------------------------------------------------------------------------------------
 ## VIV. Autres
-CONFIG_MODULE_FORCE_UNLOAD : Support du déchargement forcé des modules
-CONFIG_MODULE_UNLOAD : Support du déchargement des modules
-CONFIG_MODVERSIONS : Support des versions
+- CONFIG_MODULE_FORCE_UNLOAD : Support du déchargement forcé des modules
+- CONFIG_MODULE_UNLOAD : Support du déchargement des modules
+- CONFIG_MODVERSIONS : Support des versions
 
 
 <br />
