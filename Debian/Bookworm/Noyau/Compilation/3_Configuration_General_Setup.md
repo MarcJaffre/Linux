@@ -60,13 +60,31 @@ Les options suivants ont étés relevés sur le Kernel 6.10.7 de Kernel.org
 #### 4. High Resolution Timer Support
 #### 5. ClockSource Watchdog maximum allowable skew (in ms)
 
+
+### D. CPU/Task time and stats accounting
 <br />
 
-####
-####
+### E. RCU SubSystem
+<br />
 
-### 
-### 
+### F. Scheduler Features
+<br />
+
+### G. Control Group Support
+<br />
+
+### H. Namespaces support
+
+### I. Configure standard kernel features
+<br />
+
+ 
+### J. Kernel Performance Events And Counters
+
+### K. Kexec and crash features
+
+<br />
+
 ### 
 ### 
 
