@@ -18,7 +18,7 @@ cd linux-${VERSION};
 ```
 
 ### B. Menu de configuration
-La configuration ne sera pas présenté. (Nouvelle configuration)
+La configuration ne sera pas présenté. (Tocuhe Z permet d'afficher le menu caché)
 ```bash
 clear;
 make menuconfig;
