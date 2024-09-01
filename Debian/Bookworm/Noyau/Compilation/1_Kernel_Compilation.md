@@ -19,6 +19,8 @@ tar -xf linux-${VERSION}.tar.xz;
 cd linux-${VERSION};
 ```
 
+<br />
+
 ### B. Menu de configuration
 Touche Z permet d'afficher le menu caché
 ```bash
@@ -26,22 +28,35 @@ clear;
 make menuconfig;
 ```
 
+<br />
+
 ### C. Compilation en Multi-Core
 Si on souhaite `X` Core, il suffit de remplacer `$(nproc)` par le nombre de core qui compilerons.
 ```bash
-make ARCH=$(arch) -j$(nproc)  CONFIG_DEBUG_INFO_BTF=n;
+make ARCH=$(arch) -j$(nproc) -o2 -mtune=native
 ```
 
+```
+-O2 pour activer l'optimisation du code
+-march=native pour compiler pour l'architecture native du processeur
+-mtune=native pour ajuster les paramètres de compilation pour l'architecture native du processeur
+```
+
+<br />
 
 ### D. Installer les modules
 ```bash
 make modules_install;
 ```
 
+<br />
+
 ### E. Installer le Noyau
 ```bash
 make install;
 ```
+
+<br />
 
 ### F. Durée de compilation
 
