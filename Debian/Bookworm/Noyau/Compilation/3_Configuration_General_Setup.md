@@ -271,7 +271,7 @@ Les niveaux d'optimisation les plus courants sont :
 
 <br />
 
-#### 31. Profiling support
+#### 31. Profiling support [Y]
 Cette option permet de compiler le support pour le profilage.
 
 Le profilage est une technique qui permet de mesurer les performances du code en cours d'exécution.
@@ -289,6 +289,9 @@ Ftrace : Ftrace est un outil de profilage qui permet de collecter des informatio
 
 <br />
 <br />
+
+
+
 
 ### B. IRQ subsystem
 #### 1. Expose irq internals in debugfs
