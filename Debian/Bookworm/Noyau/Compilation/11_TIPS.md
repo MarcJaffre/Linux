@@ -19,7 +19,9 @@ Il est principalement utilisÃ© pour inspecter et modifier les informations de dÃ
 
 
 #### 3. Solutions
-Installer le paquet Pahole ou configurer la valeur `Kernel Hacking\Compile-time Checks and compiler optiond\ Generate BTF Type info` sur N. (DEBUG_INFO_BTF)
+Installer le paquet Pahole ou modifier la valeur de `DEBUG_INFO_BTF` sur `N`.
+
+`Kernel Hacking` > `Compile-time Checks and compiler optiond` >  `Generate BTF Type info`
 
 ```bash
 clear;
