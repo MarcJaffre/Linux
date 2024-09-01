@@ -60,15 +60,13 @@ fi
 # Si le dossier existe alors
 if [ -d $DOSSIER/linux-${VERSION} ]; then
    cd $DOSSIER/linux-${VERSION};
+   
    # Generer le fichier de configuration
    make menuconfig;
+
+   # Nettoyage
+   make clean;
    echo "-----------------------------------------------------------------------------" >  $DOSSIER/linux-${VERSION}/Build.log;
-   echo "# Nettoyage du KERNEL "                                                        >> $DOSSIER/linux-${VERSION}/Build.log;
-   make clean                                                                           >> $DOSSIER/linux-${VERSION}/Build.log;
-   echo ""                                                                              >> $DOSSIER/linux-${VERSION}/Build.log;
-   echo ""                                                                              >> $DOSSIER/linux-${VERSION}/Build.log;
-   echo ""                                                                              >> $DOSSIER/linux-${VERSION}/Build.log;
-   echo "-----------------------------------------------------------------------------" >> $DOSSIER/linux-${VERSION}/Build.log;
    echo "# Compilation du KERNEL "                                                      >> $DOSSIER/linux-${VERSION}/Build.log;
    make ARCH=$(arch) -j$(nproc)                                                         >> $DOSSIER/linux-${VERSION}/Build.log 2>&1;
 
