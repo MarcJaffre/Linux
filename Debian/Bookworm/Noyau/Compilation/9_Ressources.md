@@ -16,9 +16,7 @@ Cela se traduit par une amélioration de la fréquence d'images (FPS) et une ré
 #### 2. Meilleure prise en charge des processeurs à plusieurs cœurs :
 Le patch "schedutil" améliore la prise en charge des processeurs à plusieurs cœurs, ce qui permet aux jeux vidéo de bénéficier de la puissance de traitement supplémentaire offerte par ces processeurs.
 
-
 <br />
-
 
 ### B. futex2
 Améliore la gestion des mutex et des verrous, ce qui réduit les temps de latence et améliore la performance globale.
