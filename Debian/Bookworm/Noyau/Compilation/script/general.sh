@@ -29,15 +29,28 @@ KERNEL_CLEAN(){
  make clean;
 }
 
-KERNEL_COMPILATION(){}
+KERNEL_COMPILATION(){
+ cd $DOSSIER/linux-${VERSION};
+ make -j$(nproc) ARCH=$(arch);
+}
 
-KERNEL_INSTALL_MODULE(){}
+INSTALL_SYSTEM_MODULE(){
+ cd $DOSSIER/linux-${VERSION};
+ make modules_install;
+}
 
-KERNEL_COPY(){}
+INSTALL_SYSTEM_KERNEL(){
+cp $DOSSIER/linux-${VERSION}/arch/$(uname -m)/boot/bzImage /boot/vmlinuz-custom;
+}
 
-KERNEL_UPDATE_GRUB(){}
+INSTALL_SYSTEM_UPDATE_GRUB(){
+ update-grub;
+}
 
-KERNEL_UNINSTALL_MODULE(){}
+UNINSTALL_NEW_KERNEL(){
+ rm -rf /lib/modules/${VERSION};
+ rm -rf /boot/vmlinuz-custom;
+}
 
 GUIDE(){}
 
@@ -67,13 +80,13 @@ case $1 in
   ;;
  # ====================================
  install)
-  KERNEL_INSTALL_MODULE;
-  KERNEL_COPY;
-  KERNEL_UPDATE_GRUB;
+  INSTALL_SYSTEM_MODULE;
+  INSTALL_SYSTEM_KERNEL;
+  INSTALL_SYSTEM_UPDATE_GRUB;
   ;;
  # ====================================
  uninstall)
-  KERNEL_UNINSTALL_MODULE;
+  UNINSTALL_NEW_KERNEL;
   ;;
  # ====================================
  *)
