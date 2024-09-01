@@ -49,7 +49,6 @@ Pour Debian 12 (Bookworm), voici la liste de paquets mise à jour pour compiler 
 - **libbpf-dev**    : fournit les bibliothèques de développement pour les programmes de filtrage de paquets (BPF)
 
 
-
 ### E. Installer les paquets
 ```bash
 clear;
@@ -72,11 +71,12 @@ apt install -y libpci-dev 1>/dev/null;
 apt install -y libssl-dev 1>/dev/null;
 apt install -y libusb-dev 1>/dev/null;
 apt install -y libz-dev 1>/dev/null;
-
 apt install -y linux-headers-$(uname -r) 1>/dev/null;
 apt install -y linux-source-$(uname -r | cut -d "." -f 1-2) 1>/dev/null;
-
 apt install -y ncurses-dev 1>/dev/null;
+
+apt install -y libglade2-dev
+apt install -y libgtk2.0-dev
 ```
 
 <br />
