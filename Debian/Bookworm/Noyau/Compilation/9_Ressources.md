@@ -23,6 +23,16 @@ Le patch "schedutil" améliore la prise en charge des processeurs à plusieurs c
 ### B. futex2
 Améliore la gestion des mutex et des verrous, ce qui réduit les temps de latence et améliore la performance globale.
 
+
+#### 1. Amélioration de la gestion des mutex
+Le patch "futex2" permet au noyau de gérer plus efficacement les mutex, ce qui signifie que les jeux vidéo peuvent accéder plus rapidement aux ressources système partagées.
+
+#### 2. Réduction des temps de latence : 
+Le patch "futex2" réduit les temps de latence en permettant aux jeux vidéo de répondre plus rapidement aux événements système.
+
+<br />
+
+
 ### C. io_uring
 Améliore la gestion des entrées-sorties et des opérations de fichiers, ce qui réduit les temps de chargement et améliore la performance des jeux vidéo.
 
