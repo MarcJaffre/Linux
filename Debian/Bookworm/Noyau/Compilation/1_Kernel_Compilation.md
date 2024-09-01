@@ -33,6 +33,7 @@ make menuconfig;
 ### C. Compilation en Multi-Core
 Si on souhaite `X` Core, il suffit de remplacer `$(nproc)` par le nombre de core qui compilerons.
 ```bash
+#make -j$(nproc) ARCH=$(arch);
 make -j$(nproc) -O2 -march=native -mtune=native;
 ```
 
