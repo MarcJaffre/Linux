@@ -194,6 +194,8 @@ Les niveaux d'optimisation les plus courants sont :
 -O2 : optimisation moyenne
 -O3 : optimisation élevée
 
+<br />
+
 #### 31. Profiling support
 Cette option permet de compiler le support pour le profilage.
 
