@@ -34,7 +34,7 @@ make menuconfig;
 Si on souhaite `X` Core, il suffit de remplacer `$(nproc)` par le nombre de core qui compilerons.
 ```bash
 #make -j$(nproc) ARCH=$(arch);
-make -j$(nproc) -O3 -march=native -mtune=native;
+make -j$(nproc) -O3 -march=native -mtune=native > build.log 2>&1;
 ```
 
 ```
