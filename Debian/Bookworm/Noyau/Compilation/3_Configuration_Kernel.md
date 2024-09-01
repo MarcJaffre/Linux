@@ -31,6 +31,20 @@ Aller dans le dossier du Noyau et taper la commande `make menuconfig` .
 - CONFIG_CPU_IDLE : Support de l'arrêt du processeur
 - CONFIG_CPU_IDLE_GOV_LADDER : Gestionnaire d'arrêt du processeu
 
+Processor Type and Features
+> CONFIG_MK8 : Pour les processeurs AMD Ryzen et EPYC
+
+> CONFIG_MK9 : Pour les processeurs AMD Ryzen 3000 et EPYC Rome
+
+> CONFIG_INTEL_CORE2 : Pour les processeurs Intel Core 2 et plus récents
+
+> CONFIG_X86_64 : Pour les processeurs x86-64 (AMD et Intel)
+
+
+
+
+
+
 <br />
 
 ------------------------------------------------------------------------------------------------------------------------------------------
