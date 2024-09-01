@@ -13,20 +13,35 @@ Aller dans le dossier du Noyau et taper la commande `make xconfig` .
 ## II. Base
 Les options suivants ont étés relevés sur le Kernel 6.10.7 de Kernel.org
 ### A. Genetal Setup (+30 options)
-#### 1. Compile also drivers which will not load
+#### 1. Compile also drivers which will not load [N]
 Cette option permet de compiler les pilotes qui ne seront pas chargés par défaut. Cela peut être utile pour les développeurs de pilotes ou pour les utilisateurs qui veulent avoir accès à des pilotes expérimentaux.
 
-#### 2. Compile the kernel with warnings as errors
+#### 2. Compile the kernel with warnings as errors [N]
 Cette option permet de traiter les avertissements de compilation comme des erreurs. Cela signifie que si un avertissement est détecté pendant la compilation, la compilation sera arrêtée.
 
-#### 3. Local Version - apprend to kernel release
+#### 3. Local Version - apprend to kernel release [Custom]
 Cette option permet d'ajouter une chaîne de caractères personnalisée à la version du kernel. Cela peut être utile pour identifier une version personnalisée du kernel.
 
-#### 4. Build ID Salt
+#### 4. Build ID Salt [???]
 Cette option permet de spécifier une valeur de "salt" pour le Build ID du kernel. Le Build ID est une valeur unique qui identifie une version spécifique du kernel.
 
 #### 5. Kernel compression mode
-Cette option permet de choisir le mode de compression du kernel. Les options disponibles sont : * Gzip * Bzip2 * Lzma * Xz * Lzo * Zstd
+Cette option permet de choisir le mode de compression du kernel. 
+
+Les options disponibles sont : 
+- Gzip  : X86 et x64
+- Lzma  : Arm et ARM64
+- Bzip2 :
+- Xz    :
+- Lzo   :
+- Zstd  : Est très rapide pour compresser les données, ce qui est important pour les applications où la compression est effectuée en temps réel.
+
+| Algo | Zip 1 Go | Unzip 1 Go |
+| ---- | -------- | ---------- |
+| ZSTD | 1.3 Sec  | 0.5 Sec    |
+[ Gzip | 2.5 Sec  | 1.2 Sec    |
+
+
 
 #### 6. Default init path
 Cette option permet de spécifier le chemin d'accès par défaut pour les fichiers d'initialisation du système.
