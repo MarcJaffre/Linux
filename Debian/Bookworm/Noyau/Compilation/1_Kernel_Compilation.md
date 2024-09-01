@@ -5,6 +5,8 @@
 
 --------------------------------------------------------------------------------------
 ## I. Construction du Noyau
+Il est nécessaire d'avoir 25 Go.
+
 ### A. Preparation Environnement du Noyau
 ``` bash
 clear;
