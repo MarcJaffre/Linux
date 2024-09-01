@@ -31,18 +31,27 @@ make menuconfig;
 <br />
 
 ### C. Compilation en Multi-Core
+#### 1. Sans CheckPoint
 Si on souhaite `X` Core, il suffit de remplacer `$(nproc)` par le nombre de core qui compilerons.
-```bash
-#make -j$(nproc) ARCH=$(arch);
-make -j$(nproc) -O3 -march=native -mtune=native > build.log 2>&1;
-```
-
 ```
 -O3 pour activer l'optimisation du code en utilisant le cache L2 et L3. 
 -O2 pour activer l'optimisation du code
 -march=native pour compiler pour l'architecture native du processeur
 -mtune=native pour ajuster les paramètres de compilation pour l'architecture native du processeur
 ```
+
+```bash
+#make -j$(nproc) ARCH=$(arch);
+make -j$(nproc) -O3 -march=native -mtune=native > build.log 2>&1;
+```
+
+#### 2. CheckPoint
+Permet la reprise de la compilation
+```bash
+clear;
+make -j$(nproc) -O3 -march=native -mtune=native > build.log 2>&1 checkpoint;
+make -j$(nproc) -O3 -march=native -mtune=native > build.log 2>&1 checkpoint-restore;
+``` 
 
 <br />
 
