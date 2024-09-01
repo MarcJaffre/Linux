@@ -167,8 +167,13 @@ Cette option permet d'activer ou de désactiver la prise en compte de la placeme
 Cette option permet d'activer ou de désactiver la prise en charge de la sauvegarde et de la restauration des processus.
 
 ```bash
-# Sauvegarde du processus avec l'ID 1234
-checkpoint -c 1234 checkpoint_file
+# Sauvegarde du processus avec l'ID 1234 (Ne ferme pas le processus)
+checkpoint -c 1234 checkpoint_file 
+
+# Sauvegarde du processus avec l'ID 1234 (Ferme le processus à la fin)
+checkpoint -c my_checkpoint -k 1234
+
+
 
 # Restauration du processus à partir du fichier de sauvegarde
 restore -r checkpoint_file
