@@ -65,7 +65,17 @@ make modules_install;
 ### E. Installer le Noyau
 ```bash
 clear;
-make install;
+SOURCE="/Data/linux-*/arch/x86_64/boot"
+KERNEL_NAME="vmlinuz-marc"
+cp $SOURCE/bzImage /boot/$KERNEL_NAME;
+```
+
+### E. Installer le Noyau
+```bash
+clear;
+sudo cp /usr/src/linux/arch/<architecture>/boot/bzImage /boot/vmlinuz-<version>
+cp /Data/linux-*/arch/x86_64/boot/bzImage /boot/vmlinuz-marc;
+update-grub
 ```
 
 
