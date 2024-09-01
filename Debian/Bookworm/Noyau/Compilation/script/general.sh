@@ -21,8 +21,10 @@ KERNEL_PURGE(){
 
 DOWNLOAD_KERNEL(){
  cd $DOSSIER;
- wget $KERNEL $DOSSIER/linux-${VERSION}.tar.xz             2>/dev/null;
- tar xf       $DOSSIER/linux-${VERSION}.tar.xz -C $DOSSIER 1>/dev/null;
+ if [ ! -f $DOSSIER/linux-${VERSION}.tar.xz ];then
+   wget $KERNEL $DOSSIER/linux-${VERSION}.tar.xz             2>/dev/null;
+   tar xf       $DOSSIER/linux-${VERSION}.tar.xz -C $DOSSIER 1>/dev/null;
+ fi
 }
 
 KERNEL_EDIT(){
