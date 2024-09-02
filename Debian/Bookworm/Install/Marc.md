@@ -77,7 +77,7 @@ apt install --no-install-recommends -y gvfs-libs;
 apt install --no-install-recommends -y krita;
 apt install --no-install-recommends -y krita-l10n;
 # ========================================================================================
-apt install --no-install-recommends -y locales
+apt install --no-install-recommends -y locales;
 apt install --no-install-recommends -y locales-all;
 apt install --no-install-recommends -y lightdm;
 # ========================================================================================
