@@ -36,7 +36,6 @@ apt install --no-install-recommends -y apt-transport-https;
 apt install --no-install-recommends -y autofs;
 # ========================================================================================
 #apt install --no-install-recommends -y avahi-daemons;
-
 apt install --no-install-recommends -y btop;
 apt install --no-install-recommends -y ca-certificates;
 apt install --no-install-recommends -y bash-completion;
