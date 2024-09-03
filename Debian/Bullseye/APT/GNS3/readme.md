@@ -487,5 +487,14 @@ taskkill /f /im gns3.exe
 taskkill /f /im gns3server.exe
 ```
 
+#### G.  virbr0 is missing. You need to install libvirt
+```bash
+virsh net-list --all
+virsh net-start default;
+virsh net-autostart default;
+```
+
+<br />
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### VII. Samba et WSDD
