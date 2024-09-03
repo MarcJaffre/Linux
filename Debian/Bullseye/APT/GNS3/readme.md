@@ -284,7 +284,7 @@ Le pont recevra la configuration réseau.
 
 ```bash
 clear;
-apt install bridge-utils;
+apt install -y bridge-utils;
 
 NET=$(ip link | grep "2: "         | cut -d ":" -f 2 | cut -c 2-10)
 IP=$(cat /etc/network/interfaces   | grep $NET -A4 | grep add | cut -c 10-30)
