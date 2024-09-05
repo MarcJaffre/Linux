@@ -339,7 +339,9 @@ chmod +x $HOME/AppImage/*.AppImage;
 Préférences > Options
   > Général:
    - Moteur Multimédia: mplayer (mpv: BUG !)
-  > Performance:
+   > Vidéo
+    - Pilote de sortie: XV (0 Glamor ...)
+> Performance:
    - Thread: 4
    - Décodage matériel: Auto
    - Filtre Anti-bloc: Passer Toujours (CPU ne prend pas en charge H.264)
