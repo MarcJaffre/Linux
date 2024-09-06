@@ -11,13 +11,18 @@
 - Box Backup
 - Burp
 - CloudBerry
+- Déjà Dup
+- Duplicity
 - Fwbackups
 - Kbackup
 - Luckybackup
 - Mondorescue
 - Partimage
+- Rclone
 - Restic
 - Rsnapshot
 - Rsync
 - Sbackup
+- TimeShift
+- UrBackup
 ```
