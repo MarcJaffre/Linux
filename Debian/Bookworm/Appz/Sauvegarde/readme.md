@@ -1,4 +1,5 @@
 ### Liste de logiciel
 ```
-Bacula
+- Bacula
+- Partimage
 ```
