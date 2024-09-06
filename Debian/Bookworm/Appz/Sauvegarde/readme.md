@@ -19,6 +19,8 @@
 - Mondorescue
 - Partimage
 - Rclone
+- Rdiff-backup
+- Relax-and-Recover
 - Restic
 - Rsnapshot
 - Rsync
