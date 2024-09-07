@@ -59,7 +59,7 @@ services:      #
 ################
 #
  Portainer:
-  image: 'portainer/portainer-ee'
+  image: 'portainer/portainer-ce'
   container_name: 'Portainer'
   network_mode: 'bridge'
   restart: 'always'
@@ -89,12 +89,6 @@ docker-compose -f portainer.yml down 2>/dev/null;
 # Démarrage de portainer #
 ##########################
 docker-compose -f portainer.yml up -d;
-
-```
-
-
-```
-3-gPPDrrOiwK+WN8jI9rxvCA6vJj0REq/BjYCr4RCnFuUZp6zNJHaVf3tzk3LIBiPDYcwVQaXDMYYP
 ```
 
 #### G. Serveur KMS
