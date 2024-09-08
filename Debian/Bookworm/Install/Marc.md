@@ -150,7 +150,7 @@ dpkg-reconfigure tzdata;
 dpkg-reconfigure locales;
 ```
 
-### D. Catte-Wifi BCM4352
+### D. Carte-Wifi BCM4352
 ```bash
 clear;
 apt install --no-install-recommends -y firmware-brcm80211;
