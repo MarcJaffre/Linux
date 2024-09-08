@@ -158,6 +158,7 @@ apt install --no-install-recommends -y wireless-tools;
 
 apt install --no-install-recommends -y broadcom-sta-dkms;
 dpkg-reconfigure broadcom-sta-dkms;
+modprobe -r wl;
 modprobe wl;
 ```
 
