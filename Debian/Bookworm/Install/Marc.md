@@ -22,7 +22,6 @@ deb-src http://deb.debian.org/debian/              $VERSION_CODENAME-updates    
 ### B. Mise à jour
 ```bash
 clear;
-rpi-eeprom-update -a;
 apt update 1>/dev/null;
 apt upgrade -y -f;
 ```
