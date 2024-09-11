@@ -49,6 +49,7 @@ apt install --no-install-recommends -y cinnamon-core;
 apt install --no-install-recommends -y cinnamon-desktop-environment;
 apt install --no-install-recommends -y cinnamon-doc;
 apt install --no-install-recommends -y cinnamon-settings-daemon-dev;
+apt install --no-install-recommends -y dconf-editor;
 apt install --no-install-recommends -y libcinnamon-desktop-dev;
 apt install --no-install-recommends -y task-cinnamon-desktop;
 # ========================================================================================
