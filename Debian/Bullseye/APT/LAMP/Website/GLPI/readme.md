@@ -177,6 +177,40 @@ systemctl restart apache2;
 </VirtualHost>
 ```
 
+**default-ssl.conf**
+```
+<IfModule mod_ssl.c>
+        <VirtualHost _default_:443>
+                        ServerAdmin webmaster@localhost
+                        ServerName debian.lan
+                        DocumentRoot   /var/www/html/glpi/public
+                        Alias "/glpi" "/var/www/html/glpi/public"
+                        ErrorLog   /error.log
+                        CustomLog  /access.log combined
+                        SSLEngine on
+                        SSLCertificateFile    /etc/apache2/ssl/web01.pem
+                        SSLCertificateKeyFile /etc/apache2/ssl/web01.key
+                        <FilesMatch "\.(cgi|shtml|phtml|php)$">
+                                SSLOptions +StdEnvVars
+                        </FilesMatch>
+                        <Directory /usr/lib/cgi-bin>
+                                SSLOptions +StdEnvVars
+                        </Directory>
+                        <Directory /var/www/html/glpi/public>
+                                Require all granted
+                                RewriteEngine On
+                                RewriteCond %{REQUEST_FILENAME} !-f
+                                RewriteRule ^(.*)$ index.php [QSA,L]
+                        </Directory>
+
+                        <IfModule mod_headers.c>
+                                Header always set Strict-Transport-Security "max-age=15552000; >
+                        </IfModule>
+        </VirtualHost>
+</IfModule>
+``` 
+
+
 **Retour en Arrière**
 ```bash
 cat /etc/apache2/sites-enabled/000-default.conf.old  > /etc/apache2/sites-enabled/000-default.conf; systemctl restart apache2
