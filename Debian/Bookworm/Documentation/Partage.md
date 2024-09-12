@@ -61,3 +61,41 @@ usermod -aG Informaticiens marc;
 clear;
 gpasswd -d marc Informaticiens;
 ```
+
+<br />
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+### II. Samba
+
+```
+# =================================================
+[Comptable]
+comment                 = Acces au dossier Comptable
+path                    = /Data/Comptable
+browseable              = yes
+writable                = yes
+read only               = no
+force group             = Comptables
+guest ok                = no
+vfs object              = recycle
+recycle:exclude_dir     = Corbeille
+recycle:keeptree        = true
+recycle:repository      = ./Corbeille
+recycle:versions        = true
+
+# =================================================
+
+[Informaticien]
+comment                 = Acces au dossier Informaticiens
+path                    = /Data/Informaticien
+browseable              = yes
+writable                = yes
+read only               = no
+force group             = Informaticiens
+guest ok                = no
+vfs object              = recycle
+recycle:exclude_dir     = Corbeille
+recycle:keeptree        = true
+recycle:repository      = ./Corbeille
+recycle:versions        = true
+```
