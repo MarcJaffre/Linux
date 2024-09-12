@@ -47,34 +47,25 @@ setfacl -Rx g:marc .;
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### III. Pratiques
-#### A. Exemple
+#### A. Creation de dossier
 ```bash
 clear;
-mkdir -p /Data/test/direction
-mkdir -p /Data/test/informaticien
-touch /Data/test/fichier1.txt;
-touch /Data/test/fichier2.txt;
-chmod -R 700 /Data/test;
-```
-#### B. Ajout de permissions
-```bash
-clear;
-setfacl -m u:marc:r-x /Data/test;
-setfacl -m u:marc:rwx /Data/test/fichier1.txt;
-setfacl -Rm u:marc:rwx /Data/test/informaticien;
+rm -rf /Data/{Informaticien,Direction};
+mkdir -p /Data/{Informaticien,Direction};
+chmod -R 750 /Data/*;
+chown -R root:informaticien /Data/Informaticien;
 ```
 
-| Objets                   | chmod | ACL |
-| ------------------------ | ----- | --- |
-| /Data/test               | 700   | r-x |
-| /Data/test/direction     | 700   | --- |
-| /Data/test/informaticien | 700   | rwx |
-| /Data/test/fichier1.txt  | 700   | rwx |
-| /Data/test/fichier2.txt  | 700   | --- |
-
-#### C. Retirer les droits
+#### B. Création d'un Groupe informaticien
 ```bash
 clear;
-setfacl -m u:marc:--- /Data/test/fichier1.txt;
-getfacl /Data/test/fichier1.txt;
+groupadd informaticien 2>/dev/null;
+usermod -aG informaticien marc 2>/dev/null;
+```
+
+#### C. StickyBit
+```bash
+clear;
+chmod g+w /Data/Informaticien
+chmod g+t /Data/Informaticien
 ```
