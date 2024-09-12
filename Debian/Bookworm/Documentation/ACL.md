@@ -51,6 +51,7 @@ setfacl -Rx g:marc .;
 ```bash
 clear;
 mkdir -p /Data/test/direction
+mkdir -p /Data/test/informaticien
 touch /Data/test/fichier1.txt;
 touch /Data/test/fichier2.txt;
 chmod -R 700 /Data/test;
@@ -60,11 +61,20 @@ chmod -R 700 /Data/test;
 clear;
 setfacl -m u:marc:r-x /Data/test;
 setfacl -m u:marc:rwx /Data/test/fichier1.txt;
+setfacl -Rm u:marc:rwx /Data/test/informaticien;
 ```
 
-| Objets                  | chmod | ACL |
-| ----------------------- | ----- | --- |
-| /Data/test              | 700   | r-x |
-| /Data/test/direction    | 700   | --- |
-| /Data/test/fichier1.txt | 700   | rwx |
-| /Data/test/fichier2.txt | 700   | --- |
+| Objets                   | chmod | ACL |
+| ------------------------ | ----- | --- |
+| /Data/test               | 700   | r-x |
+| /Data/test/direction     | 700   | --- |
+| /Data/test/informaticien | 700   | rwx |
+| /Data/test/fichier1.txt  | 700   | rwx |
+| /Data/test/fichier2.txt  | 700   | --- |
+
+#### C. Retirer les droits
+```bash
+clear;
+setfacl -m u:marc:--- /Data/test/fichier1.txt;
+getfacl /Data/test/fichier1.txt;
+```
