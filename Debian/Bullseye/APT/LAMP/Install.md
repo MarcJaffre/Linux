@@ -36,7 +36,7 @@ mysql -u root -p${ROOT_DB_PASS} -e "SHOW DATABASES;"
 <br />
 
 #### C. PHP
-##### 1. #### A. Installation de PHP
+##### 1. Installation de PHP
 ```bash
 clear;
 apt install -y php;
