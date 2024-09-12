@@ -47,26 +47,47 @@ setfacl -Rx g:marc .;
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### III. Pratiques
-#### A. Creation de dossier
+#### A. Creation de l'arborescence
 ```bash
 clear;
 rm -rf /Data/{Informaticien,Direction};
 mkdir -p /Data/{Informaticien,Direction};
-chmod -R 750 /Data/*;
+```
+
+#### B. Permissions
+Le propriétaire et le groupe propriétaire ont tous les droits.
+```bash
+clear;
+chmod -R 770 /Data/*;
+```
+
+#### C. Groupe Propriétaire
+On définit le groupe sur `informaticien`.
+```bash
 chown -R root:informaticien /Data/Informaticien;
 ```
 
-#### B. Création d'un Groupe informaticien
+#### D. StickyBit
+Seul le propriétaire peut supprimer le dossier Informaticien.
 ```bash
 clear;
-groupadd informaticien 2>/dev/null;
+chmod -R 1770 /Data/Informaticien;
+```
+
+#### E. Création d'un Groupe informaticien
+```bash
+clear;
+groupadd informaticien
+```
+
+#### F. Ajout l'utilisateur au groupe
+```bash
+clear;
 usermod -aG informaticien marc 2>/dev/null;
 ```
 
-#### C. StickyBit
-Le Propriétaire du dossier est le seul à pouvoir supprimé le dossier
+#### G. Retirer l'utilisateur au groupe
 ```bash
 clear;
-chmod g+w /Data/Informaticien
-chmod g+t /Data/Informaticien
+gpasswd -d marc informaticien;
 ```
