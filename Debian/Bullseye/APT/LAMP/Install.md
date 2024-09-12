@@ -49,7 +49,7 @@ clear;
 apt install -y libapache2-mod-php;
 ```
 
-##### 3.. Relance Apache
+##### 3. Relance Apache
 Le service Apache lance PHP et PHP charge les modules PHP-*.
 ```bash
 clear;
