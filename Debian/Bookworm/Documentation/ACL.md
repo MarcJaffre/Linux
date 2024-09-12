@@ -64,6 +64,7 @@ usermod -aG informaticien marc 2>/dev/null;
 ```
 
 #### C. StickyBit
+Le Propriétaire du dossier est le seul à pouvoir supprimé le dossier
 ```bash
 clear;
 chmod g+w /Data/Informaticien
