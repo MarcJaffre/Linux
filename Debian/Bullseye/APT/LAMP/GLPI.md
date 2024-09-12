@@ -2,20 +2,6 @@
 ## <p align='center'> Guide de Déploiement de GLPI sous Debian </p>
 
 --------------------------------------------------------------------------------------------------------------------------------------------
-### Préparation de l'environnement
-Il faut appliquer la fiche LAMP avant d'installer GLPI.
-
-[LDAP](https://remiflandrois.fr/2022/09/12/glpi-connexion-active-directory/)
-```
-echo yes | /usr/bin/php8.2 /var/www/html/glpi/bin/console  glpi:ldap:synchronize_users -d 3
-```
-
-```
-/usr/bin/php8.2 /var/www/html/glpi/bin/console glpi:maintenance:enable;
-/usr/bin/php8.2 /var/www/html/glpi/bin/console glpi:maintenance:disable;
-```
-
---------------------------------------------------------------------------------------------------------------------------------------------
 #### I. Base De Donnée
 ##### A. Gestion de la Base De Donnée
 ```bash
