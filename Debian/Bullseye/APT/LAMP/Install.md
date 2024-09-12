@@ -45,7 +45,7 @@ clear;
 systemctl restart apache2 2>/dev/null;
 ```
 
-##### 4.
+##### 4. Prise en charge du SSL
 ```bash
 clear;
 /usr/sbin/a2dissite default-ssl;
