@@ -47,7 +47,7 @@ apt-get update;
 apt-get install 3cxpbx;
 ```
 
-
+##### 4. Tips
 ```
 /usr/sbin/3CXUpgradeDebian10
-``
+```
