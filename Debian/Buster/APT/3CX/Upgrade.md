@@ -137,11 +137,15 @@ clear;
 pg_upgradecluster 13 main;
 ```
 
-
-### E. Montée de version
+### E. Lister les versions
 ```bash
 clear;
-/usr/sbin/3CXServicePackUpdate -v 20.0.3.762
+apt-cache policy 3cxpbx;
+```
+
+### F. Montée de version
+```
+/usr/sbin/3CXServicePackUpdate -v 20.0.0.827
 ```
 
 <br />
