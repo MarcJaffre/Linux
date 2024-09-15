@@ -69,6 +69,18 @@ apt autoremove   -y;
 ```
 
 
+### C. Reboot
+Il sera nécessaire de redémarre la machine après la mise à niveau
+```bash
+clear;
+reboot;
+```
+
+### D. Vérification de la Release
+```bash
+clear;
+lsb_release -a;
+```
 <br />
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
