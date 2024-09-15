@@ -45,15 +45,11 @@ apt autoremove   -y;
 /var/log/postgresql/postgresql-13-main.log
 
 
+<br />
 
-
-
-
-
-
-
-
-##### 3. Dépôt Bookworm pour Debian
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+## III. Mise à niveau vers Bookworm
+### A. Dépôt Bookworm pour Debian
 ```bash
 clear;
 cat > /etc/apt/sources.list << EOF
@@ -61,7 +57,7 @@ deb http://deb.debian.org/debian bookworm main
 EOF
 ```
 
-##### 4. Mise à jour
+### B. Mise à jour
 Il sera nécessaire de redémarre la machine après la mise à niveau
 ```bash
 clear;
@@ -70,7 +66,7 @@ apt dist-upgrade -y;
 apt autoremove   -y;
 ```
 
-##### 5. Installation de 3CX pour Bookworù
+### C. Installation de 3CX pour Bookworù
 ```bash
 clear;
 rm /etc/apt/sources.list.d/3cxpbx.list;
@@ -80,7 +76,7 @@ apt-get update;
 apt-get install 3cxpbx;
 ```
 
-##### 6. Tips
+### D. Tips
 Dans le panel Web, la mise à jour Debian 10 vers 12 lance la commande suivante
 ```
 /usr/sbin/3CXUpgradeDebian10
