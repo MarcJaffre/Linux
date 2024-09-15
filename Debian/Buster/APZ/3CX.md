@@ -48,7 +48,7 @@ deb http://deb.debian.org/debian bookworm main
 EOF
 ```
 
-##### 2. Mise à jour
+##### 4. Mise à jour
 Il sera nécessaire de redémarre la machine après la mise à niveau
 ```bash
 clear;
@@ -57,7 +57,7 @@ apt dist-upgrade -y;
 apt autoremove   -y;
 ```
 
-##### 3. Installation de 3CX pour Bullseye
+##### 5. Installation de 3CX pour Bullseye
 ```bash
 clear;
 rm /etc/apt/sources.list.d/3cxpbx.list;
@@ -67,7 +67,8 @@ apt-get update;
 apt-get install 3cxpbx;
 ```
 
-##### 4. Tips
+##### 6. Tips
+Dans le panel Web, la mise à jour Debian 10 vers 12 lance la commande suivante
 ```
 /usr/sbin/3CXUpgradeDebian10
 ```
