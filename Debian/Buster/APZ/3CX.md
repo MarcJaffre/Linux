@@ -1,18 +1,18 @@
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
-## <p align='center'> Déploiement de 3CX </p>
+# <p align='center'> Déploiement de 3CX </p>
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
-### I. Installation
-#### A. Création d'un compte 3CX
-#### B. Auto-Hebergement
-##### 1. Dependance
+## I. Installation
+### A. Création d'un compte 3CX
+### B. Auto-Hebergement
+#### 1. Dependance
 ```bash
 clear;
 apt install -y dphys-swapfile;
 apt install -y gnupg2;
 apt install -y net-tools;
 ```
-##### 2. Installation
+#### 2. Installation
 ```bash
 clear;
 wget -O- http://downloads-global.3cx.com/downloads/3cxpbx/public.key    | apt-key add -
@@ -23,16 +23,17 @@ apt-get install 3cxpbx;
 
 <br />
 
-#### C. Montée de version
-##### 1. Dépôt Bullseye pour Debian
-
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+## II. Mise à niveau vers Bullseye
+### A. Définir les dépôt Bullseye 
 ```bash
 clear;
 cat > /etc/apt/sources.list << EOF
 deb http://deb.debian.org/debian bullseye main
 EOF
 ```
-##### 2. Mise à jour
+
+### 3. Mise à jour
 Il sera nécessaire de redémarre la machine après la mise à niveau
 ```bash
 clear;
@@ -40,6 +41,17 @@ apt update;
 apt dist-upgrade -y;
 apt autoremove   -y;
 ```
+
+/var/log/postgresql/postgresql-13-main.log
+
+
+
+
+
+
+
+
+
 
 ##### 3. Dépôt Bookworm pour Debian
 ```bash
@@ -58,7 +70,7 @@ apt dist-upgrade -y;
 apt autoremove   -y;
 ```
 
-##### 5. Installation de 3CX pour Bullseye
+##### 5. Installation de 3CX pour Bookworù
 ```bash
 clear;
 rm /etc/apt/sources.list.d/3cxpbx.list;
