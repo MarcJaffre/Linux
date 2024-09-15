@@ -5,10 +5,11 @@
 ### A. Définir les dépôt Bullseye 
 ```bash
 clear;
+source /etc/os-release;
 cat > /etc/apt/sources.list << EOF
 deb http://deb.debian.org/debian bullseye main
 EOF
-sed -i -e "s/buster/bullseye/g" /etc/apt/sources.list.d/3cxpbx*.list;
+sed -i -e "s/$VERSION_CODENAME/bullseye/g" /etc/apt/sources.list.d/3cxpbx*.list;
 ```
 
 
@@ -66,11 +67,11 @@ root@3cx:~# pg_lsclusters
 ### A. Dépôt Bookworm pour Debian
 ```bash
 clear;
+source /etc/os-release;
 cat > /etc/apt/sources.list << EOF
 deb http://deb.debian.org/debian bookworm main
 EOF
-sed -i -e "s/bullseye/bookworm/g" /etc/apt/sources.list.d/3cxpbx*.list;
-
+sed -i -e "s/$VERSION_CODENAME/bookworm/g" /etc/apt/sources.list.d/3cxpbx*.list;
 ```
 
 ### B. Mise à jour
