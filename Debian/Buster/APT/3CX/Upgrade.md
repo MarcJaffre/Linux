@@ -144,9 +144,16 @@ apt-cache policy 3cxpbx;
 ```
 
 ### F. Montée de version
+```bash
+clear;
+/usr/sbin/3CXServicePackUpdate -v 20.0.3.762
 ```
-/usr/sbin/3CXServicePackUpdate -v 20.0.0.827
+
+### G. Test
 ```
+/usr/sbin/3CXServicePackUpdate -v 20.0.3.659
+```
+
 
 <br />
 <br />
