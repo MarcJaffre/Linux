@@ -5,12 +5,21 @@
 ### I. Installation
 #### A. Création d'un compte 3CX
 #### B. Auto-Hebergement
+##### 1. Dependance
 ```bash
+clear;
 apt install -y net-tools dphys-swapfile
 apt install gnupg2 -y
-wget -O- http://downloads-global.3cx.com/downloads/3cxpbx/public.key    | apt-key add -
-
-echo "deb http://downloads-global.3cx.com/downloads/debian buster main" | tee /etc/apt/sources.list.d/3cxpbx.list
-apt-get update
-apt-get install 3cxpbx
 ```
+##### 2. Installation
+```bash
+clear;
+wget -O- http://downloads-global.3cx.com/downloads/3cxpbx/public.key    | apt-key add -
+echo "deb http://downloads-global.3cx.com/downloads/debian buster main" | tee /etc/apt/sources.list.d/3cxpbx.list;
+apt-get update;
+apt-get install 3cxpbx;
+```
+
+#### C. Montée de version
+```bash
+clear;
