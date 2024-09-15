@@ -71,10 +71,6 @@ clear;
 pg_upgradecluster 11 main;
 ```
 
-
-<br />
-<br />
-<br />
 <br />
 <br />
 
@@ -113,27 +109,45 @@ clear;
 lsb_release -a;
 ```
 
+
+### E. Mise à niveau du cluster PostGreSQL
+#### 1. Lister les instances
+```bash
+clear;
+pg_lsclusters;
+```
+
+```
+```
+
+#### 2. Supprimer le cluster vide
+```bash
+clear;
+pg_dropcluster --stop 15 main;
+```
+
+#### 3. Mise à niveau du cluster
+L'ancien cluster (13) sera Down et le nouveau cluster (15) sera démarré.
+```bash
+clear;
+pg_upgradecluster 13 main;
+```
+
+
 ### E. Montée de version
 ```bash
 clear;
 /usr/sbin/3CXServicePackUpdate -v 20.0.3.762
 ```
 
-
-### F. Mise à niveau du cluster PostGreSQL
-```bash
-pg_lsclusters
-pg_dropcluster --stop 15 main
-pg_upgradecluster 13 main
-```
-
-
-
+<br />
 <br />
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 ## III. Optionnel
 ### A. Installation de 3CX pour Bookworm ([GIT](https://gist.github.com/amanjuman/d3703ec1c8bf6a5d9fe286d4a0620698))
+Aucun Test a été fait avec la méthode suivant !
+
 ```bash
 clear;
 rm /etc/apt/sources.list.d/3cx*.list;
