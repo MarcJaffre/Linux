@@ -54,9 +54,9 @@ clear;
 lsb_release -a
 ```
 
-
-
+```bash
 /var/log/postgresql/postgresql-13-main.log
+```
 
 
 <br />
