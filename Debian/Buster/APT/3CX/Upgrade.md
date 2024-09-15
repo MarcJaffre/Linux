@@ -50,8 +50,9 @@ La version 11 de PostgreSQL est obsolète, mais le paquet du client ou du serveu
 #### 2. Lister les instances
 ```bash
 clear;
-pg_lsclusters
+pg_lsclusters;
 ```
+
 ```
 # Ver Cluster Port Status Owner    Data directory              Log file
 # 11  main    5432 online postgres /var/lib/postgresql/11/main /var/log/postgresql/postgresql-11-main.log
@@ -64,9 +65,10 @@ pg_dropcluster --stop 13 main;
 ```
 
 #### 4. Mise à niveau du cluster
+L'ancien cluster (11) sera Down et le nouveau cluster (13) sera démarré.
 ```bash
 clear;
-pg_upgradecluster 11 main
+pg_upgradecluster 11 main;
 ```
 
 
