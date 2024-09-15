@@ -8,7 +8,9 @@ clear;
 cat > /etc/apt/sources.list << EOF
 deb http://deb.debian.org/debian bullseye main
 EOF
+sed -i -e "s/buster/bullseye/g" /etc/apt/sources.list.d/3cxpbx*.list;
 ```
+
 
 ### B. Mise à jour
 ```bash
@@ -57,6 +59,8 @@ clear;
 cat > /etc/apt/sources.list << EOF
 deb http://deb.debian.org/debian bookworm main
 EOF
+sed -i -e "s/bullseye/bookworm/g" /etc/apt/sources.list.d/3cxpbx*.list;
+
 ```
 
 ### B. Mise à jour
