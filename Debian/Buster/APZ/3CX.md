@@ -23,7 +23,7 @@ apt-get install 3cxpbx;
 <br />
 
 #### C. Montée de version
-##### 1. Dépôt Bullseye
+##### 1. Dépôt Bullseye pour Debian
 ```bash
 clear;
 cat > /etc/apt/sources.list << EOF
@@ -36,8 +36,7 @@ clear;
 apt update;
 apt dist-upgrade -y;
 ```
-
-
+##### 3. Installation de 3CX pour Bullseye
 ```bash
 clear;
 rm /etc/apt/sources.list.d/3cxpbx.list;
