@@ -30,6 +30,13 @@ cat > /etc/apt/sources.list << EOF
 deb http://deb.debian.org/debian bullseye main
 EOF
 ```
+##### 2. Mise à jour
+```bash
+clear;
+apt update;
+apt dist-upgrade -y;
+```
+
 
 ```bash
 clear;
