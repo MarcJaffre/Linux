@@ -34,7 +34,8 @@ clear;
 lsb_release -a;
 ```
 
-### E. Avertissement
+### E. Mise à niveau du cluster PostGreSQL
+#### 1. Avertissement
 La version 11 de PostgreSQL est obsolète, mais le paquet du client ou du serveur est toujours installé.
 ```
 - Veuillez installer la version la plus récente des paquets postgresql-13 et postgresql-client-13 et mettre à niveau les grappes (« clusters ») en version  avec « pg_upgradecluster ».
@@ -46,8 +47,7 @@ La version 11 de PostgreSQL est obsolète, mais le paquet du client ou du serveu
 - Après la mise à niveau des grappes (« clusters »), les paquets postgresql-11 et postgresql-client-11 devraient être supprimés.            
 ```
 
-### F. Mise à niveau du cluster PostGreSQL
-#### 1. Lister les instances
+#### 2. Lister les instances
 ```bash
 clear;
 pg_lsclusters
@@ -57,13 +57,13 @@ pg_lsclusters
 # 11  main    5432 online postgres /var/lib/postgresql/11/main /var/log/postgresql/postgresql-11-main.log
 # 13  main    5433 online postgres /var/lib/postgresql/13/main /var/log/postgresql/postgresql-13-main.log
 ```
-#### 2. Supprimer le cluster vide
+#### 3. Supprimer le cluster vide
 ```bash
 clear;
 pg_dropcluster --stop 13 main;
 ```
 
-#### 3. Mise à niveau du cluster
+#### 4. Mise à niveau du cluster
 ```bash
 clear;
 pg_upgradecluster 11 main
