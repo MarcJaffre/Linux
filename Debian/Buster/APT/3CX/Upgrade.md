@@ -86,17 +86,24 @@ lsb_release -a;
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 ## III. Mise à jour de 3CX
-### A. Installation de 3CX pour Bookworm
+### A. Installation de 3CX pour Bookworm ([GIT](https://gist.github.com/amanjuman/d3703ec1c8bf6a5d9fe286d4a0620698))
 ```bash
 clear;
-rm /etc/apt/sources.list.d/3cxpbx.list;
-wget -O- http://downloads-global.3cx.com/downloads/3cxpbx/public.key      | apt-key add -
-echo "deb http://downloads-global.3cx.com/downloads/debian bookworm main" | tee /etc/apt/sources.list.d/3cxpbx.list;
-apt-get update;
-apt-get install 3cxpbx;
+rm /etc/apt/sources.list.d/3cx*.list;
+wget -O- https://repo.3cx.com/key.pub | gpg --dearmor | sudo tee /usr/share/keyrings/3cx-archive-keyring.gpg >> /dev/null
+echo "deb [arch=amd64 by-hash=yes signed-by=/usr/share/keyrings/3cx-archive-keyring.gpg] http://repo.3cx.com/3cx bookworm main" | tee /etc/apt/sources.list.d/3cxpbx.list
+echo "deb [arch=amd64 by-hash=yes signed-by=/usr/share/keyrings/3cx-archive-keyring.gpg] http://repo.3cx.com/3cx bookworm-testing main" | tee /etc/apt/sources.list.d/3cxpbx.list
+apt update -y
+apt upgrade -y --with-new-pkgs
+apt dist-upgrade -y
+apt autoremove -y
+apt-cache policy 3cxpbx
+apt-get install 3cxpbx=20.0.0.827
+/usr/sbin/3CXWizard --cleanup
+apt install -y 3cxsbc
 ```
 
-### D. Tips
+### B. Tips
 Dans le panel Web, la mise à jour Debian 10 vers 12 lance la commande suivante
 ```
 /usr/sbin/3CXUpgradeDebian10;
