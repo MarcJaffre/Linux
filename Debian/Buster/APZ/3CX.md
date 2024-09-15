@@ -37,12 +37,29 @@ apt update;
 apt dist-upgrade -y;
 apt autoremove   -y;
 ```
+
+##### 3. Dépôt Bookworm pour Debian
+```bash
+clear;
+cat > /etc/apt/sources.list << EOF
+deb http://deb.debian.org/debian bookworm main
+EOF
+```
+
+##### 2. Mise à jour
+```bash
+clear;
+apt update;
+apt dist-upgrade -y;
+apt autoremove   -y;
+```
+
 ##### 3. Installation de 3CX pour Bullseye
 ```bash
 clear;
 rm /etc/apt/sources.list.d/3cxpbx.list;
 wget -O- http://downloads-global.3cx.com/downloads/3cxpbx/public.key      | apt-key add -
-echo "deb http://downloads-global.3cx.com/downloads/debian bullseye main" | tee /etc/apt/sources.list.d/3cxpbx.list;
+echo "deb http://downloads-global.3cx.com/downloads/debian bookworm main" | tee /etc/apt/sources.list.d/3cxpbx.list;
 apt-get update;
 apt-get install 3cxpbx;
 ```
