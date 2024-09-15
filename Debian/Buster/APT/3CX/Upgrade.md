@@ -2,6 +2,9 @@
 # <p align='center'> Montée de version Debian pour 3CX </p>
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 ## I. Présentation
+La montée de version 3CX requiert une version supportée de Debian.
+
+La montée de version de Debian Buster (10) vers Debian 12 (Bookworm) est indispensable
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
