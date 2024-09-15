@@ -39,7 +39,6 @@ clear;
 apt update;
 apt dist-upgrade -y;
 apt autoremove   -y;
-reboot;
 ```
 
 ### C. Reboot
@@ -52,11 +51,7 @@ reboot;
 ### D. Vérification de la Release
 ```bash
 clear;
-lsb_release -a
-```
-
-```bash
-/var/log/postgresql/postgresql-13-main.log
+lsb_release -a;
 ```
 
 
