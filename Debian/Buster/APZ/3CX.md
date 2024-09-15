@@ -20,7 +20,16 @@ apt-get update;
 apt-get install 3cxpbx;
 ```
 
+<br />
+
 #### C. Montée de version
+```bash
+clear;
+cat > /etc/apt/sources.list << EOF
+deb http://deb.debian.org/debian bullseye main
+EOF
+```
+
 ```bash
 clear;
 rm /etc/apt/sources.list.d/3cxpbx.list;
@@ -28,4 +37,5 @@ wget -O- http://downloads-global.3cx.com/downloads/3cxpbx/public.key      | apt-
 echo "deb http://downloads-global.3cx.com/downloads/debian bullseye main" | tee /etc/apt/sources.list.d/3cxpbx.list;
 apt-get update;
 apt-get install 3cxpbx;
+apt autoremove -y;
 ```
