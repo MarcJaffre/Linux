@@ -33,14 +33,28 @@ deb http://deb.debian.org/debian bullseye main
 EOF
 ```
 
-### 3. Mise à jour
-Il sera nécessaire de redémarre la machine après la mise à niveau
+### B. Mise à jour
 ```bash
 clear;
 apt update;
 apt dist-upgrade -y;
 apt autoremove   -y;
 ```
+
+### C. Reboot
+Il sera nécessaire de redémarre la machine après la mise à niveau
+```bash
+clear;
+reboot;
+```
+
+### D. Vérification de la Release
+```bash
+clear;
+lsb_release -a
+```
+
+
 
 /var/log/postgresql/postgresql-13-main.log
 
