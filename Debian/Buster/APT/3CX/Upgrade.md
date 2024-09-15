@@ -46,13 +46,26 @@ La version 11 de PostgreSQL est obsolète, mais le paquet du client ou du serveu
 - Après la mise à niveau des grappes (« clusters »), les paquets postgresql-11 et postgresql-client-11 devraient être supprimés.            
 ```
 
-### F. Mise à niveau du cluster Postrgre
+### F. Mise à niveau du cluster PostGreSQL
+#### 1. Lister les instances
 ```bash
-root@3cx:~# pg_lsclusters
+clear;
+pg_lsclusters
+```
+```
 # Ver Cluster Port Status Owner    Data directory              Log file
 # 11  main    5432 online postgres /var/lib/postgresql/11/main /var/log/postgresql/postgresql-11-main.log
 # 13  main    5433 online postgres /var/lib/postgresql/13/main /var/log/postgresql/postgresql-13-main.log
-pg_dropcluster --stop 13 main
+```
+#### 2. Supprimer le cluster vide
+```bash
+clear;
+pg_dropcluster --stop 13 main;
+```
+
+#### 3. Mise à niveau du cluster
+```bash
+clear;
 pg_upgradecluster 11 main
 ```
 
@@ -105,7 +118,7 @@ clear;
 ```
 
 
-### F. Mise à niveau du cluster Postrgre
+### F. Mise à niveau du cluster PostGreSQL
 ```bash
 pg_lsclusters
 pg_dropcluster --stop 15 main
