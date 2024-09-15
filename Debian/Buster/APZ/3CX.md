@@ -23,6 +23,7 @@ apt-get install 3cxpbx;
 <br />
 
 #### C. Montée de version
+##### 1. Dépôt Bullseye
 ```bash
 clear;
 cat > /etc/apt/sources.list << EOF
