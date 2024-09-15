@@ -154,12 +154,22 @@ rm /etc/apt/sources.list.d/3cx*.list;
 wget -O- https://repo.3cx.com/key.pub | gpg --dearmor | sudo tee /usr/share/keyrings/3cx-archive-keyring.gpg >> /dev/null
 echo "deb [arch=amd64 by-hash=yes signed-by=/usr/share/keyrings/3cx-archive-keyring.gpg] http://repo.3cx.com/3cx bookworm main" | tee /etc/apt/sources.list.d/3cxpbx.list
 echo "deb [arch=amd64 by-hash=yes signed-by=/usr/share/keyrings/3cx-archive-keyring.gpg] http://repo.3cx.com/3cx bookworm-testing main" | tee /etc/apt/sources.list.d/3cxpbx.list
+```
+
+
+```bash
+clear;
 apt update -y
 apt upgrade -y --with-new-pkgs
 apt dist-upgrade -y
 apt autoremove -y
+```
+
+```bash
+clear;
 apt-cache policy 3cxpbx
 apt-get install 3cxpbx=20.0.0.827
+
 /usr/sbin/3CXWizard --cleanup
 apt install -y 3cxsbc
 ```
