@@ -8,8 +8,9 @@
 ##### 1. Dependance
 ```bash
 clear;
-apt install -y net-tools dphys-swapfile
-apt install gnupg2 -y
+apt install -y dphys-swapfile;
+apt install -y gnupg2;
+apt install -y net-tools;
 ```
 ##### 2. Installation
 ```bash
