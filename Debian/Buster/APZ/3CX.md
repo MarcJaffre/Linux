@@ -24,6 +24,7 @@ apt-get install 3cxpbx;
 
 #### C. Montée de version
 ##### 1. Dépôt Bullseye pour Debian
+
 ```bash
 clear;
 cat > /etc/apt/sources.list << EOF
@@ -31,6 +32,7 @@ deb http://deb.debian.org/debian bullseye main
 EOF
 ```
 ##### 2. Mise à jour
+Il sera nécessaire de redémarre la machine après la mise à niveau
 ```bash
 clear;
 apt update;
@@ -47,6 +49,7 @@ EOF
 ```
 
 ##### 2. Mise à jour
+Il sera nécessaire de redémarre la machine après la mise à niveau
 ```bash
 clear;
 apt update;
