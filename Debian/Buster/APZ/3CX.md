@@ -46,3 +46,8 @@ echo "deb http://downloads-global.3cx.com/downloads/debian bullseye main" | tee 
 apt-get update;
 apt-get install 3cxpbx;
 ```
+
+
+```
+/usr/sbin/3CXUpgradeDebian10
+``
