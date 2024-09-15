@@ -100,7 +100,7 @@ lsb_release -a;
 <br />
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
-## III. Mise à jour de 3CX
+## III. Optionnel
 ### A. Installation de 3CX pour Bookworm ([GIT](https://gist.github.com/amanjuman/d3703ec1c8bf6a5d9fe286d4a0620698))
 ```bash
 clear;
