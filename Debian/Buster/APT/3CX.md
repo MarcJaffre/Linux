@@ -91,7 +91,12 @@ apt dist-upgrade -y;
 apt autoremove   -y;
 ```
 
-### C. Installation de 3CX pour Bookworm
+
+<br />
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+## IV. Mise à jour de 3CX
+### A. Installation de 3CX pour Bookworm
 ```bash
 clear;
 rm /etc/apt/sources.list.d/3cxpbx.list;
