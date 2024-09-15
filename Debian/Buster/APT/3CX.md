@@ -55,14 +55,14 @@ lsb_release -a;
 ```
 
 ### E. Avertissement
+La version 11 de PostgreSQL est obsolète, mais le paquet du client ou du serveur est toujours installé.
 ```
-- La version 11 de PostgreSQL est obsolète, mais le paquet du client ou du serveur est toujours installé.
 - Veuillez installer la version la plus récente des paquets postgresql-13 et postgresql-client-13 et mettre à niveau les grappes (« clusters ») en version  avec « pg_upgradecluster ».
 - Veuillez noter que l'installation de postgresql-13 créera par défaut une grappe (« cluster ») 13/main.
 - Si vous souhaitez mettre à niveau la grappe 11/main, il faudra supprimer la grappe 13 en exécutant la commande « pg_dropcluster--stop 13 main ». 
 - Les anciennes versions des paquets client et serveur ne sont plus maintenues. 
-- Après la mise à niveau des grappes (« clusters »), les paquets postgresql-11 et postgresql-client-11 devraient être supprimés.                                                                                            ```
-
+- Après la mise à niveau des grappes (« clusters »), les paquets postgresql-11 et postgresql-client-11 devraient être supprimés.
+```
 
 <br />
 <br />
