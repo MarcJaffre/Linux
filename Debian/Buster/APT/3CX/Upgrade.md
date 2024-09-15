@@ -55,9 +55,10 @@ pg_lsclusters;
 
 ```
 # Ver Cluster Port Status Owner    Data directory              Log file
-# 11  main    5432 online postgres /var/lib/postgresql/11/main /var/log/postgresql/postgresql-11-main.log
-# 13  main    5433 online postgres /var/lib/postgresql/13/main /var/log/postgresql/postgresql-13-main.log
+# 11  main    XXXX online postgres /var/lib/postgresql/11/main /var/log/postgresql/postgresql-11-main.log
+# 13  main    XXXX online postgres /var/lib/postgresql/13/main /var/log/postgresql/postgresql-13-main.log
 ```
+
 #### 3. Supprimer le cluster vide
 ```bash
 clear;
@@ -118,6 +119,9 @@ pg_lsclusters;
 ```
 
 ```
+# Ver Cluster Port Status Owner    Data directory              Log file
+# 13  main    XXXX online postgres /var/lib/postgresql/13/main /var/log/postgresql/postgresql-13-main.log
+# 15  main    XXXX online postgres /var/lib/postgresql/15/main /var/log/postgresql/postgresql-15-main.log
 ```
 
 #### 2. Supprimer le cluster vide
