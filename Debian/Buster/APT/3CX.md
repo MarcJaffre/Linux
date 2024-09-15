@@ -39,6 +39,7 @@ clear;
 apt update;
 apt dist-upgrade -y;
 apt autoremove   -y;
+reboot;
 ```
 
 ### C. Reboot
