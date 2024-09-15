@@ -97,5 +97,8 @@ apt-get install 3cxpbx;
 ### D. Tips
 Dans le panel Web, la mise à jour Debian 10 vers 12 lance la commande suivante
 ```
-/usr/sbin/3CXUpgradeDebian10
+/usr/sbin/3CXUpgradeDebian10;
+```
+```
+/var/lib/3cxpbx/Instance1/Data/Backups/
 ```
