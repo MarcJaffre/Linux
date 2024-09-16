@@ -7,6 +7,14 @@ La montée de version 3CX requiert une version supportée de Debian.
 La montée de version de Debian Buster (10) vers Debian 12 (Bookworm) est indispensable
 
 
+### A. Pare-Feu
+```
+https://www.3cx.fr/docs/manuel/configuration-parefeu-routeur/
+```
+
+
+
+
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 ## II. Mise à niveau vers Bullseye
 ### A. Définir les dépôt Bullseye 
