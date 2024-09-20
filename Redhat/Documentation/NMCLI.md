@@ -151,7 +151,7 @@ nmcli connection up <NOM_DU_BRIDGE>;
 #### D. Lister les fichiers de configuration
 ```bash
 clear;
-ls /etc/NetworkManager/system-connections/
+ls /etc/NetworkManager/system-connections;
 ```
 
 <br />
