@@ -18,15 +18,16 @@ Chaque `Connection` dispose d'`Nom`, d' un `UID`, un `Type` et un `Device` pour 
 <br />
 <br />
 
-<br />
-<br />
-
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### II. NMTUI
 #### A. Présentation
 Le binraire `nmtui` permet la configuration réseau depuis un menu intéractif.
 
 ![image](https://github.com/user-attachments/assets/2ebae93e-8686-42f8-853f-e69d833fc660)
+
+
+<br />
+<br />
 
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -131,7 +132,7 @@ nmcli connection add type bridge con-name <NOM_DU_BRIDGE> ifname <NOM_INTERFACE_
 nmcli connection modify <NOM_DU_BRIDGE> ipv4.addresses <XXX.XXX.XXX.XXX/YY>;
 nmcli connection modify <NOM_DU_BRIDGE> ipv4.gateway   <XXX.XXX.XXX.XXX>;
 nmcli connection modify <NOM_DU_BRIDGE> ipv4.dns       <XXX.XXX.XXX.XXX>;
-nmcli connection modify <NOM_DU_BRIDGE> ipv4.method    manual;
+nmcli connection modify <NOM_DU_BRIDGE> ipv4.method manual;
 ```
 #### B. Afficher les informations du Bridge
 ```bash
@@ -156,8 +157,6 @@ ls /etc/NetworkManager/system-connections;
 
 <br />
 <br />
-
-
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### III. Autres
