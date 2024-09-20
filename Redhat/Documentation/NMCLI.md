@@ -87,7 +87,7 @@ nmcli connection add type ethernet con-name <NAME_CUSTOM> ifname <INTERFACE>;
 ##### 4. Lister les fichiers de configuration
 ```bash
 clear;
-ls /etc/NetworkManager/system-connections/
+ls /etc/NetworkManager/system-connections;
 ```
 ##### 5a. Configurer la connexion (DHCP)
 ```bash
