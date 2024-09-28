@@ -51,6 +51,7 @@ apt install --no-install-recommends -y cinnamon-desktop-environment;
 apt install --no-install-recommends -y cinnamon-doc;
 apt install --no-install-recommends -y cinnamon-settings-daemon-dev;
 apt install --no-install-recommends -y dconf-editor;
+apt install --no-install-recommends -y drawing;
 apt install --no-install-recommends -y libcinnamon-desktop-dev;
 apt install --no-install-recommends -y task-cinnamon-desktop;
 # ========================================================================================
@@ -76,8 +77,8 @@ apt install --no-install-recommends -y gvfs-daemons;
 apt install --no-install-recommends -y gvfs-fuse;
 apt install --no-install-recommends -y gvfs-libs;
 # ========================================================================================
-apt install --no-install-recommends -y krita;
-apt install --no-install-recommends -y krita-l10n;
+# apt install --no-install-recommends -y krita; # Remplacer par Drawing
+# apt install --no-install-recommends -y krita-l10n;
 # ========================================================================================
 apt install --no-install-recommends -y locales;
 apt install --no-install-recommends -y locales-all;
