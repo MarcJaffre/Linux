@@ -7,3 +7,4 @@
 Aller sur le panel Proxmox puis sur la VM.
 
 #### B. HotPlug
+https://pve.proxmox.com/wiki/Hotplug_(qemu_disk,nic,cpu,memory)
