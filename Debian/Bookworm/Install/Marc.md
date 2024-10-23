@@ -252,6 +252,7 @@ apt install -y -f;
 ```
 
 ### C. Blivet-GUI
+Permet la gestion du LVM sous Linux.
 ```bash
 clear;
 echo 'deb http://download.opensuse.org/repositories/home:/vtrefny/Debian_12/ /' | tee /etc/apt/sources.list.d/home:vtrefny.list;
