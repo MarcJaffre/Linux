@@ -107,11 +107,6 @@ apt install --no-install-recommends -y man;
 apt install --no-install-recommends -y mplayer;
 apt install --no-install-recommends -y net-tools;
 # ========================================================================================
-apt install --no-install-recommends -y network-manager;
-apt install --no-install-recommends -y network-manager-dev;
-apt install --no-install-recommends -y network-manager-gnome;
-apt install --no-install-recommends -y network-manager-config-connectivity-debian;
-# ========================================================================================
 apt install --no-install-recommends -y ntfs-3g;
 apt install --no-install-recommends -y numlockx;
 apt install --no-install-recommends -y openssh-server;
@@ -142,6 +137,13 @@ apt install --no-install-recommends -y xdg-user-dirs;
 apt install --no-install-recommends -y xserver-xorg;
 apt install --no-install-recommends -y xinit;
 # ========================================================================================
+apt install --no-install-recommends -y network-manager;
+apt install --no-install-recommends -y network-manager-dev;
+apt install --no-install-recommends -y network-manager-gnome;
+apt install --no-install-recommends -y network-manager-config-connectivity-debian;
+# ========================================================================================
+echo "nameserver 8.8.8.8" > /etc/resolv.conf;
+
 ```
 
 ### C. Configuration du système
