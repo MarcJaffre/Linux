@@ -11,13 +11,16 @@ echo "##########################################################################
 deb     http://deb.debian.org/debian/              $VERSION_CODENAME            main contrib non-free non-free-firmware
 deb-src http://deb.debian.org/debian/              $VERSION_CODENAME            main contrib non-free non-free-firmware
 ################################################################################################################################
-deb     http://security.debian.org/debian-security $VERSION_CODENAME-security   main contrib non-free non-free-firmware
-deb-src http://security.debian.org/debian-security $VERSION_CODENAME-security   main contrib non-free non-free-firmware
+deb     http://security.debian.org/debian-security $VERSION_CODENAME-security   main contrib non-free
+deb-src http://security.debian.org/debian-security $VERSION_CODENAME-security   main contrib non-free
 ################################################################################################################################
 deb     http://deb.debian.org/debian/              $VERSION_CODENAME-updates    main contrib non-free non-free-firmware
 deb-src http://deb.debian.org/debian/              $VERSION_CODENAME-updates    main contrib non-free non-free-firmware
 ################################################################################################################################" > /etc/apt/sources.list;
 ```
+
+
+W: Le fichier configuré « non-free-firmware/source/Sources » ne sera pas pris en compte car le dépôt « http
 
 ### B. Mise à jour
 ```bash
