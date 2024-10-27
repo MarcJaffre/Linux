@@ -19,9 +19,6 @@ deb-src http://deb.debian.org/debian/              $VERSION_CODENAME-updates    
 ################################################################################################################################" > /etc/apt/sources.list;
 ```
 
-
-W: Le fichier configuré « non-free-firmware/source/Sources » ne sera pas pris en compte car le dépôt « http
-
 ### B. Mise à jour
 ```bash
 clear;
