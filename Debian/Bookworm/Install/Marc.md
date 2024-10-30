@@ -150,6 +150,7 @@ echo "nameserver 8.8.8.8" > /etc/resolv.conf;
 ```bash
 clear;
 usermod -aG sudo $(id -n -u 1000);
+dpkg-reconfigure console-setup;
 dpkg-reconfigure keyboard-configuration;
 dpkg-reconfigure tzdata;
 dpkg-reconfigure locales;
