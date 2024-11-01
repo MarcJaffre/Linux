@@ -186,36 +186,51 @@ systemctl restart NetworkManager;
 Il suffira d'accéder au dossier `/Partages` pour y accéder. Une fois ouvert, les montages se font. (A LA DEMANDE !)
 ```bash
 clear;
-LOCAL_USER="marc"
+
+# =========================================================================================================================================================================
+# User Local
+LOCAL_USER=$(id 1000 | cut -d "=" -f2 | cut -d "(" -f2 | cut -d ")" -f 1)
 LOCAL_UID=$(id -u $LOCAL_USER)
 
+# =========================================================================================================================================================================
+# Serveurs
 CIFS_IP=192.168.20.3
 CIFS_USER="marc"
 CIFS_PASS="admin"
 
+# =========================================================================================================================================================================
+# Partages du serveur
 SHARE_1="Media_1"
 SHARE_2="Media_2"
 SHARE_3="Media_3"
 SHARE_4="Media_4"
 SHARE_5="Media_5"
 
+# =========================================================================================================================================================================
+# Dossier de montage
 mkdir /Partages 2>/dev/null;
 
+# =========================================================================================================================================================================
+# Auto Montage CIFS
 echo "/Partages /etc/auto.cifs --ghost,--timeout=30" >> /etc/auto.master;
 
+# =========================================================================================================================================================================
+# Montage des partages
 cat > /etc/auto.cifs << EOF
 ##############################################################################################################################################################
-#<Point de montage> -fstype=<type>,<options>                                              ://<ip_serveur>:/<Partage>
-Media_1             -fstype=cifs,username=$CIFS_USER,password=$CIFS_PASS,user=$LOCAL_USER,uid=$LOCAL_UID,gid=100  ://$CIFS_IP/$SHARE_1
-Media_2             -fstype=cifs,username=$CIFS_USER,password=$CIFS_PASS,user=$LOCAL_USER,uid=$LOCAL_UID,gid=100  ://$CIFS_IP/$SHARE_2
-Media_3             -fstype=cifs,username=$CIFS_USER,password=$CIFS_PASS,user=$LOCAL_USER,uid=$LOCAL_UID,gid=100  ://$CIFS_IP/$SHARE_3
-Media_4             -fstype=cifs,username=$CIFS_USER,password=$CIFS_PASS,user=$LOCAL_USER,uid=$LOCAL_UID,gid=100  ://$CIFS_IP/$SHARE_4
-Media_5             -fstype=cifs,username=$CIFS_USER,password=$CIFS_PASS,user=$LOCAL_USER,uid=$LOCAL_UID,gid=100  ://$CIFS_IP/$SHARE_5
+#<Point de montage> -fstype=<type>,<options>                                             ://<ip_serveur>:/<Partage>
+$SHARE_1            -fstype=cifs,username=$CIFS_USER,password=$CIFS_PASS,user=$LOCAL_USER,uid=$LOCAL_UID,gid=100  ://$CIFS_IP/$SHARE_1
+$SHARE_2            -fstype=cifs,username=$CIFS_USER,password=$CIFS_PASS,user=$LOCAL_USER,uid=$LOCAL_UID,gid=100  ://$CIFS_IP/$SHARE_2
+$SHARE_3            -fstype=cifs,username=$CIFS_USER,password=$CIFS_PASS,user=$LOCAL_USER,uid=$LOCAL_UID,gid=100  ://$CIFS_IP/$SHARE_3
+$SHARE_4            -fstype=cifs,username=$CIFS_USER,password=$CIFS_PASS,user=$LOCAL_USER,uid=$LOCAL_UID,gid=100  ://$CIFS_IP/$SHARE_4
+$SHARE_5            -fstype=cifs,username=$CIFS_USER,password=$CIFS_PASS,user=$LOCAL_USER,uid=$LOCAL_UID,gid=100  ://$CIFS_IP/$SHARE_5
 ##############################################################################################################################################################
 EOF
+
+# =========================================================================================================================================================================
 systemctl restart autofs;
 
-#echo "/Partages /etc/auto.cifs --ghost,--timeout=30 browse" >> /etc/auto.master;
+# =========================================================================================================================================================================
 ```
 
 <br />
