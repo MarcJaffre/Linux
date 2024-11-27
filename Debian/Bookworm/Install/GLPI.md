@@ -114,7 +114,7 @@ On vérifie le fuseau horaire (timedatectl) et si besoin on reconfigure le fusea
 <br />
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-## III. Installation de LAMP
+## III. Installation de LAMP + GLPI 
 ### A. Apache
 #### 1. Installation
 ```bash
@@ -224,4 +224,25 @@ mysql -u root -padmin -e "GRANT SELECT ON mysql.time_zone_name TO 'GLPI'@'localh
 
 # Permettre l'authentification pour GLPI
 mysql -u root -padmin -e "ALTER USER GLPI@localhost IDENTIFIED VIA mysql_native_password USING PASSWORD('admin');"
+```
+
+#### 4. GLPI
+```bash
+# Telecharger GLPI
+VERSION=10.0.9
+wget https://github.com/glpi-project/glpi/releases/download/$VERSION/glpi-$VERSION.tgz -O /tmp/glpi.tgz;
+
+# Extraire le fichier compresser
+tar -xf /tmp/glpi.tgz -C /var/www/html;
+
+# Permissions (Apache)
+chown -R www-data:www-data /var/www/html;
+chmod 755 /var/www/html/glpi;
+
+# Extensions Indispensables
+apt install -y php-curl php-gd php-intl php-mysqli php-simplexml;
+
+# Extensions Optionnelles
+apt install -y php-bz2 php-ldap php-mbstring php-symfony-polyfill-ctype php-zip;
+systemctl restart apache2;
 ```
