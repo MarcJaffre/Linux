@@ -28,3 +28,6 @@ Création du réseau `192.168.10.0/24`.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## II. Configuration de la machine
+### A. Ouvrir la session
+Par défaut l'utilisateur crée lors de l'installation n'est pas dans le groupe `27` (sudo) et donc peut pas utiliser `sudo`, ce qui oblige d'utilise `su -` pour ouvrir la session `root`.
+
