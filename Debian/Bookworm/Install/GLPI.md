@@ -37,7 +37,7 @@ L'interface se nomme `enp0s3`.
 
 Son Adresse IPv4 est `192.168.10.6`.
 
-La passerelle par défaut `192.168.10.1`.
+La passerelle par défaut `192.168.10.1`. (Default permet de reconnaitre la passerelle par défaut)
 
 Le serveur DNS est `192.168.0.1` (Routeur Physique)
 
