@@ -4,7 +4,9 @@
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## I. Information
 ### A. Présentation
-Le serveur Debian sera dans un réseau NAT et une redirection de port permettant d'y accéder depuis la machine hôte.
+Le serveur Debian sera dans un réseau NAT dans mon exemple et une redirection de port permettant d'y accéder depuis la machine hôte.
+
+
 ### B. Virtualbox
 #### 1. Création d'un réseau NAT
 Création du réseau `192.168.10.0/24`.
@@ -13,4 +15,13 @@ Création du réseau `192.168.10.0/24`.
 
 ![image](https://github.com/user-attachments/assets/5923dd6d-ba17-43fc-93d4-f64112af3031)
 
+#### 2. Création de la Machine Virtuelle
+```
+- Processeur     : 2 Core
+- Mémoire-vive   : 1 Go
+- Stockage       : 16 Go
+- Enable EFI     : Oui
+```
+
+#### 3. Configuration du Réseau
 ![image](https://github.com/user-attachments/assets/38a46955-8950-4f35-9f13-995f0c6f9a24)
