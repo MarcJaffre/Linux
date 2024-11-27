@@ -92,11 +92,7 @@ Remise en page du fichier pour une meilleur clareté.
 ### C. Redirection de port (Virtualbox)
 La redirection de port permet à la machine physique d'accéder à la VM.
 
-Le port 22 de l'adresse IP 192.168.10.5 (Linux) est rediriger sur la carte de bouclage de la machine physique et le port d'écoute est le 44*. (*Port inutilisé)
-
-Depuis le poste physique on enverra la requête à la carte de réseau de bouclage `127.0.0.1` sur le port `44` pour accéder à la `VM` port `22`.
-
-![image](https://github.com/user-attachments/assets/b9945164-8f6e-44b6-acdf-af5cc985faa2)
+![image](https://github.com/user-attachments/assets/016addcc-9a19-4721-99a3-16eddcded46c)
 
 ### D. Se connecter en SSH
 Le protocole SSH est l'équivalent du Bureau à distance de Windows mais pour la console Linux. (Compte root est bloqué par défaut)
@@ -104,6 +100,15 @@ Le protocole SSH est l'équivalent du Bureau à distance de Windows mais pour la
 
 ### E. Se connecter en Root
 ![image](https://github.com/user-attachments/assets/b2e71036-f550-4689-8fb7-7d711364209c)
+
+### F. Fuseau Horaire
+Le fuseau horaire est important à configurer pour que l'heure dans les tickets soit réellement la bonne.
+
+Exemple:
+Si le serveur est à 11h et que l'heure réel est 12h et qu'on ouvre le ticket, celui-ci sera sur l'heure du serveur, soit 1 heurede décalage.
+
+![image](https://github.com/user-attachments/assets/7e267cdf-eb07-426b-b202-44bb46dc27a1)
+
 
 <br />
 
