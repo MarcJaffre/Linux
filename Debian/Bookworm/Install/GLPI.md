@@ -98,5 +98,7 @@ Depuis le poste physique on enverra la requête à la carte de réseau de boucla
 
 ![image](https://github.com/user-attachments/assets/b9945164-8f6e-44b6-acdf-af5cc985faa2)
 
-
+### D. Se connecter en SSH
+Le protocole SSH est l'équivalent du Bureau à distance de Windows mais pour la console Linux. (Compte root est bloqué par défaut)
+![image](https://github.com/user-attachments/assets/2f267ff8-941e-497c-953f-1828bd425c20)
 
