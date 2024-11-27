@@ -123,9 +123,6 @@ apt install -y apache2 libapache2-mod-php;
 
 #### 2. Fix GLPI
 ```
-# Supprimé le fichier install.php
-rm /var/www/html/glpi/install/install.php;
-
 # Activation du module Rewrite (Apache2)
 /usr/sbin/a2enmod rewrite;
 
@@ -271,3 +268,10 @@ PASSDB=admin
 --db-user=$USERNAMEDB \
 --db-password=$PASSDB \
 --force;
+```
+
+```
+# Supprimé le fichier install.php
+rm /var/www/html/glpi/install/install.php;
+```
+
