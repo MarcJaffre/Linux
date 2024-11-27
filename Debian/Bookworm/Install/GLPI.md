@@ -108,4 +108,20 @@ Le protocole SSH est l'équivalent du Bureau à distance de Windows mais pour la
 <br />
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-##  III. LAMP
+## III. Installation de LAMP
+### A. Apache
+apt install -y apache2 libapache2-mod-php 1>/dev/null;
+
+### B. PHP
+apt install -y php libapache2-mod-php 1>/dev/null;
+
+### C. MariaDB
+```bash
+clear;
+apt install -y mariadb-server;
+```
+
+```
+mysql_secure_installation;
+```
+<br />
