@@ -107,7 +107,7 @@ Le fuseau horaire est important à configurer pour que l'heure dans les tickets 
 Exemple:
 Si le serveur est à 11h et que l'heure réel est 12h et qu'on ouvre le ticket, celui-ci sera sur l'heure du serveur, soit 1 heurede décalage.
 
-On vérifie le fuseau horaire (timedatectl) et si besoin on reconfigure le fuseau horaire. (dpk-reconfigure tzdata)
+On vérifie le fuseau horaire (timedatectl) et si besoin on reconfigure le fuseau horaire. (dpkg-reconfigure tzdata)
 
 ![image](https://github.com/user-attachments/assets/b3aae45b-e69d-46b1-898f-cf6dc6e119c3)
 
