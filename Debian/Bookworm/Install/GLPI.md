@@ -109,10 +109,7 @@ Si le serveur est à 11h et que l'heure réel est 12h et qu'on ouvre le ticket, 
 
 On vérifie le fuseau horaire (timedatectl) et si besoin on reconfigure le fuseau horaire. (dpk-reconfigure tzdata)
 
-
 ![image](https://github.com/user-attachments/assets/b3aae45b-e69d-46b1-898f-cf6dc6e119c3)
-
-
 
 <br />
 
@@ -122,16 +119,22 @@ On vérifie le fuseau horaire (timedatectl) et si besoin on reconfigure le fusea
 ```bash
 apt install -y apache2 libapache2-mod-php;
 ```
+
 ### B. PHP
 ```bash
 apt install -y php libapache2-mod-php;
 ```
+
 ### C. MariaDB
+#### 1. Installation
 ```bash
 apt install -y mariadb-server;
 ```
-
-```bash
+#### 2. Sécurisation (Recommandé)
+Par défaut le compte root de la Base de donnée au niveau du mot de passe à est vide, il faut pour celà en définit .
+```bsh
 mysql_secure_installation;
 ```
+
+
 <br />
