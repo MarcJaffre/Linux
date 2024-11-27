@@ -227,6 +227,7 @@ mysql -u root -padmin -e "ALTER USER GLPI@localhost IDENTIFIED VIA mysql_native_
 ```
 
 #### 4. GLPI
+
 ```bash
 # Telecharger GLPI 10.0.9
 VERSION=10.0.9
@@ -249,6 +250,7 @@ apt install -y php-bz2 php-ldap php-mbstring php-symfony-polyfill-ctype php-zip;
 systemctl restart apache2;
 ```
 
+```
 # Check Requirement
 /var/www/html/glpi/bin/console glpi:system:check_requirements;
 
