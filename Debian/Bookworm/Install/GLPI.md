@@ -31,3 +31,9 @@ Création du réseau `192.168.10.0/24`.
 ### A. Ouvrir la session
 Par défaut l'utilisateur crée lors de l'installation n'est pas dans le groupe `27` (sudo) et donc peut pas utiliser `sudo`, ce qui oblige d'utilise `su -` pour ouvrir la session `root`.
 
+### B. Lister interfaces réseaux
+L'interface se nomme `enp0s3` et à comme IP `192.168.10.6`.
+![image](https://github.com/user-attachments/assets/2ecdd07a-cc4c-4b57-bba5-32a0c85d5a63)
+
+### C.
+
