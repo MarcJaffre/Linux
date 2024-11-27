@@ -89,3 +89,14 @@ Remise en page du fichier pour une meilleur clareté.
 
 ![image](https://github.com/user-attachments/assets/c05dd301-8d3c-46ab-a5a9-ee1a7c95619f)
 
+### C. Redirection de port (Virtualbox)
+La redirection de port permet à la machine physique d'accéder à la VM.
+
+Le port 22 de l'adresse IP 192.168.10.5 (Linux) est rediriger sur la carte de bouclage de la machine physique et le port d'écoute est le 44*. (*Port inutilisé)
+
+Depuis le poste physique on enverra la requête à la carte de réseau de bouclage `127.0.0.1` sur le port `44` pour accéder à la `VM` port `22`.
+
+![image](https://github.com/user-attachments/assets/b9945164-8f6e-44b6-acdf-af5cc985faa2)
+
+
+
