@@ -91,10 +91,10 @@ Le partitionnement suivant n'utilise pas la technologie LVM. Sans le LVM, le red
 #### B. Création de la table de partition
 
 #### C. Création de la partition de démarrage
-##### 1. Mode MBR
+##### 1. Mode MBR (Screen à faire)
 <p align='center'> <img src='' /> </p>
 
-##### 2. Mode EFI
+##### 2. Mode EFI (Screen à faire)
 <p align='center'> <img src='' /> </p>
 
 #### D. Création de la partition SYSTEM
