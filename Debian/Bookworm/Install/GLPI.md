@@ -116,8 +116,55 @@ On vérifie le fuseau horaire (timedatectl) et si besoin on reconfigure le fusea
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## III. Installation de LAMP
 ### A. Apache
+#### 1. Installation
 ```bash
 apt install -y apache2 libapache2-mod-php;
+```
+
+#### 2. Fix GLPI
+```
+# Supprimé le fichier install.php
+rm /var/www/html/glpi/install/install.php;
+
+# Activation du module Rewrite (Apache2)
+/usr/sbin/a2enmod rewrite;
+
+# Configurer Apache
+mv /etc/apache2/sites-enabled/000-default.conf /etc/apache2/sites-enabled/000-default.conf.old;
+nano /etc/apache2/sites-enabled/000-default.conf;
+
+# Relance du service
+systemctl restart apache2;
+```
+
+```
+<VirtualHost *:80>
+ # Nom du serveur (/etc/hosts)
+ ServerName debian.lan
+
+ # Dossier Web Public
+ DocumentRoot /var/www/html/glpi/public
+        
+ # Fichier à charger par défaut (ordre)
+ <IfModule dir_module>
+   DirectoryIndex index.php index.html
+ </IfModule>
+
+ # Alias
+ Alias "/glpi" "/var/www/html/glpi/public"
+
+ # Log
+ ErrorLog ${APACHE_LOG_DIR}/error.log
+ CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+ # Repertoire
+ <Directory /var/www/html/glpi/public>
+   Require all granted
+   RewriteEngine On
+   RewriteCond %{REQUEST_FILENAME} !-f
+   RewriteRule ^(.*)$ index.php [QSA,L]
+ </Directory>
+</VirtualHost>
 ```
 
 ### B. PHP
