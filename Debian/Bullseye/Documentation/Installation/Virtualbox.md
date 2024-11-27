@@ -86,7 +86,9 @@
 ---------------------------------------------------------------------------------------------------------------------------
 ### IV. Installation de Debian (Partie 2)
 #### A. Présentation
-Le partitionnement suivant n'utilise pas la technologie LVM. Sans le LVM, le redimensionnement des partitions à chaud est très compliquer. (requiert arrêt de la machine)
+Le partitionnement suivant n'utilise pas la technologie LVM. 
+
+En n'utilisant pas le partitionnement en LVM, le redimensionnement des partitions à chaud est compliquer.
 
 #### B. Création de la table de partition
 
