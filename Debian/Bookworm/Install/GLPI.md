@@ -275,3 +275,5 @@ PASSDB=admin
 rm /var/www/html/glpi/install/install.php;
 ```
 
+![image](https://github.com/user-attachments/assets/fb19c7cd-179e-4c0f-8403-dc76d351c1dd)
+
