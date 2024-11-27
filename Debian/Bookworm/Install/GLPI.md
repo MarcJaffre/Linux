@@ -5,8 +5,6 @@
 ## I. Information
 ### A. Présentation
 Le serveur Debian sera dans un réseau NAT dans mon exemple et une redirection de port permettant d'y accéder depuis la machine hôte.
-
-
 ### B. Virtualbox
 #### 1. Création d'un réseau NAT
 Création du réseau `192.168.10.0/24`.
@@ -23,5 +21,10 @@ Création du réseau `192.168.10.0/24`.
 - Enable EFI     : Non (Eviter Ecran Gris)
 ```
 
-#### 3. Configuration du Réseau
+#### 3. Configuration du Réseau pour la VM
 ![image](https://github.com/user-attachments/assets/38a46955-8950-4f35-9f13-995f0c6f9a24)
+
+<br />
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## II. Configuration de la machine
