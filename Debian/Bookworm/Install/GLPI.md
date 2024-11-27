@@ -244,6 +244,8 @@ apt install -y php-curl php-gd php-intl php-mysqli php-simplexml;
 
 # Extensions Optionnelles pour GLPI
 apt install -y php-bz2 php-ldap php-mbstring php-symfony-polyfill-ctype php-zip;
+
+# Relance du service
 systemctl restart apache2;
 ```
 
