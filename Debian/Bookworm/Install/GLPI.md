@@ -20,7 +20,7 @@ Création du réseau `192.168.10.0/24`.
 - Processeur     : 2 Core
 - Mémoire-vive   : 1 Go
 - Stockage       : 16 Go
-- Enable EFI     : Oui
+- Enable EFI     : Non (Eviter Ecran Gris)
 ```
 
 #### 3. Configuration du Réseau
