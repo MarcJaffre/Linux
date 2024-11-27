@@ -228,7 +228,7 @@ mysql -u root -padmin -e "ALTER USER GLPI@localhost IDENTIFIED VIA mysql_native_
 
 #### 4. GLPI
 ```bash
-# Telecharger GLPI
+# Telecharger GLPI 10.0.9
 VERSION=10.0.9
 wget https://github.com/glpi-project/glpi/releases/download/$VERSION/glpi-$VERSION.tgz -O /tmp/glpi.tgz;
 
@@ -239,10 +239,31 @@ tar -xf /tmp/glpi.tgz -C /var/www/html;
 chown -R www-data:www-data /var/www/html;
 chmod 755 /var/www/html/glpi;
 
-# Extensions Indispensables
+# Extensions Indispensables pour GLPI
 apt install -y php-curl php-gd php-intl php-mysqli php-simplexml;
 
-# Extensions Optionnelles
+# Extensions Optionnelles pour GLPI
 apt install -y php-bz2 php-ldap php-mbstring php-symfony-polyfill-ctype php-zip;
 systemctl restart apache2;
 ```
+
+# Check Requirement
+/var/www/html/glpi/bin/console glpi:system:check_requirements;
+
+# Installation du site (Repondre Yes puis No)
+
+LANGUE=fr_FR
+HOST=localhost
+DATABSE=GLPI
+USERNAMEDB=GLPI
+PASSDB=admin
+
+/var/www/html/glpi/bin/console db:install \
+--reconfigure \
+--default-language=$LANGUE \
+--db-host=$HOST \
+--db-port=3306 \
+--db-name=$DATABSE \
+--db-user=$USERNAMEDB \
+--db-password=$PASSDB \
+--force;
