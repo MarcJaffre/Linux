@@ -31,9 +31,33 @@ Création du réseau `192.168.10.0/24`.
 ### A. Ouvrir la session
 Par défaut l'utilisateur crée lors de l'installation n'est pas dans le groupe `27` (sudo) et donc peut pas utiliser `sudo`, ce qui oblige d'utilise `su -` pour ouvrir la session `root`.
 
-### B. Lister interfaces réseaux
-L'interface se nomme `enp0s3` et à comme IP `192.168.10.6`.
+### B. Interfaces Réseaux
+#### 1. Information
+L'interface se nomme `enp0s3`.
+
+Son Adresse IPv4 est `192.168.10.6`.
+
+La passerelle par défaut `192.168.10.1`.
+
+Le serveur DNS est `192.168.0.1` (Routeur Physique)
+
 ![image](https://github.com/user-attachments/assets/2ecdd07a-cc4c-4b57-bba5-32a0c85d5a63)
 
-### C.
+![image](https://github.com/user-attachments/assets/851eb216-56b6-4bf6-84eb-e8bf212b7c6a)
 
+![image](https://github.com/user-attachments/assets/7af3856a-c0b3-461b-b007-ac7437408267)
+
+#### 2. IP en static
+Taper la commande `nano /etc/network/interfaces`
+
+```
+# Demarrer interface au demarrage
+auto enp0s3
+
+# Activer la fonction deco/reco de l-interface
+allow-hotplug enp0s3
+
+# Mode Static
+iface enp0s3 inet static
+  address 192.168.10.5/24
+  gateway 
