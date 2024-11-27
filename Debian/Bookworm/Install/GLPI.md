@@ -102,3 +102,10 @@ Depuis le poste physique on enverra la requête à la carte de réseau de boucla
 Le protocole SSH est l'équivalent du Bureau à distance de Windows mais pour la console Linux. (Compte root est bloqué par défaut)
 ![image](https://github.com/user-attachments/assets/2f267ff8-941e-497c-953f-1828bd425c20)
 
+### E. Se connecter en Root
+![image](https://github.com/user-attachments/assets/b2e71036-f550-4689-8fb7-7d711364209c)
+
+<br />
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+##  III. LAMP
