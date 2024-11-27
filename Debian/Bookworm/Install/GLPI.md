@@ -132,7 +132,7 @@ mv /etc/apache2/sites-enabled/000-default.conf /etc/apache2/sites-enabled/000-de
 # Création d'un fichier
 nano /etc/apache2/sites-enabled/000-default.conf;
 
-# COPIER LE CODE (Voir ci-dessous#
+# COPIER LE CODE (Voir ci-dessous) #
 
 # Relance du service
 systemctl restart apache2;
