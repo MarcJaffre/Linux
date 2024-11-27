@@ -224,7 +224,9 @@ mysql -u root -padmin -e "ALTER USER GLPI@localhost IDENTIFIED VIA mysql_native_
 ```
 
 #### 4. GLPI
+La variable VERSION permet de définir la version qu'on souhaite télécharger de GLPI.
 
+L'utilisateur www-data est le compte utilisateur du processus d'APACHE et donc le dossier www doit appartenir à www-data.
 ```bash
 # Telecharger GLPI 10.0.9
 VERSION=10.0.9
@@ -247,6 +249,7 @@ apt install -y php-bz2 php-ldap php-mbstring php-symfony-polyfill-ctype php-zip;
 systemctl restart apache2;
 ```
 
+L'installation suivante est réalisable sur l'interface web.
 ```
 # Check Requirement
 /var/www/html/glpi/bin/console glpi:system:check_requirements;
@@ -270,8 +273,8 @@ PASSDB=admin
 --force;
 ```
 
+Une fois l'installation finit, il faut supprimer le fichier install.php.
 ```
-# Supprimé le fichier install.php
 rm /var/www/html/glpi/install/install.php;
 ```
 
