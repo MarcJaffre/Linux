@@ -129,14 +129,19 @@ rm /var/www/html/glpi/install/install.php;
 # Activation du module Rewrite (Apache2)
 /usr/sbin/a2enmod rewrite;
 
-# Configurer Apache
+# Renommer le fichier du site web d'Apache (000-default.conf => 000-default.conf.old)
 mv /etc/apache2/sites-enabled/000-default.conf /etc/apache2/sites-enabled/000-default.conf.old;
+
+# Création d'un fichier
 nano /etc/apache2/sites-enabled/000-default.conf;
+
+# COPIER LE CODE (Voir ci-dessous#
 
 # Relance du service
 systemctl restart apache2;
 ```
 
+**000-default.conf**
 ```
 <VirtualHost *:80>
  # Nom du serveur (/etc/hosts)
