@@ -33,7 +33,7 @@
 
 ---------------------------------------------------------------------------------------------------------------------------
 ### III. Installation de Debian (Partie 1)
-#### A. Définir le mode d'installation
+#### A. Définir le mode d'installation (Screen à faire)
 <p align='center'> <img src='' /> </p>
 <br />
 
