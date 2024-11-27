@@ -130,11 +130,25 @@ apt install -y php libapache2-mod-php;
 ```bash
 apt install -y mariadb-server;
 ```
+
 #### 2. Sécurisation (Recommandé)
 Par défaut le compte root de la Base de donnée au niveau du mot de passe à est vide, il faut pour celà en définit .
 ```bsh
 mysql_secure_installation;
 ```
 
+![image](https://github.com/user-attachments/assets/6f023d62-1724-429a-aa02-2cbb8bca15f1)
+
+![image](https://github.com/user-attachments/assets/8bfb35eb-47dc-4c0d-89cc-c126605153f9)
+
+![image](https://github.com/user-attachments/assets/40d233f8-414e-4681-b2ee-19f02f8cad42)
+
+![image](https://github.com/user-attachments/assets/e3ca7a05-7acf-47fa-8bbf-c07b0662c643)
+
+![image](https://github.com/user-attachments/assets/9ad8d0f1-d7cb-44d7-ad33-1ad029447c46)
+
+![image](https://github.com/user-attachments/assets/4f91e560-afb6-4cac-8501-5772f941aa69)
+
+![image](https://github.com/user-attachments/assets/9fdb1e4a-5c3b-443a-bd7a-28be20d7de72)
 
 <br />
