@@ -50,9 +50,9 @@ Le serveur DNS est `192.168.0.1` (Routeur Physique)
 #### 2. IP en static
 Taper la commande `nano /etc/network/interfaces`, editer le fichier. (CTRL+O: Enregistrer sous | Entrer | CTRl+X : Quitter)
 
-Puis il est nécessaire de redémarrer le service `networking` pour que la configuration s'applique et on vérifie si le service n'est pas en erreur.
+Puis il est nécessaire de redémarrer le service `networking` pour que la configuration s'applique et on vérifie si le service n'est pas en erreur. (Q pour quitter le mode Statut)
 
-Il ne reste plus qu'a vérifier si tout marche avec la commande `nslookup google.fr`.
+Il ne reste plus qu'a vérifier si tout marche avec la commande `ping -c 3 google.fr`. (3 Requêtes)
 ```
 # Demarrer interface au demarrage
 auto enp0s3
@@ -76,8 +76,16 @@ iface enp0s3 inet static
 
 ![image](https://github.com/user-attachments/assets/58c336a2-410d-498c-92f0-1bedd780c942)
 
-
 ![image](https://github.com/user-attachments/assets/9012279b-84ca-477b-944f-113e61383c10)
 
+![image](https://github.com/user-attachments/assets/6b5ce30d-bbc4-4998-948d-23607cbb110a)
 
+#### 3. Gestion des Dépôts
+Taper la commande `nano /etc/apt/sources.list`.
+
+La ligne `deb cdrom ....` permet de chercher un paquet dans le lecteur CDROM, je recommande de commenter la ligne en mettant un `#` au début de la ligne.
+
+Remise en page du fichier pour une meilleur clareté.
+
+![image](https://github.com/user-attachments/assets/c05dd301-8d3c-46ab-a5a9-ee1a7c95619f)
 
