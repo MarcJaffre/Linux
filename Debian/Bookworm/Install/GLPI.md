@@ -151,4 +151,25 @@ mysql_secure_installation;
 
 ![image](https://github.com/user-attachments/assets/9fdb1e4a-5c3b-443a-bd7a-28be20d7de72)
 
-<br />
+#### 3. Base De Donnée
+Le mot de passe root de ma base de donnée est `admin`. Le mot de passe doit être coller au paramètre `-p`.
+```
+# Suppression de la BDD et USER
+mysql -u root -padmin -e "DROP DATABASE IF EXISTS GLPI"
+mysql -u root -padmin -e "DROP USER IF EXISTS 'GLPI'@'localhost';"
+
+# Création de la BDD
+mysql -u root -padmin -e "CREATE DATABASE IF NOT EXISTS GLPI;"
+
+# Création de l'utilisateur
+mysql -u root -padmin -e "CREATE USER 'GLPI'@'localhost' IDENTIFIED BY 'admin';"
+
+# Permission de la BDD pour le compte
+mysql -u root -padmin -e "GRANT ALL PRIVILEGES ON GLPI.* TO 'GLPI'@'localhost';"
+
+# Fuseau Horaire
+mysql -u root -padmin -e "GRANT SELECT ON mysql.time_zone_name TO 'GLPI'@'localhost';"
+
+# Permettre l'authentification pour GLPI
+mysql -u root -padmin -e "ALTER USER GLPI@localhost IDENTIFIED VIA mysql_native_password USING PASSWORD('admin');"
+```
