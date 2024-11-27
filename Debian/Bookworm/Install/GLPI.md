@@ -59,5 +59,10 @@ allow-hotplug enp0s3
 
 # Mode Static
 iface enp0s3 inet static
+  # CIDR
   address 192.168.10.5/24
-  gateway 
+  # Passerelle
+  gateway 192.168.10.1
+  # DNS
+  dns-nameservers 192.168.10.1 8.8.8.8
+```
