@@ -48,7 +48,9 @@ Le serveur DNS est `192.168.0.1` (Routeur Physique)
 ![image](https://github.com/user-attachments/assets/7af3856a-c0b3-461b-b007-ac7437408267)
 
 #### 2. IP en static
-Taper la commande `nano /etc/network/interfaces`
+Taper la commande `nano /etc/network/interfaces`, editer le fichier. (CTRL+O: Enregistrer sous | Entrer | CTRl+X : Quitter)
+
+Puis il est nécessaire de redémarrer le service `networking` pour que la configuration s'applique.
 
 ```
 # Demarrer interface au demarrage
@@ -66,3 +68,12 @@ iface enp0s3 inet static
   # DNS
   dns-nameservers 192.168.10.1 8.8.8.8
 ```
+
+![image](https://github.com/user-attachments/assets/b79b4335-87c8-4771-8757-62e229cf50eb)
+
+![image](https://github.com/user-attachments/assets/7dbea66f-c732-449d-8f64-d8fea75380de)
+
+![image](https://github.com/user-attachments/assets/9012279b-84ca-477b-944f-113e61383c10)
+
+
+
