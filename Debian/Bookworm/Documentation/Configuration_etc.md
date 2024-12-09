@@ -125,26 +125,29 @@
 - Dans ce répertoire, vous pouvez déclarer les fichiers de configuration pour automatiser la configuration réseau de votre distribution Linux.
 
 
-/etc/modprobe.d/blacklist.conf
+#### X. /etc/modprobe.d/blacklist.conf
 - Le fichier /etc/modprobe.d/blacklist.conf est utilisé pour empêcher les modules d’être chargés par le noyau Linux.
 - Il contient une liste de modules qui ne doivent pas être chargés, soit parce qu’ils sont connus pour causer des problèmes, soit parce qu’ils ne sont pas nécessaires sur le système.
 - Ce fichier est utilisé pour gérer le chargement des modules du noyau sur un système Linux.
   
 
-/etc/udev/rules.d/70-persistent-net.rules	Le fichier /etc/udev/rules.d/70-persistent-net.rules est utilisé pour attribuer de manière persistante des noms d’interface réseau sur un système Linux. Il contient une liste de règles qui correspondent aux interfaces réseau en fonction de leurs adresses MAC et leur attribue des noms stables, tels que « eth0 » ou « wlan0 ». Ce fichier est utilisé pour gérer la dénomination des interfaces réseau sur un système Linux.
+#### X. /etc/udev/rules.d/70-persistent-net.rules
+- Le fichier /etc/udev/rules.d/70-persistent-net.rules est utilisé pour attribuer de manière persistante des noms d’interface réseau sur un système Linux.
+- Il contient une liste de règles qui correspondent aux interfaces réseau en fonction de leurs adresses MAC et leur attribue des noms stables, tels que « eth0 » ou « wlan0 ».
+- Ce fichier est utilisé pour gérer la dénomination des interfaces réseau sur un système Linux.
 
 
-/etc/default/grub	Le fichier /etc/default/grub est utilisé pour configurer le chargeur de démarrage GRUB sur un système Linux. Il contient des options et des paramètres qui affectent le comportement de GRUB, tels que le noyau par défaut pour démarrer, le délai d’expiration et la résolution d’affichage. Ce fichier est utilisé pour gérer le chargeur de démarrage GRUB sur un système Linux.
+#### X. /etc/default/grub	Le fichier /etc/default/grub est utilisé pour configurer le chargeur de démarrage GRUB sur un système Linux. Il contient des options et des paramètres qui affectent le comportement de GRUB, tels que le noyau par défaut pour démarrer, le délai d’expiration et la résolution d’affichage. Ce fichier est utilisé pour gérer le chargeur de démarrage GRUB sur un système Linux.
 
-/etc/X11/xorg.conf	Le fichier /etc/X11/xorg.conf est utilisé pour configurer le système X Window sur un système Linux. Il contient des informations sur la carte graphique, le moniteur et le clavier, ainsi que des options pour personnaliser le comportement du système X Window, telles que la profondeur de couleur et la résolution de l’écran. Ce fichier est utilisé pour gérer le système X Window sur un système Linux.
+#### X. /etc/X11/xorg.conf	Le fichier /etc/X11/xorg.conf est utilisé pour configurer le système X Window sur un système Linux. Il contient des informations sur la carte graphique, le moniteur et le clavier, ainsi que des options pour personnaliser le comportement du système X Window, telles que la profondeur de couleur et la résolution de l’écran. Ce fichier est utilisé pour gérer le système X Window sur un système Linux.
 
-/etc/ld.so.conf	Le fichier /etc/ld.so.conf est utilisé pour configurer l’éditeur de liens dynamique sur un système Linux. Il contient une liste de répertoires qui doivent être recherchés par l’éditeur de liens dynamiques lors du chargement de bibliothèques partagées. Ce fichier est utilisé pour gérer l’éditeur de liens dynamique sur un système Linux.
+#### X. /etc/ld.so.conf	Le fichier /etc/ld.so.conf est utilisé pour configurer l’éditeur de liens dynamique sur un système Linux. Il contient une liste de répertoires qui doivent être recherchés par l’éditeur de liens dynamiques lors du chargement de bibliothèques partagées. Ce fichier est utilisé pour gérer l’éditeur de liens dynamique sur un système Linux.
 
-/etc/pam.d/system-auth	Le fichier /etc/pam.d/system-auth est utilisé pour configurer le mécanisme d’authentification sur un système Linux. Il contient une liste de modules qui doivent être utilisés pour l’authentification, tels que la vérification du mot de passe par rapport au fichier fantôme ou l’utilisation de cartes à puce. Ce fichier est utilisé pour gérer l’authentification sur un système Linux.
+#### X. /etc/pam.d/system-auth	Le fichier /etc/pam.d/system-auth est utilisé pour configurer le mécanisme d’authentification sur un système Linux. Il contient une liste de modules qui doivent être utilisés pour l’authentification, tels que la vérification du mot de passe par rapport au fichier fantôme ou l’utilisation de cartes à puce. Ce fichier est utilisé pour gérer l’authentification sur un système Linux.
 
-/etc/systemd/system.conf	Le fichier /etc/systemd/system.conf stocke la configuration de Systemd.
+#### X. /etc/systemd/system.conf	Le fichier /etc/systemd/system.conf stocke la configuration de Systemd.
 Ce dernier est le gestionnaire de service qui succède à SysV init.
 
-/etc/logrotate.conf	Le fichier /etc/logrotate.conf est utilisé pour configurer l’utilitaire logrotate sur un système Linux. Il contient des informations sur la façon dont les fichiers journaux doivent être pivotés, telles que la fréquence, la taille et la compression des journaux pivotés. Ce fichier est utilisé pour gérer les fichiers journaux sur un système Linux.
+#### X. /etc/logrotate.conf	Le fichier /etc/logrotate.conf est utilisé pour configurer l’utilitaire logrotate sur un système Linux. Il contient des informations sur la façon dont les fichiers journaux doivent être pivotés, telles que la fréquence, la taille et la compression des journaux pivotés. Ce fichier est utilisé pour gérer les fichiers journaux sur un système Linux.
 
 /etc/rsyslog.conf	Le fichier /etc/rsyslog.conf est utilisé pour configurer le démon rsyslog sur un système Linux. Il contient des informations sur l’emplacement d’envoi des messages de journal, par exemple à un serveur distant ou à un fichier local, ainsi que des options de filtrage et de formatage des messages de journal. Ce fichier est utilisé pour gérer la journalisation sur un système Linux.
