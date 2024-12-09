@@ -2,11 +2,10 @@
 <p align='center'> Fichiers de configuration linux </p>
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
-### I. Base
+### I. 
 #### A. /etc/fstab
 - Le fichier /etc/fstab est utilisé pour contrôler la manière dont les systèmes de fichiers sont montés au démarrage et pendant le fonctionnement normal du système. 
 - Il répertorie tous les systèmes de fichiers disponibles et leurs points de montage, y compris les options et les fréquences de vidage.
-
 
 #### B. /etc/passwd
 - Le fichier /etc/passwd contient des informations sur les utilisateurs du système, notamment leur nom d’utilisateur, leur ID d’utilisateur, leur ID de groupe, leur répertoire personnel et leur shell.
@@ -98,19 +97,39 @@
 - Il contient une liste de paires clé-valeur qui spécifient les valeurs maximale et minimale pour diverses ressources système, telles que le nombre de descripteurs de fichiers ouverts, la taille de la mémoire virtuelle et le nombre maximal de processus.
 - Ce fichier est utilisé pour gérer les limites de ressources sur un système Linux.
 
-/etc/apt/sources.list	Le fichier /etc/apt/sources.list est utilisé pour configurer les sources logicielles du gestionnaire de paquets APT sur un système Linux. Il contient une liste de référentiels, ou sources de logiciels, à partir desquels les paquets peuvent être installés et mis à jour. Ce fichier est utilisé pour gérer les sources logicielles et les paquets sur un système Linux à base Debian (Ubuntu, Mint, …)
+#### X. /etc/apt/sources.list
+- Le fichier /etc/apt/sources.list est utilisé pour configurer les sources logicielles du gestionnaire de paquets APT sur un système Linux.
+- Il contient une liste de référentiels, ou sources de logiciels, à partir desquels les paquets peuvent être installés et mis à jour.
+- Ce fichier est utilisé pour gérer les sources logicielles et les paquets sur un système Linux à base Debian (Ubuntu, Mint, …)
 
-/etc/apt/apt.conf	Le fichier /etc/apt/apt.conf est utilisé pour configurer le gestionnaire de paquets APT sur un système Linux. Il contient une liste d’options et de préférences qui affectent le comportement d’APT, telles que le serveur proxy à utiliser, la version par défaut à partir de laquelle installer les packages et l’action par défaut à effectuer lors de la mise à niveau des packages.
+#### X. /etc/apt/apt.conf	Le fichier /etc/apt/apt.conf est utilisé pour configurer le gestionnaire de paquets APT sur un système Linux.
+- Il contient une liste d’options et de préférences qui affectent le comportement d’APT, telles que le serveur proxy à utiliser, la version par défaut à partir de laquelle installer les packages et l’action par défaut à - effectuer lors de la mise à niveau des packages.
 
-/etc/bash.bashrc	Le fichier /etc/bash.bashrc est le fichier de configuration à l’échelle du système pour le shell bash. Il contient une liste de commandes et de paramètres qui sont exécutés chaque fois qu’un utilisateur démarre une session shell bash. Ce fichier est utilisé pour configurer le shell bash pour tous les utilisateurs sur un système Linux.
+#### X. /etc/bash.bashrc
+- Le fichier /etc/bash.bashrc est le fichier de configuration à l’échelle du système pour le shell bash.
+- Il contient une liste de commandes et de paramètres qui sont exécutés chaque fois qu’un utilisateur démarre une session shell bash.
+- Ce fichier est utilisé pour configurer le shell bash pour tous les utilisateurs sur un système Linux.
 
-/etc/sysconfig/network	Le fichier /etc/sysconfig/network est utilisé pour configurer les paramètres réseau sur un système Linux. Il contient des informations sur le nom d’hôte, la passerelle et d’autres paramètres réseau qui doivent être définis au démarrage du système. Ce fichier est utilisé pour gérer les paramètres réseau sur un système Linux à base de Redhat / Fedora
+#### X. /etc/sysconfig/network
+- Le fichier /etc/sysconfig/network est utilisé pour configurer les paramètres réseau sur un système Linux.
+- Il contient des informations sur le nom d’hôte, la passerelle et d’autres paramètres réseau qui doivent être définis au démarrage du système.
+- Ce fichier est utilisé pour gérer les paramètres réseau sur un système Linux à base de Redhat / Fedora
 
-/etc/network/interfaces	Le fichier /etc/network/interfaces est utilisé pour configurer les interfaces réseau sur un système Linux. Il contient des informations sur les interfaces réseau, telles que les adresses IP, les masques de réseau et les passerelles, ainsi que des options pour configurer les adresses DHCP et les adresses IP statiques. Ce fichier est utilisé pour gérer la configuration du réseau sur un système Linux.
+#### X. /etc/network/interfaces
+- Le fichier /etc/network/interfaces est utilisé pour configurer les interfaces réseau sur un système Linux.
+- Il contient des informations sur les interfaces réseau, telles que les adresses IP, les masques de réseau et les passerelles, ainsi que des options pour configurer les adresses DHCP et les adresses IP statiques.
+- Ce fichier est utilisé pour gérer la configuration du réseau sur un système Linux.
 
-/etc/NetworkManager/system-connections/	Dans ce répertoire, vous pouvez déclarer les fichiers de configuration pour automatiser la configuration réseau de votre distribution Linux.
 
-/etc/modprobe.d/blacklist.conf	Le fichier /etc/modprobe.d/blacklist.conf est utilisé pour empêcher les modules d’être chargés par le noyau Linux. Il contient une liste de modules qui ne doivent pas être chargés, soit parce qu’ils sont connus pour causer des problèmes, soit parce qu’ils ne sont pas nécessaires sur le système. Ce fichier est utilisé pour gérer le chargement des modules du noyau sur un système Linux.
+#### X. /etc/NetworkManager/system-connections/
+- Dans ce répertoire, vous pouvez déclarer les fichiers de configuration pour automatiser la configuration réseau de votre distribution Linux.
+
+
+/etc/modprobe.d/blacklist.conf
+- Le fichier /etc/modprobe.d/blacklist.conf est utilisé pour empêcher les modules d’être chargés par le noyau Linux.
+- Il contient une liste de modules qui ne doivent pas être chargés, soit parce qu’ils sont connus pour causer des problèmes, soit parce qu’ils ne sont pas nécessaires sur le système.
+- Ce fichier est utilisé pour gérer le chargement des modules du noyau sur un système Linux.
+  
 
 /etc/udev/rules.d/70-persistent-net.rules	Le fichier /etc/udev/rules.d/70-persistent-net.rules est utilisé pour attribuer de manière persistante des noms d’interface réseau sur un système Linux. Il contient une liste de règles qui correspondent aux interfaces réseau en fonction de leurs adresses MAC et leur attribue des noms stables, tels que « eth0 » ou « wlan0 ». Ce fichier est utilisé pour gérer la dénomination des interfaces réseau sur un système Linux.
 
