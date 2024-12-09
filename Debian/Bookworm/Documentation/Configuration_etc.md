@@ -4,7 +4,7 @@
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### I. 
 #### A. /etc/fstab
-- Le fichier /etc/fstab est utilisé pour contrôler la manière dont les systèmes de fichiers sont montés au démarrage et pendant le fonctionnement normal du système. 
+- Le fichier /etc/fstab est utilisé pour contrôler la manière dont les systèmes de fichiers sont montés au démarrage et pendant le fonctionnement normal du système.
 - Il répertorie tous les systèmes de fichiers disponibles et leurs points de montage, y compris les options et les fréquences de vidage.
 
 #### B. /etc/passwd
@@ -13,7 +13,7 @@
 
 #### C. /etc/shadow
 - Le fichier /etc/shadow contient le mot de passe crypté et d’autres informations de sécurité pour chaque utilisateur du système.
-- Contrairement à /etc/passwd, ce fichier n’est lisible que par l’utilisateur root et est donc beaucoup plus sûr. 
+- Contrairement à /etc/passwd, ce fichier n’est lisible que par l’utilisateur root et est donc beaucoup plus sûr.
 - Il est utilisé pour stocker des informations telles que le dernier changement de mot de passe, l’âge minimum du mot de passe et l’âge maximum du mot de passe.
 
 #### D. /etc/group
@@ -166,4 +166,7 @@
 - Il contient des informations sur la façon dont les fichiers journaux doivent être pivotés, telles que la fréquence, la taille et la compression des journaux pivotés.
 - Ce fichier est utilisé pour gérer les fichiers journaux sur un système Linux.
 
-/etc/rsyslog.conf	Le fichier /etc/rsyslog.conf est utilisé pour configurer le démon rsyslog sur un système Linux. Il contient des informations sur l’emplacement d’envoi des messages de journal, par exemple à un serveur distant ou à un fichier local, ainsi que des options de filtrage et de formatage des messages de journal. Ce fichier est utilisé pour gérer la journalisation sur un système Linux.
+/etc/rsyslog.conf
+- Le fichier /etc/rsyslog.conf est utilisé pour configurer le démon rsyslog sur un système Linux.
+- Il contient des informations sur l’emplacement d’envoi des messages de journal, par exemple à un serveur distant ou à un fichier local, ainsi que des options de filtrage et de formatage des messages de journal.
+- Ce fichier est utilisé pour gérer la journalisation sur un système Linux.
