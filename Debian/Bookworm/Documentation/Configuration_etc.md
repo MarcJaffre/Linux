@@ -4,12 +4,16 @@
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### I. Base
 #### A. /etc/fstab
+```
 Le fichier /etc/fstab est utilisé pour contrôler la manière dont les systèmes de fichiers sont montés au démarrage et pendant le fonctionnement normal du système. 
 Il répertorie tous les systèmes de fichiers disponibles et leurs points de montage, y compris les options et les fréquences de vidage.
+```
 
 #### B. /etc/passwd
+```
 Le fichier /etc/passwd contient des informations sur les utilisateurs du système, notamment leur nom d’utilisateur, leur ID d’utilisateur, leur ID de groupe, leur répertoire personnel et leur shell.
 Ce fichier est lisible par tous les utilisateurs du système, mais il est important de le sécuriser afin d’empêcher tout accès non autorisé aux comptes des utilisateurs.
+```
 
 #### C. /etc/shadow
 Le fichier /etc/shadow contient le mot de passe crypté et d’autres informations de sécurité pour chaque utilisateur du système.
