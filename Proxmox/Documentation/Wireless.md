@@ -25,8 +25,8 @@ iface wlp3s0 inet static
         address 192.168.0.100/24
         gateway 192.168.0.1
         dns-nameservers 192.168.0.1
-        wpa-ssid MONSSID
-        wpa-psk  MONPASS
+        wpa-ssid OpenWRT
+        wpa-psk  Azerty74240
         post-up ip route add default via 192.168.0.1 dev wlp3s0 metric 100
 
 #################################################################################
@@ -34,13 +34,13 @@ iface wlp3s0 inet static
 ##########
 auto vmbr0
 iface vmbr0 inet static
-        address 192.168.20.100/24
-        gateway 192.168.20.1
-        dns-nameservers 192.168.20.1
+        address 192.168.0.200/24
+        gateway 192.168.0.1
+        dns-nameservers 192.168.0.1
         bridge-ports enp4s0
         bridge-stp off
         bridge-fd 0
-        post-up ip route add default via 192.168.20.1 dev vmbr0 metric 10
+        post-up ip route add default via 192.168.0.1 dev vmbr0 metric 10
 #################################################################################
 EOF
 systemctl restart networking;
