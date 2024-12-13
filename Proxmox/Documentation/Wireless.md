@@ -44,6 +44,10 @@ iface vmbr0 inet static
 #################################################################################
 EOF
 systemctl restart networking;
+
+# Verification
+ping -c3 -I vmbr0  google.fr
+ping -c3 -I wlp3s0 google.fr
 ```
 
 <br />
