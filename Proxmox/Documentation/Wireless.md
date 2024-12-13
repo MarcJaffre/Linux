@@ -1,7 +1,7 @@
 ### Fonctionnel
 Lorsque vmbr0 démarre il déclare 2 route :
 - Pour l'interface wlp3s0 la passerelle par défaut est 192.168.0.1
-- Pour l'interface vmr0 la passerelle par défaut est 192.168.20.1
+- Pour l'interface vmbr0  la passerelle par défaut est 192.168.20.1
 
 **/etc/network/interfaces**
 ```
