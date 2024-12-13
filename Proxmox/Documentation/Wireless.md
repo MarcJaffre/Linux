@@ -40,7 +40,7 @@ iface wlp3s0 inet manual
       wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
 
 auto vmbr0
-ifacevm br0 inet static
+ifacevm vmbr0 inet static
     address 192.168.0.100/24
     gateway 192.168.0.1
     dns-nameservers 192.168.0.1
