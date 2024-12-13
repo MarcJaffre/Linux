@@ -4,15 +4,17 @@
 clear;
 cat > /etc/network/interfaces << EOF
 #################################################################################
-# LoopBack #
+# Loopback #
 ############
 auto lo
 iface lo inet loopback
+
 #################################################################################
 # Ethernet #
 ############
 auto enp4s0
 iface enp4s0 inet manual
+
 #################################################################################
 # Wireless #
 ############
@@ -23,24 +25,28 @@ iface wlp3s0 inet static
   dns-nameservers 192.168.0.1
   wpa-ssid OpenWRT
   wpa-psk  Azerty74240
+
+
 #################################################################################
 # Bridge #
 ##########
 auto vmbr0
 iface vmbr0 inet static
-  address         192.168.0.200/24
-  gateway         192.168.0.1
-  dns-nameservers 192.168.0.1
-  bridge-ports    enp4s0
-  bridge-stp      off
-  bridge-fd       0
-  post-up ip route add default via 192.168.0.1 dev vmbr0  metric 10
-  post-up ip route add default via 192.168.0.1 dev wlp3s0 metric 100
+ address         192.168.0.200/24
+ gateway         192.168.0.1
+ dns-nameservers 192.168.0.1
+ bridge-ports    enp4s0
+ bridge-stp      off
+ bridge-fd       0
+ post-up ip route add default via 192.168.0.1 dev vmbr0  metric 10
+ post-up ip route add default via 192.168.0.1 dev wlp3s0 metric 100
+
 #################################################################################
 EOF
 systemctl restart networking;
 ```
 
+<br />
 
 ### Test
 **/etc/network/interfaces**
