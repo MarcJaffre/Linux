@@ -1,6 +1,8 @@
 ### Fonctionnel
 ****
-```
+```bash
+clear;
+
 cat > /etc/network/interfaces << EOF
 #################################################################################
 # LoopBack #
@@ -12,7 +14,6 @@ iface lo inet loopback
 ############
 auto enp4s0
 iface enp4s0 inet manual
-
 #################################################################################
 # Wireless #
 ############
@@ -24,7 +25,6 @@ iface wlp3s0 inet static
         wpa-ssid OpenWRT
         wpa-psk  Azerty74240
         post-up ip route add default via 192.168.0.1 dev wlp3s0 metric 100
-
 #################################################################################
 # Bridge #
 ##########
