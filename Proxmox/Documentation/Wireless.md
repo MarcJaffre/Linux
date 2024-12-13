@@ -15,6 +15,7 @@ iface wlp3s0 inet static
         dns-nameservers 8.8.8.8
         wpa-ssid MONSSID
         wpa-psk  MONPASS
+        post-up ip route add default via 192.168.0.1 dev wlp3s0 metric 100
 
 auto vmbr0
 iface vmbr0 inet static
@@ -23,7 +24,6 @@ iface vmbr0 inet static
         bridge-ports enp4s0
         bridge-stp off
         bridge-fd 0
-        post-up ip route add default via 192.168.0.1 dev wlp3s0 metric 100
         post-up ip route add default via 192.168.20.1 dev vmbr0 metric 10
 ```
 
