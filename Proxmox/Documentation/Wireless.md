@@ -18,7 +18,6 @@ iface enp4s0 inet manual
 ############
 auto wlp3s0
 iface wlp3s0 inet static
-  post-up ip route add default via 192.168.0.1 dev wlp3s0 metric 100
   address 192.168.0.100/24
   gateway 192.168.0.1
   dns-nameservers 192.168.0.1
@@ -29,13 +28,14 @@ iface wlp3s0 inet static
 ##########
 auto vmbr0
 iface vmbr0 inet static
-  post-up ip route add default via 192.168.0.1 dev vmbr0 metric 10
-  address 192.168.0.200/24
-  gateway 192.168.0.1
+  address         192.168.0.200/24
+  gateway         192.168.0.1
   dns-nameservers 192.168.0.1
-  bridge-ports enp4s0
-  bridge-stp off
-  bridge-fd 0
+  bridge-ports    enp4s0
+  bridge-stp      off
+  bridge-fd       0
+  post-up ip route add default via 192.168.0.1 dev vmbr0  metric 10
+  post-up ip route add default via 192.168.0.1 dev wlp3s0 metric 100
 #################################################################################
 EOF
 systemctl restart networking;
