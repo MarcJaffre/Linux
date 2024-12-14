@@ -48,7 +48,6 @@ iface wlp3s0 inet static
 auto vmbr0
 iface vmbr0 inet static
   address 192.168.0.200/24
-  dns-nameservers 8.8.8.8
   bridge-ports enp4s0
   bridge-stp off
   bridge-fd 0
