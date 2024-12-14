@@ -114,6 +114,14 @@ ping: Warning: source address might be selected on device other than: enp4s0
 #### A. Fusion des interfaces
 **/etc/network/interfaces**
 ```
+clear;
+
+cat > /etc/resolv.conf << EOF
+domain lan
+search lan
+nameserver 8.8.8.8
+EOF
+
 cat > /etc/network/interfaces << EOF
 #################################################################################
 # Loopback #
@@ -145,16 +153,6 @@ iface vmbr0 inet static
   bridge-stp off
   bridge-fd 0
   post-up ip route add default via 192.168.0.1 dev vmbr0 metric 10
-
-
-#################################################################################
-# Pont Virtuel #
-################
-auto vmbr1
-iface vmbr1 inet manual
- bridge-ports none
- bridge-stp off
- bridge-fd 0
 
 #################################################################################
 EOF
