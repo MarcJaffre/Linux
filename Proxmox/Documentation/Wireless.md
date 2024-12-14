@@ -3,18 +3,21 @@
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### I. Configuration du réseau
-#### A. Ethernet et Wifi (Séparé)
-L'interface enp4s0 ne peut pas envoyé de paquet car elle est mise en pont sur le pont vmbr0.
-****
+#### A. Configuration du DNS
 ```bash
 clear;
-
 cat > /etc/resolv.conf << EOF
 domain lan
 search lan
 nameserver 8.8.8.8
 EOF
+```
 
+#### B. Réseau Ethernet et WIFI en mode Séparé
+L'interface enp4s0 ne peut pas envoyé de paquet car elle est mise en pont sur le pont vmbr0.
+****
+```bash
+clear;
 cat > /etc/network/interfaces << EOF
 #################################################################################
 # Loopback #
