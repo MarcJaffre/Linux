@@ -1,4 +1,5 @@
-### Fonctionnel
+### A. Ethernet et Wifi (Séparé)
+L'interface enp4s0 ne peut pas envoyé de paquet car elle est mise en pont sur le pont vmbr0.
 ****
 ```bash
 clear;
