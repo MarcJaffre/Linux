@@ -40,7 +40,7 @@ iface wlp3s0 inet static
   dns-nameservers 8.8.8.8
   wpa-ssid OpenWRT
   wpa-psk  Azerty74240
-  post-up ip route add default via 192.168.0.1 dev wlp3s0 metric 10
+  post-up ip route add default via 192.168.0.1 dev wlp3s0 metric 15
 
 #################################################################################
 # Bridge #
@@ -51,7 +51,7 @@ iface vmbr0 inet static
   bridge-ports enp4s0
   bridge-stp off
   bridge-fd 0
-  post-up ip route add default via 192.168.0.1 dev vmbr0 metric 15
+  post-up ip route add default via 192.168.0.1 dev vmbr0 metric 10
 
 #################################################################################
 # Pont Virtuel #
