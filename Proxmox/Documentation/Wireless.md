@@ -156,6 +156,8 @@ iface vmbr0 inet static
 
 #################################################################################
 EOF
+
+systemctl restart networking;
 ```
 
 #### B. Verification
