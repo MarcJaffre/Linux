@@ -61,6 +61,7 @@ apt install --no-install-recommends -y gdebi;
 apt install --no-install-recommends -y git;
 # ========================================================================================
 apt install --no-install-recommends -y gnome-disk-utility;
+apt install --no-install-recommends -y gnome-connections;
 apt install --no-install-recommends -y gnome-calculator;
 apt install --no-install-recommends -y gnome-calendar;
 apt install --no-install-recommends -y gnome-software;
