@@ -43,6 +43,9 @@ apt install --no-install-recommends -y bash-completion;
 apt install --no-install-recommends -y build-essential;
 apt install --no-install-recommends -y cifs-utils;
 # ========================================================================================
+apt install --no-install-recommends -y bluez;
+apt install --no-install-recommends -y blueman;
+# ========================================================================================
 apt install --no-install-recommends -y cinnamon;
 apt install --no-install-recommends -y cinnamon-l10n;
 apt install --no-install-recommends -y cinnamon-control-center-goa;
