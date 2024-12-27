@@ -1,0 +1,74 @@
+<html lang="fr">
+    <!--- ########################################################################################### --->
+	<head>
+		<title>Alerte LibreNMS</title>
+	</head>
+    <!--- ########################################################################################### --->
+	<style>
+		table{
+		      border-collapse: collapse
+		      }
+		caption{
+		       border: 1px black solid;
+		       caption-side: top;
+		       font-weight: bold;
+		       }
+		th{
+		  border:    1px black solid;
+		  font-size: 18px;
+		  height:    60px;
+		  }
+		td{
+		  border: 1px black solid;
+		  font-size: 18px;
+		  height: 40px;
+		  text-align: center;
+		  width: 180px;
+          }
+	</style>
+    <!--- ########################################################################################### --->
+	
+	
+	<body>	
+    <!--- ########################################################################################### --->
+		<center>
+			<br />
+			<h1>Alerte de supervision</h1>
+			<img src="LOGO DE l'entreprise" alt="" title="Copwell France" align='center' />
+			<h2>{{ $alert-> name }}</h2>
+    <!--- ########################################################################################### --->
+		<table>
+			<caption>
+				<h2>{{ $alert->display }}</h2>
+			</caption>
+			<thead>	
+				<tr>
+					<!-- <th>Titre de l'alerte</th> -->
+					<!-- <th>Nom de l'appareil</th> -->
+					<th>Heure de début</th>
+					<th>Niveau de sévérité</th>
+					<th>Etat de l'alerte</th>
+					<th>Durée de l'alerte</th>
+					<th>Consigne</th>
+					<!-- <th>Information</th> -->
+				</tr>
+			</thead>
+    <!--- ########################################################################################### --->
+			<tbody>
+				<tr>
+					<!-- <td>{{ $alert->name }}</td> -->
+					<!-- <td>{{ $alert->display }}</td> -->
+					<td>{{ $alert->timestamp }}</td>
+					<td> @if ($alert->severity == "warning") <font color="orange"> WARNING</font> @else{{ $alert->severity }}  @endif</td>
+					<td> @if ($alert->state == 1) <font color="red"> En cours</font> @else <font color="green">OK</font>  @endif</td>
+					<td>{{ $alert->elapsed }}</td>
+					<td><a href="{{ $alert->proc }}">ICI</a></td>
+					<!-- <td>{{ $alert->notes }}</td> -->
+				</tr>
+			</tbody>
+		</table>
+		</center>
+	<!--- ########################################################################################### --->
+	<!--- ########################################################################################### --->
+	</body>
+</html>
