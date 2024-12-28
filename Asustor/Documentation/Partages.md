@@ -63,4 +63,6 @@ Ajouter les groupes et les droits correspondant.
 ![image](https://github.com/user-attachments/assets/47d108cf-614e-4727-949f-216abc6d4b40)
 
 ##### 5. Auditer les accès
-Cliquer sur le bouton `Permissions effectives` puis cliquer le `crayon` et choisissez un utilisateur qui fait partie d'un des groupes suivants: ``
+Cliquer sur le bouton `Permissions effectives` puis cliquer le `crayon` et choisissez un utilisateur qui fait partie d'un des groupes suivants:  `TEST_RO` et `TEST_RW`.
+
+Ceci permet de valider l'accès.
