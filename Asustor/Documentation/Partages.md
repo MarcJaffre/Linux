@@ -58,6 +58,7 @@ Je recommande de le supprimé
 
 ##### 4. Ajouter les groupes
 Ajouter les groupes et les droits correspondant.
+
 ![image](https://github.com/user-attachments/assets/8cbf9d4a-be8c-4fa9-a822-d14516aea915)
 
 ![image](https://github.com/user-attachments/assets/47d108cf-614e-4727-949f-216abc6d4b40)
