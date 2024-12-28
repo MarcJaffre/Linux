@@ -23,6 +23,9 @@ Aller dans le menu `Contrôle d'Accès` > `Dossiers Partagés` > `Ajouter` et do
 | TEST_RO | Lecture seule       |
 | TEST_RW | Lecture et écriture |
 
+![image](https://github.com/user-attachments/assets/a34b8dc2-d37f-4250-9aba-d82b1b5f43f0)
+
+
 <br />
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
