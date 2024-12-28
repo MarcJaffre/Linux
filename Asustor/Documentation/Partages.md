@@ -28,6 +28,8 @@ Ne pas disposer des ACL, ont ne peut que gérer les droits sur le partage et pou
 ##### 1. Activer les ACL au partage
 Aller dans le menu `Contrôle d'Accès` > `Dossiers Partagés` > sélectionner votre partage > `Editer` > onglet `Windows ACL` > Cocher `Activer Windows ACL`.
 
+Aucun changement au niveau du chmod sur le dossier `TEST`.
+
 ![image](https://github.com/user-attachments/assets/e6a140c0-56a5-47ab-a29b-f2f0cb505baf)
 
 
