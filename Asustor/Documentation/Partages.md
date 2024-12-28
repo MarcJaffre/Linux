@@ -13,7 +13,7 @@ Aller dans le menu `Contrôle d'Accès` > `Groupes Locaux` > `Ajouter`.
 Aller dans le menu `Contrôle d'Accès` > `Groupes Locaux` > Sélectionner votre groupe > `Editer`.
 
 #### D. Création du Partage
-Aller dans le menu `Contrôle d'Accès` > `Dossiers Partagés` > `Ajouter`.
+Aller dans le menu `Contrôle d'Accès` > `Dossiers Partagés` > `Ajouter` et donner le nom `TEST`.
 
 <br />
 
@@ -22,5 +22,16 @@ Aller dans le menu `Contrôle d'Accès` > `Dossiers Partagés` > `Ajouter`.
 #### A. Sans ACL
 Ne pas disposer des ACL, ont ne peut que gérer les droits sur le partage et pour les systèmes d'exploitation Microsoft est trop permissive.
 
-#### B. Avec ACL
+![image](https://github.com/user-attachments/assets/d7b7a6c9-7859-493a-ba4c-0611bd55ff59)
 
+#### B. Avec ACL
+##### 1. Activer les ACL au partage
+Aller dans le menu `Contrôle d'Accès` > `Dossiers Partagés` > sélectionner votre partage > `Editer` > onglet `Windows ACL` > Cocher `Activer Windows ACL`.
+
+![image](https://github.com/user-attachments/assets/e6a140c0-56a5-47ab-a29b-f2f0cb505baf)
+
+
+##### 2. Editer les permissions
+Ouvrir l' `Explorateur de fichiers` puis ouvrez votre partage. (Il est nécessaire d'avoir les pleins droits pour la maintenance.
+
+##### 3. 
