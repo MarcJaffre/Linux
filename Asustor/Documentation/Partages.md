@@ -31,7 +31,7 @@ Aller dans le menu `Contrôle d'Accès` > `Dossiers Partagés` > `Ajouter` et do
 -----------------------------------------------------------------------------------------------------------------------------------------------
 ### II. Gestion des permissions
 #### A. Sans ACL
-Ne pas disposer des ACL, ont ne peut que gérer les droits sur le partage et pour les systèmes d'exploitation Microsoft est trop permissive.
+Ne pas disposer des ACL, ont ne peut que gérer les droits sur le partage et pour les systèmes d'exploitation Microsoft à automatiquement trop permissive.
 
 ![image](https://github.com/user-attachments/assets/d7b7a6c9-7859-493a-ba4c-0611bd55ff59)
 
@@ -54,7 +54,7 @@ Par défaut, le propriétaire est `Admin` et le groupe propriétaire est `Admini
 ##### 3. Problème de la configuration par défaut
 Par défaut le groupe spécial `chacun` donne tout les droits à l'ensemble des utilisateurs. Le groupe `Chacun` est l'équivalant à `Tout le monde` dans Microsoft Windows.
 
-Je recommande de le supprimé
+Je recommande de le supprimé.
 
 ##### 4. Ajouter les groupes
 Ajouter les groupes et les droits correspondant.
@@ -67,3 +67,9 @@ Ajouter les groupes et les droits correspondant.
 Cliquer sur le bouton `Permissions effectives` puis cliquer le `crayon` et choisissez un utilisateur qui fait partie d'un des groupes suivants:  `TEST_RO` et `TEST_RW`.
 
 Ceci permet de valider l'accès.
+
+##### 6. Bonus
+Depuis l'explorateur de Windows, il est possible depuis un compte utilisateur qui à droit d'éditer les permissions.
+
+![image](https://github.com/user-attachments/assets/d11e5fa9-c0e5-4625-855f-f57373001ffd)
+
