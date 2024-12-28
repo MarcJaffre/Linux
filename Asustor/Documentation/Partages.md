@@ -7,13 +7,21 @@
 Aller dans le menu `Contrôle d'Accès` > `Utilisateurs Locaux` > `Ajouter`.
 
 #### B. Création de Groupe
-Aller dans le menu `Contrôle d'Accès` > `Groupes Locaux` > `Ajouter`.
+Aller dans le menu `Contrôle d'Accès` > `Groupes Locaux` > `Ajouter`. Créer un groupe `TEST_RO` et `TEST_RW`.
+
 
 #### C. Ajouter de l'utilisateur dans les Groupes
 Aller dans le menu `Contrôle d'Accès` > `Groupes Locaux` > Sélectionner votre groupe > `Editer`.
 
 #### D. Création du Partage
 Aller dans le menu `Contrôle d'Accès` > `Dossiers Partagés` > `Ajouter` et donner le nom `TEST`.
+
+#### E. Ajouter les permissions 
+
+| Groupe  | Permission -------- |
+| ------- | ------------------- |
+| TEST_RO | Lecture seule       |
+| TEST_RW | Lecture et écriture |
 
 <br />
 
