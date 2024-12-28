@@ -49,4 +49,7 @@ Ouvrir l' `Explorateur de fichiers` puis ouvrez votre partage > `clique droit` >
 
 Par défaut, le propriétaire est `Admin` et le groupe propriétaire est `Administrators`.
 
-##### 3. 
+##### 3. Problème de la configuration par défaut
+Par défaut le groupe spécial `chacun` donne tout les droits à l'ensemble des utilisateurs. Le groupe `Chacun` est l'équivalant à `Tout le monde` dans Microsoft Windows.
+
+![image](https://github.com/user-attachments/assets/05392c76-b70c-4d93-a44d-25489df9e376)
