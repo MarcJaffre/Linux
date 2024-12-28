@@ -45,6 +45,8 @@ Aucun changement au niveau du chmod sur le dossier `TEST`.
 
 
 ##### 2. Editer les permissions
-Ouvrir l' `Explorateur de fichiers` puis ouvrez votre partage. (Il est nécessaire d'avoir les pleins droits pour la maintenance.
+Ouvrir l' `Explorateur de fichiers` puis ouvrez votre partage > `clique droit` > `Propriété` . (Il est nécessaire d'avoir les pleins droits pour la maintenance.
+
+Par défaut, le propriétaire est `Admin` et le groupe propriétaire est `Administrators`.
 
 ##### 3. 
