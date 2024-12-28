@@ -16,7 +16,7 @@ Aller dans le menu `Contrôle d'Accès` > `Groupes Locaux` > Sélectionner votre
 #### D. Création du Partage
 Aller dans le menu `Contrôle d'Accès` > `Dossiers Partagés` > `Ajouter` et donner le nom `TEST`.
 
-#### E. Ajouter les permissions 
+#### E. Ajouter les permissions au dossier `TEST`
 
 | Groupe  | Permission          |
 | ------- | ------------------- |
