@@ -18,7 +18,7 @@ Aller dans le menu `Contrôle d'Accès` > `Dossiers Partagés` > `Ajouter` et do
 
 #### E. Ajouter les permissions 
 
-| Groupe  | Permission -------- |
+| Groupe  | Permission          |
 | ------- | ------------------- |
 | TEST_RO | Lecture seule       |
 | TEST_RW | Lecture et écriture |
