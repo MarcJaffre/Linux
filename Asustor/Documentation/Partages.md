@@ -44,7 +44,7 @@ Aucun changement au niveau du chmod sur le dossier `TEST`.
 ![image](https://github.com/user-attachments/assets/e6a140c0-56a5-47ab-a29b-f2f0cb505baf)
 
 
-##### 2. Editer les permissions
+##### 2. Editer les permissions (ACL = NTFS)
 Ouvrir l' `Explorateur de fichiers` puis ouvrez votre partage > `clique droit` > `Propriété` . (Il est nécessaire d'avoir les pleins droits pour la maintenance.
 
 Par défaut, le propriétaire est `Admin` et le groupe propriétaire est `Administrators`.
