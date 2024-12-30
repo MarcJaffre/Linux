@@ -59,8 +59,8 @@
 					<!-- <td>{{ $alert->name }}</td> -->
 					<!-- <td>{{ $alert->display }}</td> -->
 					<td>{{ $alert->timestamp }}</td>
-					<td> @if ($alert->severity == "warning") <font color="orange"> WARNING</font> @else{{ $alert->severity }}  @endif</td>
-					<td> @if ($alert->state == 1) <font color="red"> En cours</font> @else <font color="green">OK</font>  @endif</td>
+					<td> @if ($alert->severity == "warning") <font color="orange">WARNING</font> @else{{ $alert->severity }} @endif </td>
+					<td> @if ($alert->state == 1) <font color="red">En cours</font> @else <font color="green">OK</font> @endif </td>
 					<td>{{ $alert->elapsed }}</td>
 					<td><a href="{{ $alert->proc }}">ICI</a></td>
 					<!-- <td>{{ $alert->notes }}</td> -->
