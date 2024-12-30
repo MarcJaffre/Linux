@@ -1,30 +1,12 @@
 <html lang="fr">
     <!--- ################################################################################################################################################################################# --->
-	<head>
-		<title>Alerte LibreNMS</title>
-	</head>
+	<head> <title>Alerte LibreNMS</title> </head>
     <!--- ################################################################################################################################################################################# --->
 	<style>
-		table{
-		      border-collapse: collapse
-		      }
-		caption{
-		       border: 1px black solid;
-		       caption-side: top;
-		       font-weight: bold;
-		       }
-		th{
-		  border:    1px black solid;
-		  font-size: 18px;
-		  height:    60px;
-		  }
-		td{
-		  border: 1px black solid;
-		  font-size: 18px;
-		  height: 40px;
-		  text-align: center;
-		  width: 180px;
-          }
+		table{ border-collapse: collapse; }
+		caption{ border: 1px black solid; caption-side: top; font-weight: bold; }
+		th{ border: 1px black solid; font-size: 18px; height: 60px; }
+		td{ border: 1px black solid; font-size: 18px; height: 40px; text-align: center; width: 180px; }
 	</style>
     <!--- ################################################################################################################################################################################# --->
 	
@@ -34,7 +16,7 @@
 		<center>
 			<br />
 			<h1>Alerte de supervision</h1>
-			<img src="LOGO DE l'entreprise" alt="" title="Copwell France" align='center' />
+			<img src="LOGO DE l'entreprise" alt="" title="ENTREPRISE France" align='center' />
 			<h2>{{ $alert-> name }}</h2>
     <!--- ################################################################################################################################################################################# --->
 		<table>
