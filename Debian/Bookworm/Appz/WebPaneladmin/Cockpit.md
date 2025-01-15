@@ -31,11 +31,12 @@ apt install -y --no-install-recommends --no-install-suggests cockpit-ws         
 
 ```bash
 clear;
-apt install -y cockpit-machines       1>/dev/null;
-apt install -y cockpit-pcp            1>/dev/null;
-apt install -y cockpit-podman         1>/dev/null;
-apt install -y cockpit-sosreport      1>/dev/null;
-apt install -y cockpit-tests          1>/dev/null;
+apt install -y --no-install-recommends --no-install-suggests cockpit-389-ds         1>/dev/null;
+apt install -y --no-install-recommends --no-install-suggests cockpit-machines       1>/dev/null;
+apt install -y --no-install-recommends --no-install-suggests cockpit-pcp            1>/dev/null;
+apt install -y --no-install-recommends --no-install-suggests cockpit-podman         1>/dev/null;
+apt install -y --no-install-recommends --no-install-suggests cockpit-sosreport      1>/dev/null;
+apt install -y --no-install-recommends --no-install-suggests cockpit-tests          1>/dev/null;
 ```
 
 #### C. Extensions
