@@ -35,8 +35,6 @@ systemctl restart cockpit.service;
 ```
 
 
-
-
 #### C. Extension (Dépôt)
 ##### 1. 389-DS
 ```bash
@@ -45,6 +43,7 @@ apt install -y --no-install-recommends --no-install-suggests cockpit-389-ds 1>/d
 ```
 
 ##### 2. Bridge
+Permet la création, gestion des ponts sous Linux.
 ```bash
 clear;
 apt install -y --no-install-recommends --no-install-suggests cockpit-bridge 1>/dev/null;
@@ -57,6 +56,7 @@ apt install -y --no-install-recommends --no-install-suggests cockpit-doc 1>/dev/
 ```
 
 ##### 4. Machines
+Permet l'ajout de la gestion des Machines-virtuelles sous Cockpit.
 ```bash
 clear;
 apt install -y --no-install-recommends --no-install-suggests cockpit-machines 1>/dev/null;
