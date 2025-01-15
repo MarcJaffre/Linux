@@ -39,7 +39,7 @@ pveam remove local:vztmpl/debian-12-standard_12.7-1_amd64.tar.zst;
 
 ------------------------------------------------------------------------------------------------------
 ## II. Création de conteneur
-### A. Création de base
+### A. Création d'un conteneur LXC ([DOC](https://pve.proxmox.com/pve-docs/pct.1.html))
 Création d'un conteneur sous Debian, 2 Core, 1 Go, 512 Mo Swap et 15 Go de stockage.
 ```bash
 clear;
@@ -50,11 +50,14 @@ pct create 103 local:vztmpl/debian-12-standard_12.7-1_amd64.tar.zst \
 --memory 1024 \
 --swap 512 \
 --rootfs Data:15 \
---net0 name=eth0,bridge=vmbr0,ip=192.168.0.220/24
+--net0 name=eth0,bridge=vmbr0,firewall=0,,link_down=0,gw=192.168.0.1,ip=192.168.0.220/24
 ```
 
-### A. Supprimer un conteneur
+### B. Supprimer un conteneur
 ```bash
 clear;
 pct destroy 103;
 ```
+
+### C. Ajout un disque-dur
+
