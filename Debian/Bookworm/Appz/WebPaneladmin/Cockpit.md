@@ -35,12 +35,7 @@ apt install -y cockpit-tests          1>/dev/null;
 #apt install -y cockpit-ws            1>/dev/null;
 ```
 
-#### C. Démarrage du service
-```bash
-systemctl restart cockpit.service;
-```
-
-#### D. Extensions
+#### C. Extensions
 ```bash
 clear;
 # ============================================================================================================================================================================
@@ -54,8 +49,25 @@ COCKPIT_IDENTITIES="https://github.com/45Drives/cockpit-identities/releases/down
 wget $COCKPIT_IDENTITIES -O /tmp/cockpit-identities.deb   2>/dev/null; apt install -y /tmp/cockpit-identities.deb   1>/dev/null;
 ```
 
-#### E. Accéder au panel d'administration
+#### D. Autoriser Root
+```
+sed -i -e "s/root/#root/g" /etc/cockpit/disallowed-users;
+```
+
+
+#### E. Relance du service
+```bash
+systemctl restart cockpit.service;
+```
+
+#### G. Accéder au panel d'administration
 Le panel d'administration de Cockpit est sur le port `9090` en `HTTPS`.
+
+```bash
+clear;
+IP=$(ip add | grep "2: " -A2 | grep inet | cut -c 10-25 |cut -d "/" -f 1)
+echo "https://$IP:9090"
+
 
 #### F. LXC
 Il est nécessaire d'avoir la fonctionnalité `Nesting` activé pour que le service fonctionne.
