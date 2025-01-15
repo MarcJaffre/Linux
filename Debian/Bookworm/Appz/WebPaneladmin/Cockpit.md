@@ -174,10 +174,10 @@ clear;
 PACKAGES=$(apt search ^cockpit | grep "/" | grep "installé" | cut -d "/" -f 1 | xargs -n 50)
 apt remove --purge $PACKAGES;
 apt remove --purge wsdd2;
+apt autoremove -y;
 rm -r /etc/cockpit;
 rm -r /usr/share/cockpit;
 rm -r /usr/share/containers;
-apt autoremove -y;
 ```
 
 #### H. LXC
