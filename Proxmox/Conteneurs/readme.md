@@ -135,6 +135,6 @@ pct exec 999 -- bash -c '/root/install.sh'
 
 #### 4. Transférer un fichier
 ```
-pct push 99 /root/install.sh /root/install.sh;
+pct push 999 /root/install.sh /root/install.sh;
 ```
 
