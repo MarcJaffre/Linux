@@ -86,13 +86,14 @@ apt install -y --no-install-recommends --no-install-suggests cockpit-pcp 1>/dev/
 ```
 
 ##### 8. Podman
-Permet d'intégrer la gestion des conteneurs via PodMan.
+Permet d'intégrer la fonctionnalité de gestion des conteneurs via PodMan.
 ```bash
 clear;
 apt install -y --no-install-recommends --no-install-suggests cockpit-podman 1>/dev/null;
 ```
 
 ##### 9. SOS Report
+Permet d'intégrer la fonctionnalité de générer des rapports de diagnostiques.
 ```bash
 clear;
 apt install -y --no-install-recommends --no-install-suggests cockpit-sosreport 1>/dev/null;
