@@ -44,9 +44,12 @@ Création d'un conteneur sous Debian, 2 Core, 1 Go, 512 Mo Swap et 15 Go de stoc
 ```bash
 clear;
 pct destroy 103 2>/dev/null;
-pct create 103 local:vztmpl/debian-12-standard_12.7-1_amd64.tar.zst \
+pct create 103 \
+local:vztmpl/debian-12-standard_12.7-1_amd64.tar.zst \
+--timezone Europe/Paris \
 --pool 100.LXC \
---rootfs volume=Data:15 \
+--storage Data \
+--rootfs Data:15 \
 --ostype alpine \
 --hostname Alpine \
 --cores 2 \
@@ -56,8 +59,10 @@ pct create 103 local:vztmpl/debian-12-standard_12.7-1_amd64.tar.zst \
 --net0 name=eth0,bridge=vmbr0,firewall=0,link_down=0,gw=192.168.0.1,ip=192.168.0.220/24 \
 --searchdomain lan.home \
 --nameserver 8.8.8.8 \
+--template 0 \
 --unprivileged=0 \
 --features keyctl=1,nesting=1,mount="nfs;cifs",fuse=1,mknod=1 
+
 
 # keyctl=1,
 # nesting=1,
