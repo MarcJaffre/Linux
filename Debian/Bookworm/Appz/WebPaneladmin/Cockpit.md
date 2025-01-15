@@ -130,7 +130,7 @@ apt install -y --no-install-recommends --no-install-suggests cockpit-ws 1>/dev/n
 clear;
 URL="https://github.com/45Drives/cockpit-file-sharing/releases/download/v4.2.9/cockpit-file-sharing_4.2.9-1focal_all.deb"
 wget $URL -O /tmp/cockpit-file-sharing.deb 2>/dev/null;
-apt install -y /tmp/cockpit-file-sharing.deb 1>/dev/null;
+dpkg -i /tmp/cockpit-file-sharing.deb 1>/dev/null;
 ```
 
 ##### X. Navigator
@@ -138,7 +138,8 @@ apt install -y /tmp/cockpit-file-sharing.deb 1>/dev/null;
 clear;
 URL="https://github.com/45Drives/cockpit-navigator.git"
 git clone $URL /tmp/cockpit-navigator 2>/dev/null;
-cd /tmp/cockpit-navigator 1>/dev/null; make install;
+cd /tmp/cockpit-navigator 1>/dev/null;
+make install;
 ```
 
 ##### X. Identities
@@ -146,7 +147,7 @@ cd /tmp/cockpit-navigator 1>/dev/null; make install;
 clear;
 URL="https://github.com/45Drives/cockpit-identities/releases/download/v0.1.12/cockpit-identities_0.1.12-1focal_all.deb"
 wget $URL -O /tmp/cockpit-identities.deb 2>/dev/null;
-apt install -y /tmp/cockpit-identities.deb 1>/dev/null;
+dpkg -i /tmp/cockpit-identities.deb 1>/dev/null;
 ```
 
 
