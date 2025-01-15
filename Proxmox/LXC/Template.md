@@ -43,6 +43,7 @@ pveam remove local:vztmpl/debian-12-standard_12.7-1_amd64.tar.zst;
 Création d'un conteneur sous Debian, 2 Core, 1 Go, 512 Mo Swap et 15 Go de stockage.
 ```bash
 clear;
+pct destroy 103;
 pct create 103 local:vztmpl/debian-12-standard_12.7-1_amd64.tar.zst \
 --ostype alpine \
 --hostname Alpine \
@@ -52,12 +53,10 @@ pct create 103 local:vztmpl/debian-12-standard_12.7-1_amd64.tar.zst \
 --rootfs volume=Data:15 \
 --password admin \
 --unprivileged=1 \
---net0 name=eth0,bridge=vmbr0,firewall=0,,link_down=0,gw=192.168.0.1,ip=192.168.0.220/24
-
-# --features force_rw_sys=0,fuse=0,keyctl=0,mknod=,nesting=0 \
+--features force_rw_sys=0,fuse=0,keyctl=0,mknod=0,nesting=0 \
+--net0 name=eth0,bridge=vmbr0,firewall=0,link_down=0,gw=192.168.0.1,ip=192.168.0.220/24
 ```
 
---rootfs [volume=]<volume> [,acl=<1|0>] [,mountoptions=<opt[;opt...]>] [,quota=<1|0>] [,replicate=<1|0>] [,ro=<1|0>] [,shared=<1|0>] [,size=<DiskSize>]
 
 ### B. Supprimer un conteneur
 ```bash
