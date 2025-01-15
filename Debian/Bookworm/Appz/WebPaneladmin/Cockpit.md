@@ -21,18 +21,21 @@ apt install -y -f;
 ```bash
 clear;
 apt install -y cockpit                1>/dev/null;
-apt install -y cockpit-networkmanager 1>/dev/null;
-apt install -y cockpit-storaged       1>/dev/null;
-apt install -y cockpit-system         1>/dev/null;
+#apt install -y cockpit-bridge         1>/dev/null;
+#apt install -y cockpit-networkmanager 1>/dev/null;
+#apt install -y cockpit-packagekit     1>/dev/null;
+#apt install -y cockpit-storaged       1>/dev/null;
+#apt install -y cockpit-system         1>/dev/null;
+#apt install -y cockpit-ws             1>/dev/null;
+```
 
-apt install -y cockpit-bridge         1>/dev/null;
+```bash
+clear;
 apt install -y cockpit-machines       1>/dev/null;
-apt install -y cockpit-packagekit     1>/dev/null;
 apt install -y cockpit-pcp            1>/dev/null;
 apt install -y cockpit-podman         1>/dev/null;
 apt install -y cockpit-sosreport      1>/dev/null;
 apt install -y cockpit-tests          1>/dev/null;
-#apt install -y cockpit-ws            1>/dev/null;
 ```
 
 #### C. Extensions
