@@ -109,13 +109,15 @@ pct enter 999;
 ```
 
 ### B. Remote Command
-#### 1. Création du fichier
+#### 1. Création d'un script
 ```bash
 clear;
 pct exec 999 -- bash -c 'cat > install.sh << EOF
 #!/usr/bin/bash
 apt update;
-apt upgrade;
+apt upgrade -y;
+sed -i -e "s/\#PermitRootLogin prohibit-password/PermitRootLogin yes/g" /etc/ssh/sshd_config;
+systemctl restart ssh;
 EOF'
 ```
 
@@ -129,3 +131,4 @@ pct exec 999 -- bash -c 'chmod +x /root/install.sh'
 clear;
 pct exec 999 -- bash -c '/root/install.sh'
 ```
+
