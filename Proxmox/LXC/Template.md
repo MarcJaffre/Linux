@@ -38,5 +38,17 @@ pveam remove local:vztmpl/debian-12-standard_12.7-1_amd64.tar.zst;
 <br />
 
 ------------------------------------------------------------------------------------------------------
-## II. Création d'un template
+## II. Création de conteneur
+### A. Création de base
+Création d'un conteneur sous Debian, 2 Core, 1 Go, 512 Mo Swap et 15 Go de stockage.
 
+```bash
+clear;
+pct create 103 local:vztmpl/debian-12-standard_12.7-1_amd64.tar.zst \
+--ostype alpine \
+--hostname Alpine \
+--cores 2 \
+--memory 1024 \
+--swap 512 \
+--rootfs Data:15
+```
