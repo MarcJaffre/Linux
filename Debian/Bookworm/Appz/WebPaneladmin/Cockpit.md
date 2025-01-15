@@ -1,8 +1,9 @@
 ------------------------------------------------------------------------------------------------------------------------------------------------
 # <p align='center'> Installation de Cockpit </p>
+------------------------------------------------------------------------------------------------------------------------------------------------
 
-### X. Cockpit
-#### X. Installation des dépendances
+### I. Cockpit
+#### A. Installation des dépendances
 ```bash
 clear;
 apt update >/dev/null;
@@ -16,7 +17,7 @@ apt install -y udisks2-lvm2    1>/dev/null;
 apt install -y -f;
 ```
 
-#### X. Installation de Cockpit ([CERTIFICAT](https://infotechys.com/install-ssl-certificates-on-cockpit/))
+#### B. Installation de Cockpit ([CERTIFICAT](https://infotechys.com/install-ssl-certificates-on-cockpit/))
 ```bash
 clear;
 apt install -y cockpit                1>/dev/null;
@@ -34,12 +35,12 @@ apt install -y cockpit-tests          1>/dev/null;
 #apt install -y cockpit-ws            1>/dev/null;
 ```
 
-#### X. Démarrage du service
+#### C. Démarrage du service
 ```bash
 systemctl restart cockpit.service;
 ```
 
-#### X. Extensions
+#### D. Extensions
 ```bash
 clear;
 # ============================================================================================================================================================================
@@ -53,6 +54,7 @@ COCKPIT_IDENTITIES="https://github.com/45Drives/cockpit-identities/releases/down
 wget $COCKPIT_IDENTITIES -O /tmp/cockpit-identities.deb   2>/dev/null; apt install -y /tmp/cockpit-identities.deb   1>/dev/null;
 ```
 
-
+#### E. Accéder au panel d'administration
+Le panel d'administration de Cockpit est sur le port `9090` en `HTTPS`.
 
 <br />
