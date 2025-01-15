@@ -141,6 +141,7 @@ echo "Le panel d'administration est accesible à l'adresse https://$IP:9090"
 clear;
 PACKAGES=$(apt search ^cockpit | grep "/" | grep "installé" | cut -d "/" -f 1 | xargs -n 50)
 apt remove --purge $PACKAGES;
+rm -r /etc/cockpit/;
 ```
 
 
