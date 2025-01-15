@@ -112,6 +112,7 @@ apt install -y --no-install-recommends --no-install-suggests cockpit-system 1>/d
 ```
 
 ##### 12. Tests
+Permet d'intégrer la fonctionnalité de test de fonctionnement.
 ```bash
 clear;
 apt install -y --no-install-recommends --no-install-suggests cockpit-tests 1>/dev/null;
