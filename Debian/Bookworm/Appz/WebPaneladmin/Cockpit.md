@@ -162,23 +162,22 @@ IP=$(ip add | grep "2: " -A2 | grep inet | cut -c 10-25 |cut -d "/" -f 1)
 echo "Le panel d'administration est accesible à l'adresse https://$IP:9090"
 ```
 
-#### G. Désinstallation des paquets
-```bash
-clear;
-PACKAGES=$(apt search ^cockpit | grep "/" | grep "installé" | cut -d "/" -f 1 | xargs -n 50)
-apt remove --purge $PACKAGES;
-rm -r /etc/cockpit/;
-```
-#### H. Découverte Réseau
+#### G. Découverte Réseau
 ```bash
 clear;
 apt install -y wsdd2;
 ```
+#### H. Désinstallation des paquets
+
+```bash
+clear;
+PACKAGES=$(apt search ^cockpit | grep "/" | grep "installé" | cut -d "/" -f 1 | xargs -n 50)
+apt remove --purge $PACKAGES;
+apt remove --purge wsdd2;
+rm -r /etc/cockpit/;
+```
 
 #### H. LXC
 Il est nécessaire d'avoir la fonctionnalité `Nesting` activé pour que le service fonctionne.
-
-
-
 
 <br />
