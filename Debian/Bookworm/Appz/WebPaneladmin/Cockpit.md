@@ -86,6 +86,7 @@ apt install -y --no-install-recommends --no-install-suggests cockpit-pcp 1>/dev/
 ```
 
 ##### 8. Podman
+Permet d'intégrer la gestion des conteneurs via PodMan.
 ```bash
 clear;
 apt install -y --no-install-recommends --no-install-suggests cockpit-podman         1>/dev/null;
