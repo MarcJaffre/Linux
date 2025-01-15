@@ -63,9 +63,10 @@ apt install -y --no-install-recommends --no-install-suggests cockpit-machines 1>
 ```
 
 ##### 5. Networking
-Les interfaces gérées par le service linux `networking` n'est pas gérer par NetworkManager. 
+Les interfaces gérées par le service linux `networking` n'est pas gérer par NetworkManager.
 
-Ce paquet porte confusion car il porte le nom du service networking. 
+Il est conçu pour interagir avec NetworkManager, pas avec le service networking !
+
 ```bash
 clear;
 apt install -y --no-install-recommends --no-install-suggests cockpit-networkmanager 1>/dev/null;
