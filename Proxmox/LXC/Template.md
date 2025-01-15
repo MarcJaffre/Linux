@@ -49,9 +49,15 @@ pct create 103 local:vztmpl/debian-12-standard_12.7-1_amd64.tar.zst \
 --cores 2 \
 --memory 1024 \
 --swap 512 \
---rootfs Data:15 \
+--rootfs volume=Data:15 \
+--password admin \
+--unprivileged=1 \
 --net0 name=eth0,bridge=vmbr0,firewall=0,,link_down=0,gw=192.168.0.1,ip=192.168.0.220/24
+
+# --features force_rw_sys=0,fuse=0,keyctl=0,mknod=,nesting=0 \
 ```
+
+--rootfs [volume=]<volume> [,acl=<1|0>] [,mountoptions=<opt[;opt...]>] [,quota=<1|0>] [,replicate=<1|0>] [,ro=<1|0>] [,shared=<1|0>] [,size=<DiskSize>]
 
 ### B. Supprimer un conteneur
 ```bash
@@ -59,5 +65,20 @@ clear;
 pct destroy 103;
 ```
 
-### C. Ajout un disque-dur
+### C. Démarrer le conteneur
+```bash
+clear;
+pct start 103;
+```
 
+### D. Arrêter le conteneur
+```bash
+clear;
+pct stop 103;
+```
+
+### E. Etat le conteneur
+```bash
+clear;
+pct status 103;
+```
