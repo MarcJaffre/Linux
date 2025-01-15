@@ -60,8 +60,10 @@ local:vztmpl/debian-12-standard_12.7-1_amd64.tar.zst \
 --nameserver 8.8.8.8 \
 --template 0 \
 --unprivileged 0 \
---features keyctl=1,nesting=1,mount="nfs;cifs",fuse=1,mknod=1 \
+--features keyctl=1,nesting=1,mount="nfs;cifs",fuse=1,mknod=1;
 
+
+# --mp0 volume=/dev/sdc1,mp=/mnt/media,acl=0,backup=0,quota=0,replicate=0,ro=0,shared=0 
 # --features
 # keyctl=1,
 # nesting=1,
