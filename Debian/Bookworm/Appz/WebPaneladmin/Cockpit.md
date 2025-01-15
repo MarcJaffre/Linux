@@ -169,7 +169,11 @@ PACKAGES=$(apt search ^cockpit | grep "/" | grep "installé" | cut -d "/" -f 1 |
 apt remove --purge $PACKAGES;
 rm -r /etc/cockpit/;
 ```
-
+#### H. Découverte Réseau
+```bash
+clear;
+apt install -y wsdd2;
+```
 
 #### H. LXC
 Il est nécessaire d'avoir la fonctionnalité `Nesting` activé pour que le service fonctionne.
