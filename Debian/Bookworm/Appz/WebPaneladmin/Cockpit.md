@@ -20,10 +20,8 @@ apt install -y -f;
 #### B. Installation de Cockpit ([CERTIFICAT](https://infotechys.com/install-ssl-certificates-on-cockpit/))
 ```bash
 clear;
-apt install -y --no-install-recommends --no-install-suggests cockpit                1>/dev/null;
+apt install -y --no-install-recommends --no-install-suggests cockpit 1>/dev/null;
 ```
-
-
 
 #### C. Extension (Dépôt)
 ##### 1. 389-DS
@@ -32,73 +30,73 @@ clear;
 apt install -y --no-install-recommends --no-install-suggests cockpit-389-ds 1>/dev/null;
 ```
 
-##### X. Bridge
+##### 2. Bridge
 ```bash
 clear;
 apt install -y --no-install-recommends --no-install-suggests cockpit-bridge 1>/dev/null;
 ```
 
-##### X. Doc
+##### 3. Doc
 ```bash
 clear;
 apt install -y --no-install-recommends --no-install-suggests cockpit-doc 1>/dev/null;
 ```
 
-##### X. Machines
+##### 4. Machines
 ```bash
 clear;
 apt install -y --no-install-recommends --no-install-suggests cockpit-machines 1>/dev/null;
 ```
 
-##### X. Networking
+##### 5. Networking
 ```bash
 clear;
 apt install -y --no-install-recommends --no-install-suggests cockpit-networkmanager 1>/dev/null;
 ```
 
-##### X. Packagekit
+##### 6. Packagekit
 ```bash
 clear;
 apt install -y --no-install-recommends --no-install-suggests cockpit-packagekit 1>/dev/null;
 ```
 
-##### X. PCP
+##### 7. PCP
 ```bash
 clear;
 apt install -y --no-install-recommends --no-install-suggests cockpit-pcp 1>/dev/null;
 ```
 
-##### X. Podman
+##### 8. Podman
 ```bash
 clear;
 apt install -y --no-install-recommends --no-install-suggests cockpit-podman         1>/dev/null;
 ```
 
-##### X. SOS Report
+##### 9. SOS Report
 ```bash
 clear;
 apt install -y --no-install-recommends --no-install-suggests cockpit-sosreport      1>/dev/null;
 ```
 
-##### X. Storage
+##### 10. Storage
 ```bash
 clear;
 apt install -y --no-install-recommends --no-install-suggests cockpit-storaged       1>/dev/null;
 ```
 
-##### X. System
+##### 11. System
 ```bash
 clear;
 apt install -y --no-install-recommends --no-install-suggests cockpit-system         1>/dev/null;
 ```
 
-##### X. Tests
+##### 12. Tests
 ```bash
 clear;
 apt install -y --no-install-recommends --no-install-suggests cockpit-tests          1>/dev/null;
 ```
 
-##### X. WS
+##### 13. WS
 ```bash
 clear;
 apt install -y --no-install-recommends --no-install-suggests cockpit-ws             1>/dev/null;
