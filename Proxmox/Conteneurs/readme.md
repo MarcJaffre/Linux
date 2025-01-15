@@ -37,8 +37,6 @@ pveam remove local:vztmpl/debian-12-standard_12.7-1_amd64.tar.zst;
 
 <br />
 
-<br />
-
 ------------------------------------------------------------------------------------------------------
 ## II. Création de conteneur
 
@@ -88,10 +86,7 @@ local:vztmpl/debian-12-standard_12.7-1_amd64.tar.zst \
 # force_rw_sys=1
 ```
 
-
-
-
-### C. Démarrer le conteneur
+### D. Démarrer le conteneur
 ```bash
 clear;
 pct start 999;
@@ -101,8 +96,10 @@ pct start 999;
 ### E. Etat le conteneur
 ```bash
 clear;
-pct status 999;
+pct status999;
 ```
+
+<br />
 
 ------------------------------------------------------------------------------------------------------
 ## III. Personnalisation du conteneur
