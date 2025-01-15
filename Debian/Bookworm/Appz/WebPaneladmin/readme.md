@@ -9,52 +9,6 @@ Pour la gestion des environnements Linux, il est fort utile un outil Web pour l'
 
 <br />
 
-------------------------------------------------------------------------------------------------------------------------------------------------
-## II. Outils Web
-### A. AaPanel
-#### X. Installation du paquet
-```bash
-clear;
-
-URL="https://www.aapanel.com/script/install_7.0_en.sh"
-
-if [ -f /usr/bin/curl ]; then
- curl -ksSO "$URL";
-else
- wget --no-check-certificate -O install.sh "$URL";
-fi;
-bash install.sh aapanel;
-```
-
-```
-==================================================================
-Congratulations! Installed successfully!
-==================================================================
-aaPanel Internet Address: https://92.132.218.220:24084/53dfbb0a
-aaPanel Internal Address: https://192.168.0.55:24084/53dfbb0a
-username: w3yoat0r
-password: 2af6bc98
-```
-
-
-<br />
-
-#### X. Gestion du service
-```bash
-clear;
-systemctl enable  --now bt;
-systemctl disable --now bt;
-systemctl stop    bt;
-systemctl start   bt;
-systemctl restart bt;
-```
-
-#### X. Afficher les ports
-```bash
-clear;
-cat /www/server/panel/data/port.pl
-```
-
 #### X. Script de Sauvegarde (BUG RECOVERY)
 Le script sauvegarde arrête docker pendant la création de la sauvegarde compresser puis le transfert sur le serveur. A la fin du transfert, docker est démarrer.
 ```bash
@@ -124,7 +78,6 @@ Le script de restauration arrête docker pendant la restauration. Il renommer l'
 ##############
 # apt install -y sshpass tar
 
-
 ################################################################################
 # Variables #
 #############
@@ -164,9 +117,6 @@ mv /tmp/var/lib/docker $DESTINATION;
 systemctl start docker.socket;
 systemctl start docker.service;
 ```
-
-
-
 
 <br />
 
@@ -258,8 +208,6 @@ wget $COCKPIT_FILE_SHARE -O /tmp/cockpit-file-sharing.deb 2>/dev/null; apt insta
 COCKPIT_IDENTITIES="https://github.com/45Drives/cockpit-identities/releases/download/v0.1.12/cockpit-identities_0.1.12-1focal_all.deb"
 wget $COCKPIT_IDENTITIES -O /tmp/cockpit-identities.deb   2>/dev/null; apt install -y /tmp/cockpit-identities.deb   1>/dev/null;
 ```
-
-
 
 <br />
 
