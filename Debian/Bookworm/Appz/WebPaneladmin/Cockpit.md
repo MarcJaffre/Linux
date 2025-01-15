@@ -57,4 +57,7 @@ wget $COCKPIT_IDENTITIES -O /tmp/cockpit-identities.deb   2>/dev/null; apt insta
 #### E. Accéder au panel d'administration
 Le panel d'administration de Cockpit est sur le port `9090` en `HTTPS`.
 
+#### F. LXC
+Il est nécessaire d'avoir la fonctionnalité `Nesting` activé pour que le service fonctionne.
+
 <br />
