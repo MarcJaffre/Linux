@@ -18,10 +18,24 @@ apt install -y -f;
 ```
 
 #### B. Installation de Cockpit ([CERTIFICAT](https://infotechys.com/install-ssl-certificates-on-cockpit/))
+##### 1. Cockpit
 ```bash
 clear;
 apt install -y --no-install-recommends --no-install-suggests cockpit 1>/dev/null;
 ```
+
+##### 2. Autoriser Root
+```
+sed -i -e "s/root/#root/g" /etc/cockpit/disallowed-users;
+```
+
+##### 3. Relance du service
+```bash
+systemctl restart cockpit.service;
+```
+
+
+
 
 #### C. Extension (Dépôt)
 ##### 1. 389-DS
@@ -114,17 +128,6 @@ wget $COCKPIT_FILE_SHARE -O /tmp/cockpit-file-sharing.deb 2>/dev/null; apt insta
 # ============================================================================================================================================================================
 COCKPIT_IDENTITIES="https://github.com/45Drives/cockpit-identities/releases/download/v0.1.12/cockpit-identities_0.1.12-1focal_all.deb"
 wget $COCKPIT_IDENTITIES -O /tmp/cockpit-identities.deb   2>/dev/null; apt install -y /tmp/cockpit-identities.deb   1>/dev/null;
-```
-
-#### D. Autoriser Root
-```
-sed -i -e "s/root/#root/g" /etc/cockpit/disallowed-users;
-```
-
-
-#### E. Relance du service
-```bash
-systemctl restart cockpit.service;
 ```
 
 #### F. Accéder au panel d'administration
