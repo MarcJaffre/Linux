@@ -102,8 +102,6 @@ clear;
 apt install -y --no-install-recommends --no-install-suggests cockpit-ws             1>/dev/null;
 ```
 
-
-
 #### D. Extensions (Externe)
 ```bash
 clear;
@@ -129,7 +127,7 @@ sed -i -e "s/root/#root/g" /etc/cockpit/disallowed-users;
 systemctl restart cockpit.service;
 ```
 
-#### G. Accéder au panel d'administration
+#### F. Accéder au panel d'administration
 Le panel d'administration de Cockpit est sur le port `9090` en `HTTPS`.
 
 ```bash
@@ -138,7 +136,18 @@ IP=$(ip add | grep "2: " -A2 | grep inet | cut -c 10-25 |cut -d "/" -f 1)
 echo "Le panel d'administration est accesible à l'adresse https://$IP:9090"
 ```
 
-#### F. LXC
+#### G. Désinstallation des paquets
+```bash
+clear;
+PACKAGES=$(apt search ^cockpit | grep "/" | grep "installé" | cut -d "/" -f 1 | xargs -n 50)
+apt remove --purge $PACKAGES;
+```
+
+
+#### H. LXC
 Il est nécessaire d'avoir la fonctionnalité `Nesting` activé pour que le service fonctionne.
+
+
+
 
 <br />
