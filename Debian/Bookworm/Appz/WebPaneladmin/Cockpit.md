@@ -5,6 +5,7 @@
 #### X. Installation des dépendances
 ```bash
 clear;
+apt update 2>/dev/null;
 apt install -y build-essential 1>/dev/null;
 apt install -y git             1>/dev/null;
 apt install -y make            1>/dev/null;
