@@ -105,14 +105,14 @@ pct status 999;
 ### A. Se connecter au conteneur
 ```bash
 clear;
-pct enter 103
+pct enter 999;
 ```
 
 ### B. Remote Command
 #### 1. Création du fichier
 ```bash
 clear;
-pct exec 103 -- bash -c 'cat > install.sh << EOF
+pct exec 999 -- bash -c 'cat > install.sh << EOF
 #!/usr/bin/bash
 apt update;
 apt upgrade;
@@ -122,10 +122,10 @@ EOF'
 #### 2. Modification des permissions
 ```bash
 clear;
-pct exec 103 -- bash -c 'chmod +x /root/install.sh'
+pct exec 999 -- bash -c 'chmod +x /root/install.sh'
 ```
 #### 3. Lancement du script
 ```bash
 clear;
-pct exec 103 -- bash -c '/root/install.sh'
+pct exec 999 -- bash -c '/root/install.sh'
 ```
