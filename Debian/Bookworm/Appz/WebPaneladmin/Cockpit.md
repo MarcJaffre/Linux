@@ -125,18 +125,33 @@ apt install -y --no-install-recommends --no-install-suggests cockpit-ws 1>/dev/n
 ```
 
 #### D. Extensions (Externe)
+##### X. File-sharing
 ```bash
 clear;
-# ============================================================================================================================================================================
-COCKPIT_NAVIGATOR="https://github.com/45Drives/cockpit-navigator.git"
-git clone $COCKPIT_NAVIGATOR /tmp/cockpit-navigator 2>/dev/null; cd /tmp/cockpit-navigator 1>/dev/null; make install;
-# ============================================================================================================================================================================
-COCKPIT_FILE_SHARE="https://github.com/45Drives/cockpit-file-sharing/releases/download/v3.2.9/cockpit-file-sharing_3.2.9-2focal_all.deb"
-wget $COCKPIT_FILE_SHARE -O /tmp/cockpit-file-sharing.deb 2>/dev/null; apt install -y /tmp/cockpit-file-sharing.deb 1>/dev/null;
-# ============================================================================================================================================================================
-COCKPIT_IDENTITIES="https://github.com/45Drives/cockpit-identities/releases/download/v0.1.12/cockpit-identities_0.1.12-1focal_all.deb"
-wget $COCKPIT_IDENTITIES -O /tmp/cockpit-identities.deb   2>/dev/null; apt install -y /tmp/cockpit-identities.deb   1>/dev/null;
+URL="https://github.com/45Drives/cockpit-file-sharing/releases/download/v4.2.9/cockpit-file-sharing_4.2.9-1focal_all.deb"
+wget $URL -O /tmp/cockpit-file-sharing.deb 2>/dev/null;
+apt install -y /tmp/cockpit-file-sharing.deb 1>/dev/null;
 ```
+
+##### X. Navigator
+```bash
+clear;
+URL="https://github.com/45Drives/cockpit-navigator.git"
+git clone $URL /tmp/cockpit-navigator 2>/dev/null;
+cd /tmp/cockpit-navigator 1>/dev/null; make install;
+```
+
+##### X. Identities
+```bash
+clear;
+URL="https://github.com/45Drives/cockpit-identities/releases/download/v0.1.12/cockpit-identities_0.1.12-1focal_all.deb"
+wget $URL -O /tmp/cockpit-identities.deb 2>/dev/null;
+apt install -y /tmp/cockpit-identities.deb 1>/dev/null;
+```
+
+
+
+
 
 #### F. Accéder au panel d'administration
 Le panel d'administration de Cockpit est sur le port `9090` en `HTTPS`.
