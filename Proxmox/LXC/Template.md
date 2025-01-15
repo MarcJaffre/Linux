@@ -41,7 +41,6 @@ pveam remove local:vztmpl/debian-12-standard_12.7-1_amd64.tar.zst;
 ## II. Création de conteneur
 ### A. Création de base
 Création d'un conteneur sous Debian, 2 Core, 1 Go, 512 Mo Swap et 15 Go de stockage.
-
 ```bash
 clear;
 pct create 103 local:vztmpl/debian-12-standard_12.7-1_amd64.tar.zst \
@@ -50,5 +49,12 @@ pct create 103 local:vztmpl/debian-12-standard_12.7-1_amd64.tar.zst \
 --cores 2 \
 --memory 1024 \
 --swap 512 \
---rootfs Data:15
+--rootfs Data:15 \
+--net0 name=eth0,bridge=vmbr0,ip=192.168.0.220/24
+```
+
+### A. Supprimer un conteneur
+```bash
+clear;
+pct destroy 103;
 ```
