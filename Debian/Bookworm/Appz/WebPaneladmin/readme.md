@@ -207,12 +207,6 @@ clear;
 
 
 
-
-
-
-
-
-
 ### X. Cockpit
 #### X. Installation des dépendances
 ```bash
