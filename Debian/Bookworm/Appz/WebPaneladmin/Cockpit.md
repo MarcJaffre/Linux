@@ -66,8 +66,8 @@ Le panel d'administration de Cockpit est sur le port `9090` en `HTTPS`.
 ```bash
 clear;
 IP=$(ip add | grep "2: " -A2 | grep inet | cut -c 10-25 |cut -d "/" -f 1)
-echo "https://$IP:9090"
-
+echo "Le panel d'administration est accesible à l'adresse https://$IP:9090"
+```
 
 #### F. LXC
 Il est nécessaire d'avoir la fonctionnalité `Nesting` activé pour que le service fonctionne.
