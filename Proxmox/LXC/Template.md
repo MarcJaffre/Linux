@@ -42,7 +42,7 @@ pveam remove local:vztmpl/debian-12-standard_12.7-1_amd64.tar.zst;
 ### A. Supprimer un conteneur
 ```bash
 clear;
-pct destroy 999;
+pct destroy 999 2>/dev/null;
 ```
 ### B. Création d'un conteneur LXC ([DOC](https://pve.proxmox.com/pve-docs/pct.1.html))
 Création d'un conteneur sous Debian, 2 Core, 1 Go, 512 Mo Swap et 15 Go de stockage.
