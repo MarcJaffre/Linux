@@ -110,19 +110,24 @@ pct enter 999;
 ```
 
 ### B. Remote Command
-#### 1. Création d'un script
+#### 1. Création d'un script (Host PVE)
+On peux utiliser `pct exec 999 -- bash -c '....'` pour envoyer une commande à distance.
 ```bash
 clear;
-pct exec 999 -- bash -c 'cat > install.sh << EOF
+cat > install.sh << EOF
 #!/usr/bin/bash
 apt update;
 apt upgrade -y;
 sed -i -e "s/\#PermitRootLogin prohibit-password/PermitRootLogin yes/g" /etc/ssh/sshd_config;
 systemctl restart ssh;
-EOF'
+EOF
+```
+#### 4. Transférer un fichier
+```
+pct push 999 /root/install.sh /root/install.sh;
 ```
 
-#### 2. Modification des permissions
+#### 2. Modification des permissions (Guest)
 ```bash
 clear;
 pct exec 999 -- bash -c 'chmod +x /root/install.sh'
@@ -131,10 +136,5 @@ pct exec 999 -- bash -c 'chmod +x /root/install.sh'
 ```bash
 clear;
 pct exec 999 -- bash -c '/root/install.sh'
-```
-
-#### 4. Transférer un fichier
-```
-pct push 999 /root/install.sh /root/install.sh;
 ```
 
