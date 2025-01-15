@@ -14,7 +14,7 @@ clear;
 pct destroy 999 2>/dev/null;
 ```
 ### C. Création d'un conteneur LXC ([DOC](https://pve.proxmox.com/pve-docs/pct.1.html))
-Création d'un conteneur sous Debian, 2 Core, 1 Go, 512 Mo Swap et 15 Go de stockage.
+Création d'un conteneur sous Debian, 2 Core, 1 Go, 512 Mo Swap et 4 Go de stockage.
 ```bash
 clear;
 pct create 999 \
@@ -22,7 +22,7 @@ local:vztmpl/debian-12-standard_12.7-1_amd64.tar.zst \
 --timezone Europe/Paris \
 --pool 100.LXC \
 --storage Data \
---rootfs Data:15 \
+--rootfs Data:4 \
 --ostype debian \
 --hostname Debian \
 --cores 2 \
