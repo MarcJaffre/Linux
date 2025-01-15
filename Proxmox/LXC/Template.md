@@ -1,7 +1,7 @@
 ------------------------------------------------------------------------------------------------------
 # <p align='center'> Construction d'un template LXC sur Proxmox </p>
 ------------------------------------------------------------------------------------------------------
-## I. Présentation
+## I. Présentation de base
 ### A. Stockage
 Le nom du stockage est `Local`.
 
@@ -14,7 +14,7 @@ pveam update;
 ### C. Afficher la liste des OS Templates disponibles
 ```bash
 clear;
-pveam available --section  system
+pveam available --section system;
 ```
 
 ### D. Télécharger un OS Template
@@ -32,8 +32,11 @@ pveam list local;
 ### F. Supprimer un template
 ```bash
 clear;
-pveam remove local:vztmpl/debian-12-standard_12.7-1_amd64.tar.zst
+pveam remove local:vztmpl/debian-12-standard_12.7-1_amd64.tar.zst;
 ```
 
+<br />
 
-```
+------------------------------------------------------------------------------------------------------
+## II. Création d'un template
+
