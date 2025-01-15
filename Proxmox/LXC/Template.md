@@ -43,15 +43,17 @@ pveam remove local:vztmpl/debian-12-standard_12.7-1_amd64.tar.zst;
 Création d'un conteneur sous Debian, 2 Core, 1 Go, 512 Mo Swap et 15 Go de stockage.
 ```bash
 clear;
-pct stop 103; pct destroy 103 2>/dev/null;
+pct stop 103;
+pct destroy 103 2>/dev/null;
+
 pct create 103 \
 local:vztmpl/debian-12-standard_12.7-1_amd64.tar.zst \
 --timezone Europe/Paris \
 --pool 100.LXC \
 --storage Data \
 --rootfs Data:15 \
---ostype alpine \
---hostname Alpine \
+--ostype debian \
+--hostname Debian \
 --cores 2 \
 --memory 1024 \
 --swap 512 \
@@ -97,4 +99,34 @@ pct stop 103;
 ```bash
 clear;
 pct status 103;
+```
+
+------------------------------------------------------------------------------------------------------
+## III. Personnalisation du conteneur
+### A. Se connecter au conteneur
+```bash
+clear;
+pct enter 103
+```
+
+### B. Remote Command
+#### 1. Création du fichier
+```bash
+clear;
+pct exec 103 -- bash -c 'cat > install.sh << EOF
+#!/usr/bin/bash
+apt update;
+apt upgrade;
+EOF'
+```
+
+#### 2. Modification des permissions
+```bash
+clear;
+pct exec 103 -- bash -c 'chmod +x /root/install.sh'
+```
+#### 3. Lancement du script
+```bash
+clear;
+pct exec 103 -- bash -c '/root/install.sh'
 ```
