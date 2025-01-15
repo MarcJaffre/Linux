@@ -89,37 +89,37 @@ apt install -y --no-install-recommends --no-install-suggests cockpit-pcp 1>/dev/
 Permet d'intégrer la gestion des conteneurs via PodMan.
 ```bash
 clear;
-apt install -y --no-install-recommends --no-install-suggests cockpit-podman         1>/dev/null;
+apt install -y --no-install-recommends --no-install-suggests cockpit-podman 1>/dev/null;
 ```
 
 ##### 9. SOS Report
 ```bash
 clear;
-apt install -y --no-install-recommends --no-install-suggests cockpit-sosreport      1>/dev/null;
+apt install -y --no-install-recommends --no-install-suggests cockpit-sosreport 1>/dev/null;
 ```
 
 ##### 10. Storage
 ```bash
 clear;
-apt install -y --no-install-recommends --no-install-suggests cockpit-storaged       1>/dev/null;
+apt install -y --no-install-recommends --no-install-suggests cockpit-storaged 1>/dev/null;
 ```
 
 ##### 11. System
 ```bash
 clear;
-apt install -y --no-install-recommends --no-install-suggests cockpit-system         1>/dev/null;
+apt install -y --no-install-recommends --no-install-suggests cockpit-system 1>/dev/null;
 ```
 
 ##### 12. Tests
 ```bash
 clear;
-apt install -y --no-install-recommends --no-install-suggests cockpit-tests          1>/dev/null;
+apt install -y --no-install-recommends --no-install-suggests cockpit-tests 1>/dev/null;
 ```
 
 ##### 13. WS
 ```bash
 clear;
-apt install -y --no-install-recommends --no-install-suggests cockpit-ws             1>/dev/null;
+apt install -y --no-install-recommends --no-install-suggests cockpit-ws 1>/dev/null;
 ```
 
 #### D. Extensions (Externe)
