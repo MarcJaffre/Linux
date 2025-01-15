@@ -20,13 +20,13 @@ apt install -y -f;
 #### B. Installation de Cockpit ([CERTIFICAT](https://infotechys.com/install-ssl-certificates-on-cockpit/))
 ```bash
 clear;
-apt install -y cockpit                1>/dev/null;
-#apt install -y cockpit-bridge         1>/dev/null;
-#apt install -y cockpit-networkmanager 1>/dev/null;
-#apt install -y cockpit-packagekit     1>/dev/null;
-#apt install -y cockpit-storaged       1>/dev/null;
-#apt install -y cockpit-system         1>/dev/null;
-#apt install -y cockpit-ws             1>/dev/null;
+apt install -y --no-install-recommends --no-install-suggests cockpit                1>/dev/null;
+apt install -y --no-install-recommends --no-install-suggests cockpit-bridge         1>/dev/null;
+apt install -y --no-install-recommends --no-install-suggests cockpit-networkmanager 1>/dev/null;
+apt install -y --no-install-recommends --no-install-suggests cockpit-packagekit     1>/dev/null;
+apt install -y --no-install-recommends --no-install-suggests cockpit-storaged       1>/dev/null;
+apt install -y --no-install-recommends --no-install-suggests cockpit-system         1>/dev/null;
+apt install -y --no-install-recommends --no-install-suggests cockpit-ws             1>/dev/null;
 ```
 
 ```bash
