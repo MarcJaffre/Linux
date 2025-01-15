@@ -1,5 +1,5 @@
 ------------------------------------------------------------------------------------------------------
-# <p align='center'> Construction d'un template LXC sur Proxmox </p>
+# <p align='center'> Téléchargement d'un template OS conteneur pour Proxmox </p>
 ------------------------------------------------------------------------------------------------------
 ## I. Présentation de base
 ### A. Stockage
