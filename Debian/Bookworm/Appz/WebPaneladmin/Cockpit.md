@@ -79,6 +79,7 @@ apt install -y --no-install-recommends --no-install-suggests cockpit-packagekit 
 ```
 
 ##### 7. PCP
+Permet d'intégrer les fonctionnalités de Performance Co-Pilot.
 ```bash
 clear;
 apt install -y --no-install-recommends --no-install-suggests cockpit-pcp 1>/dev/null;
