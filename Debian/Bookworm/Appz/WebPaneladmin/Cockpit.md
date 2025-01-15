@@ -13,6 +13,7 @@ apt install -y nfs-common      1>/dev/null;
 apt install -y realmd          1>/dev/null;
 apt install -y tuned           1>/dev/null;
 apt install -y udisks2-lvm2    1>/dev/null;
+apt install -y -f;
 ```
 
 #### X. Installation de Cockpit ([CERTIFICAT](https://infotechys.com/install-ssl-certificates-on-cockpit/))
