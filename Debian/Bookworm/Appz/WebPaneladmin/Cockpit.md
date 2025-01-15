@@ -21,25 +21,92 @@ apt install -y -f;
 ```bash
 clear;
 apt install -y --no-install-recommends --no-install-suggests cockpit                1>/dev/null;
-apt install -y --no-install-recommends --no-install-suggests cockpit-bridge         1>/dev/null;
-apt install -y --no-install-recommends --no-install-suggests cockpit-networkmanager 1>/dev/null;
-apt install -y --no-install-recommends --no-install-suggests cockpit-packagekit     1>/dev/null;
-apt install -y --no-install-recommends --no-install-suggests cockpit-storaged       1>/dev/null;
-apt install -y --no-install-recommends --no-install-suggests cockpit-system         1>/dev/null;
-apt install -y --no-install-recommends --no-install-suggests cockpit-ws             1>/dev/null;
 ```
 
+
+
+#### C. Extension (Dépôt)
+##### 1. 389-DS
 ```bash
 clear;
-apt install -y --no-install-recommends --no-install-suggests cockpit-389-ds         1>/dev/null;
-apt install -y --no-install-recommends --no-install-suggests cockpit-machines       1>/dev/null;
-apt install -y --no-install-recommends --no-install-suggests cockpit-pcp            1>/dev/null;
+apt install -y --no-install-recommends --no-install-suggests cockpit-389-ds 1>/dev/null;
+```
+
+##### X. Bridge
+```bash
+clear;
+apt install -y --no-install-recommends --no-install-suggests cockpit-bridge 1>/dev/null;
+```
+
+##### X. Doc
+```bash
+clear;
+apt install -y --no-install-recommends --no-install-suggests cockpit-doc 1>/dev/null;
+```
+
+##### X. Machines
+```bash
+clear;
+apt install -y --no-install-recommends --no-install-suggests cockpit-machines 1>/dev/null;
+```
+
+##### X. Networking
+```bash
+clear;
+apt install -y --no-install-recommends --no-install-suggests cockpit-networkmanager 1>/dev/null;
+```
+
+##### X. Packagekit
+```bash
+clear;
+apt install -y --no-install-recommends --no-install-suggests cockpit-packagekit 1>/dev/null;
+```
+
+##### X. PCP
+```bash
+clear;
+apt install -y --no-install-recommends --no-install-suggests cockpit-pcp 1>/dev/null;
+```
+
+##### X. Podman
+```bash
+clear;
 apt install -y --no-install-recommends --no-install-suggests cockpit-podman         1>/dev/null;
+```
+
+##### X. SOS Report
+```bash
+clear;
 apt install -y --no-install-recommends --no-install-suggests cockpit-sosreport      1>/dev/null;
+```
+
+##### X. Storage
+```bash
+clear;
+apt install -y --no-install-recommends --no-install-suggests cockpit-storaged       1>/dev/null;
+```
+
+##### X. System
+```bash
+clear;
+apt install -y --no-install-recommends --no-install-suggests cockpit-system         1>/dev/null;
+```
+
+##### X. Tests
+```bash
+clear;
 apt install -y --no-install-recommends --no-install-suggests cockpit-tests          1>/dev/null;
 ```
 
-#### C. Extensions
+##### X. WS
+```bash
+clear;
+apt install -y --no-install-recommends --no-install-suggests cockpit-ws             1>/dev/null;
+```
+
+
+
+#### D. Extensions (Externe)
 ```bash
 clear;
 # ============================================================================================================================================================================
