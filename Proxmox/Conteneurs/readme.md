@@ -122,17 +122,19 @@ sed -i -e "s/\#PermitRootLogin prohibit-password/PermitRootLogin yes/g" /etc/ssh
 systemctl restart ssh;
 EOF
 ```
-#### 4. Transférer un fichier
-```
+
+#### 2. Transférer un fichier
+```bash
+clear;
 pct push 999 /root/install.sh /root/install.sh;
 ```
 
-#### 2. Modification des permissions (Guest)
+#### 3. Modification des permissions (Guest)
 ```bash
 clear;
 pct exec 999 -- bash -c 'chmod +x /root/install.sh'
 ```
-#### 3. Lancement du script
+#### 4. Lancement du script
 ```bash
 clear;
 pct exec 999 -- bash -c '/root/install.sh'
