@@ -31,7 +31,7 @@ local:vztmpl/debian-12-standard_12.7-1_amd64.tar.zst \
 --password admin \
 --net0 name=eth0,bridge=vmbr0,ip=192.168.0.220/24,firewall=0,gw=192.168.0.1,type=veth \
 --searchdomain lan.home \
---nameserver 8.8.8.8 \
+--nameserver 192.168.0.1 \
 --template 0 \
 --unprivileged 0 \
 --features keyctl=1,nesting=1,mount="nfs;cifs",fuse=1,mknod=1;
