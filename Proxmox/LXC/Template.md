@@ -11,7 +11,7 @@ clear;
 pveam  update;
 ```
 
-### C. Lister les OS Templates
+### C. Afficher la liste des OS Templates disponibles
 ```bash
 clear;
 pveam available --section  system
@@ -21,4 +21,19 @@ pveam available --section  system
 ```bash
 clear;
 pveam download local debian-12-standard_12.7-1_amd64.tar.zst;
+```
+
+### E. Lister les templates sur la machines
+```bash
+clear;
+pveam list local;
+```
+
+### F. Supprimer un template
+```bash
+clear;
+pveam remove local:vztmpl/debian-12-standard_12.7-1_amd64.tar.zst
+```
+
+
 ```
