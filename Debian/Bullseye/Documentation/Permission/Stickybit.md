@@ -5,8 +5,6 @@
 ### A. Présentation
 Permet de définir un dossier commun à tout le monde mais seul le propriétaire ou root peut supprimer la racine.
 
-/ ! \ Ne pas faire de Stickybit dans le dossier d'un User dans Truenas, sa marchera pas.
-
 ### B. Suppression du Dossier Public
 ```bash
 clear;
