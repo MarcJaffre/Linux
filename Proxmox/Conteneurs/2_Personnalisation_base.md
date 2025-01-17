@@ -24,10 +24,10 @@ On peux utiliser `pct exec 999 -- bash -c '....'` pour envoyer une commande à d
 clear;
 cat > install.sh << EOF
 #!/usr/bin/bash
-apt update;
-apt upgrade -y;
 sed -i -e "s/\#PermitRootLogin prohibit-password/PermitRootLogin yes/g" /etc/ssh/sshd_config;
 systemctl restart ssh;
+apt update;
+apt upgrade -y;
 EOF
 ```
 
