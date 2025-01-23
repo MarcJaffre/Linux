@@ -17,6 +17,7 @@ lspci -vnk -s $GPU;
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### II. Installation de pilote
 #### A. Pilote Libre
+Aucune Information
 
 #### B. Pilote propriétaire
 ##### 1. En-tête du kernel
@@ -35,6 +36,7 @@ apt install -y --no-install-recommends --no-install-suggests nvidia-smi 1>/dev/n
 ```bash
 nvidia-smi;
 ```
+
 ![image](https://github.com/MarcJaffre/Linux/assets/35907/0fad553a-a4ac-457b-b3ef-48b8acf4151f)
 
 
