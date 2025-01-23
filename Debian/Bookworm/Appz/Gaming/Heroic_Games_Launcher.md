@@ -11,8 +11,13 @@ Lancer le fichier debian et installer le paquet ou via la ligne de commande. (`s
 
 --------------------------------------------------------------------------------------------------------------------------------
 ## II. Prise en main
-### A. Options
+### A. Settings
+1. Définir la langue en Français
+
+2. aa
+
 #### 1. Général
+
 #### 2. Paramètres de jeu par défaut
 #### 3. Avancé
 #### 4. Informations Systèmes
