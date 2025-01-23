@@ -11,7 +11,14 @@ Lancer le fichier debian et installer le paquet ou via la ligne de commande. (`s
 
 --------------------------------------------------------------------------------------------------------------------------------
 ## II. Prise en main
-### A. Gestions des versions
+### A. Options
+#### 1. Général
+#### 2. Paramètres de jeu par défaut
+#### 3. Avancé
+#### 4. Informations Systèmes
+
+
+### B. Gestions des versions
 #### 1. Wine-GE
 La dernière version date de 2024. DECONSEILLER
 #### 2. Proton-GE
