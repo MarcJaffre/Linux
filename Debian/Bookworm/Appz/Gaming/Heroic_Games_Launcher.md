@@ -57,7 +57,7 @@ Aller dans `Bibliothèque` > `Ajouter un jeu` > `Battle.net-setup.exe` > `Lancer
 Faire l'`installation`  et lancer Battle.net .
 
 #### 2. Sélectionner l'exécutable
-L'installation c'est bien terminé, il suffit de choisir l'exe de Battle.net
+L'installation c'est bien terminé, il suffit de choisir l'executable `Battle.net Launcher.exe` puis valider.
 ```
 Titre: Battle.net
 Exe  : /home/marc/Games/Heroic/Prefixes/default/Battle.net/pfx/drive_c/Program Files (x86)/Battle.net/Battle.net Launcher.exe
