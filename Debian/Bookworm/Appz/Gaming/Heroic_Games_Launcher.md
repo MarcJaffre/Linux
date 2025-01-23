@@ -12,9 +12,15 @@ Lancer le fichier debian et installer le paquet ou via la ligne de commande. (`s
 --------------------------------------------------------------------------------------------------------------------------------
 ## II. Prise en main
 ### A. Settings
-1. Définir la langue en Français
-
-2. aa
+#### 1. Choose App Language
+Sélectionner la langue `Française`.
+#### 2. Fonctionnalité
+| Action   | Description                                                                      | 
+| -------- | -------------------------------------------------------------------------------- |
+| Cocher   | Vérifier au démarrage si une version plus récente d'Heroic est disponible        |
+| Cocher   | Mettre à jour les jeux à jour automatiquement                                    |
+| Cocher   |
+| Cocher   |
 
 #### 1. Général
 
