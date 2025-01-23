@@ -52,7 +52,7 @@ Prendre la dernière version pour profiter des derniers correctifs.
 ## III. Jeux-vidéo
 ### A. Battle.Net
 #### 1. Installateur
-Aller dans `Bibliothèque` > `Ajouter un jeu` > `Battle.net-setup.exe` > `Lancer l'installateur en Premier`. 
+Aller dans `Bibliothèque` > `Titre` Battle.net > `Ajouter un jeu` > `Battle.net-setup.exe` > `Lancer l'installateur en Premier`. 
 
 Faire l'`installation`  et lancer Battle.net .
 
