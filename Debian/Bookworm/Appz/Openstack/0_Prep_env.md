@@ -49,7 +49,8 @@ hostnamectl set-hostname openstack.home.lan
 ```
 
 ### E. Hosts
-```
+```bash
+clear;
 cat > /etc/hosts << EOF
 # IP4
 127.0.0.1       localhost
