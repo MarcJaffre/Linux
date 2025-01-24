@@ -73,7 +73,39 @@ sed -i -e "s/^\#NTP\=/NTP\=192.168.0.1/g" /etc/systemd/timesyncd.conf
 systemctl restart systemd-timesyncd
 ```
 
+### H. Configurer le Fuseau Horaire
+```bash
+clear;
+timedatectl set-timezone Europe/Paris
+timedatectl set-ntp true;
+timedatectl;
+```
+
+
 <br />
 
 --------------------------------------------------------------------------------------------------------------------------------
 ##  II. Installation d'OpenStack
+### A. Chrony
+#### 1. Installation
+```bash
+clear;
+apt -y install -y chrony
+```
+
+#### 2. Configuration du NTP
+```bash
+clear;
+sed -i -e "s/pool 2.debian.pool.ntp.org iburst/pool 0.fr.pool.ntp.org iburst/g" /etc/chrony/chrony.conf;
+systemctl restart chrony;
+chronyc sources;
+```
+
+
+### 
+```bash
+clear;
+```
+
+
+
