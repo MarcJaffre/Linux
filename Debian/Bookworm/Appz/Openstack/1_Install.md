@@ -143,7 +143,7 @@ keystone-manage credential_setup --keystone-user keystone --keystone-group keyst
 clear;
 export controller=$(hostname -f)
 
-keystone-manage bootstrap --bootstrap-password StrongPassw0rd01 \
+keystone-manage bootstrap --bootstrap-password admin \
 --bootstrap-admin-url https://$controller:5000/v3/ \
 --bootstrap-internal-url https://$controller:5000/v3/ \
 --bootstrap-public-url https://$controller:5000/v3/ \
