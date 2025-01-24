@@ -66,3 +66,14 @@ clear;
 [ -e /var/run/reboot-required ] && reboot;
 ```
 
+### G. NTP
+```bash
+clear;
+sed -i -e "s/^\#NTP\=/NTP\=192.168.0.1/g" /etc/systemd/timesyncd.conf
+systemctl restart systemd-timesyncd
+```
+
+<br />
+
+--------------------------------------------------------------------------------------------------------------------------------
+##  II. Installation d'OpenStack
