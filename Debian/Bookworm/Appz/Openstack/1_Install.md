@@ -151,9 +151,11 @@ keystone-manage bootstrap --bootstrap-password admin \
 ```
 
 
-### 
+### K. Apache (FQDN)
 ```bash
 clear;
+echo "ServerName openstack.home.lan" >> /etc/apache2/apache2.conf
+apachectl configtest
 ```
 
 
