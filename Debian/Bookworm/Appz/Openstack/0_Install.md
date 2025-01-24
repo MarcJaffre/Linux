@@ -158,16 +158,43 @@ systemctl restart nginx;
 
 
 ### H. Base de donnée
+#### 1. Suppression de la BDD et USER
 ```bash
 clear;
-mysql -u root -p -e "create database keystone;" 
-mysql -u root -p -e "grant all privileges on keystone.* to keystone@'localhost' identified by 'admin';"
+mysql -u root -padmin -e "DROP DATABASE IF EXISTS keystone"
+mysql -u root -padmin -e "DROP USER IF EXISTS 'keystone'@'localhost';"
 ```
 
-
-### 
+#### 2. Création de la BDD
 ```bash
 clear;
+mysql -u root -padmin -e "CREATE DATABASE IF NOT EXISTS keystone;"
+```
+#### 3. Création de l'utilisateur
+```bash
+clear;
+mysql -u root -padmin -e "CREATE USER 'keystone'@'localhost' IDENTIFIED BY 'admin';"
+```
+#### 4. Permission de la BDD pour le compte
+```bash
+clear;
+mysql -u root -padmin -e "GRANT ALL PRIVILEGES ON keystone.* TO 'keystone'@'localhost';"
+```
+#### 5. Permettre l'authentification
+```bash
+clear;
+mysql -u root -padmin -e "ALTER USER keystone@localhost IDENTIFIED VIA mysql_native_password USING PASSWORD('admin');"
+```
+
+### I. 
+```bash
+clear;
+apt install -y apache2;
+apt install -y keystone
+apt install -y libapache2-mod-wsgi-py3;
+apt install -y python3-oauth2client;
+apt install -y python3-openstackclient;
+
 ```
 
 
