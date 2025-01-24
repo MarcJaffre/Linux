@@ -46,6 +46,7 @@ systemctl restart networking;
 clear;
 hostnamectl set-hostname openstack.home.lan
 ```
+
 ### E. Hosts
 ```
 cat > /etc/hosts << EOF
