@@ -23,6 +23,7 @@ EOF
 clear;
 apt update 1>/dev/null;
 apt upgrade -y;
+apt dist-upgrade -y;
 ```
 
 ### C. Network
