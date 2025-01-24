@@ -119,12 +119,9 @@ apt install -y python3-openstackclient;
 clear;
 sed -i -e "s/^\memcache_servers/memcache_servers/g"      /etc/keystone/keystone.conf;
 sed -i -e "s/^\#provider \= fernet/provider \= fernet/g" /etc/keystone/keystone.conf;
+sed -i -e "s/^\#connection \= <None>/connection \= mysql\+pymysql\:\/\/keystone\:admin\@localhost\/keystone/g"    /etc/keystone/keystone.conf;
 ```
 
-```bash
-[database]
-connection = mysql+pymysql://keystone:admin@localhost/keystone
-```
 
 #### 3. Remplissez la base de données du service d’
 ```bash
