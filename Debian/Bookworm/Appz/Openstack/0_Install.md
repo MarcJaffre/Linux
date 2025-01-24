@@ -104,8 +104,8 @@ systemctl restart chrony;
 ```bash
 clear;
 apt install -y mariadb-server;
-sed -i -e "s///g" /etc/mysql/mariadb.conf.d/50-server.cnf
-max_connections        = 700
+sed -i -e "s/^\#max_connections        \= 100/max_connections        \= 700/g" /etc/mysql/mariadb.conf.d/50-server.cnf;
+systemctl restart mariadb;
 ```
 
 ### 
