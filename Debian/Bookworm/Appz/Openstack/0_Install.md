@@ -25,12 +25,28 @@ apt update 1>/dev/null;
 apt upgrade -y;
 ```
 
-### C. Hostname
+### C. Network
+```bash
+clear;
+
+cat > /etc/network/interfaces << EOF
+auto lo
+iface lo inet loopback
+allow-hotplug ens18
+iface ens18 inet static
+ address 192.168.0.32/24
+ gateway 192.168.0.1
+ dns-nameservers 192.168.0.1 8.8.8.8
+EOF
+systemctl restart networking;
+```
+
+### D. Hostname
 ```bash
 clear:
 hostnamectl set-hostname openstack.home.lan
 ```
-### B. Hosts
+### BC. Hosts
 ```
 cat > /etc/hosts << EOF
 127.0.0.1       localhost
