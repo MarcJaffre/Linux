@@ -130,7 +130,7 @@ apt install -y nginx libnginx-mod-stream;
 #### 2. Disable the default nginx web page.
 ```bash
 clear;
-unlink /etc/nginx/sites-enabled/default
+unlink /etc/nginx/sites-enabled/default;
 ```
 
 ### F. RabbitMQ
