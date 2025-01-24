@@ -186,7 +186,9 @@ clear;
 mysql -u root -padmin -e "ALTER USER keystone@localhost IDENTIFIED VIA mysql_native_password USING PASSWORD('admin');"
 ```
 
-### I. 
+### I. Installez Keystone
+L'installation de Keystone, requiert des dépendances. Le client OpenStack est installée. Répondre `NO` à toute les questions.
+
 ```bash
 clear;
 apt install -y apache2;
