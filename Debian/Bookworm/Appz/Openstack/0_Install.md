@@ -121,9 +121,16 @@ apt install -y memcached;
 ```
 
 ### E. Nginx web server
+#### 1.
 ```bash
 clear;
 apt install -y nginx libnginx-mod-stream;
+```
+
+#### 2. Disable the default nginx web page.
+```bash
+clear;
+unlink /etc/nginx/sites-enabled/default
 ```
 
 ### F. RabbitMQ
@@ -140,11 +147,13 @@ rabbitmqctl add_user openstack admin;
 rabbitmqctl set_permissions openstack ".*" ".*" ".*";
 ```
 
-
-
-### 
+### G. Relance des services
 ```bash
 clear;
+systemctl restart mariadb;
+systemctl restart rabbitmq-server;
+systemctl restart memcached;
+systemctl restart nginx;
 ```
 
 
