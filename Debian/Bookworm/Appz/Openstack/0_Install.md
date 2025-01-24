@@ -1,5 +1,5 @@
 --------------------------------------------------------------------------------------------------------------------------------
-# <p align='center'> Installation d'OpenStack </p>
+# <p align='center'> [Installation d'OpenStack](https://computingforgeeks.com/how-to-install-openstack-on-debian/) </p>
 --------------------------------------------------------------------------------------------------------------------------------
 ## I. Préparation du systèmes
 ### A. Dépôts
@@ -221,9 +221,17 @@ keystone-manage fernet_setup     --keystone-user keystone --keystone-group keyst
 keystone-manage credential_setup --keystone-user keystone --keystone-group keystone;
 ```
 
-### J. 
+
+### J. Amorcez le service d’identité
 ```bash
 clear;
+export controller=$(hostname -f)
+
+keystone-manage bootstrap --bootstrap-password StrongPassw0rd01 \
+--bootstrap-admin-url https://$controller:5000/v3/ \
+--bootstrap-internal-url https://$controller:5000/v3/ \
+--bootstrap-public-url https://$controller:5000/v3/ \
+--bootstrap-region-id RegionOne
 ```
 
 
