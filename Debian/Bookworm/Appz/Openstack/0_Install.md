@@ -108,20 +108,63 @@ sed -i -e "s/^\#max_connections        \= 100/max_connections        \= 700/g" /
 systemctl restart mariadb;
 ```
 
-### 
+### C. Python
 ```bash
 clear;
+apt install -y python3-pymysql;
 ```
+
+### D. Memcached
+```bash
+clear;
+apt install -y memcached;
+```
+
+### E. Nginx web server
+```bash
+clear;
+apt install -y nginx libnginx-mod-stream;
+```
+
+### F. RabbitMQ
+#### 1. Installation
+```bash
+clear;
+apt install -y rabbitmq-server;
+```
+
+#### 2. Ajoutez un utilisateur RabbitMQ pour OpenStack, définissez le mot de passe et accordez des autorisation
+```bash
+clear;
+rabbitmqctl add_user openstack admin;
+rabbitmqctl set_permissions openstack ".*" ".*" ".*";
+```
+
+
 
 ### 
 ```bash
 clear;
 ```
 
+
 ### 
 ```bash
 clear;
 ```
+
+
+### 
+```bash
+clear;
+```
+
+
+### 
+```bash
+clear;
+```
+
 
 ### 
 ```bash
