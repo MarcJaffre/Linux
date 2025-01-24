@@ -1,5 +1,5 @@
 --------------------------------------------------------------------------------------------------------------------------------
-# <p align='center'> [Installation d'OpenStack](https://computingforgeeks.com/how-to-install-openstack-on-debian/) </p>
+# <p align='center'> Préparation Environnement </p>
 --------------------------------------------------------------------------------------------------------------------------------
 ## I. Préparation du systèmes
 ### A. Dépôts
