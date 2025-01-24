@@ -7,6 +7,8 @@ Aller sur le Dashboard de [Fortinet](https://support.fortinet.com/asset/#/dashbo
 
 Télécharger l'image `New deployment of FortiGate for KVM`  : `FGT_VM64_KVM-v7.6.1.F-build3457-FORTINET.out.kvm.zip (105.32 MB)`.
 
+<br />
+
 ### B. Transfert de fichier
 Envoyé le fichier via un client SFTP dans le dossier /tmp.
 
@@ -19,6 +21,8 @@ Le stockage se nomme `Data`
 clear;
 qm importdisk XXX /tmp/fortios.qcow2 <NOM DU STOCKAGE>
 ```
+
+<br />
 
 ### E. Attacher le Stockage
 Le disque dur est en status inutilisé, il faut l'attacher sur la VM.
@@ -54,6 +58,8 @@ set allowaccess ping https ssh http
 
 end
 ```
+
+<br />
 
 ### C. Configuration Passerelle
 ```
