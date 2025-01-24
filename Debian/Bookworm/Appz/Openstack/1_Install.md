@@ -110,6 +110,7 @@ clear;
 apt install -y apache2;
 apt install -y keystone
 apt install -y libapache2-mod-wsgi-py3;
+apt install -y python3-pip;
 apt install -y python3-oauth2client;
 apt install -y python3-openstackclient;
 ```
@@ -124,9 +125,10 @@ sed -i -e "s/^\#connection \= <None>/connection \= mysql\+pymysql\:\/\/keystone\
 
 
 #### 3. Remplissez la base de données du service
-Une erreur est présent sur Pyhton3.11.
+Une erreur est présent sur Pyhton3.11. ([Bug](https://bugs.launchpad.net/keystone/+bug/2042744))
 ```bash
 clear;
+pip3 install --force-reinstall -I --ignore-installed keystone --break-system-packages;
 su -s /bin/bash keystone -c "keystone-manage db_sync"
 ```
 
