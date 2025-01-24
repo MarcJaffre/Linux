@@ -186,9 +186,9 @@ clear;
 mysql -u root -padmin -e "ALTER USER keystone@localhost IDENTIFIED VIA mysql_native_password USING PASSWORD('admin');"
 ```
 
-### I. Installez Keystone
+### I. Keystone
 L'installation de Keystone, requiert des dépendances. Le client OpenStack est installée. Répondre `NO` à toute les questions.
-
+#### 1. Installation
 ```bash
 clear;
 apt install -y apache2;
@@ -196,11 +196,27 @@ apt install -y keystone
 apt install -y libapache2-mod-wsgi-py3;
 apt install -y python3-oauth2client;
 apt install -y python3-openstackclient;
-
 ```
 
+#### 2. Configuration de Keystone
+```bash
+clear;
+nano /etc/keystone/keystone.conf
+```
 
-### 
+```bash
+# Specify Memcache Server on line 363
+memcache_servers = localhost:11211
+
+# Add MariaDB connection information around line 543:
+[database]
+connection = mysql+pymysql://keystone:admin@localhost/keystone
+
+# Set  token provider in line 2169
+provider = fernet
+```
+
+### J. 
 ```bash
 clear;
 ```
