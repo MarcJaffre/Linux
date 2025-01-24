@@ -45,21 +45,31 @@ Lors du premier démarrage, indiquer comme identifiant `admin` et comme mot de p
 
 
 ### B. Configuration IPv4
+#### 1. WAN
 ```
 config system interface
 edit "port1"
 set mode static
 set ip 192.168.0.44 255.255.255.0
 set allowaccess ping https ssh http
-next
+```
 
+```
+next
+```
+
+#### 2. LAN
+```bash
 edit "port2"
 set mode static
 set ip 192.168.10.1 255.255.255.0
 set allowaccess ping https ssh http
+```
 
+```
 end
 ```
+
 
 <br />
 
