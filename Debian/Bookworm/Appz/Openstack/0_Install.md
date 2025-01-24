@@ -157,9 +157,11 @@ systemctl restart nginx;
 ```
 
 
-### 
+### H. Base de donnée
 ```bash
 clear;
+mysql -u root -p -e "create database keystone;" 
+mysql -u root -p -e "grant all privileges on keystone.* to keystone@'localhost' identified by 'admin';"
 ```
 
 
