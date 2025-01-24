@@ -43,13 +43,18 @@ systemctl restart networking;
 
 ### D. Hostname
 ```bash
-clear:
+clear;
 hostnamectl set-hostname openstack.home.lan
 ```
 ### BC. Hosts
 ```
 cat > /etc/hosts << EOF
+# IP4
 127.0.0.1       localhost
 192.168.0.30    openstack.home.lan
+# IPv6
+::1     localhost ip6-localhost ip6-loopback
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
 EOF
 ```
