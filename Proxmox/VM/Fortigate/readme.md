@@ -40,7 +40,9 @@ La VM est prête
 
 ---------------------------------------------------------------------------------------------------------------------------------------
 ## I. Configuration
-### A. Défaut
+### A. Premier démarrage
+Lors du premier démarrage, indiquer comme identifiant `admin` et comme mot de passe `vide`.
+
 
 ### B. Configuration IPv4
 ```
