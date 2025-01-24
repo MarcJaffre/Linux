@@ -5,14 +5,19 @@
 ### A. Dépôts
 ```bash
 cat > /etc/apt/sources.list << EOF
-deb     http://ftp.fr.debian.org/debian/           bookworm          main
-deb-src http://ftp.fr.debian.org/debian/           bookworm          main
-deb     http://security.debian.org/debian-security bookworm-security main contrib
-deb-src http://security.debian.org/debian-security bookworm-security main contrib
-deb     http://ftp.fr.debian.org/debian/           bookworm-updates  main contrib
-deb-src http://ftp.fr.debian.org/debian/           bookworm-updates  main contrib
+###################################################################################################################
+deb     http://ftp.fr.debian.org/debian/           bookworm          main non-free non-free-firmware contrib
+deb-src http://ftp.fr.debian.org/debian/           bookworm          main non-free non-free-firmware contrib
+###################################################################################################################
+deb     http://security.debian.org/debian-security bookworm-security main non-free non-free-firmware contrib
+deb-src http://security.debian.org/debian-security bookworm-security main non-free non-free-firmware contrib
+###################################################################################################################
+deb     http://ftp.fr.debian.org/debian/           bookworm-updates  main non-free non-free-firmware contrib
+deb-src http://ftp.fr.debian.org/debian/           bookworm-updates  main non-free non-free-firmware contrib
+###################################################################################################################
 EOF
 ```
+
 ### B. Mise à jour
 ```bash
 clear;
