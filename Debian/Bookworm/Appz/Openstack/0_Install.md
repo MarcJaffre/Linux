@@ -69,14 +69,14 @@ clear;
 ### G. NTP
 ```bash
 clear;
-sed -i -e "s/^\#NTP\=/NTP\=192.168.0.1/g" /etc/systemd/timesyncd.conf
-systemctl restart systemd-timesyncd
+sed -i -e "s/^\#NTP\=/NTP\=192.168.0.1/g" /etc/systemd/timesyncd.conf;
+systemctl restart systemd-timesyncd;
 ```
 
 ### H. Configurer le Fuseau Horaire
 ```bash
 clear;
-timedatectl set-timezone Europe/Paris
+timedatectl set-timezone Europe/Paris;
 timedatectl set-ntp true;
 timedatectl;
 ```
@@ -90,7 +90,7 @@ timedatectl;
 #### 1. Installation
 ```bash
 clear;
-apt -y install -y chrony
+apt -y install -y chrony;
 ```
 
 #### 2. Configuration du NTP
@@ -98,9 +98,30 @@ apt -y install -y chrony
 clear;
 sed -i -e "s/pool 2.debian.pool.ntp.org iburst/pool 0.fr.pool.ntp.org iburst/g" /etc/chrony/chrony.conf;
 systemctl restart chrony;
-chronyc sources;
 ```
 
+### B. MariaDB
+```bash
+clear;
+apt install -y mariadb-server;
+sed -i -e "s///g" /etc/mysql/mariadb.conf.d/50-server.cnf
+max_connections        = 700
+```
+
+### 
+```bash
+clear;
+```
+
+### 
+```bash
+clear;
+```
+
+### 
+```bash
+clear;
+```
 
 ### 
 ```bash
