@@ -123,7 +123,8 @@ sed -i -e "s/^\#connection \= <None>/connection \= mysql\+pymysql\:\/\/keystone\
 ```
 
 
-#### 3. Remplissez la base de données du service d’
+#### 3. Remplissez la base de données du service
+Une erreur est présent sur Pyhton3.11.
 ```bash
 clear;
 su -s /bin/bash keystone -c "keystone-manage db_sync"
