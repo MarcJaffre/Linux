@@ -201,19 +201,24 @@ apt install -y python3-openstackclient;
 #### 2. Configuration de Keystone
 ```bash
 clear;
-nano /etc/keystone/keystone.conf
+sed -i -e "s/^\memcache_servers/memcache_servers/g"      /etc/keystone/keystone.conf;
+sed -i -e "s/^\#provider \= fernet/provider \= fernet/g" /etc/keystone/keystone.conf;
 ```
 
 ```bash
-# Specify Memcache Server on line 363
-memcache_servers = localhost:11211
-
-# Add MariaDB connection information around line 543:
 [database]
 connection = mysql+pymysql://keystone:admin@localhost/keystone
+```
 
-# Set  token provider in line 2169
-provider = fernet
+#### 3. Remplissez la base de données du service d’
+```bash
+clear;
+su -s /bin/bash keystone -c "keystone-manage db_sync"
+```
+
+```bash
+keystone-manage fernet_setup     --keystone-user keystone --keystone-group keystone;
+keystone-manage credential_setup --keystone-user keystone --keystone-group keystone;
 ```
 
 ### J. 
