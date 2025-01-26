@@ -3,9 +3,9 @@
 ----------------
 ## I. Guide
 ### A. Paquet nécessaire
-Pour installer un paquet Deb, il est nécessaire de disposer du paquet `gdeb`.
+Pour installer un paquet Deb, il est nécessaire de disposer du paquet `gdebi`.
 
 ```bash
 clear;
-apt install gdeb;
+apt install gdebi;
 ```
