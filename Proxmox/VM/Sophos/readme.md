@@ -2,8 +2,8 @@
 ---------------------------------------------------------------------------------------------------------------------------------------
 # <p align='center'> Création d'une VM Sophos </p>
 ---------------------------------------------------------------------------------------------------------------------------------------
-## I. Fortigate
-### A. Télécharger Fortigate
+## I. Sophos
+### A. Télécharger Sophos
 Aller sur le site [Sophos](https://www.sophos.com/en-us/support/downloads/firewall-installers). 
 
 Télécharger le fichier `Virtual Installers: Firewall OS for KVM`.
