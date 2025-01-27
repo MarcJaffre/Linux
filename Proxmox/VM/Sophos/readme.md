@@ -8,10 +8,6 @@ Aller sur le site [Sophos](https://www.sophos.com/en-us/support/downloads/firewa
 
 Télécharger le fichier `Virtual Installers: Firewall OS for KVM`.
 
-
-
-<br />
-
 ### B. Transfert de fichier
 Envoyé le fichier via un client SFTP dans le dossier /tmp.
 
