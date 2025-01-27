@@ -22,7 +22,8 @@ Créer une VM sans stockage.
 Le stockage se nomme `Data`
 ```bash
 clear;
-qm importdisk XXX /tmp/Sophos.qcow2 <NOM DU STOCKAGE>
+qm importdisk XXX /tmp/PRIMARY-DISK.qcow2   <NOM DU STOCKAGE>
+qm importdisk XXX /tmp/AUXILIARY-DISK.qcow2 <NOM DU STOCKAGE>
 ```
 
 <br />
@@ -43,5 +44,5 @@ La VM est prête
 
 
 ```
-https://docs.fortinet.com/document/fortigate-private-cloud/7.6.0/openstack-administration-guide/740208/deploying-a-fortigate-vm-instance-in-an-openstack-environment
+https://docs.sophos.com/nsg/sophos-firewall/19.5/Help/en-us/webhelp/onlinehelp/VirtualAndSoftwareAppliancesHelp/KVM/index.html
 ```
