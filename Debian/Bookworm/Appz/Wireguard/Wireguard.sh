@@ -46,8 +46,10 @@ systemctl stop wg-quick@wg0 2>/dev/null;
 ################
 func_INSTALL(){
  echo "Installation de Wireguard";
- apt install -y iptables wireguard 1>/dev/null;
- mkdir -p /etc/wireguard           2>/dev/null;
+ apt install -y qrencode  1>/dev/null;
+ apt install -y iptables  1>/dev/null;
+ apt install -y wireguard 1>/dev/null;
+ mkdir -p /etc/wireguard  2>/dev/null;
 }
 
 ##########################################################################################################################################
