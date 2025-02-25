@@ -2,7 +2,7 @@
 
 ##########################################################################################################################################
 # Auteur      : Marc Jaffre
-# Desctiption : Sauvegarde de la configuration VPN
+# Desctiption : Déploiement d'un VPN Wireguard complet + Sauvegarde / Restauration
 ##########################################################################################################################################
 
 ##########################################################################################################################################
@@ -142,7 +142,7 @@ PostDown = iptables -D FORWARD -i %i -j ACCEPT; iptables -t nat -D POSTROUTING -
 [Peer]
 PublicKey    = ${CLIENT_1_PUBLIC}
 PresharedKey = ${CLIENT_1_PRESHARED}
-AllowedIPs   = ${WIREGUARD_NETWORK}.2/32
+AllowedIPs   = ${WIREGUARD_NETWORK}.2/30
 
 ####################################################################################################################
 # Client 2 #
@@ -158,7 +158,7 @@ AllowedIPs   = ${WIREGUARD_NETWORK}.3/32
 [Peer]
 PublicKey    = ${CLIENT_3_PUBLIC}
 PresharedKey = ${CLIENT_3_PRESHARED}
-AllowedIPs   = ${WIREGUARD_NETWORK}.4/32
+AllowedIPs   = ${WIREGUARD_NETWORK}.4/30
 
 ####################################################################################################################
 # Client 4 #
@@ -166,7 +166,7 @@ AllowedIPs   = ${WIREGUARD_NETWORK}.4/32
 [Peer]
 PublicKey    = ${CLIENT_4_PUBLIC}
 PresharedKey = ${CLIENT_4_PRESHARED}
-AllowedIPs   = ${WIREGUARD_NETWORK}.5/32
+AllowedIPs   = ${WIREGUARD_NETWORK}.5/30
 
 ####################################################################################################################
 # Client 5 #
@@ -174,7 +174,7 @@ AllowedIPs   = ${WIREGUARD_NETWORK}.5/32
 [Peer]
 PublicKey    = ${CLIENT_5_PUBLIC}
 PresharedKey = ${CLIENT_5_PRESHARED}
-AllowedIPs   = ${WIREGUARD_NETWORK}.6/32
+AllowedIPs   = ${WIREGUARD_NETWORK}.6/30
 
 ####################################################################################################################
 EOF
@@ -187,7 +187,7 @@ EOF
  # Generation des fichiers de configuration clientes
  echo "[Interface]
 PrivateKey   = ${CLIENT_1_PRIVATE}
-Address      = ${WIREGUARD_NETWORK}.2/32
+Address      = ${WIREGUARD_NETWORK}.2/30
 DNS          = ${DNS}
 MTU          = ${MTU}
 [Peer]
@@ -199,7 +199,7 @@ Endpoint     = ${ENDPOINT}:${PORT}" > $HOME/client-1.conf;
 # --------------------------------------------------------------------------------------
 echo "[Interface]
 PrivateKey   = ${CLIENT_2_PRIVATE}
-Address      = ${WIREGUARD_NETWORK}.3/32
+Address      = ${WIREGUARD_NETWORK}.3/30
 DNS          = ${DNS}
 MTU          = ${MTU}
 [Peer]
@@ -211,7 +211,7 @@ Endpoint     = ${ENDPOINT}:${PORT}" > $HOME/client-2.conf;
 # --------------------------------------------------------------------------------------
 echo "[Interface]
 PrivateKey   = ${CLIENT_3_PRIVATE}
-Address      = ${WIREGUARD_NETWORK}.4/32
+Address      = ${WIREGUARD_NETWORK}.4/30
 DNS          = ${DNS}
 MTU          = ${MTU}
 [Peer]
@@ -223,7 +223,7 @@ Endpoint     = ${ENDPOINT}:${PORT}" > $HOME/client-3.conf;
 # --------------------------------------------------------------------------------------
 echo "[Interface]
 PrivateKey   = ${CLIENT_4_PRIVATE}
-Address      = ${WIREGUARD_NETWORK}.4/32
+Address      = ${WIREGUARD_NETWORK}.4/30
 DNS          = ${DNS}
 MTU          = ${MTU}
 [Peer]
@@ -235,7 +235,7 @@ Endpoint     = ${ENDPOINT}:${PORT}" > $HOME/client-4.conf;
 # --------------------------------------------------------------------------------------
 echo "[Interface]
 PrivateKey   = ${CLIENT_5_PRIVATE}
-Address      = ${WIREGUARD_NETWORK}.4/32
+Address      = ${WIREGUARD_NETWORK}.4/30
 DNS          = ${DNS}
 MTU          = ${MTU}
 [Peer]
