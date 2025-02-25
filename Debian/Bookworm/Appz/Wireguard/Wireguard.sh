@@ -13,14 +13,13 @@ clear;
 ##########################################################################################################################################
 # Configuration de la sauvegarde et Restauration #
 ##################################################
-DOSSIER_BACKUP="/mnt/Media_5/Backup/Wireguard"
+DOSSIER_BACKUP="/"
 FICHIER="Wireguard_backup.tar"
 SHOW_CLIENT=$2
 
 ##########################################################################################################################################
 # Configuration du VPN #
 ########################
-
 # Information Host:
 NET="$(ip addr | grep "^2: " | cut -d ":" -f 2 | cut -c 2-20)"
 IP_NET=$(ip add show $NET | grep "inet " | cut -d "t" -f2 | cut -d "/" -f 1 | cut -c 2-50)
@@ -29,14 +28,13 @@ IP_NET=$(ip add show $NET | grep "inet " | cut -d "t" -f2 | cut -d "/" -f 1 | cu
 WIREGUARD_NETWORK="192.168.100"
 
 # Client
-ENDPOINT="proxmox74.ddns.net"
+ENDPOINT=""
 PORT="51820"
-DNS="192.168.0.1"
+DNS=""
 MTU="1420"
-ALLOW_NETWORK_1=",192.168.0.0/24"
-ALLOW_NETWORK_2=",192.168.1.0/24"
+ALLOW_NETWORK_1=",192.168.X.0/24"
+ALLOW_NETWORK_2=",192.168.X.0/24"
 ALLOW_NETWORK_3=""
-
 
 ##########################################################################################################################################
 # Arrêt du service #
@@ -44,16 +42,20 @@ ALLOW_NETWORK_3=""
 systemctl stop wg-quick@wg0 2>/dev/null;
 
 ##########################################################################################################################################
+# Installation #
+################
 func_INSTALL(){
  echo "Installation de Wireguard";
  apt install -y iptables wireguard 1>/dev/null;
  mkdir -p /etc/wireguard           2>/dev/null;
 }
 
+##########################################################################################################################################
+# Generation Config #
+#####################
 func_CONFIG(){
  # =======================================================================================================================
  echo "Generation d'une configuration"
-
  # =======================================================================================================================
  # Serveur
  wg genkey > /tmp/Private 2>/dev/null;
@@ -247,27 +249,36 @@ Endpoint     = ${ENDPOINT}:${PORT}" > $HOME/client-5.conf;
  rm /tmp/Preshared 2>/dev/null;
 }
 
-
+##########################################################################################################################################
+# Editer config #
+#################
 func_EDIT(){
  echo "Edition de la configuration";
 }
 
+##########################################################################################################################################
+# Creation #
+############
 func_CREATE(){
  echo "Création d'une sauvegarde Wireguard";
  tar -czf $DOSSIER_BACKUP/$FICHIER /etc/wireguard /root/client-*.conf;
 }
-
+##########################################################################################################################################
+# Restauration #
+################
 func_RESTORE(){
  echo "Restauration du serveur Wireguard";
   tar -xzf $DOSSIER_BACKUP/$FICHIER -C /
 }
 
+##########################################################################################################################################
+# Afficher configuration #
+##########################
 func_SHOW(){
 qrencode -t ansiutf8 < $HOME/client-$SHOW_CLIENT.conf;
 }
 
-
-
+##########################################################################################################################################
 case $1 in
    install)
     func_INSTALL;
@@ -314,4 +325,5 @@ esac
 ########################
 systemctl enable wg-quick@wg0 2>/dev/null;
 systemctl start  wg-quick@wg0 2>/dev/null;
+
 ##########################################################################################################################################
