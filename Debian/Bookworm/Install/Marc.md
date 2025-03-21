@@ -363,12 +363,11 @@ chmod +x $HOME/AppImage/*.AppImage;
 
 ### A. SMPlayer
 ```
+
 Préférences > Options
   > Général:
    - Moteur Multimédia: mplayer (mpv: BUG !)
-   > Vidéo
-    - Pilote de sortie: XV (0 Glamor ...)
-> Performance:
+  > Performance:
    - Thread: 4
    - Décodage matériel: Auto
    - Filtre Anti-bloc: Passer Toujours (CPU ne prend pas en charge H.264)
@@ -380,7 +379,8 @@ Préférences > Options
    - Ajouter des fichiers du répertoire: Fichiers Vidéos
    - Ajouter les fichiers des répertoires récursivement
   > Avancés
-   - Format de l'écran: 16:9
+   - Format de l'écran            : 16:9
+   - Lancer les actions suivantes : aspect_none -noaspect -nokeepaspect
 -----------------------
 La liste de lecture:
 Clique droit dans le blanc > Décocher les cases
