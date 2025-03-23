@@ -110,7 +110,7 @@ apt install -y mariadb-server 1>/dev/null;
 ##### 2. Suppression de la base de donnée librenms
 ```bash
 clear;
-mysql -u root -padmin -e "DROP DATABASE IF EXISTS librenms
+mysql -u root -padmin -e "DROP DATABASE IF EXISTS librenms";
 ```
 
 ##### 2. Suppression de l'utilisateur librenms
