@@ -14,6 +14,7 @@ LibreNMS est un outil de supervision.
 ```bash
 clear;
 apt update 1>/dev/null;
+
 apt install -y acl;
 apt install -y apt-transport-https;
 apt install -y ca-certificates;
