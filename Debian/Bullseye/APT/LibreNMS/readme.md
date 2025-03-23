@@ -37,6 +37,7 @@ apt install -y python3-pip;
 apt install -y rrdtool;
 apt install -y snmp;
 apt install -y snmpd;
+apt install -y sudo;
 apt install -y unzip;
 apt install -y whois;
 apt install -y wget;
