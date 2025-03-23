@@ -312,6 +312,12 @@ Si l'IP du serveur est derrière un pare-feu, ce qui est mon cas, taper la comma
 runuser -l librenms -c "lnms config:set base_url http://192.168.180.28:8083/"
 ```
 
+#### D1. FAIL: base_url is not set correctly
+```
+echo "APP_URL=http://192.168.180.28:8083" >> /opt/librenms/.env
+```
+
+
 #### E. Consider adding a device such as localhost
 Ajouter un hôte. L'adresse de mon serveur est 192.168.200.13.
 ```
