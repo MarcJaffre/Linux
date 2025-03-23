@@ -13,6 +13,7 @@ LibreNMS est un outil de supervision.
 ##### 1. Dépendances
 ```bash
 clear;
+sed -i -e "s/^CDROM/#CDROM/g" /etc/apt/sources.list;
 apt update 1>/dev/null;
 
 apt install -y acl;
