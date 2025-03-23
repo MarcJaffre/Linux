@@ -262,9 +262,10 @@ chmod +x /usr/bin/distro;
 ##### 4. Activation du service SNMP Daemon
 ```bash
 clear;
-systemctl enable snmpd;
+systemctl enable  snmpd;
 systemctl restart snmpd;
 ```
+
 #### C. Planification de tâche
 ```bash
 clear;
