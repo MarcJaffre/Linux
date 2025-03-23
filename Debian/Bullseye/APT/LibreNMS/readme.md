@@ -318,7 +318,7 @@ runuser -l librenms -c "lnms config:set base_url http://192.168.180.28:8083/"
 
 #### D1. FAIL: base_url is not set correctly
 ```
-echo "APP_URL=http://192.168.180.28:8083" >> /opt/librenms/.env
+sed -i -e "s/^#APP_URL=/APP_URL=http\:\/\/192.168.180.28:8083/g" /opt/librenms/.env
 ```
 
 
