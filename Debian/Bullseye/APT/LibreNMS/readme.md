@@ -89,7 +89,7 @@ runuser -l librenms -c './scripts/composer_wrapper.php install --no-dev';
 clear;
 timedatectl set-timezone Europe/Paris;
 sed -i -e "s/^\;date.timezone \=/date.timezone \= Europe\/Paris/g" /etc/php/8.2/fpm/php.ini;
-sed -i -e "s/^\;date.timezone \=/date.timezone \= Europe\/Paris/g" /etc/php/8.2/cli/php.ini
+sed -i -e "s/^\;date.timezone \=/date.timezone \= Europe\/Paris/g" /etc/php/8.2/cli/php.ini;
 ```
 
 #### G. Relance du service PHP
