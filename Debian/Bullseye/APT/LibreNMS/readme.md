@@ -14,8 +14,32 @@ LibreNMS est un outil de supervision.
 ```bash
 clear;
 apt update 1>/dev/null;
-apt install -y acl apt-transport-https ca-certificates curl fping git graphviz imagemagick lsb-release mariadb-client mariadb-server mtr-tiny nginx-full nmap
-apt install -y python3-dotenv python3-pymysql python3-redis python3-setuptools python3-systemd python3-pip rrdtool snmp snmpd unzip whois wget;
+apt install -y acl;
+apt install -y apt-transport-https;
+apt install -y ca-certificates;
+apt install -y curl;
+apt install -y fping;
+apt install -y git;
+apt install -y graphviz;
+apt install -y imagemagick;
+apt install -y lsb-release;
+apt install -y mariadb-client;
+apt install -y mariadb-server;
+apt install -y mtr-tiny;
+apt install -y nginx-full;
+apt install -y nmap;
+apt install -y python3-dotenv;
+apt install -y python3-pymysql;
+apt install -y python3-redis;
+apt install -y python3-setuptools;
+apt install -y python3-systemd;
+apt install -y python3-pip;
+apt install -y rrdtool;
+apt install -y snmp;
+apt install -y snmpd;
+apt install -y unzip;
+apt install -y whois;
+apt install -y wget;
 ```
 
 ##### 2. Dépôt PHP8
