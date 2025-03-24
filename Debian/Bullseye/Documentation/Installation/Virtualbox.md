@@ -137,7 +137,6 @@ Sélectionner `Utiliser comme` > `Espace d'échange "SWAP"`.
 <p align='center'> <img src='https://github.com/user-attachments/assets/cb978147-ff24-4ade-9df7-b55246f3f95b' /> </p>
 <br />
 
-
 #### X. Création de la partition SYSTEM
 La partition système est celle qui correspond à Debian. Un système linux en **mode serveur** est très peu gourmand en espace de stockage.
 
@@ -149,7 +148,7 @@ Le point de montage `/` définit la partition Système.
 
 <p align='center'> <img src='https://github.com/user-attachments/assets/a6c2dc01-2270-4b7b-8f23-fae460cbe331' /> </p>
 
-<p align='center'> <img src='' /> </p>
+<p align='center'> <img src='https://github.com/user-attachments/assets/f5bdd214-6794-4ea3-823f-c0d0c62c3549' /> </p>
 <br />
 
 #### X. Création de la partition HOME
@@ -160,6 +159,7 @@ Le point de montage `/home` définit la partition HOME.
 <p align='center'> <img src='https://github.com/user-attachments/assets/0ae43a75-7423-4cd0-9333-520f53075c6b' /> </p>
 
 <p align='center'> <img src='' /> </p>
+<br />
 
 
 #### X. Résumé
