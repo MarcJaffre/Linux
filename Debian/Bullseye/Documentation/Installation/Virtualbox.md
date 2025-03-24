@@ -99,13 +99,19 @@ Pour un serveur, il est recommandé en LVM.
 Le partitionnement se fera en manuel.
 
 <p align='center'> <img src='https://github.com/user-attachments/assets/03880a02-a294-4635-a1e6-39179da633c0' /> </p>
+<br />
 
-
-#### X. Création de la table de partition
+#### X. Partitionner les disques
+Le disque-dur se nomme `sda`
+<p align='center'> <img src='https://github.com/user-attachments/assets/1ca2210f-b113-4956-9de9-9e1a5f14a1b9' /> </p>
 
 #### X. Création de la partition de démarrage
 ##### 1. Mode MBR
-<p align='center'> <img src='' /> </p>
+Sélectionner `l'espace libre` > `Entrer` > `Créer une noouvelle partition` > `Taille: 512Mo` > `Début du disque` > .
+
+<p align='center'> <img src='https://github.com/user-attachments/assets/bfec2d16-4fd6-43ed-8944-de127b24ebd2' /> </p>
+
+<p align='center'> <img src='https://github.com/user-attachments/assets/4703b4fa-c366-4ba4-8df4-2eea5e770708' /> </p>
 
 ##### 2. Mode EFI (Screen à faire)
 <p align='center'> <img src='' /> </p>
