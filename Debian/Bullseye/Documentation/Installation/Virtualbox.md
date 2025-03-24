@@ -33,8 +33,12 @@
 
 ---------------------------------------------------------------------------------------------------------------------------
 ### III. Installation de Debian (Partie 1)
-#### A. Définir le mode d'installation (Screen à faire)
-<p align='center'> <img src='' /> </p>
+#### A. Définir le mode d'installation
+Le mode `Graphical Install` permet d'avoir une installation avec la prise en charge de la souris.
+
+Le mode `Install` est une installation en mode clavier sans souris.
+
+<p align='center'> <img src='https://github.com/user-attachments/assets/13fc67c4-2d99-47c7-b558-6c4f432a2a0d' /> </p>
 <br />
 
 #### B. Sélectionner la langue de l'installateur
