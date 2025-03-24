@@ -126,9 +126,16 @@ Sélectionner `Utiliser comme` > `Partition système EFI` > `Fin de paramètrage
 <br />
 
 #### X. Création de la partition SYSTEM
-La partition système est celle qui correspond à Debian. Un système linux de type serveur sous Debian est très léger, donc il n'est pas nécessaire de lui attribué un espace conséquent.
+La partition système est celle qui correspond à Debian. Un système linux en **mode serveur** est très peu gourmand en espace de stockage.
 
-<p align='center'> <img src='' /> </p>
+Il est fort utile de définir un `Nom` et un `Label` pour l'identifier en ligne de commande. (Dans mon cas, j'ai choisis `SYSTEM`)
+
+<p align='center'> <img src='https://github.com/user-attachments/assets/b860b871-3fe2-4da0-ac4c-63ee9d6c169c' /> </p>
+
+<p align='center'> <img src='https://github.com/user-attachments/assets/a6c2dc01-2270-4b7b-8f23-fae460cbe331' /> </p>
+
+<p align='center'> <img src='https://github.com/user-attachments/assets/509d9c59-c640-4fd7-ab6c-412fa5eb62ae' /> </p>
+<br />
 
 #### X. Création de la partition HOME
 La partition HOME permet de séparer le système des données utilisateur. L'utilisation de l'espace disque de celle-ci dans le cas d'un serveur est souvent nul.
