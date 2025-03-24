@@ -115,10 +115,15 @@ Sélectionner `l'espace libre` > `Entrer` > `Créer une noouvelle partition` > `
 
 <p align='center'> <img src='https://github.com/user-attachments/assets/9606a7c0-f398-4365-aa6a-f3285cb4171f' /> </p>
 
+##### 2. Partition de démarrage EFI
+Sélectionner `Utiliser comme` > `Partition système EFI` > `Fin de paramètrage de cette partition`. (ESP = EFI)
 
+<p align='center'> <img src='https://github.com/user-attachments/assets/2238542b-5999-4814-ae34-fdccaa4685f6' /> </p>
 
-##### 2. Mode EFI (Screen à faire)
-<p align='center'> <img src='' /> </p>
+<p align='center'> <img src='https://github.com/user-attachments/assets/a77ef429-4b28-4c78-9524-833fc8782fec' /> </p>
+
+<p align='center'> <img src='![image](https://github.com/user-attachments/assets/039a7f8a-b6fa-479c-8425-f8374cb59f4c' /> </p>
+
 
 #### X. Création de la partition SYSTEM
 La partition système est celle qui correspond à Debian. Un système linux de type serveur sous Debian est très léger, donc il n'est pas nécessaire de lui attribué un espace conséquent.
