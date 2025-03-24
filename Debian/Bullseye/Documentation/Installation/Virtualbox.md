@@ -95,21 +95,27 @@ Le guide suivant apprend l'installation de Debian sans utiliser la technologie L
 
 Pour un serveur, il est recommandé en LVM.
 
-#### B. Création de la table de partition
+#### X. Méthode de partitionnement
+Le partitionnement se fera en manuel.
 
-#### C. Création de la partition de démarrage
+<p align='center'> <img src='https://github.com/user-attachments/assets/03880a02-a294-4635-a1e6-39179da633c0' /> </p>
+
+
+#### X. Création de la table de partition
+
+#### X. Création de la partition de démarrage
 ##### 1. Mode MBR
 <p align='center'> <img src='' /> </p>
 
 ##### 2. Mode EFI (Screen à faire)
 <p align='center'> <img src='' /> </p>
 
-#### D. Création de la partition SYSTEM
+#### X. Création de la partition SYSTEM
 La partition système est celle qui correspond à Debian. Un système linux de type serveur sous Debian est très léger, donc il n'est pas nécessaire de lui attribué un espace conséquent.
 
 <p align='center'> <img src='' /> </p>
 
-#### E. Création de la partition HOME
+#### X. Création de la partition HOME
 La partition HOME permet de séparer le système des données utilisateur. L'utilisation de l'espace disque de celle-ci dans le cas d'un serveur est souvent nul.
 
 <p align='center'> <img src='' /> </p>
