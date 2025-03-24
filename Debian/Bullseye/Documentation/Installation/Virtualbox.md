@@ -16,6 +16,16 @@
 | Mode Console        |	256 Mo     | 512 Mo     | 2 Go     |
 | Mode Graphique      |	1 Go       | 2 Go       | 10 Go    |
 
+
+#### C. Ressources
+```
+# 11.7
+https://cdimage.debian.org/mirror/cdimage/archive/11.7.0/amd64/iso-dvd/debian-11.7.0-amd64-DVD-1.iso
+
+# 11.11
+https://cdimage.debian.org/mirror/cdimage/archive/11.11.0/amd64/iso-dvd/debian-11.11.0-amd64-DVD-1.iso
+```
+
 <br />
 
 ---------------------------------------------------------------------------------------------------------------------------
