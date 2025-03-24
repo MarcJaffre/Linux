@@ -130,6 +130,8 @@ La partition système est celle qui correspond à Debian. Un système linux en *
 
 Il est fort utile de définir un `Nom` et un `Label` pour l'identifier en ligne de commande. (Dans mon cas, j'ai choisis `SYSTEM`)
 
+Le point de montage `/` définit la partition Système.
+
 <p align='center'> <img src='https://github.com/user-attachments/assets/b860b871-3fe2-4da0-ac4c-63ee9d6c169c' /> </p>
 
 <p align='center'> <img src='https://github.com/user-attachments/assets/a6c2dc01-2270-4b7b-8f23-fae460cbe331' /> </p>
@@ -137,7 +139,31 @@ Il est fort utile de définir un `Nom` et un `Label` pour l'identifier en ligne 
 <p align='center'> <img src='https://github.com/user-attachments/assets/509d9c59-c640-4fd7-ab6c-412fa5eb62ae' /> </p>
 <br />
 
+#### X. Création de la partition SWAP
+La partition `SWAP` permet de compenser le manque de mémoire-vive. Il n'existe pas de règle absolu pour la politique de l'espace nécessaire.
+
+Sélectionner `Utiliser comme` > `Espace d'échange "SWAP"`.
+
+<p align='center'> <img src='https://github.com/user-attachments/assets/fec7a444-1a56-4826-a63e-d0d80f25c6af' /> </p>
+
+<p align='center'> <img src='https://github.com/user-attachments/assets/8ed37ff6-13d8-4e6c-a72b-f3eb4dc501be' /> </p>
+
+<p align='center'> <img src='https://github.com/user-attachments/assets/8062e759-5bf0-4d2e-91e8-6802be98422d' /> </p>
+<br />
+
+<p align='center'> <img src='' /> </p>
+
+
 #### X. Création de la partition HOME
-La partition HOME permet de séparer le système des données utilisateur. L'utilisation de l'espace disque de celle-ci dans le cas d'un serveur est souvent nul.
+La partition HOME permet de séparer le système des données utilisateur. L'utilisation de l'espace disque est selon son usage.
+
+Le point de montage `/home` définit la partition HOME.
+
+<p align='center'> <img src='https://github.com/user-attachments/assets/0ae43a75-7423-4cd0-9333-520f53075c6b' /> </p>
+
+
+<p align='center'> <img src='' /> </p>
+
+<p align='center'> <img src='' /> </p>
 
 <p align='center'> <img src='' /> </p>
