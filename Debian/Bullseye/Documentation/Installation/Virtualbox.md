@@ -193,8 +193,11 @@ A l'instant on répond Oui, le disque-dur sera modifier réellement, en cas d'er
 <br />
 <br />
 
-
-
 ---------------------------------------------------------------------------------------------------------------------------
 ### V. Installation de Debian (Partie 3)
-#### A. 
+#### A. Configurer l'outil de gestion des paquets
+Si on dispose de plusieurs DVD Debian qui permet 
+
+![image](https://github.com/user-attachments/assets/426dc122-372b-45c3-ae43-526a7af5516b)
+
+
