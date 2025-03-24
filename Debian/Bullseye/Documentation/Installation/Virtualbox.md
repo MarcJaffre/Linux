@@ -122,8 +122,21 @@ Sélectionner `Utiliser comme` > `Partition système EFI` > `Fin de paramètrage
 
 <p align='center'> <img src='https://github.com/user-attachments/assets/a77ef429-4b28-4c78-9524-833fc8782fec' /> </p>
 
-<p align='center'> <img src='' /> </p>
+<p align='center'> <img src='https://github.com/user-attachments/assets/ae8c9fa4-d34f-4cac-96b1-695eef3b6605' /> </p>
 <br />
+
+#### X. Création de la partition SWAP
+La partition `SWAP` permet de compenser le manque de mémoire-vive. Il n'existe pas de règle absolu pour la politique de l'espace nécessaire.
+
+Sélectionner `Utiliser comme` > `Espace d'échange "SWAP"`.
+
+<p align='center'> <img src='https://github.com/user-attachments/assets/fec7a444-1a56-4826-a63e-d0d80f25c6af' /> </p>
+
+<p align='center'> <img src='https://github.com/user-attachments/assets/8ed37ff6-13d8-4e6c-a72b-f3eb4dc501be' /> </p>
+
+<p align='center'> <img src='https://github.com/user-attachments/assets/cb978147-ff24-4ade-9df7-b55246f3f95b' /> </p>
+<br />
+
 
 #### X. Création de la partition SYSTEM
 La partition système est celle qui correspond à Debian. Un système linux en **mode serveur** est très peu gourmand en espace de stockage.
@@ -138,19 +151,6 @@ Le point de montage `/` définit la partition Système.
 
 <p align='center'> <img src='' /> </p>
 <br />
-
-#### X. Création de la partition SWAP
-La partition `SWAP` permet de compenser le manque de mémoire-vive. Il n'existe pas de règle absolu pour la politique de l'espace nécessaire.
-
-Sélectionner `Utiliser comme` > `Espace d'échange "SWAP"`.
-
-<p align='center'> <img src='https://github.com/user-attachments/assets/fec7a444-1a56-4826-a63e-d0d80f25c6af' /> </p>
-
-<p align='center'> <img src='https://github.com/user-attachments/assets/8ed37ff6-13d8-4e6c-a72b-f3eb4dc501be' /> </p>
-
-<p align='center'> <img src='' /> </p>
-<br />
-
 
 #### X. Création de la partition HOME
 La partition HOME permet de séparer le système des données utilisateur. L'utilisation de l'espace disque est selon son usage.
