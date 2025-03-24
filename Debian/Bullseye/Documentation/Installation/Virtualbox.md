@@ -21,11 +21,12 @@
 ---------------------------------------------------------------------------------------------------------------------------
 ### II. Création de la machine virtuelle
 #### A. Caractéristique de la machine
+Un Système linux en serveur est plus léger qu'un linux bureautique.
 ```
 - Système d'exploitation : Debian 12
 - Processeur (CPU)       : 2 Core
 - Mémoire-Vive (RAM)     : 1 Go
-- Stockage (HDD0)        : X Go
+- Stockage (HDD0)        : 10 Go
 - Type de Réseau         : Mode Pont
 ```
 
