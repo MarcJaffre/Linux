@@ -1,15 +1,15 @@
 ---------------------------------------------------------------------------------------------------------------------------
-## <p align='center'> Installation de Debian 11 </p>
+# <p align='center'> Installation de Debian 11 </p>
 
 ---------------------------------------------------------------------------------------------------------------------------
-### I. Information Générale
-#### A. Présentation de la distribution
+## I. Information Générale
+### A. Présentation de la distribution
 ```
 - Système d'exploitation     : Debian
 - Version de la distribution : Bullseye (11)
 ```
 
-#### B. Recommandation (CF. Wikipedia Debian)
+### B. Recommandation (CF. Wikipedia Debian)
 
 | Type d'installation | RAM (Min.) | RAM (Rec.) | Stockage |
 | ------------------- | ---------- | ---------- | -------- |
@@ -17,7 +17,7 @@
 | Mode Graphique      |	1 Go       | 2 Go       | 10 Go    |
 
 
-#### C. Ressources
+### C. Ressources
 ```
 # 11.7
 https://cdimage.debian.org/mirror/cdimage/archive/11.7.0/amd64/iso-dvd/debian-11.7.0-amd64-DVD-1.iso
@@ -29,8 +29,8 @@ https://cdimage.debian.org/mirror/cdimage/archive/11.11.0/amd64/iso-dvd/debian-1
 <br />
 
 ---------------------------------------------------------------------------------------------------------------------------
-### II. Création de la machine virtuelle
-#### A. Caractéristique de la machine
+## II. Création de la machine virtuelle
+### A. Caractéristique de la machine
 Un Système linux en serveur est plus léger qu'un linux bureautique.
 ```
 - Système d'exploitation : Debian 12
@@ -43,8 +43,8 @@ Un Système linux en serveur est plus léger qu'un linux bureautique.
 <br />
 
 ---------------------------------------------------------------------------------------------------------------------------
-### III. Installation de Debian (Partie 1)
-#### A. Définir le mode d'installation
+## III. Installation de Debian (Partie 1)
+### A. Définir le mode d'installation
 Le mode `Graphical Install` permet d'avoir une installation avec la prise en charge de la souris.
 
 Le mode `Install` est une installation en mode clavier sans souris.
@@ -52,45 +52,45 @@ Le mode `Install` est une installation en mode clavier sans souris.
 <p align='center'> <img src='https://github.com/user-attachments/assets/13fc67c4-2d99-47c7-b558-6c4f432a2a0d' /> </p>
 <br />
 
-#### B. Sélectionner la langue de l'installateur
+### B. Sélectionner la langue de l'installateur
 <p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/4b7faf28-68d7-4b87-ba0b-c08f13b990ba' /> </p>
 <br />
 
-#### C. Situation Géographique
+### C. Situation Géographique
 <p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/ca05942d-41ba-483d-9702-ca37aafd2ed6' /> </p>
 <br />
 
-#### D. Clavier
+### D. Clavier
 <p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/1364a050-a3ad-49ca-83d5-b5fb83363cd0' /> </p>
 <br />
 
-#### E. Définir le nom de la machine
+### E. Définir le nom de la machine
 <p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/f56498d6-5b0b-4b9e-b10e-0134f1f80026' /> </p>
 <br />
 
-#### F. Définir le nom de domaine de la machine
+### F. Définir le nom de domaine de la machine
 <p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/0036ebf8-a8fd-4860-89cd-c2687a963c41' /> </p>
 <br />
 
-#### G. Définir le nom de domaine de la machine
+### G. Définir le nom de domaine de la machine
 <p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/0036ebf8-a8fd-4860-89cd-c2687a963c41' /> </p>
 <br />
 
-#### H. Définir le mot de passe Root
+### H. Définir le mot de passe Root
 <p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/9c779df0-342f-4843-8ff1-c42abb647b4f' /> </p>
 
 <p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/a09b7cb9-a270-486d-a767-90568ce8beb1' /> </p>
 <br />
 
-#### I. Définir le nom visuel de l'utilisateur
+### I. Définir le nom visuel de l'utilisateur
 <p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/8da86feb-8794-4111-a97d-289ea8fa3537' /> </p>
 <br />
 
-#### J. Définir le nom d'utilisateur réel
+### J. Définir le nom d'utilisateur réel
 <p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/c7e11f8a-f510-437a-8f6d-617ae8b6c893' /> </p>
 <br />
 
-#### K. Définir le mot de passe
+### K. Définir le mot de passe
 <p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/fb14928e-83d4-4a5b-8686-5996b30530f3' /> </p>
 
 <p align='center'> <img src='https://github.com/Drthrax74/Linux/assets/35907/777e1f78-80eb-40ac-ad06-f2721b9cf6af' /> </p>
@@ -99,24 +99,24 @@ Le mode `Install` est une installation en mode clavier sans souris.
 <br />
 
 ---------------------------------------------------------------------------------------------------------------------------
-### IV. Installation de Debian (Partie 2)
-#### A. Présentation
+## IV. Installation de Debian (Partie 2)
+### A. Présentation
 Le guide suivant apprend l'installation de Debian sans utiliser la technologie LVM.
 
 Pour un serveur, il est recommandé en LVM.
 
-#### X. Méthode de partitionnement
+### X. Méthode de partitionnement
 Le partitionnement se fera en manuel.
 
 <p align='center'> <img src='https://github.com/user-attachments/assets/03880a02-a294-4635-a1e6-39179da633c0' /> </p>
 <br />
 
-#### X. Partitionner les disques
+### X. Partitionner les disques
 Le disque-dur se nomme `sda`
 <p align='center'> <img src='https://github.com/user-attachments/assets/1ca2210f-b113-4956-9de9-9e1a5f14a1b9' /> </p>
 
-#### X. Partition de démarrage
-##### 1. Créer la partition
+### X. Partition de démarrage
+#### 1. Créer la partition
 Sélectionner `l'espace libre` > `Entrer` > `Créer une noouvelle partition` > `Taille: 512Mo` > `Début du disque` > .
 
 <p align='center'> <img src='https://github.com/user-attachments/assets/bfec2d16-4fd6-43ed-8944-de127b24ebd2' /> </p>
@@ -125,7 +125,7 @@ Sélectionner `l'espace libre` > `Entrer` > `Créer une noouvelle partition` > `
 
 <p align='center'> <img src='https://github.com/user-attachments/assets/9606a7c0-f398-4365-aa6a-f3285cb4171f' /> </p>
 
-##### 2. Partition de démarrage EFI
+#### 2. Partition de démarrage EFI
 Sélectionner `Utiliser comme` > `Partition système EFI` > `Fin de paramètrage de cette partition`. (ESP = EFI)
 
 <p align='center'> <img src='https://github.com/user-attachments/assets/2238542b-5999-4814-ae34-fdccaa4685f6' /> </p>
@@ -135,7 +135,7 @@ Sélectionner `Utiliser comme` > `Partition système EFI` > `Fin de paramètrage
 <p align='center'> <img src='https://github.com/user-attachments/assets/ae8c9fa4-d34f-4cac-96b1-695eef3b6605' /> </p>
 <br />
 
-#### X. Création de la partition SWAP
+### X. Création de la partition SWAP
 La partition `SWAP` permet de compenser le manque de mémoire-vive. Il n'existe pas de règle absolu pour la politique de l'espace nécessaire.
 
 Sélectionner `Utiliser comme` > `Espace d'échange "SWAP"`.
@@ -147,7 +147,7 @@ Sélectionner `Utiliser comme` > `Espace d'échange "SWAP"`.
 <p align='center'> <img src='https://github.com/user-attachments/assets/cb978147-ff24-4ade-9df7-b55246f3f95b' /> </p>
 <br />
 
-#### X. Création de la partition SYSTEM
+### X. Création de la partition SYSTEM
 La partition système est celle qui correspond à Debian. Un système linux en **mode serveur** est très peu gourmand en espace de stockage.
 
 Il est fort utile de définir un `Nom` et un `Label` pour l'identifier en ligne de commande. (Dans mon cas, j'ai choisis `SYSTEM`)
@@ -161,7 +161,7 @@ Le point de montage `/` définit la partition Système.
 <p align='center'> <img src='https://github.com/user-attachments/assets/63a86f70-b917-41ef-bf86-c49880a27554' /> </p>
 <br />
 
-#### X. Création de la partition HOME
+### X. Création de la partition HOME
 La partition HOME permet de séparer le système des données utilisateur. L'utilisation de l'espace disque est selon son usage.
 
 Le point de montage `/home` définit la partition HOME. Dans mon cas, je prend le reste de l'espace disponible
@@ -171,7 +171,7 @@ Le point de montage `/home` définit la partition HOME. Dans mon cas, je prend l
 <p align='center'> <img src='https://github.com/user-attachments/assets/32789d4e-d639-4ec1-b8f0-53cfec4779b6' /> </p>
 <br />
 
-#### X. Résumé
+### X. Résumé
 <p align='center'> <img src='https://github.com/user-attachments/assets/32789d4e-d639-4ec1-b8f0-53cfec4779b6' /> </p>
 
 Le Disque-dur se nomme `sda` et dispose de `10.7 Go`.
@@ -185,7 +185,7 @@ La parition N°3: SYSTEM, au format EXT4 et pèse 6G
 La parition N°4: HOME, au format EXT4 et pèse 3.2Go.
 
 
-#### X. Appliquer les modifications
+### X. Appliquer les modifications
 A l'instant on répond Oui, le disque-dur sera modifier réellement, en cas d'erreur, il suffit de faire non et de redémarrer le poste.
 
 <p align='center'> <img src='https://github.com/user-attachments/assets/68e26a85-ca2b-4a09-8acf-75556ee18432' /> </p>
@@ -193,6 +193,8 @@ A l'instant on répond Oui, le disque-dur sera modifier réellement, en cas d'er
 <br />
 <br />
 
+
+
 ---------------------------------------------------------------------------------------------------------------------------
 ### V. Installation de Debian (Partie 3)
-
+#### A. 
