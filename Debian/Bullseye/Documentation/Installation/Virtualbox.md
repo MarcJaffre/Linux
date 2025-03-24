@@ -154,29 +154,22 @@ Le point de montage `/` définit la partition Système.
 #### X. Création de la partition HOME
 La partition HOME permet de séparer le système des données utilisateur. L'utilisation de l'espace disque est selon son usage.
 
-Le point de montage `/home` définit la partition HOME.
-
-<p align='center'> <img src='https://github.com/user-attachments/assets/0ae43a75-7423-4cd0-9333-520f53075c6b' /> </p>
+Le point de montage `/home` définit la partition HOME. Dans mon cas, je prend le reste de l'espace disponible
 
 <p align='center'> <img src='https://github.com/user-attachments/assets/177acbcf-19b9-45ce-9a08-aece57b4e633' /> </p>
+
+<p align='center'> <img src='https://github.com/user-attachments/assets/32789d4e-d639-4ec1-b8f0-53cfec4779b6' /> </p>
 <br />
 
-
-
-
-
-
-
 #### X. Résumé
-<p align='center'> <img src='' /> </p>
+<p align='center'> <img src='https://github.com/user-attachments/assets/32789d4e-d639-4ec1-b8f0-53cfec4779b6' /> </p>
 
 Le Disque-dur se nomme `sda` et dispose de `10.7 Go`.
 
-La parition N°1 
+La parition N°1 : EFI, au format EXT4 et pèse 512Mo.
 
+La parition N°2: SWAP, aucun format et pèse 1Go.
 
-<p align='center'> <img src='' /> </p>
+La parition N°3: SYSTEM, au format EXT4 et pèse 6G
 
-<p align='center'> <img src='' /> </p>
-
-<p align='center'> <img src='' /> </p>
+La parition N°4: HOME, au format EXT4 et pèse 3.2Go.
