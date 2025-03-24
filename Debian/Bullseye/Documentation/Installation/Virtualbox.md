@@ -194,10 +194,14 @@ A l'instant on répond Oui, le disque-dur sera modifier réellement, en cas d'er
 <br />
 
 ---------------------------------------------------------------------------------------------------------------------------
-### V. Installation de Debian (Partie 3)
-#### A. Configurer l'outil de gestion des paquets
+## V. Installation de Debian (Partie 3)
+### A. Configurer l'outil de gestion des paquets
+#### 1. DVD
 Si on dispose de plusieurs DVD Debian qui permet 
-
+### B. Dépôt
+Si la machine dispose d'internet, réponde oui pour le choix d'un miroir. (Un miroir est une source contenant des paquets linux)
 ![image](https://github.com/user-attachments/assets/426dc122-372b-45c3-ae43-526a7af5516b)
+
+![image](https://github.com/user-attachments/assets/aadb132b-7ffe-4595-9430-692b8341e40b)
 
 
