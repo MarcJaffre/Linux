@@ -122,7 +122,7 @@ Sélectionner `Utiliser comme` > `Partition système EFI` > `Fin de paramètrage
 
 <p align='center'> <img src='https://github.com/user-attachments/assets/a77ef429-4b28-4c78-9524-833fc8782fec' /> </p>
 
-<p align='center'> <img src='https://github.com/user-attachments/assets/039a7f8a-b6fa-479c-8425-f8374cb59f4c' /> </p>
+<p align='center'> <img src='' /> </p>
 <br />
 
 #### X. Création de la partition SYSTEM
@@ -136,7 +136,7 @@ Le point de montage `/` définit la partition Système.
 
 <p align='center'> <img src='https://github.com/user-attachments/assets/a6c2dc01-2270-4b7b-8f23-fae460cbe331' /> </p>
 
-<p align='center'> <img src='https://github.com/user-attachments/assets/509d9c59-c640-4fd7-ab6c-412fa5eb62ae' /> </p>
+<p align='center'> <img src='' /> </p>
 <br />
 
 #### X. Création de la partition SWAP
@@ -148,10 +148,8 @@ Sélectionner `Utiliser comme` > `Espace d'échange "SWAP"`.
 
 <p align='center'> <img src='https://github.com/user-attachments/assets/8ed37ff6-13d8-4e6c-a72b-f3eb4dc501be' /> </p>
 
-<p align='center'> <img src='https://github.com/user-attachments/assets/8062e759-5bf0-4d2e-91e8-6802be98422d' /> </p>
-<br />
-
 <p align='center'> <img src='' /> </p>
+<br />
 
 
 #### X. Création de la partition HOME
@@ -161,11 +159,11 @@ Le point de montage `/home` définit la partition HOME.
 
 <p align='center'> <img src='https://github.com/user-attachments/assets/0ae43a75-7423-4cd0-9333-520f53075c6b' /> </p>
 
-<p align='center'> <img src='https://github.com/user-attachments/assets/9a429d99-e23b-44fb-a483-99d4789eb95f' /> </p>
+<p align='center'> <img src='' /> </p>
 
 
 #### X. Résumé
-<p align='center'> <img src='https://github.com/user-attachments/assets/9a429d99-e23b-44fb-a483-99d4789eb95f' /> </p>
+<p align='center'> <img src='' /> </p>
 
 Le Disque-dur se nomme `sda` et dispose de `10.7 Go`.
 
