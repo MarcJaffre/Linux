@@ -173,3 +173,16 @@ La parition N°2: SWAP, aucun format et pèse 1Go.
 La parition N°3: SYSTEM, au format EXT4 et pèse 6G
 
 La parition N°4: HOME, au format EXT4 et pèse 3.2Go.
+
+
+#### X. Appliquer les modifications
+A l'instant on répond Oui, le disque-dur sera modifier réellement, en cas d'erreur, il suffit de faire non et de redémarrer le poste.
+
+<p align='center'> <img src='https://github.com/user-attachments/assets/68e26a85-ca2b-4a09-8acf-75556ee18432' /> </p>
+
+<br />
+<br />
+
+---------------------------------------------------------------------------------------------------------------------------
+### V. Installation de Debian (Partie 3)
+
