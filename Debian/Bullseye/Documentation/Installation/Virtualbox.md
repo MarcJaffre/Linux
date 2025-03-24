@@ -91,14 +91,14 @@ Le mode `Install` est une installation en mode clavier sans souris.
 ---------------------------------------------------------------------------------------------------------------------------
 ### IV. Installation de Debian (Partie 2)
 #### A. Présentation
-Le partitionnement suivant n'utilise pas la technologie LVM. 
+Le guide suivant apprend l'installation de Debian sans utiliser la technologie LVM.
 
-En n'utilisant pas le partitionnement en LVM, le redimensionnement des partitions à chaud est compliquer.
+Pour un serveur, il est recommandé en LVM.
 
 #### B. Création de la table de partition
 
 #### C. Création de la partition de démarrage
-##### 1. Mode MBR (Screen à faire)
+##### 1. Mode MBR
 <p align='center'> <img src='' /> </p>
 
 ##### 2. Mode EFI (Screen à faire)
