@@ -161,6 +161,9 @@ Le point de montage `/home` définit la partition HOME.
 
 <p align='center'> <img src='https://github.com/user-attachments/assets/0ae43a75-7423-4cd0-9333-520f53075c6b' /> </p>
 
+<p align='center'> <img src='https://github.com/user-attachments/assets/9a429d99-e23b-44fb-a483-99d4789eb95f' /> </p>
+
+
 
 <p align='center'> <img src='' /> </p>
 
