@@ -164,6 +164,13 @@ Le point de montage `/home` définit la partition HOME.
 <p align='center'> <img src='https://github.com/user-attachments/assets/9a429d99-e23b-44fb-a483-99d4789eb95f' /> </p>
 
 
+#### X. Résumé
+<p align='center'> <img src='https://github.com/user-attachments/assets/9a429d99-e23b-44fb-a483-99d4789eb95f' /> </p>
+
+Le Disque-dur se nomme `sda` et dispose de `10.7 Go`.
+
+La parition N°1 
+
 
 <p align='center'> <img src='' /> </p>
 
