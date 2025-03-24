@@ -148,7 +148,7 @@ Le point de montage `/` définit la partition Système.
 
 <p align='center'> <img src='https://github.com/user-attachments/assets/a6c2dc01-2270-4b7b-8f23-fae460cbe331' /> </p>
 
-<p align='center'> <img src='https://github.com/user-attachments/assets/f5bdd214-6794-4ea3-823f-c0d0c62c3549' /> </p>
+<p align='center'> <img src='https://github.com/user-attachments/assets/63a86f70-b917-41ef-bf86-c49880a27554' /> </p>
 <br />
 
 #### X. Création de la partition HOME
@@ -160,6 +160,9 @@ Le point de montage `/home` définit la partition HOME.
 
 <p align='center'> <img src='' /> </p>
 <br />
+
+
+
 
 
 #### X. Résumé
