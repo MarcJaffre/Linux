@@ -89,4 +89,39 @@ cat > /etc/motd << EOF
 EOF
 ```
 
+<br />
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+## II. Installation des paquets
+### A. Paquets
+```bash
+clear;
+apt install -y acl;
+apt install -y apt-transport-https;
+apt install -y ca-certificates;
+apt install -y curl;
+apt install -y fping;
+apt install -y git;
+apt install -y graphviz;
+apt install -y imagemagick;
+apt install -y lsb-release;
+apt install -y mariadb-client;
+apt install -y mariadb-server;
+apt install -y mtr-tiny;
+apt install -y nginx-full;
+apt install -y nmap;
+apt install -y python3-dotenv;
+apt install -y python3-pymysql;
+apt install -y python3-redis;
+apt install -y python3-setuptools;
+apt install -y python3-systemd;
+apt install -y python3-pip;
+apt install -y rrdtool;
+apt install -y snmp;
+apt install -y snmpd;
+apt install -y unzip;
+apt install -y whois;
+apt install -y wget;
+apt install -y jq;
+```
 
