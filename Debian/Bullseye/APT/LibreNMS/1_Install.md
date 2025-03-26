@@ -133,7 +133,7 @@ apt install -y whois;
 #### 2. PHP-8
 ```bash
 clear;
-wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg 2>/dev/null;;
+wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg 2>/dev/null;
 echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/php.list;
 apt update 1>/dev/null;
 apt install -y php 1>/dev/null;
