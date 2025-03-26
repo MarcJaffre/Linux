@@ -3,18 +3,21 @@
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 ## I. Préparation de l'environnement
 ### A. Configuration réseau
-#### 1. Networking
+#### 1. Networking (Loopback)
 ```bash
 clear;
-# ----------------------------------------------------------------------
-INTER_NET=$(ip add | grep "2: " | cut -d: -f 2 | cut -c 2-9)
-# ----------------------------------------------------------------------
 cat > /etc/network/interfaces << EOF
 source /etc/network/interfaces.d/*
 auto lo
 iface lo inet loopback
 EOF
-# ----------------------------------------------------------------------
+```
+
+#### 2. Networking (Ethernet)
+```bash
+clear;
+INTER_NET=$(ip add | grep "2: " | cut -d: -f 2 | cut -c 2-9)
+
 cat > /etc/network/interfaces.d/ethernet << EOF
 auto $INTER_NET
 allow-hotplug $INTER_NET
@@ -22,12 +25,22 @@ iface $INTER_NET inet static
  address 192.168.0.34/24
  gateway 192.168.0.1
 EOF
-# ----------------------------------------------------------------------
-systemctl restart networking;
 ```
 
-#### 2. Resolv.conf
-
+#### 3. Resolv.conf
+```bash
+clear;
+cat > /etc/resolv.conf << EOF
+domain home.lan
+search home.lan
+nameserver 192.168.0.1
+EOF
+```
+#### 4. Relance du service
+```bash
+clear;
+systemctl restart networking;
+```
 
 ### B. Configuration Dépôt
 ```bash
