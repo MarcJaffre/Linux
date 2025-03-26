@@ -210,5 +210,20 @@ mysql -u root -padmin -e "ALTER USER librenms@localhost IDENTIFIED VIA mysql_nat
 mysql -u librenms -padmin -e "SHOW DATABASES;"
 ```
 
+### G. PHP-FPM
+#### 1. Librenms.conf
+```bash
+clear;
+PHP_VERSION=$(php -v | head -n 1 | cut -c 5-7)
+cat /etc/php/$PHP_VERSION/fpm/pool.d/www.conf > /etc/php/$PHP_VERSION/fpm/pool.d/librenms.conf;
+```
+#### 2. Remplacement de terme
+```bash
+clear;
+sed -i -e "s/\[www\]/\[librenms\]/g"                 /etc/php/$PHP_VERSION/fpm/pool.d/librenms.conf;
+sed -i -e "s/^user \= www-data/user \= librenms/g"   /etc/php/$PHP_VERSION/fpm/pool.d/librenms.conf;
+sed -i -e "s/^group \= www-data/group \= librenms/g" /etc/php/$PHP_VERSION/fpm/pool.d/librenms.conf;
+sed -i -e "s/\/run\/php\/php8.3\-fpm.sock/\/run\/php\-fpm\-librenms.sock/g" /etc/php/$PHP_VERSION/fpm/pool.d/librenms.conf;
 
-
+grep "librenms" /etc/php/$PHP_VERSION/fpm/pool.d/librenms.conf;
+```
