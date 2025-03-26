@@ -54,3 +54,12 @@ deb     http://ftp.fr.debian.org/debian/           bullseye-updates   main contr
 deb-src http://ftp.fr.debian.org/debian/           bullseye-updates   main contrib
 EOF
 ```
+
+### C. Mise à jour
+```bash
+clear;
+apt update 1>/dev/null;
+apt update -y;
+```
+
+
