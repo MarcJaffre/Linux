@@ -183,7 +183,7 @@ runuser -l librenms -c './scripts/composer_wrapper.php install --no-dev';
 ### F. MariaDB
 ```bash
 clear;
-/etc/mysql/mariadb.conf.d/50-server.cnf
+sed -i -e "s/\[mysqld\]/\[mysqld\]\ninnodb\_file\_per\_table\=1\nlower\_case\_table\_names\=0/g" /etc/mysql/mariadb.conf.d/50-server.cnf
 ```
 
 
