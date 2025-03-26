@@ -214,7 +214,7 @@ mysql_upgrade --force;
 ```
 
 
-```
+```bash
 clear;
 mysql -u root -padmin -e "DROP DATABASE IF EXISTS librenms";
 mysql -u root -padmin -e "DROP USER IF EXISTS 'librenms'@'localhost';"
