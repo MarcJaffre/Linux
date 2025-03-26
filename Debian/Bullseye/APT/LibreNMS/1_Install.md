@@ -153,7 +153,6 @@ sed -i -e "s/^\;date.timezone \=/date.timezone \= Europe\/Paris/g" /etc/php/$PHP
 ```
 
 
-
 ### B. Utilisateur
 ```bash
 clear;
@@ -194,6 +193,11 @@ systemctl enable --now mariadb;
 ```
 
 #### 3. Sécurisation
+```bash
+clear;
+MARIADB_PASS_ROOT_SQL="admin"
+(echo ""; echo "y"; echo "y"; echo "$MARIADB_PASS_ROOT_SQL"; echo "$MARIADB_PASS_ROOT_SQL"; echo "y"; echo "n"; echo "y"; echo "y") | mysql_secure_installation;
+```
 
 #### 4. BDD + Accès
 ```bash
