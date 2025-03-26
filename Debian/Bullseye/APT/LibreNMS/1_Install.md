@@ -141,6 +141,14 @@ apt install -y php8.2-{cli,curl,fpm,gd,gmp,mbstring,mysql,snmp,xml,zip} 1>/dev/n
 php -v | head -n 1 | cut -c 1-7;
 ```
 
+#### 3. Fuseau Horaire (PHP 8.X)
+```bash
+clear;
+VERSION=$(php -v | head -n 1 | cut -c 5-7)
+sed -i -e "s/^\;date.timezone \=/date.timezone \= Europe\/Paris/g" /etc/php/$VERSION/fpm/php.ini;
+sed -i -e "s/^\;date.timezone \=/date.timezone \= Europe\/Paris/g" /etc/php/$VERSION/cli/php.ini;
+```
+
 ### B. Création de l'utilisateur LibreNMS
 ```bash
 clear;
@@ -167,4 +175,9 @@ setfacl -R -m g::rwx /opt/librenms/rrd /opt/librenms/logs /opt/librenms/bootstra
 ```bash
 clear;
 runuser -l librenms -c './scripts/composer_wrapper.php install --no-dev';
+```
+#### 4. Relance du service
+```bash
+clear;
+systemctl restart php8.2-fpm.service;
 ```
