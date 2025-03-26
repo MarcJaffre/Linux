@@ -100,7 +100,7 @@ EOF
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 ## II. Déploiement de LibreNMS
-### A. Paquetts
+### A. Paquets
 #### 1. Indispensables
 ```bash
 clear;
@@ -130,7 +130,6 @@ apt install -y snmpd;
 apt install -y unzip;
 apt install -y whois;
 ```
-
 #### 2. PHP-8
 ```bash
 clear;
@@ -139,9 +138,18 @@ echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc/apt
 apt update 1>/dev/null;
 apt install -y php;
 ```
-
 #### 3. Extension PHP-8
 ```bash
 clear;
 apt install -y php-{cli,curl,fpm,gd,gmp,mbstring,mysql,snmp,xml,zip};
 ```
+
+
+### B. Utilisateur
+```bash
+clear;
+useradd librenms -d /opt/librenms -M -r -s "$(which bash)";
+```
+
+
+
