@@ -291,7 +291,7 @@ EOF
 ### C. Activation du site
 ```bash
 clear;
-rm /etc/nginx/sites-enabled/default;
+rm /etc/nginx/sites-enabled/default 2>/dev/null;
 nginx -t;
 systemctl reload nginx;
 systemctl restart php8.2-fpm;
