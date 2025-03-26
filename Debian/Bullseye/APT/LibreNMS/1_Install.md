@@ -75,11 +75,9 @@ EOF
 
 cat > /etc/hosts << EOF
 127.0.0.1       localhost
-127.0.1.1       LibreNMS.home.lan     LibreNMS
 192.168.0.34    LibreNMS.home.lan     LibreNMS
 EOF
 ```
-
 
 ### E. MotD
 ```bash
