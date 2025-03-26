@@ -144,6 +144,15 @@ clear;
 apt install -y php-{cli,curl,fpm,gd,gmp,mbstring,mysql,snmp,xml,zip};
 ```
 
+#### 4. Fuseau Horaires
+```bash
+clear;
+PHP_VERSION=$(php -v | head -n 1 | cut -c 5-7)
+sed -i -e "s/^\;date.timezone \=/date.timezone \= Europe\/Paris/g" /etc/php/$PHP_VERSION/fpm/php.ini;
+sed -i -e "s/^\;date.timezone \=/date.timezone \= Europe\/Paris/g" /etc/php/$PHP_VERSION/cli/php.ini;
+```
+
+
 
 ### B. Utilisateur
 ```bash
@@ -170,7 +179,6 @@ setfacl -R -m g::rwx /opt/librenms/rrd /opt/librenms/logs /opt/librenms/bootstra
 clear;
 runuser -l librenms -c './scripts/composer_wrapper.php install --no-dev';
 ```
-
-
+### F. Fuseau 
 
 
