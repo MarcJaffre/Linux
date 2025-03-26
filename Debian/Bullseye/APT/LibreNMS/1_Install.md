@@ -151,5 +151,17 @@ clear;
 useradd librenms -d /opt/librenms -M -r -s "$(which bash)";
 ```
 
+### C. Télécharger LibreNMS
+```bash
+clear;
+git clone https://github.com/librenms/librenms.git /opt/librenms 2>/dev/null;
+```
 
+### D. Permissions
+```
+chown -R librenms:librenms /opt/librenms;
+chmod 771 /opt/librenms;
+setfacl -d -m g::rwx /opt/librenms/rrd /opt/librenms/logs /opt/librenms/bootstrap/cache/ /opt/librenms/storage/;
+setfacl -R -m g::rwx /opt/librenms/rrd /opt/librenms/logs /opt/librenms/bootstrap/cache/ /opt/librenms/storage/;
+```
 
