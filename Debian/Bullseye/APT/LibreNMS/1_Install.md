@@ -268,3 +268,25 @@ PHP_VERSION=$(php -v | head -n 1 | cut -c 5-7)
 systemctl reload nginx
 systemctl restart php$PHP_VERSION-fpm;
 ```
+
+### H. LNMS
+```bash
+clear;
+ln -s /opt/librenms/lnms /usr/bin/lnms
+cp /opt/librenms/misc/lnms-completion.bash /etc/bash_completion.d/
+```
+### I. SNMP
+```bash
+clear;
+cp /opt/librenms/snmpd.conf.example /etc/snmp/snmpd.conf;
+sed -i -e "s/RANDOMSTRINGGOESHERE/librenms/g" /etc/snmp/snmpd.conf;
+```
+
+### I. Agent
+```bash
+clear;
+curl -o /usr/bin/distro https://raw.githubusercontent.com/librenms/librenms-agent/master/snmp/distro;
+chmod +x /usr/bin/distro;
+systemctl enable  snmpd;
+systemctl restart snmpd;
+```
