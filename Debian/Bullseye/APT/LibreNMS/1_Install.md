@@ -59,7 +59,7 @@ EOF
 ```bash
 clear;
 apt update 1>/dev/null;
-apt update -y;
+apt dist-upgrade -y;
 ```
 
 
