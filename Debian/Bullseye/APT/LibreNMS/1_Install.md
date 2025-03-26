@@ -131,13 +131,17 @@ apt install -y unzip;
 apt install -y whois;
 ```
 
-#### 2. PHP 8.2
+#### 2. PHP-8
 ```bash
 clear;
+wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg;
+echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/php.list;
+apt update 1>/dev/null;
+apt install -y php;
 ```
 
-#### 3. Extension PHP 8.2
+#### 3. Extension PHP-8
 ```bash
 clear;
-apt install -y php-cli php-curl php-fpm php-gd php-gmp php-mbstring php-mysql php-snmp php-xml php-zip
+apt install -y php-{cli,curl,fpm,gd,gmp,mbstring,mysql,snmp,xml,zip};
 ```
