@@ -227,3 +227,40 @@ sed -i -e "s/\/run\/php\/php8.3\-fpm.sock/\/run\/php\-fpm\-librenms.sock/g" /etc
 
 grep "librenms" /etc/php/$PHP_VERSION/fpm/pool.d/librenms.conf;
 ```
+
+#### 3. VirtualHost
+```bash
+clear;
+rm /etc/nginx/sites-enabled/default 2>/dev/null;
+
+cat > /etc/nginx/sites-enabled/librenms.vhost << EOF
+server {
+ listen      80;
+ server_name 192.168.0.34;
+ root        /opt/librenms/html;
+ index       index.php;
+
+ charset utf-8;
+ gzip on;
+ gzip_types text/css application/javascript text/javascript application/x-javascript image/svg+xml text/plain text/xsd text/xsl text/xml image/x-icon;
+ location / {
+  try_files \$uri \$uri/ /index.php?\$query_string;
+ }
+ location ~ [^/]\.php(/|$) {
+  fastcgi_pass unix:/run/php-fpm-librenms.sock;
+  fastcgi_split_path_info ^(.+\.php)(/.+)$;
+  include fastcgi.conf;
+ }
+ location ~ /\.(?!well-known).* {
+  deny all;
+ }
+}
+EOF
+```
+#### 4. Appliquer changement
+```bash
+clear;
+PHP_VERSION=$(php -v | head -n 1 | cut -c 5-7)
+systemctl reload nginx
+systemctl restart php$PHP_VERSION-fpm;
+```
