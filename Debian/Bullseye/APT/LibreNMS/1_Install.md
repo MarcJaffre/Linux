@@ -335,3 +335,20 @@ chmod 771 /opt/librenms
 setfacl -d -m g::rwx /opt/librenms/rrd /opt/librenms/logs /opt/librenms/bootstrap/cache/ /opt/librenms/storage/
 setfacl -R -m g::rwx /opt/librenms/rrd /opt/librenms/logs /opt/librenms/bootstrap/cache/ /opt/librenms/storage/
 ```
+
+### N. Env
+```bash
+clear;
+sed -i -e "s/\#DB_HOST\=/DB_HOST\=localhost/g" /opt/librenms/.env
+sed -i -e "s/\#DB_DATABASE\=/DB_DATABASE\=librenms/g" /opt/librenms/.env
+sed -i -e "s/\#DB_USERNAME\=/DB_USERNAME\=librenms/g" /opt/librenms/.env
+sed -i -e "s/\#DB_PASSWORD\=/DB_PASSWORD\=admin/g" /opt/librenms/.env
+```
+
+<br />
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
