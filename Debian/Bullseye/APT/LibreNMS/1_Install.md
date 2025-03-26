@@ -248,7 +248,7 @@ systemctl status       mariadb;
 <br />
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
-## IV. Configuration
+## IV. Configuration de LibreNMS
 ### A. PHP
 ```bash
 clear;
@@ -293,3 +293,11 @@ nginx -t;
 systemctl reload nginx;
 systemctl restart php8.2-fpm;
 ```
+
+### D. Activation de LNMS
+```bash
+clear;
+ln -s /opt/librenms/lnms /usr/bin/lnms;
+cp /opt/librenms/misc/lnms-completion.bash /etc/bash_completion.d;
+```
+
