@@ -214,6 +214,21 @@ mysql_upgrade --force;
 ```
 
 
+```
+clear;
+mysql -u root -padmin -e "DROP DATABASE IF EXISTS librenms";
+mysql -u root -padmin -e "DROP USER IF EXISTS 'librenms'@'localhost';"
+mysql -u root -padmin -e "SELECT User FROM mysql.user; SHOW DATABASES;"
+mysql -u root -padmin -e "CREATE DATABASE IF NOT EXISTS librenms CHARACTER SET utf8 COLLATE utf8_unicode_ci;"
+mysql -u root -padmin -e "CREATE USER IF NOT EXISTS 'librenms'@'localhost' IDENTIFIED BY 'PASSSWORD123';"
+mysql -u root -padmin -e "GRANT ALL PRIVILEGES ON librenms.* TO 'librenms'@'localhost';"
+mysql -u root -padmin -e "ALTER USER librenms@localhost IDENTIFIED VIA mysql_native_password USING PASSWORD('PASSSWORD123');"
+mysql -u root -padmin -e "SELECT User FROM mysql.user; SHOW DATABASES;"
+mysql -u librenms -pPASSWORD123 -e "SHOW DATABASES;"
+```
+
+
+
 ### G. PHP-FPM
 #### 1. Librenms.conf
 ```bash
