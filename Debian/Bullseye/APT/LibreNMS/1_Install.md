@@ -300,4 +300,40 @@ clear;
 ln -s /opt/librenms/lnms /usr/bin/lnms;
 cp /opt/librenms/misc/lnms-completion.bash /etc/bash_completion.d;
 ```
+### E. SNMP
+#### 1. Configuration (Renommage)
+```bash
+clear;
+cp /opt/librenms/snmpd.conf.example /etc/snmp/snmpd.conf;
+```
+#### 2. Communauté
+```bash
+clear;
+sed -i -e "s/RANDOMSTRINGGOESHERE/librenms/g" /etc/snmp/snmpd.conf;
+```
 
+#### 3. Agent LibreNMS
+```bash
+clear;
+curl -o /usr/bin/distro https://raw.githubusercontent.com/librenms/librenms-agent/master/snmp/distro;
+chmod +x /usr/bin/distro;
+systemctl enable snmpd;
+systemctl restart snmpd;
+```
+#### 4. Cron
+```bash
+clear;
+cp /opt/librenms/dist/librenms.cron /etc/cron.d/librenms;
+```
+#### 5. Scheduler Timer
+```bash
+clear;
+cp /opt/librenms/dist/librenms-scheduler.service /opt/librenms/dist/librenms-scheduler.timer /etc/systemd/system/
+systemctl enable --now librenms-scheduler.timer;
+```
+
+#### 6. LogRotate
+```bash
+clear;
+cp /opt/librenms/misc/librenms.logrotate /etc/logrotate.d/librenms;
+```
