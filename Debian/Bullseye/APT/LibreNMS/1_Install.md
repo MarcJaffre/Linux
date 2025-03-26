@@ -158,7 +158,7 @@ git clone https://github.com/librenms/librenms.git /opt/librenms;
 ```bash
 clear;
 chmod 771 /opt/librenms;
-chown -R librenms:librenms opt/librenms
+chown -R librenms:librenms /opt/librenms
 setfacl -d -m g::rwx /opt/librenms/rrd /opt/librenms/logs /opt/librenms/bootstrap/cache/ /opt/librenms/storage/;
 setfacl -R -m g::rwx /opt/librenms/rrd /opt/librenms/logs /opt/librenms/bootstrap/cache/ /opt/librenms/storage/;
 ```
