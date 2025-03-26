@@ -79,7 +79,13 @@ cat > /etc/hosts << EOF
 EOF
 ```
 
-### E. MotD
+### E. Fuseau Horaire
+```bash
+clear;
+timedatectl set-timezone Europe/Paris;
+```
+
+### X. MotD
 ```bash
 clear;
 cat > /etc/motd << EOF
@@ -92,7 +98,7 @@ EOF
 <br />
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
-## II. Installation des paquets
+## II. Déploiement de LibreNMS
 ### A. Paquetts
 #### 1. Indispensables
 ```bash
@@ -130,7 +136,14 @@ apt install -y jq;
 clear;
 curl -sSLo /usr/share/keyrings/deb.sury.org-php.gpg https://packages.sury.org/php/apt.gpg;
 echo "deb [signed-by=/usr/share/keyrings/deb.sury.org-php.gpg] https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list;
-apt update;
+apt update 1>/dev/null;
 apt install -y php8.2-{cli,curl,fpm,gd,gmp,mbstring,mysql,snmp,xml,zip};
 php -v | head -n 1 | cut -c 1-7;
 ```
+
+### B. Création de l'utilisateur LibreNMS
+```bash
+clear;
+useradd librenms -d /opt/librenms -M -r -s "$(which bash)";
+```
+
