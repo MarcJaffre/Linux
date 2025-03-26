@@ -285,9 +285,6 @@ server {
 EOF
 ```
 
-
-
-
 ### C. Activation du site
 ```bash
 clear;
