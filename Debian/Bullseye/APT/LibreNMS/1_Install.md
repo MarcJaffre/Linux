@@ -264,7 +264,6 @@ systemctl restart php8.2-fpm.service;
 ```bash
 clear;
 cat > /etc/nginx/sites-enabled/librenms.vhost << EOF
-
 server {
  listen      80;
  server_name  192.168.0.34 _;
@@ -283,11 +282,11 @@ server {
   deny all;
  }
 }
-
 EOF
-
-
 ```
+
+
+
 
 ### C. Activation du site
 ```bash
