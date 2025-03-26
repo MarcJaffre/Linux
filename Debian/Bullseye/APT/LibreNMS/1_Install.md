@@ -179,6 +179,11 @@ setfacl -R -m g::rwx /opt/librenms/rrd /opt/librenms/logs /opt/librenms/bootstra
 clear;
 runuser -l librenms -c './scripts/composer_wrapper.php install --no-dev';
 ```
-### F. Fuseau 
+
+### F. MariaDB
+```bash
+clear;
+```
+
 
 
