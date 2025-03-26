@@ -181,3 +181,73 @@ runuser -l librenms -c './scripts/composer_wrapper.php install --no-dev';
 clear;
 systemctl restart php8.2-fpm.service;
 ```
+
+
+<br />
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+## III. Base de donnée
+### A. Sécurisation de MYSQL
+```bash
+clear;
+PASS_ROOT_SQL=admin
+apt install -y mariadb-server 1>/dev/null;
+(echo ""; echo "y"; echo "y"; echo "$PASS_ROOT_SQL"; echo "$PASS_ROOT_SQL"; echo "y"; echo "y"; echo "y"; echo "y") | mysql_secure_installation | 1>/dev/null;
+systemctl enable --now mariadb;
+```
+
+### B. Suppression de la BDD et USER
+```bash
+clear;
+mysql -u root -padmin -e "DROP DATABASE IF EXISTS librenms;DROP USER IF EXISTS 'librenms'@'localhost';"
+```
+
+### C. Création de la BDD
+```bash
+clear;
+mysql -u root -padmin -e "CREATE DATABASE IF NOT EXISTS librenms CHARACTER SET utf8 COLLATE utf8_unicode_ci;"
+```
+
+### D. Création de l'utilisateur
+```bash
+clear;
+mysql -u root -padmin -e "CREATE USER IF NOT EXISTS 'librenms'@'localhost' IDENTIFIED BY 'admin';"
+```
+
+### E. Permission de la BDD pour le compte
+```bash
+clear;
+mysql -u root -padmin -e "GRANT ALL PRIVILEGES ON librenms.* TO 'librenms'@'localhost';"
+mysql -u root -padmin -e "ALTER USER librenms@localhost IDENTIFIED VIA mysql_native_password USING PASSWORD('admin');"
+```
+
+### F. Vérification
+```bash
+clear;
+mysql -u root -padmin -e "SELECT User FROM mysql.user; SHOW DATABASES;"
+mysql -u librenms -padmin -e "SHOW DATABASES;"
+```
+### G. Configuration
+```bash
+clear;
+nano /etc/mysql/mariadb.conf.d/50-server.cnf;
+systemctl restart mariadb;
+```
+
+```
+[mysqld]
+innodb_file_per_table   = 1
+lower_case_table_names  = 0
+```
+# Activation du service
+```bash
+clear;
+systemctl enable --now mariadb;
+systemctl status       mariadb;
+```
+
+
+
+
+
+
