@@ -165,3 +165,12 @@ setfacl -d -m g::rwx /opt/librenms/rrd /opt/librenms/logs /opt/librenms/bootstra
 setfacl -R -m g::rwx /opt/librenms/rrd /opt/librenms/logs /opt/librenms/bootstrap/cache/ /opt/librenms/storage/;
 ```
 
+### E. Script Composer Wrapper
+```bash
+clear;
+runuser -l librenms -c './scripts/composer_wrapper.php install --no-dev';
+```
+
+
+
+
