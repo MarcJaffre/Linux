@@ -62,4 +62,30 @@ apt update 1>/dev/null;
 apt dist-upgrade -y;
 ```
 
+### D. Nom de la machine
+```bash
+clear;
+
+cat > /etc/hostname << EOF
+LibreNMS
+EOF
+
+cat > /etc/hosts << EOF
+127.0.0.1       localhost
+127.0.1.1       LibreNMS.home.lan     LibreNMS
+192.168.0.34    LibreNMS.home.lan     LibreNMS
+EOF
+```
+
+
+### E. MotD
+```bash
+clear;
+cat > /etc/motd << EOF
+############
+# Librenms #
+############
+EOF
+```
+
 
