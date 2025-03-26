@@ -315,7 +315,7 @@ cp /opt/librenms/dist/librenms.cron /etc/cron.d/librenms;
 ### K. Scheduler Timer 
 ```bash
 clear;
-cp /opt/librenms/dist/librenms-scheduler.service /opt/librenms/dist/librenms-scheduler.timer /etc/systemd/system/;
+cp /opt/librenms/dist/librenms-scheduler.service /opt/librenms/dist/librenms-scheduler.timer /etc/systemd/system/
 systemctl enable librenms-scheduler.timer;
 systemctl start  librenms-scheduler.timer;
 ```
