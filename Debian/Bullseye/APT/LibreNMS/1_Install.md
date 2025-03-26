@@ -141,7 +141,8 @@ php -v | head -n 1 | cut -c 5-7;
 #### 3. Extension PHP-8
 ```bash
 clear;
-apt install -y php-{cli,curl,fpm,gd,gmp,mbstring,mysql,snmp,xml,zip};
+PHP_VERSION=$(php -v | head -n 1 | cut -c 5-7)
+apt install -y php$PHP_VERSION-{cli,curl,fpm,gd,gmp,mbstring,mysql,snmp,xml,zip};
 ```
 
 #### 4. Fuseau Horaires
