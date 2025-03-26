@@ -290,3 +290,32 @@ chmod +x /usr/bin/distro;
 systemctl enable  snmpd;
 systemctl restart snmpd;
 ```
+
+### J. Cron
+```bash
+clear;
+cp /opt/librenms/dist/librenms.cron /etc/cron.d/librenms;
+```
+
+### K. Scheduler Timer 
+```bash
+clear;
+cp /opt/librenms/dist/librenms-scheduler.service /opt/librenms/dist/librenms-scheduler.timer /etc/systemd/system/;
+systemctl enable librenms-scheduler.timer;
+systemctl start  librenms-scheduler.timer;
+```
+
+### L. LogRotate
+```bash
+clear;
+cp /opt/librenms/misc/librenms.logrotate /etc/logrotate.d/librenms;
+```
+
+### M. Permission
+```bash
+clear;
+chown -R librenms:librenms /opt/librenms
+chmod 771 /opt/librenms
+setfacl -d -m g::rwx /opt/librenms/rrd /opt/librenms/logs /opt/librenms/bootstrap/cache/ /opt/librenms/storage/
+setfacl -R -m g::rwx /opt/librenms/rrd /opt/librenms/logs /opt/librenms/bootstrap/cache/ /opt/librenms/storage/
+```
