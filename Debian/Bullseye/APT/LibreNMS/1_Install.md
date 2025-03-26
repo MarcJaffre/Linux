@@ -209,7 +209,10 @@ mysql -u root -padmin -e "CREATE USER 'librenms'@'localhost' IDENTIFIED BY 'admi
 mysql -u root -padmin -e "GRANT ALL PRIVILEGES ON librenms.* TO 'librenms'@'localhost';"
 mysql -u root -padmin -e "ALTER USER librenms@localhost IDENTIFIED VIA mysql_native_password USING PASSWORD('admin');"
 mysql -u librenms -padmin -e "SHOW DATABASES;"
+
+mysql_upgrade --force;
 ```
+
 
 ### G. PHP-FPM
 #### 1. Librenms.conf
