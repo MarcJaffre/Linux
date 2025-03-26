@@ -5,7 +5,6 @@
 ### A. Configuration réseau
 `BC:24:11:D0:7A:A4`.
 
-
 #### 1. Networking (Loopback)
 ```bash
 clear;
@@ -15,7 +14,6 @@ auto lo
 iface lo inet loopback
 EOF
 ```
-
 #### 2. Networking (Ethernet)
 ```bash
 clear;
@@ -29,7 +27,6 @@ iface $INTER_NET inet static
  gateway 192.168.0.1
 EOF
 ```
-
 #### 3. Resolv.conf
 ```bash
 clear;
@@ -45,27 +42,8 @@ clear;
 systemctl restart networking;
 ```
 
-### B. Configuration Dépôt
-```bash
-clear;
-cat > /etc/apt/sources.list << EOF
-deb     http://ftp.fr.debian.org/debian/           bullseye           main non-free
-deb-src http://ftp.fr.debian.org/debian/           bullseye           main
-deb     http://security.debian.org/debian-security bullseye-security  main contrib
-deb-src http://security.debian.org/debian-security bullseye-security  main contrib
-deb     http://ftp.fr.debian.org/debian/           bullseye-updates   main contrib
-deb-src http://ftp.fr.debian.org/debian/           bullseye-updates   main contrib
-EOF
-```
 
-### C. Mise à jour
-```bash
-clear;
-apt update 1>/dev/null;
-apt dist-upgrade -y;
-```
-
-### D. Nom de la machine
+### B. Nom de la machine
 ```bash
 clear;
 
@@ -80,13 +58,13 @@ cat > /etc/hosts << EOF
 EOF
 ```
 
-### E. Fuseau Horaire
+### C. Fuseau Horaire
 ```bash
 clear;
 timedatectl set-timezone Europe/Paris;
 ```
 
-### X. MotD
+### D. MotD
 ```bash
 clear;
 cat > /etc/motd << EOF
@@ -94,6 +72,28 @@ cat > /etc/motd << EOF
 # Librenms #
 ############
 EOF
+```
+
+
+### E. Configuration Dépôt
+```bash
+clear;
+cat > /etc/apt/sources.list << EOF
+deb     http://ftp.fr.debian.org/debian/           bullseye           main non-free
+deb-src http://ftp.fr.debian.org/debian/           bullseye           main
+deb     http://security.debian.org/debian-security bullseye-security  main contrib
+deb-src http://security.debian.org/debian-security bullseye-security  main contrib
+deb     http://ftp.fr.debian.org/debian/           bullseye-updates   main contrib
+deb-src http://ftp.fr.debian.org/debian/           bullseye-updates   main contrib
+EOF
+```
+
+
+### F. Mise à jour
+```bash
+clear;
+apt update 1>/dev/null;
+apt dist-upgrade -y;
 ```
 
 <br />
