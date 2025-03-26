@@ -136,7 +136,8 @@ clear;
 wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg;
 echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/php.list;
 apt update 1>/dev/null;
-apt install -y php;
+apt install -y php 1>/dev/null;
+php -v | head -n 1 | cut -c 5-7;
 ```
 #### 3. Extension PHP-8
 ```bash
