@@ -193,7 +193,18 @@ systemctl restart mariadb;
 systemctl enable --now mariadb;
 ```
 
+#### 3. Sécurisation
 
+#### 4. BDD + Accès
+```bash
+clear;
+mysql -u root -padmin -e "DROP DATABASE IF EXISTS librenms;DROP USER IF EXISTS 'librenms'@'localhost';"
+mysql -u root -padmin -e "CREATE DATABASE IF NOT EXISTS librenms;"
+mysql -u root -padmin -e "CREATE USER 'librenms'@'localhost' IDENTIFIED BY 'admin';"
+mysql -u root -padmin -e "GRANT ALL PRIVILEGES ON librenms.* TO 'librenms'@'localhost';"
+mysql -u root -padmin -e "ALTER USER librenms@localhost IDENTIFIED VIA mysql_native_password USING PASSWORD('admin');"
+mysql -u librenms -padmin -e "SHOW DATABASES;"
+```
 
 
 
