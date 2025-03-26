@@ -151,6 +151,12 @@ PHP_VERSION=$(php -v | head -n 1 | cut -c 5-7)
 sed -i -e "s/^\;date.timezone \=/date.timezone \= Europe\/Paris/g" /etc/php/$PHP_VERSION/fpm/php.ini;
 sed -i -e "s/^\;date.timezone \=/date.timezone \= Europe\/Paris/g" /etc/php/$PHP_VERSION/cli/php.ini;
 ```
+#### 5. Activation (Optionnel)
+```bash
+clear;
+a2enmod proxy_fcgi setenvif
+a2enconf php8.3-fpm
+```
 
 
 ### B. Utilisateur
