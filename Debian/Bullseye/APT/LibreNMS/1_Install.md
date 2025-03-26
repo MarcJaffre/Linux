@@ -133,7 +133,7 @@ apt install -y whois;
 #### 2. PHP-8
 ```bash
 clear;
-wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg;
+wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg 2>/dev/null;;
 echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/php.list;
 apt update 1>/dev/null;
 apt install -y php 1>/dev/null;
@@ -151,12 +151,6 @@ clear;
 PHP_VERSION=$(php -v | head -n 1 | cut -c 5-7)
 sed -i -e "s/^\;date.timezone \=/date.timezone \= Europe\/Paris/g" /etc/php/$PHP_VERSION/fpm/php.ini;
 sed -i -e "s/^\;date.timezone \=/date.timezone \= Europe\/Paris/g" /etc/php/$PHP_VERSION/cli/php.ini;
-```
-#### 5. Activation (Optionnel)
-```bash
-clear;
-a2enmod proxy_fcgi setenvif
-a2enconf php8.3-fpm
 ```
 
 
