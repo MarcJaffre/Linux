@@ -93,7 +93,8 @@ EOF
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 ## II. Installation des paquets
-### A. Paquets
+### A. Paquetts
+#### 1. Indispensables
 ```bash
 clear;
 apt install -y acl;
@@ -124,4 +125,12 @@ apt install -y whois;
 apt install -y wget;
 apt install -y jq;
 ```
-
+#### 2. PHP 8.X
+```bash
+clear;
+curl -sSLo /usr/share/keyrings/deb.sury.org-php.gpg https://packages.sury.org/php/apt.gpg;
+echo "deb [signed-by=/usr/share/keyrings/deb.sury.org-php.gpg] https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list;
+apt update;
+apt install -y php8.2-{cli,curl,fpm,gd,gmp,mbstring,mysql,snmp,xml,zip};
+php -v | head -n 1 | cut -c 1-7;
+```
