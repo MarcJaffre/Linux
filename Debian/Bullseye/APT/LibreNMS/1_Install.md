@@ -263,7 +263,7 @@ systemctl restart php8.2-fpm.service;
 ### B. VirtualHost
 ```bash
 clear;
-nano /etc/nginx/sites-enabled/librenms.vhost
+cat > /etc/nginx/sites-enabled/librenms.vhost << EOF
 
 server {
  listen      80;
@@ -273,7 +273,7 @@ server {
  charset utf-8;
  gzip on;
  gzip_types text/css application/javascript text/javascript application/x-javascript image/svg+xml text/plain text/xsd text/xsl text/xml image/x-icon;
- location / { try_files $uri $uri/ /index.php?$query_string; }
+ location / { try_files \$uri \$uri/ /index.php?\$query_string; }
  location ~ [^/]\.php(/|$) {
   fastcgi_pass unix:/run/php-fpm-librenms.sock;
   fastcgi_split_path_info ^(.+\.php)(/.+)$;
@@ -283,6 +283,10 @@ server {
   deny all;
  }
 }
+
+EOF
+
+
 ```
 
 ### C. Activation du site
