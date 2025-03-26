@@ -182,7 +182,6 @@ clear;
 systemctl restart php8.2-fpm.service;
 ```
 
-
 <br />
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -246,8 +245,51 @@ systemctl enable --now mariadb;
 systemctl status       mariadb;
 ```
 
+<br />
 
+------------------------------------------------------------------------------------------------------------------------------------------------------
+## IV. Configuration
+### A. PHP
+```bash
+clear;
+cp /etc/php/8.2/fpm/pool.d/www.conf /etc/php/8.2/fpm/pool.d/librenms.conf;
+sed -i -e "s/\[www\]/[librenms]/g"                                                           /etc/php/8.2/fpm/pool.d/librenms.conf;
+sed -i -e "s/user \= www-data/user \= librenms/g"                                            /etc/php/8.2/fpm/pool.d/librenms.conf;
+sed -i -e "s/^group \= www-data/group \= librenms/g"                                         /etc/php/8.2/fpm/pool.d/librenms.conf;
+sed -i -e "s/listen \= \/run\/php\/php8.2-fpm.sock/listen \= \/run\/php-fpm-librenms.sock/g" /etc/php/8.2/fpm/pool.d/librenms.conf;
+grep -v "^;"  /etc/php/8.2/fpm/pool.d/librenms.conf;
+systemctl restart php8.2-fpm.service;
+```
+### B. VirtualHost
+```bash
+clear;
+nano /etc/nginx/sites-enabled/librenms.vhost
 
+server {
+ listen      80;
+ server_name  192.168.0.34 _;
+ root        /opt/librenms/html;
+ index       index.php;
+ charset utf-8;
+ gzip on;
+ gzip_types text/css application/javascript text/javascript application/x-javascript image/svg+xml text/plain text/xsd text/xsl text/xml image/x-icon;
+ location / { try_files $uri $uri/ /index.php?$query_string; }
+ location ~ [^/]\.php(/|$) {
+  fastcgi_pass unix:/run/php-fpm-librenms.sock;
+  fastcgi_split_path_info ^(.+\.php)(/.+)$;
+  include fastcgi.conf;
+ }
+ location ~ /\.(?!well-known).* {
+  deny all;
+ }
+}
+```
 
-
-
+### C. Activation du site
+```bash
+clear;
+rm /etc/nginx/sites-enabled/default;
+nginx -t;
+systemctl reload nginx;
+systemctl restart php8.2-fpm;
+```
