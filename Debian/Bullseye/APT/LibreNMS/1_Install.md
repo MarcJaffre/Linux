@@ -66,6 +66,8 @@ timedatectl set-timezone Europe/Paris;
 ### D. MotD
 ```bash
 clear;
+sed -i -e "s/^uname/#uname/g" /etc/update-motd.d/10-uname;
+
 cat > /etc/motd << EOF
 ############
 # Librenms #
