@@ -46,7 +46,7 @@ mysql_secure_installation
 /usr/bin/mariadb -u root -padmin -e "SELECT User FROM mysql.user; SHOW DATABASES;"
 ```
 
-### Liste des SQL gérer par le compte USER:
+### H. Liste des SQL gérer par le compte USER:
 ```
 /usr/bin/mariadb -u wikijs -pwikijsrocks -e "SHOW DATABASES;"
 ```
