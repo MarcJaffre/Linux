@@ -13,10 +13,6 @@ requête HTTP transmise, en attente de la réponse… 302 Found
 requête HTTP transmise, en attente de la réponse… 200 OK
 ```
 
-
-nano config.yml
-
-
 ### B. Création du dossier wiki
 ```bash
 clear;
