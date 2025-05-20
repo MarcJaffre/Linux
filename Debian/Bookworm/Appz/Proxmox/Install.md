@@ -28,13 +28,19 @@ sda                 8:0    0   1,8T  0 disk
   ├─vg0-SWAP      254:2    0   3,7G  0 lvm  [SWAP]
   ├─vg0-DATA      254:3    0 931,3G  0 lvm  /Data
 
+---------------------------------------------------------------------------------------------------------
+
 root@Proxmox:~# pvs
   PV         VG  Fmt  Attr PSize  PFree   
   /dev/sda2  vg0 lvm2 a--  <1,82t <774,37g
 
+---------------------------------------------------------------------------------------------------------
+
 root@Proxmox:~# vgs
   VG  #PV #LV #SN Attr   VSize  VFree   
   vg0   1   5   0 wz--n- <1,82t <774,37g
+
+---------------------------------------------------------------------------------------------------------
 
 root@Proxmox:~# lvs
   LV        VG  Attr       LSize   Pool Origin Data%  Meta%  Move Log Cpy%Sync Convert
