@@ -61,4 +61,6 @@ Définir la valeur sur `dn`.
 
 
 ### C. Inscription
-![image](https://github.com/user-attachments/assets/27ed60d7-1d9b-4686-a530-98b911c39f5d)
+Définir le nom de domaine `studi.local` et attacher au groupe `Wiki_User`.
+
+Il ne reste plus qu'a s'authentifié
