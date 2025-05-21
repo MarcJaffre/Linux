@@ -18,7 +18,12 @@ Créer un Compte `Marc` dans `Users` puis ajouter l'utilisateur dans le groupe `
 
 ---------------------------------------------------------------------------------------------------------------------
 ## II. WikiJS
-### A. Configuration de la stratégie
+### A. Groupe
+Crée un groupe local `Wiki_User` avec des droits de Lectures.
+
+Crée un groupe local `Wiki_Admin` avec des droits de Lectures.
+
+### B. Configuration de la stratégie
 #### 1. Nom d'affichage
 Définir la valeur sur `Active Directory`.
 
