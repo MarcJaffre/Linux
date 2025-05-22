@@ -57,7 +57,7 @@ clear;
 ### F. Afficher les Users 
 ```bash
 clear;
-/usr/bin/mariadb -u root -padmin -e "SELECT User FROM mysql.user; SHOW DATABASES;"
+/usr/bin/mariadb -u root -p -e "SELECT User FROM mysql.user; SHOW DATABASES;"
 ```
 
 ### G. Liste des SQL gérer par le compte USER:
