@@ -6,7 +6,7 @@
 L'utilisateur `marc` sur ma machine linux existe.
 
 ### C. Apache2
-P
+Pour permettre l'accès correct à Apache2, il faut faire `chown -R www-data:www-data /var/www`
 ```
 # ==================================================================
 [Apache] 
