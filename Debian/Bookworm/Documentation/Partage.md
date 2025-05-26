@@ -75,6 +75,7 @@ path                    = /Data/Comptable
 browseable              = yes
 writable                = yes
 read only               = no
+valid users             = @Informaticiens
 force group             = Comptables
 guest ok                = no
 vfs object              = recycle
