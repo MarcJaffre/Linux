@@ -21,6 +21,15 @@ L'utilisateur `marc` sur ma machine linux existe.
 #force create mode    = 0700
 #force directory mode = 0700   
 #guest ok             = no | yes (Permet aux clients de se connecter au répertoire partagé sans fournir de mot de passe.)
+
+# Corbeille réseau
+#vfs object              = recycle
+#recycle:exclude         = *.TMP *.tmp *.temp ~$* *.log *.bak
+#recycle:exclude_dir     = Corbeille
+#recycle:keeptree        = true
+#recycle:repository      = ./Corbeille | ./Corbeille/%U
+#recycle:touch           = yes
+#recycle:versions        = true
 ```
 
 ### C. Apache2
