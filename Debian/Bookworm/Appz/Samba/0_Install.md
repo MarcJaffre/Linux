@@ -19,6 +19,7 @@ systemctl enable  samba;
 
 ### C. WSDD
 Permet au poste client de découvrir les partages.
-```
+```bash
+clear;
 apt install --no-install-recommends wsdd;
 ```
