@@ -7,3 +7,12 @@
 apt install samba;
 apt install samba-common;
 ```
+
+### B. Gestion du service
+```bash
+systemctl stop    samba;
+systemctl start   samba;
+systemctl restart samba;
+systemctl disable samba;
+systemctl enable  samba;
+```
