@@ -16,3 +16,9 @@ systemctl restart samba;
 systemctl disable samba;
 systemctl enable  samba;
 ```
+
+### C. WSDD
+Permet au poste client de découvrir les partages.
+```
+apt install --no-install-recommends wsdd;
+```
