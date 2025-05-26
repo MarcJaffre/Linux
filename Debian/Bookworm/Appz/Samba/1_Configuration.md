@@ -3,11 +3,13 @@
 --------------------------------------------------------------------------------------------------------------------------------------------
 ## I. Base Linux
 ### A. Liste les utilisateurs linux
-```
+```bash
+clear;
 cat /etc/passwd
 ```
 ### B. Information sur l'utilisateur
-```
+```bash
+clear;
 id <UID>
 ```
 
@@ -18,15 +20,17 @@ id <UID>
 ### A. Gestion des partages
 #### 1. Sauvegarder la configuration par défaut
 ```bash
+clear;
 cp /etc/samba/smb.conf > /etc/samba/smb.conf.bak;
 ```
 
 #### 2. Edition de la configuration
 ```bash
-nano /etc/samba/smb.conf
+clear;
+nano /etc/samba/smb.conf;
 ```
 #### 3. smb.conf (Epurer)
-```
+```bash
 [global]
 ## Browsing/Identification ###
    workgroup            = WORKGROUP
