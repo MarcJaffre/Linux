@@ -5,6 +5,8 @@
 ### A. Utilisateur
 L'utilisateur `marc` sur ma machine linux existe.
 
+### C. Apache2
+P
 ```
 # ==================================================================
 [Apache] 
@@ -22,3 +24,5 @@ force create mode    = 0700
 force directory mode = 0700
 # ==================================================================
 ```
+
+
