@@ -52,4 +52,14 @@ force directory mode = 0700
 # ==================================================================
 ```
 
+### D. Vérification configuration
+```bash
+clear;
+testparm -s /etc/samba/smb.conf;
+```
 
+### E. Relance du service
+```bash
+clear;
+systemctl restart smbd;
+```
