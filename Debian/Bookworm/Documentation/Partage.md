@@ -91,6 +91,7 @@ path                    = /Data/Informaticien
 browseable              = yes
 writable                = yes
 read only               = no
+valid users             = @Informaticiens
 force group             = Informaticiens
 guest ok                = no
 vfs object              = recycle
