@@ -5,8 +5,10 @@
 ### A. Carte-réseau
 #### 1. Edition du fichier
 ```bash
+clear;
 nano /etc/network/interfaces
 ```
+
 ```
 auto enp6s18
 allow-hotplug enp6s18
@@ -16,6 +18,7 @@ iface enp6s18 inet static
    gateway 192.168.0.1
    dns-nameservers 192.168.0.1 8.8.8.8 1.1.1.1
 ```
+
 ### B. Configuration du DNS
 #### 1. Edition du fichier
 ```bash
@@ -30,15 +33,18 @@ nameserver 192.168.0.1
 ### C. Configuration du nom de la machine
 #### 1. Edition du fichier
 ```bash
-nano /etc/hostname
+nano /etc/hostname;
 ```
 ```
 wikijs
 ```
+
 #### 1. Edition du fichier
 ```bash
-nano /etc/hosts
+clear;
+nano /etc/hosts;
 ```
+
 ```
 127.0.0.1       wikijs.home.lan wikijs
 192.168.0.18    wikijs.home.lan wikijs
@@ -58,6 +64,8 @@ hostname --ip-address
 
 ### G. Dépôt
 ```bash
+clear;
+
 nano /etc/apt/sources.list
 ```
 
@@ -72,11 +80,15 @@ deb-src http://ftp.fr.debian.org/debian/            bookworm-updates main non-fr
 
 ### H. Mise à jour
 ```bash
+clear;
+
 apt update
 apt upgrade -y
 ```
 
 ### I. Fuseau horaire
 ```bash
+clear;
+
 dpkg-reconfigure tzdata
 ```
