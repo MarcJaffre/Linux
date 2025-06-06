@@ -71,12 +71,12 @@ nano /etc/apt/sources.list
 ```
 
 ```
-deb     http://ftp.fr.debian.org/debian/            bookworm main non-free-firmware
-deb-src http://ftp.fr.debian.org/debian/            bookworm main non-free-firmware
-deb     http://security.debian.org/debian-security  bookworm-security main non-free-firmware
-deb-src http://security.debian.org/debian-security  bookworm-security main non-free-firmware
-deb     http://ftp.fr.debian.org/debian/            bookworm-updates main non-free-firmware
-deb-src http://ftp.fr.debian.org/debian/            bookworm-updates main non-free-firmware
+deb     http://ftp.fr.debian.org/debian/            bookworm           main non-free-firmware
+deb-src http://ftp.fr.debian.org/debian/            bookworm           main non-free-firmware
+deb     http://security.debian.org/debian-security  bookworm-security  main non-free-firmware
+deb-src http://security.debian.org/debian-security  bookworm-security  main non-free-firmware
+deb     http://ftp.fr.debian.org/debian/            bookworm-updates   main non-free-firmware
+deb-src http://ftp.fr.debian.org/debian/            bookworm-updates   main non-free-firmware
 ```
 
 ### H. Mise à jour
