@@ -22,7 +22,8 @@ iface enp6s18 inet static
 ### B. Configuration du DNS
 #### 1. Edition du fichier
 ```bash
-nano /etc/resolv.conf
+clear;
+nano /etc/resolv.conf;
 ```
 ```
 domain home.lan
