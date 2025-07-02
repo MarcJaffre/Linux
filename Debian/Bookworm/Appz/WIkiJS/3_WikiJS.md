@@ -64,7 +64,7 @@ clear;
 nano /etc/systemd/system/wiki.service
 ```
 
-```
+```bash
 [Unit]
 Description=Wiki.js
 After=network.target
