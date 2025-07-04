@@ -3,6 +3,7 @@
 ----------------------------------------------------------------------------------------------------------------------------
 ## I. Debian
 ### A. Carte-réseau
+Ma carte-réseau se nomme `enp6s18`. Il sera nécessaire d'adapter.
 #### 1. Edition du fichier
 ```bash
 clear;
