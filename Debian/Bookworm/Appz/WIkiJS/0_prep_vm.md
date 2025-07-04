@@ -67,8 +67,7 @@ hostname --ip-address
 ### G. Dépôt
 ```bash
 clear;
-
-nano /etc/apt/sources.list
+nano /etc/apt/sources.list;
 ```
 
 ```
@@ -95,14 +94,12 @@ deb-src http://ftp.fr.debian.org/debian/            bookworm-updates   main non-
 ### H. Mise à jour
 ```bash
 clear;
-
-apt update
-apt upgrade -y
+apt update;
+apt upgrade -y;
 ```
 
 ### I. Fuseau horaire
 ```bash
 clear;
-
-dpkg-reconfigure tzdata
+dpkg-reconfigure tzdata;
 ```
