@@ -6,24 +6,24 @@
 #### 1. Edition du fichier de configuration
 ```bash
 clear;
-nano /etc/sysctl.conf
+nano /etc/sysctl.conf;
 ```
 #### 2. Variable
 ```
-# Autoriser le port 80 en utilisateur 
+# Autoriser le port 80 en utilisateur
 net.ipv4.ip_unprivileged_port_start=80
 ```
 
 #### 3. Rechargement
 ```bash
-sysctl --load
+sysctl --load;
 ```
 
 ### B. Configuration
 #### 1. Edition du fichier de configuration
 ```bash
 clear;
-nano /var/wiki/config.yml
+nano /var/wiki/config.yml;
 ```
 #### 2. Port
 ```
@@ -41,8 +41,6 @@ db:
   db:   wiki
   ssl:  false
 ```
-
-
 
 ```
 port: 80
