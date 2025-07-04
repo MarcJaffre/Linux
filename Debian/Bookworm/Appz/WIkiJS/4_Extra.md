@@ -27,7 +27,6 @@ nano /var/wiki/config.yml;
 ```
 #### 2. Port
 ```
-
 # Port HTTP
 port: 80
 
