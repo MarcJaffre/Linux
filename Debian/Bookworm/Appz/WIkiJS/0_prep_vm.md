@@ -7,7 +7,7 @@ Ma carte-réseau se nomme `enp6s18`. Il sera nécessaire d'adapter.
 #### 1. Edition du fichier
 ```bash
 clear;
-nano /etc/network/interfaces
+nano /etc/network/interfaces;
 ```
 
 ```
@@ -53,11 +53,11 @@ nano /etc/hosts;
 ```
 ### E. Redémarrrage
 ```bash
-reboot
+reboot;
 ```
 ### F. Vérification
 ```bash
-hostname --ip-address
+hostname --ip-address;
 ```
 
 ```
