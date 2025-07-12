@@ -366,7 +366,7 @@ chmod +x $HOME/AppImage/*.AppImage;
 
 Préférences > Options
   > Général:
-   - Moteur Multimédia: mplayer (mpv: BUG !)
+   - Moteur Multimédia: mplayer (mpv: BUG ! | /usr/bin/mpv)
   > Performance:
    - Thread: 4
    - Décodage matériel: Auto
