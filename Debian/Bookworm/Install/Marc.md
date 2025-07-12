@@ -223,11 +223,11 @@ echo "/Partages /etc/auto.cifs --ghost,--timeout=30" >> /etc/auto.master;
 cat > /etc/auto.cifs << EOF
 ##############################################################################################################################################################
 #<Point de montage> -fstype=<type>,<options>                                             ://<ip_serveur>:/<Partage>
-$SHARE_1            -fstype=cifs,username=$CIFS_USER,password=$CIFS_PASS,user=$LOCAL_USER,uid=$LOCAL_UID,gid=100  ://$CIFS_IP/$SHARE_1
-$SHARE_2            -fstype=cifs,username=$CIFS_USER,password=$CIFS_PASS,user=$LOCAL_USER,uid=$LOCAL_UID,gid=100  ://$CIFS_IP/$SHARE_2
-$SHARE_3            -fstype=cifs,username=$CIFS_USER,password=$CIFS_PASS,user=$LOCAL_USER,uid=$LOCAL_UID,gid=100  ://$CIFS_IP/$SHARE_3
-$SHARE_4            -fstype=cifs,username=$CIFS_USER,password=$CIFS_PASS,user=$LOCAL_USER,uid=$LOCAL_UID,gid=100  ://$CIFS_IP/$SHARE_4
-$SHARE_5            -fstype=cifs,username=$CIFS_USER,password=$CIFS_PASS,user=$LOCAL_USER,uid=$LOCAL_UID,gid=100  ://$CIFS_IP/$SHARE_5
+$SHARE_1            -fstype=cifs,username=$CIFS_USER,password=$CIFS_PASS,uid=$LOCAL_UID,gid=100  ://$CIFS_IP/$SHARE_1
+$SHARE_2            -fstype=cifs,username=$CIFS_USER,password=$CIFS_PASS,uid=$LOCAL_UID,gid=100  ://$CIFS_IP/$SHARE_2
+$SHARE_3            -fstype=cifs,username=$CIFS_USER,password=$CIFS_PASS,uid=$LOCAL_UID,gid=100  ://$CIFS_IP/$SHARE_3
+$SHARE_4            -fstype=cifs,username=$CIFS_USER,password=$CIFS_PASS,uid=$LOCAL_UID,gid=100  ://$CIFS_IP/$SHARE_4
+$SHARE_5            -fstype=cifs,username=$CIFS_USER,password=$CIFS_PASS,uid=$LOCAL_UID,gid=100  ://$CIFS_IP/$SHARE_5
 ##############################################################################################################################################################
 EOF
 
