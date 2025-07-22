@@ -15,7 +15,7 @@ Aller dans `Réseau` puis `Modifier les règles et les zones`.
 ### C. Gestions des Zones
 Pour gérer les zones, il faut que le pare-feu soit actif.
 
-Le champs `Adresses autorisées` permet de limité l'accès au ports ouvert.
+Le champs `Adresses autorisées` permet de limité l'accès au ports ouvert par rapport à la source.
 
 | Class | Adresse CIDR   |
 | ----- | -------------- |
