@@ -45,6 +45,17 @@ ip addr add 192.168.10.1/24 dev eth0.10;
 ```bash
 clear;
 echo > /etc/network/interfaces.d/eth0 << EOF
+
+#########################################
+# Eth0 #
+########
+auto eth0
+iface eth0 inet manual
+ up ip link set dev eth0 up
+
+#########################################
+# Vlan 10 #
+###########
 auto eth0.10
 iface eth0.10 inet static
  address 192.168.10.1
@@ -57,4 +68,22 @@ EOF
 ```bash
 clear;
 ifup eth0.10
+```
+
+
+
+```
+#########################################
+# Physique #
+############
+
+
+#########################################
+# Vlan 10 #
+###########
+auto eth0.10
+iface eth0.10 inet static
+  address 192.168.10.1
+  netmask 255.255.255.0
+ vlan-raw-device eth0
 ```
