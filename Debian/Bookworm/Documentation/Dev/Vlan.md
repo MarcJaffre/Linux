@@ -3,6 +3,8 @@
 --------------------------------------------------------------------------------
 ## I. Base
 ### A. Présentation
+Un **VLAN sous Linux** est une interface réseau virtuelle créée sur une interface physique qui permet de séparer logiquement le réseau en plusieurs sous-réseaux isolés, chaque VLAN étant identifié par un numéro (ID), ce qui facilite la gestion et la sécurité du réseau.
+
 
 ### B. Installation du paquet
 ```bash
