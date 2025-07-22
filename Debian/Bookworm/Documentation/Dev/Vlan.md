@@ -5,6 +5,7 @@
 ### A. Présentation
 Un **VLAN sous Linux** est une interface réseau virtuelle créée sur une interface physique qui permet de séparer logiquement le réseau en plusieurs sous-réseaux isolés, chaque VLAN étant identifié par un numéro (ID), ce qui facilite la gestion et la sécurité du réseau.
 
+<br />
 
 ### B. Installation du paquet
 ```bash
@@ -26,7 +27,7 @@ modprobe 8021q;
 
 ### D. Network
 #### 1. Temporaire
-Création du VLAN `10` attaché sur l'interface `eth0`.
+Création du VLAN `10` attaché sur l'interface `eth0` qui elle doit être UP pour que le VLAN marche..
 ```bash
 clear;
 
