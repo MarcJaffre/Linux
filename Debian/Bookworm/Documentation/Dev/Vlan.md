@@ -70,8 +70,6 @@ clear;
 ifup eth0.10
 ```
 
-
-
 ```
 #########################################
 # Physique #
@@ -86,4 +84,19 @@ iface eth0.10 inet static
   address 192.168.10.1
   netmask 255.255.255.0
  vlan-raw-device eth0
+```
+
+<br />
+
+--------------------------------------------------------------------------------
+## II. Inter-Vlan
+### A. Forwarding (Global)
+Pour autoriser l'inter-vlan sur le Linux.
+```bash
+clear;
+cat > /etc/sysctl.d/ipv4_forwarding.conf << EOF
+net.ipv4.ip_forward=1
+EOF
+
+sysctl -p /etc/sysctl.d/ipv4_forwarding.conf
 ```
