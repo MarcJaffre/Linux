@@ -5,7 +5,7 @@
 ### A. Installation du Paquet
 ```bash
 clear;
-apt install firewalld;
+apt install -y firewalld;
 systemctl stop firewalld;
 ```
 
