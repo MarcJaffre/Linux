@@ -9,6 +9,9 @@
 clear;
 apt install vlan;
 ```
+
+<br />
+
 ### C. Gestion du Module Vlan
 Activer le module `8021q` au démarrage du système et lancer à chaud le module pour ne pas avoir redémarrer la machine.
 ```bash
@@ -16,6 +19,8 @@ clear;
 echo "8021q" >> /etc/modules;
 modprobe 8021q;
 ```
+
+<br />
 
 ### D. Network
 #### 1. Temporaire
@@ -44,6 +49,7 @@ iface eth0.10 inet static
  vlan-raw-device eth0
 EOF
 ```
+
 #### 3. Mise en ligne interface
 ```bash
 clear;
