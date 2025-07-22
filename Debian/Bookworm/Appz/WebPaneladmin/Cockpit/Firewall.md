@@ -15,13 +15,15 @@ Aller dans `Réseau` puis `Modifier les règles et les zones`.
 ### C. Gestions des Zones
 Pour gérer les zones, il faut que le pare-feu soit actif.
 
-Le champs `Adresses autorisées` permet de limité l'accès au ports ouvert par rapport à la source.
+#### 0. Limiter l'accès
+Le champs `Adresses autorisées` permet de limité l'accès au ports ouvert par rapport à la source. Pour autoriser toute les IP publiques la CIDR est `0.0.0.0/0`.
 
 | Class | Adresse CIDR   |
 | ----- | -------------- |
 |   A   | 10.0.0.0/8     |
 |   B   | 172.16.0.0/12  |
 |   C   | 192.168.0.0/16 |
+
 
 
 <br />
