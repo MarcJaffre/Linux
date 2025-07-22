@@ -9,14 +9,18 @@ apt install -y firewalld;
 systemctl stop firewalld;
 ```
 
-### B. Zones
+### B. Activation du Pare-feu
 Aller dans `Réseau` puis `Modifier les règles et les zones`. 
-#### 1. Activation du Pare-feu
+
+### C. Gestions des Zones
 Pour gérer les zones, il faut que le pare-feu soit actif.
+
+Le champs `Adresses autorisées` permet de limité l'accès au ports ouvert. (Class C `192.168.0.0/16`)
+
 
 <br />
 
-#### X. Public
+#### 1. Public (Non utiliser)
 Pour une utilisation dans les lieux **publics**. Vous ne faites pas confiance aux autres ordinateurs du réseau pour endommager le vôtre. Seules certaines connexions entrantes sont acceptées.
 
 Ports ouvert par défaut:
@@ -28,7 +32,7 @@ Ports ouvert par défaut:
 
 <br />
 
-#### X. External
+#### 2. External (Utilisé)
 Pour une utilisation sur des réseaux **externes**. Vous ne faites pas confiance aux autres ordinateurs du réseau pour endommager le vôtre. Seules certaines connexions entrantes sont acceptées.
 
 Ports ouvert par défaut:
@@ -39,7 +43,7 @@ Ports ouvert par défaut:
 
 <br />
 
-#### X. DMZ
+#### 3. DMZ (Non utiliser)
 Pour les ordinateurs de votre zone **démilitarisée** accessibles au public avec un accès limité à votre réseau interne. Seules certaines connexions entrantes sont acceptées.
 
 Ports ouvert par défaut:
@@ -50,7 +54,7 @@ Ports ouvert par défaut:
 
 <br />
 
-#### X. Work
+#### 4. Work (Non utiliser)
 À utiliser dans les espaces de **travail**. Vous faites généralement confiance aux autres ordinateurs du réseau pour ne pas endommager le vôtre. Seules certaines connexions entrantes sont acceptées.
 
 Ports ouvert par défaut:
@@ -62,7 +66,7 @@ Ports ouvert par défaut:
 
 <br />
 
-#### X. Home
+#### 5. Home (Non utiliser)
 Pour une utilisation **domestique**. Vous faites généralement confiance aux autres ordinateurs du réseau pour ne pas endommager le vôtre. Seules certaines connexions entrantes sont acceptées.
 
 Ports ouvert par défaut:
@@ -76,7 +80,7 @@ Ports ouvert par défaut:
 
 <br />
 
-#### X. Internal
+#### 6. Internal (Non utiliser)
 Pour une utilisation sur les réseaux **internes**. Vous faites généralement confiance aux autres ordinateurs du réseau pour ne pas endommager le vôtre. Seules certaines connexions entrantes sont acceptées.
 
 ```
