@@ -35,18 +35,59 @@ systemctl restart cockpit.service;
 ```
 
 
-#### C. Extension (Dépôt)
-##### 1. 389-DS
-```bash
-clear;
-apt install -y --no-install-recommends --no-install-suggests cockpit-389-ds 1>/dev/null;
-```
 
-##### 2. Bridge
+#### C. Extension (indispensable)
+##### X. Bridge
 Permet la création, gestion des ponts sous Linux.
 ```bash
 clear;
 apt install -y --no-install-recommends --no-install-suggests cockpit-bridge 1>/dev/null;
+```
+
+##### X. Networking
+Les interfaces gérées par le service linux `networking` n'est pas gérer par NetworkManager.
+
+Il est conçu pour interagir avec NetworkManager, pas avec le service networking !
+
+```bash
+clear;
+apt install -y --no-install-recommends --no-install-suggests cockpit-networkmanager 1>/dev/null;
+```
+
+##### X. Packagekit
+```bash
+clear;
+apt install -y --no-install-recommends --no-install-suggests cockpit-packagekit 1>/dev/null;
+```
+
+##### X. PCP
+Permet d'intégrer les fonctionnalités de Performance Co-Pilot.
+```bash
+clear;
+apt install -y --no-install-recommends --no-install-suggests cockpit-pcp 1>/dev/null;
+```
+
+##### X. Storage
+```bash
+clear;
+apt install -y --no-install-recommends --no-install-suggests cockpit-storaged 1>/dev/null;
+```
+
+##### X. System
+```bash
+clear;
+apt install -y --no-install-recommends --no-install-suggests cockpit-system 1>/dev/null;
+```
+
+
+<br />
+
+
+#### D. Extension (Complémentaire)
+##### 1. 389-DS
+```bash
+clear;
+apt install -y --no-install-recommends --no-install-suggests cockpit-389-ds 1>/dev/null;
 ```
 
 ##### 3. Doc
@@ -60,29 +101,6 @@ Permet l'ajout de la gestion des Machines-virtuelles sous Cockpit.
 ```bash
 clear;
 apt install -y --no-install-recommends --no-install-suggests cockpit-machines 1>/dev/null;
-```
-
-##### 5. Networking
-Les interfaces gérées par le service linux `networking` n'est pas gérer par NetworkManager.
-
-Il est conçu pour interagir avec NetworkManager, pas avec le service networking !
-
-```bash
-clear;
-apt install -y --no-install-recommends --no-install-suggests cockpit-networkmanager 1>/dev/null;
-```
-
-##### 6. Packagekit
-```bash
-clear;
-apt install -y --no-install-recommends --no-install-suggests cockpit-packagekit 1>/dev/null;
-```
-
-##### 7. PCP
-Permet d'intégrer les fonctionnalités de Performance Co-Pilot.
-```bash
-clear;
-apt install -y --no-install-recommends --no-install-suggests cockpit-pcp 1>/dev/null;
 ```
 
 ##### 8. Podman
@@ -99,18 +117,6 @@ clear;
 apt install -y --no-install-recommends --no-install-suggests cockpit-sosreport 1>/dev/null;
 ```
 
-##### 10. Storage
-```bash
-clear;
-apt install -y --no-install-recommends --no-install-suggests cockpit-storaged 1>/dev/null;
-```
-
-##### 11. System
-```bash
-clear;
-apt install -y --no-install-recommends --no-install-suggests cockpit-system 1>/dev/null;
-```
-
 ##### 12. Tests
 Permet d'intégrer la fonctionnalité de test de fonctionnement.
 ```bash
@@ -124,7 +130,12 @@ clear;
 apt install -y --no-install-recommends --no-install-suggests cockpit-ws 1>/dev/null;
 ```
 
-#### D. Extensions (Externe)
+
+<br />
+
+
+
+#### E. Extensions (Externe)
 ##### X. File-sharing
 ```bash
 clear;
@@ -150,9 +161,7 @@ wget $URL -O /tmp/cockpit-identities.deb 2>/dev/null;
 dpkg -i /tmp/cockpit-identities.deb 1>/dev/null;
 ```
 
-
-
-
+<br />
 
 #### F. Accéder au panel d'administration
 Le panel d'administration de Cockpit est sur le port `9090` en `HTTPS`.
