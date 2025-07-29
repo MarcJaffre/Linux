@@ -2,23 +2,25 @@
 # <p align='center'> Guide d'installation de FOG sur une machine Debian </p>
 
 ----------------------------------------------------------------------------------------------------------------------------
-## Guide d'installation
+## I. Guide d'installation
 Lors de l'étape `* Press [Enter] key when database is updated/installed.`, il faut procéder à l'installation sur la page Web de Fog, puis valider dans la console.
 
-#### Télécharger fog
+#### A. Télécharger fog
 ```bash
 clear;
 wget https://github.com/FOGProject/fogproject/archive/master.tar.gz -O /tmp/master.tar.gz 2>/dev/null;
 ```
 
-#### Extraction du fichier compresser
+#### B. Extraction du fichier compresser
 ```bash
 clear;
 cd /tmp;
 tar -xf master.tar.gz;
 ```
 
-#### Installation de FOG (Automatique)
+#### C. Installation de FOG
+
+##### 1. Automatique
 Le mot de passe de la SQL est admin.
 ```bash
 clear;
@@ -26,8 +28,33 @@ cd /tmp/fogproject-master/bin;
 (echo "admin") | ./installfog.sh -y;
 ```
 
+##### 2. Installation de FOG (Manuel)
+```bash
+clear;
+cd /tmp/fogproject-master/bin;
+./installfog.sh;
 
-#### Fichier Démarrage
+#Choice                                                                : 2
+#What type of installation would you like to do [N/s (Normal/Storage)] ? N
+#Would you like to change the default network interface from ens18     ? N
+#Would you like to setup a router address for the DHCP server [Y/n]    ? N
+#Would you like DHCP to handle DNS [Y/n]                               ? N
+#Would you like to use the FOG server for DHCP service                 ? N
+#You like to install the additional language packs                     ? Y
+#Would you like to enable secure HTTPS on your FOG server              ? N
+#Would you like to change it                                           ? N
+#Are you ok with sending this information                              ? Y
+#Are you sure you wish to continue                                     ? Y
+#is running and won't be stored anywhere                               : Mot de passe du compte root de la Base de Donnée SQL
+
+#Press [Enter] key when database is updated/installed.                 : Aller http//X.X.X.X/fog/management
+#                                                                      : Username: fog
+#                                                                      : Password: admin
+#                                                                      : Cliquer sur Install Now
+#                                                                      : Entrer dans la console
+```
+
+#### D. Fichier Démarrage
 ```
 arm64-efi
 default.ipxe
@@ -58,42 +85,20 @@ undionly.pxe
 ```
 
 
-
-
-
-
-
-#### Installation de FOG (Manuel)
-```bash
-clear;
-cd /tmp/fogproject-master/bin;
-./installfog.sh;
-
-#Choice                                                                : 2
-#What type of installation would you like to do [N/s (Normal/Storage)] ? N
-#Would you like to change the default network interface from ens18     ? N
-#Would you like to setup a router address for the DHCP server [Y/n]    ? N
-#Would you like DHCP to handle DNS [Y/n]                               ? N
-#Would you like to use the FOG server for DHCP service                 ? N
-#You like to install the additional language packs                     ? Y
-#Would you like to enable secure HTTPS on your FOG server              ? N
-#Would you like to change it                                           ? N
-#Are you ok with sending this information                              ? Y
-#Are you sure you wish to continue                                     ? Y
-#is running and won't be stored anywhere                               : Mot de passe du compte root de la Base de Donnée SQL
-
-#Press [Enter] key when database is updated/installed.                 : Aller http//X.X.X.X/fog/management
-#                                                                      : Username: fog
-#                                                                      : Password: admin
-#                                                                      : Cliquer sur Install Now
-#                                                                      : Entrer dans la console
-```
-
-#### SQL
+#### E. SQL
+Pour ceux qui veulent explorer la Base De Donnée de FOG.
 ```bash
 clear;
 cat /var/www/fog/lib/fog/config.class.php | grep "DATABASE_TYPE\|DATABASE_HOST\|DATABASE_NAME\|DATABASE_USERNAME\|DATABASE_PASSWORD";
 ```
+
+
+
+
+
+
+
+
 
 <br />
 
