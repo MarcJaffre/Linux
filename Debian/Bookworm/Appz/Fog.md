@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------------------------------------------------------------
-# <p align='center'>Guide d'installation de FOG sur une machine Debian </p>
+# <p align='center'> Guide d'installation de FOG sur une machine Debian </p>
 
 ----------------------------------------------------------------------------------------------------------------------------
 ## Guide d'installation
