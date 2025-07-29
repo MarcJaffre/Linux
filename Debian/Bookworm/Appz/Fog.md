@@ -84,21 +84,12 @@ undionly.kpxe
 undionly.pxe
 ```
 
-
 #### E. SQL
 Pour ceux qui veulent explorer la Base De Donnée de FOG.
 ```bash
 clear;
 cat /var/www/fog/lib/fog/config.class.php | grep "DATABASE_TYPE\|DATABASE_HOST\|DATABASE_NAME\|DATABASE_USERNAME\|DATABASE_PASSWORD";
 ```
-
-
-
-
-
-
-
-
 
 <br />
 
