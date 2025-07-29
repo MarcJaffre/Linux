@@ -126,6 +126,8 @@ Sous FOG
   > Cliquer sur l'icône Deploy
 ```
 ----------------------------------------------------------------------------------------------------------------------------
+
+### A. Purge
 ```
 # Package: apt install -y apache2 bc build-essential cpp curl g++ gawk gcc genisoimage gettext git gzip htmldoc isolinux lftp libapache2-mod-php libc6 libcurl4 liblzma-dev m4 mariadb-client mariadb-server net-tools nfs-kernel-server openssh-server php php-bcmath php-cli php-curl php-fpm php-gd php-intl php-json php-ldap php-mbstring php-mysql php-mysqlnd tar tftpd-hpa tftp-hpa unzip vsftpd wget zlib1g
 
