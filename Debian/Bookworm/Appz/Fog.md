@@ -36,7 +36,7 @@ intel.efi
 intel.kkpxe
 intel.kpxe
 intel.pxe
-ipxe.efi  <= Option 67 en UEFI
+ipxe.efi  <= Option 67 du DHCP en UEFI
 ipxe.iso
 ipxe.kkpxe
 ipxe.kpxe
@@ -52,7 +52,7 @@ realtek.kpxe
 realtek.pxe
 snp.efi
 snponly.efi
-undionly.kkpxe  <= Option 67 en MBR
+undionly.kkpxe  <= Option 67 du DHCP en MBR
 undionly.kpxe
 undionly.pxe
 ```
