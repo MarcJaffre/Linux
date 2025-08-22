@@ -22,11 +22,18 @@ su -u phonesystem;
 3CXBackupCmd --file=$HOME/full_pbx_backup.zip --options=ALL                  --log=$HOME/pbx-backup_full.log
 
 # Correctif
-rm /tmp/*.sync;
+rm /tmp/3cxpbx.sync;
 
 # Restauration Partiel
 3CXRestoreCmd --file=$HOME/part_pbx_backup.zip --log=$HOME/pbx_resto_part.log;
 
 # Retour en arrière
 3CXRestoreCmd --file=$HOME/full_pbx_backup.zip --log=$HOME/pbx_resto_full.log;
+```
+
+```bash
+# Si les actions précédentes ont étés fait en root :
+cd /var/lib/3cxpbx/Instance1/Data/Http/Interface/provisioning;
+chmod 750 *;
+chown -R phonesystem:phonesystem *;
 ```
