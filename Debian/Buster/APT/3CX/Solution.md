@@ -18,8 +18,8 @@ clear;
 su -u phonesystem;
 
 # Sauvegardes (Complète et partiel)
-3CXBackupCmd --file=$HOME/part_pbx_backup.zip --options=CH,PROMPTS,FW,REC,VM --log=$HOME/pbx-backup_part.log
-3CXBackupCmd --file=$HOME/full_pbx_backup.zip --options=ALL                  --log=$HOME/pbx-backup_full.log
+3CXBackupCmd --file=$HOME/part_pbx_backup.zip --options=CH,PROMPTS,FW,REC,VM --log=$HOME/pbx-backup_part.log;
+3CXBackupCmd --file=$HOME/full_pbx_backup.zip --options=ALL                  --log=$HOME/pbx-backup_full.log;
 
 # Correctif
 rm /tmp/3cxpbx.sync;
