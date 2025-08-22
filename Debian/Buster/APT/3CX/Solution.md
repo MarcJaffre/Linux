@@ -25,10 +25,10 @@ su - phonesystem;
 rm /tmp/3cxpbx.sync;
 
 # Restauration Partiel
-3CXRestoreCmd --file=$HOME/part_pbx_backup.zip --log=$HOME/pbx_resto_part.log;
+/usr/sbin/3CXRestoreCmd --file=$HOME/part_pbx_backup.zip --log=$HOME/pbx_resto_part.log;
 
 # Retour en arrière
-3CXRestoreCmd --file=$HOME/full_pbx_backup.zip --log=$HOME/pbx_resto_full.log;
+/usr/sbin/3CXRestoreCmd --file=$HOME/full_pbx_backup.zip --log=$HOME/pbx_resto_full.log;
 ```
 
 ```bash
