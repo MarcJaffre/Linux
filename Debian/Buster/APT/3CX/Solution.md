@@ -15,7 +15,7 @@ Puis il faut le restaurer.
 
 ```bash
 clear;
-su -u phonesystem;
+su - phonesystem;
 
 # Sauvegardes (Complète et partiel)
 3CXBackupCmd --file=$HOME/part_pbx_backup.zip --options=CH,PROMPTS,FW,REC,VM --log=$HOME/pbx-backup_part.log;
