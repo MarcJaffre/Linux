@@ -16,28 +16,48 @@ Puis il faut réinstaller le 3CX et faire la restauration.
 ```bash
 clear;
 
-# Root
+#################################################################################################################################
+# Root #
+########
+#
+# Creation du dossier Backup
 mkdir /backup;
+#
+# Modification des permissions
 chown -R phonesystem:phonesystem /backup;
-
+#
+#################################################################################################################################
+# Utilisateur #
+###############
+#
 # Changer Utiliser
 su - phonesystem;
+#
 # Sauvegardes (Complète et partiel)
-
 /usr/sbin/3CXBackupCmd --file=/backup/full_pbx_backup.zip --options=ALL                  --log=/backup/pbx-backup_full.log;
 /usr/sbin/3CXBackupCmd --file=/backup/part_pbx_backup.zip --options=CH,PROMPTS,FW,REC,VM --log=/backup/pbx-backup_part.log;
-
+#
 # Correctif
 rm /tmp/3cxpbx.sync;
-
-# Remise à zéro du 3CX (Root)
+#
+#################################################################################################################################
+# Root #
+########
+# Remise à zéro du 3CX
 /usr/sbin/3CXWizard --cleanup;
-
+#################################################################################################################################
+# Utilisateur #
+###############
+#
+# Changer Utiliser
+su - phonesystem;
+#
 # Restauration Partiel
 /usr/sbin/3CXRestoreCmd --file=/backup/part_pbx_backup.zip --log=/backup/pbx_resto_part.log;
-
+#
 # Retour en arrière
 /usr/sbin/3CXRestoreCmd --file=/backup/full_pbx_backup.zip --log=/backup/pbx_resto_full.log;
+#################################################################################################################################
 ```
 
 
