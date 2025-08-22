@@ -11,7 +11,7 @@ Le serveur 3CX est associé à un FQDN / Licence mais dans le portal 3CX sa ne c
 #### 2. Solution ([Doc](https://www.3cx.com/docs/backup-restore-command-line/))
 Pour résoudre le problème, il faut réaliser une sauvegarde en excluant ce qui pose problème. (FQDN, Licence)
 
-Puis il faut le restaurer.
+Puis il faut réinstaller le 3CX et faire la restauration.
 
 ```bash
 clear;
@@ -23,6 +23,10 @@ su - phonesystem;
 
 # Correctif
 rm /tmp/3cxpbx.sync;
+
+# Remise à zéro du 3CX
+/usr/sbin/3CXWizard --cleanup;
+
 
 # Restauration Partiel
 /usr/sbin/3CXRestoreCmd --file=$HOME/part_pbx_backup.zip --log=$HOME/pbx_resto_part.log;
