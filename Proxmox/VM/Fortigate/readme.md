@@ -126,6 +126,7 @@ https://docs.fortinet.com/document/fortigate-private-cloud/7.6.0/openstack-admin
 execute factoryreset
 execute factoryreset-shutdown
 
+
 config system interface
 edit "port1"
     set mode static
@@ -156,9 +157,9 @@ end
 
 
 config system global
-set hostname fortigate
-set language french
-set timezone Europe/Paris
+    set hostname fortigate
+    set language french
+    set timezone Europe/Paris
 end
 ```
 
