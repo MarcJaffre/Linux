@@ -19,6 +19,14 @@ unzip  /tmp/FGT_VM64_KVM-v7.6.4.F-build3596-FORTINET.out.kvm.zip -d /tmp;
 ### B. Création de la VM
 Créer une VM sans stockage.
 
+```
+Support for low encryption operation only
+Maximum of 1 CPU and 2GiB of memory
+Maximum of three interfaces, firewall policies, and routes each
+No FortiCare Support
+```
+
+
 ### C. Importer le Disque
 Le stockage se nomme `Data`
 ```bash
