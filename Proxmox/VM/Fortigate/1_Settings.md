@@ -68,9 +68,7 @@ config system dhcp server
             next
         end
         set default-gateway 192.168.10.1
-        set dns-service specify
-        set dns-server1 8.8.8.8
-        set dns-server2 8.8.4.4
+        set dns-service default
         set status enable
 end
 ```
