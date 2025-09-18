@@ -58,7 +58,7 @@ config firewall policy
         set name "LAN_to_WAN"
         set srcintf "port2"
         set dstintf "port1"
-        set srcaddr "all"
+        set srcaddr "port2 address"
         set dstaddr "all"
         set action accept
         set schedule "always"
