@@ -36,11 +36,33 @@ qm importdisk $VMID /tmp/fortios.qcow2 $STORAGE;
 ### E. Attacher le Stockage
 Le disque dur est en status inutilisé, il faut l'attacher sur la VM.
 
+```bash
+clear;
+STORAGE=Data
+VMID=211
+DIRECTORY=$(cat /etc/pve/storage.cfg  | grep "dir: $STORAGE" -A1 | tail -n 1 | cut -d " " -f 2)
+qm set $VMID -sata1 $DIRECTORY/images/$VMID/vm-$VMID-disk-0.raw
+```
+
+
 ### F. Boot Menu
 Définir le disque dur comme démarrage.
 
+```bash
+clear;
+VMID=211
+qm set $VMID -boot order=sata1
+```
+
+
 ### G. Ajouter une carte-réseau
 Pour avoir un LAN, il est nécessaire d'attacher une seconde carte réseau
+```bash
+clear;
+VMID=211
+qm set 211 -net0 model=e1000,bridge=vmbr0
+qm set 211 -net1 model=e1000,bridge=vmbr1
+```
 
 ### H. Démarrer
 La VM est prête
