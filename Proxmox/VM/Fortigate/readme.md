@@ -90,7 +90,6 @@ config system interface
 edit "port1"
     set mode static
     set ip 192.168.0.44/24
-    set allowaccess ping ssh
-    #http https
+    set allowaccess ping ssh http https
 end
 ```
