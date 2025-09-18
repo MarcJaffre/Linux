@@ -123,6 +123,8 @@ https://docs.fortinet.com/document/fortigate-private-cloud/7.6.0/openstack-admin
 
 
 ```
+execute factoryreset
+
 config system interface
 edit "port1"
     set mode static
