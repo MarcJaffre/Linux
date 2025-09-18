@@ -74,65 +74,22 @@ La VM est prête
 
 ---------------------------------------------------------------------------------------------------------------------------------------
 ## I. Configuration
-### A. Premier démarrage
+### A. Reset Factory
+```bash
+execute factoryreset
+```
+
+### B. Premier démarrage
 Lors du premier démarrage, indiquer comme identifiant `admin` et comme mot de passe `vide`.
 
-### B. Configuration IPv4
-#### 1. WAN
-```
-config system interface
-edit "port1"
-set mode static
-set ip 192.168.0.44 255.255.255.0
-set allowaccess ping https ssh http
-```
 
 ```
-next
-```
-
-#### 2. LAN
-```bash
-edit "port2"
-set mode static
-set ip 192.168.10.1 255.255.255.0
-set allowaccess ping https ssh http
-```
-
-```
-end
-```
-
-
-<br />
-
-### C. Configuration Passerelle
-```
-config router static
-edit 1
-set gateway 192.168.0.1
-set device "port1"
-end
-```
-
-
-```
-https://docs.fortinet.com/document/fortigate-private-cloud/7.6.0/openstack-administration-guide/740208/deploying-a-fortigate-vm-instance-in-an-openstack-environment
-```
-
-
-
-```
-execute factoryreset
-execute factoryreset-shutdown
-
-
 config system interface
 edit "port1"
     set mode static
     set ip 192.168.0.44 255.255.255.0
     set name WAN
-    set alias WAN
+    set alias "WAN"
     set role wan
     set allowaccess ping ssh http https
 next
@@ -142,7 +99,7 @@ edit "port2"
     set mode static
     set ip 192.168.10.1 255.255.255.0
     set name LAN
-    set alias LAN
+    set alias "LAN"
     set role lan
     set allowaccess ping ssh http https
 end
@@ -186,3 +143,11 @@ end
 
 execute ping google.fr
 ```
+
+
+
+
+```
+https://docs.fortinet.com/document/fortigate-private-cloud/7.6.0/openstack-administration-guide/740208/deploying-a-fortigate-vm-instance-in-an-openstack-environment
+```
+
