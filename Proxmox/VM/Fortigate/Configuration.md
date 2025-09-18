@@ -26,8 +26,8 @@ Dans le bandeau de gauche, sélectionner le menu `Réseau` > `Interfaces`.
 #### 1. WAN
 Sélectionner l'interface qui correspond au `WAN` puis cliquer sur `Modifier`.
 
-
-
 <img width="869" height="344" alt="image" src="https://github.com/user-attachments/assets/e9386b81-0197-428e-ae30-89ebb9c47a0e" />
 
+<img width="860" height="138" alt="image" src="https://github.com/user-attachments/assets/459f20cb-a727-432a-a1da-8830c64ffbfe" />
 
+<img width="856" height="218" alt="image" src="https://github.com/user-attachments/assets/328bff8f-4637-499e-94f8-b12e0362cf0c" />
