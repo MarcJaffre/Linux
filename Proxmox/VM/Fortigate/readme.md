@@ -160,7 +160,6 @@ config system dns
     set secondary 8.8.4.4
 end
 
-
 config system dhcp server
     edit 1
         set interface "port2"
@@ -184,8 +183,6 @@ config system global
     set language french
     set timezone Europe/Paris
 end
-
-
 
 execute ping google.fr
 ```
