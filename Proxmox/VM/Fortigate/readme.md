@@ -75,13 +75,15 @@ La VM est prête
 
 ---------------------------------------------------------------------------------------------------------------------------------------
 ## I. Configuration de base
-### A. Reset Factory
+### A. Premier démarrage
+Lors du premier démarrage, indiquer comme identifiant `admin` et comme mot de passe `vide`.
+
+### B. Reset Factory
 ```bash
 execute factoryreset
 ```
 
-### B. Configuration du WAN (Interface + Passerelle)
-Lors du premier démarrage, indiquer comme identifiant `admin` et comme mot de passe `vide`.
+### C. Configuration du WAN (Interface + Passerelle)
 
 ```
 config system interface
