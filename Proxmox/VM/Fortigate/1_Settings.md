@@ -9,14 +9,12 @@
 execute factoryreset
 ```
 
-### B. Premier démarrage
+### B. Configuration du WAN (Interface + Passerelle)
 Lors du premier démarrage, indiquer comme identifiant `admin` et comme mot de passe `vide`.
 
 ```
-
 config system interface
 
-# Configuration WAN
 edit "port1"
     set mode static
     set ip 192.168.0.44 255.255.255.0
@@ -25,6 +23,30 @@ edit "port1"
     set role wan
     set allowaccess ping ssh http https
 next
+
+config router static
+edit 1
+    set gateway 192.168.0.1
+    set device "port1"
+next
+end
+
+config system dns
+    set primary 8.8.8.8
+    set secondary 8.8.4.4
+end
+```
+
+### C. Configuration avancée
+
+```bash
+# Configuration globale
+config system global
+    set hostname fortigate
+    set language french
+    set timezone Europe/Paris
+end
+
 
 # Configuration LAN
 edit "port2"
@@ -36,19 +58,6 @@ edit "port2"
     set allowaccess ping ssh http https
 end
 
-# Configuration de la passerelle
-config router static
-edit 1
-    set gateway 192.168.0.1
-    set device "port1"
-next
-end
-
-# Configuration du DNS
-config system dns
-    set primary 8.8.8.8
-    set secondary 8.8.4.4
-end
 
 # Configuration du DHCP
 config system dhcp server
@@ -68,15 +77,6 @@ config system dhcp server
         set status enable
     next
 end
-
-# Configuration globale
-config system global
-    set hostname fortigate
-    set language french
-    set timezone Europe/Paris
-end
-
-execute ping google.fr
 ```
 
 
@@ -87,23 +87,5 @@ https://docs.fortinet.com/document/fortigate-private-cloud/7.6.0/openstack-admin
 ```
 
 
-
-
-
-## I. Configuration de base
-### A. Settings (Hostname, NTP, Langue)
-Dans le bandeau de gauche, sélectionner le menu `Settings`.
-
-```
-Host name : Fortigate
-Time zone : (UTC+1:00) Europe/Paris
-Setup device as local NTP server : OFF
-
-HTTP port  : 80
-HTTPS port : 443
-SSH port   : 22
-
-Language : French
-```
 
 <br />
