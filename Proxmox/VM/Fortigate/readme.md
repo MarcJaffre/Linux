@@ -119,3 +119,31 @@ end
 ```
 https://docs.fortinet.com/document/fortigate-private-cloud/7.6.0/openstack-administration-guide/740208/deploying-a-fortigate-vm-instance-in-an-openstack-environment
 ```
+
+
+
+```
+config system interface
+edit "port1"
+    set mode static
+    set ip 192.168.0.44 255.255.255.0
+    set allowaccess ping https ssh http
+next
+edit "port2"
+    set mode static
+    set ip 192.168.10.1 255.255.255.0
+    set allowaccess ping https ssh http
+end
+
+config router static
+edit 1
+    set gateway 192.168.0.1
+    set device "port1"
+next
+end
+
+config system dns
+    set primary 8.8.8.8
+    set secondary 8.8.4.4
+end
+```
