@@ -124,17 +124,19 @@ https://docs.fortinet.com/document/fortigate-private-cloud/7.6.0/openstack-admin
 
 ```
 execute factoryreset
+execute factoryreset-shutdown
+
 
 config system interface
 edit "port1"
     set mode static
     set ip 192.168.0.44 255.255.255.0
-    set allowaccess ping https ssh http
+    set allowaccess ping ssh
 next
 edit "port2"
     set mode static
     set ip 192.168.10.1 255.255.255.0
-    set allowaccess ping https ssh http
+    set allowaccess ping https
 end
 
 config router static
