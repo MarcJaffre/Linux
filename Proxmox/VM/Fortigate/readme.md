@@ -26,9 +26,9 @@ Créer une VM sans stockage.
 Le stockage se nomme `Data`
 ```bash
 clear;
-STORAGE=DATA
-VMID=210
-qm importdisk $VMID /tmp/fortios.qcow2 $STORAGE
+STORAGE=Data
+VMID=211
+qm importdisk $VMID /tmp/fortios.qcow2 $STORAGE;
 ```
 
 <br />
@@ -51,7 +51,6 @@ La VM est prête
 ## I. Configuration
 ### A. Premier démarrage
 Lors du premier démarrage, indiquer comme identifiant `admin` et comme mot de passe `vide`.
-
 
 ### B. Configuration IPv4
 #### 1. WAN
