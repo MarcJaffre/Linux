@@ -131,6 +131,7 @@ config system interface
 edit "port1"
     set mode static
     set name WAN
+    set alias WAN
     set ip 192.168.0.44 255.255.255.0
     set allowaccess ping ssh http https
 next
@@ -140,6 +141,7 @@ edit "port2"
     set mode static
     set ip 192.168.10.1 255.255.255.0
     set name LAN
+    set alias LAN
     set allowaccess ping ssh http https
 end
 
@@ -161,6 +163,8 @@ config system global
     set language french
     set timezone Europe/Paris
 end
+
+
+
+execute ping google.fr
 ```
-
-
