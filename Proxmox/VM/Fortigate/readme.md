@@ -5,7 +5,13 @@
 ### A. Télécharger Fortigate
 Aller sur le Dashboard de [Fortinet](https://support.fortinet.com/asset/#/dashboard) > `Support` > `VM Images`.  (`Select Platform`: `KVM`)
 
-Télécharger l'image `New deployment of FortiGate for KVM`  : `FGT_VM64_KVM-v7.6.1.F-build3457-FORTINET.out.kvm.zip (105.32 MB)`.
+Prendre l'image `New deployment of FortiGate for KVM`.
+
+```bash
+clear;
+URL=https://support.fortinet.com/app/download/api/file/ec37d4e5-e805-41e4-98dd-43d04743181f
+wget $URL -O /tmp/FGT_VM64_KVM-v7.6.4.F-build3596-FORTINET.out.kvm.zip
+```
 
 <br />
 
