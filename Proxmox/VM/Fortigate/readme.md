@@ -67,8 +67,15 @@ qm set 211 -net0 model=e1000,bridge=vmbr0
 qm set 211 -net1 model=e1000,bridge=vmbr1
 ```
 
+
 ### G. Démarrer
 La VM est prête
+
+```bash
+ckear;
+VMID=211
+qm start $VMID
+```
 
 <br/>
 
