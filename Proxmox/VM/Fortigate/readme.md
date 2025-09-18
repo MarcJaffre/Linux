@@ -10,7 +10,8 @@ Prendre l'image `New deployment of FortiGate for KVM`.
 ```bash
 clear;
 URL=https://support.fortinet.com/app/download/api/file/ec37d4e5-e805-41e4-98dd-43d04743181f
-wget $URL -O /tmp/FGT_VM64_KVM-v7.6.4.F-build3596-FORTINET.out.kvm.zip
+wget $URL -O /tmp/FGT_VM64_KVM-v7.6.4.F-build3596-FORTINET.out.kvm.zip;
+unzip  /tmp/FGT_VM64_KVM-v7.6.4.F-build3596-FORTINET.out.kvm.zip -d /tmp;
 ```
 
 <br />
@@ -25,7 +26,9 @@ Créer une VM sans stockage.
 Le stockage se nomme `Data`
 ```bash
 clear;
-qm importdisk XXX /tmp/fortios.qcow2 <NOM DU STOCKAGE>
+STORAGE=DATA
+VMID=210
+qm importdisk $VMID /tmp/fortios.qcow2 $STORAGE
 ```
 
 <br />
