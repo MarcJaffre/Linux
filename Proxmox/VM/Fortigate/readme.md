@@ -84,7 +84,10 @@ Lors du premier démarrage, indiquer comme identifiant `admin` et comme mot de p
 
 
 ```
+
 config system interface
+
+# Configuration WAN
 edit "port1"
     set mode static
     set ip 192.168.0.44 255.255.255.0
@@ -94,7 +97,7 @@ edit "port1"
     set allowaccess ping ssh http https
 next
 
-
+# Configuration LAN
 edit "port2"
     set mode static
     set ip 192.168.10.1 255.255.255.0
@@ -104,7 +107,7 @@ edit "port2"
     set allowaccess ping ssh http https
 end
 
-
+# Configuration de la passerelle
 config router static
 edit 1
     set gateway 192.168.0.1
@@ -112,11 +115,13 @@ edit 1
 next
 end
 
+# Configuration du DNS
 config system dns
     set primary 8.8.8.8
     set secondary 8.8.4.4
 end
 
+# Configuration du DHCP
 config system dhcp server
     edit 1
         set interface "port2"
@@ -135,6 +140,7 @@ config system dhcp server
     next
 end
 
+# Configuration globale
 config system global
     set hostname fortigate
     set language french
