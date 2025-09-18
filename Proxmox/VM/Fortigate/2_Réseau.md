@@ -1,9 +1,10 @@
 -----------------------------------------------------------------------------------------------------------------------
-# <p align='center'> Configuration du réseau </p>
+# <p align='center'> Configuration des réseaux </p>
 -----------------------------------------------------------------------------------------------------------------------
-## I. Configuration des réseaux
+## I. Général
 ### A. Interfaces
 Dans le bandeau de gauche, sélectionner le menu `Réseau` > `Interfaces`.
+
 #### 1. WAN
 Sélectionner l'interface qui correspond au `WAN` puis cliquer sur `Modifier`.
 
@@ -24,4 +25,8 @@ Définir l'adresse IP du routeur au sein d'un réseau LAN. (192.168.10.0/24)
 
 <br />
 
-### B. Routes
+### B. Paramètres DNS
+Les Paramètres DNS permet de définir le DNS que le routeur va utilisé pour résoudre les requêtes.
+
+
+<img width="860" height="167" alt="image" src="https://github.com/user-attachments/assets/60fbadad-5a03-453c-b245-89934ecab2c4" />
