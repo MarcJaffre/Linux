@@ -1,12 +1,11 @@
 -----------------------------------------------------------------------------------------------------------------------
 # <p align='center'> Configuration de base du routeur </p>
 -----------------------------------------------------------------------------------------------------------------------
-
-
-
-### C. Configuration avancée
+## I. Configuration du routeur en CLI
+### A. Console SSH
 Se connecter en SSH et injecter la configuration
-#### 1. Configuration Global
+
+### B. Configuration Global
 ```bash
 config system global
     set hostname fortigate
@@ -14,8 +13,7 @@ config system global
     set timezone Europe/Paris
 end
 ```
-
-#### 2. Définir un alias et la zone du WAN
+### C. Définir un alias et la zone du WAN
 ```
 config system interface
 edit "port1"
@@ -25,7 +23,7 @@ next
 end
 ```
 
-#### 3. Configuration de la passerelle
+### D. Configuration de la passerelle
 ```bash
 config router static
 edit 1
@@ -34,7 +32,7 @@ edit 1
 next
 end
 ```
-#### 4. Configuration du DNS (routeur)
+### E. Configuration du DNS (routeur)
 ```bash
 config system dns
     set primary 8.8.8.8
@@ -43,7 +41,7 @@ end
 ```
 
 
-#### 5. Configuration du LAN
+### F. Configuration du LAN
 ```bash
 edit "port2"
     set mode static
@@ -55,8 +53,7 @@ edit "port2"
 end
 ```
 
-#### 6. Configuration du DHCP (LAN)
-
+### G. Configuration du DHCP (LAN)
 ```bash
 config system dhcp server
     edit 1
