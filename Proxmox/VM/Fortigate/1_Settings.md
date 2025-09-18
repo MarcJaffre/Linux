@@ -2,25 +2,6 @@
 # <p align='center'> Configuration de base du routeur </p>
 -----------------------------------------------------------------------------------------------------------------------
 
----------------------------------------------------------------------------------------------------------------------------------------
-## I. Configuration
-### A. Reset Factory
-```bash
-execute factoryreset
-```
-
-### B. Configuration du WAN (Interface + Passerelle)
-Lors du premier démarrage, indiquer comme identifiant `admin` et comme mot de passe `vide`.
-
-```
-config system interface
-edit "port1"
-    set mode static
-    set ip 192.168.0.44/24
-    set allowaccess ping ssh http https
-end
-```
-
 
 
 ### C. Configuration avancée
