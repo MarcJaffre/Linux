@@ -131,7 +131,7 @@ edit "port1"
     set mode static
     set name WAN
     set ip 192.168.0.44 255.255.255.0
-    set allowaccess ping ssh
+    set allowaccess ping ssh http https
 next
 
 
@@ -139,7 +139,7 @@ edit "port2"
     set mode static
     set ip 192.168.10.1 255.255.255.0
     set name LAN
-    set allowaccess ping https
+    set allowaccess ping ssh http https
 end
 
 config router static
