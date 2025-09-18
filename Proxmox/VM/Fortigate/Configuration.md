@@ -32,6 +32,11 @@ Sélectionner l'interface qui correspond au `WAN` puis cliquer sur `Modifier`.
 
 #### 2. LAN
 
+<img width="850" height="173" alt="image" src="https://github.com/user-attachments/assets/ed8c80be-fd90-4b00-895d-1c40219789fa" />
+
+<img width="855" height="103" alt="image" src="https://github.com/user-attachments/assets/2e55d500-b51b-4c3f-bdc7-627c28c3bba6" />
+
+
 <br />
 
 ### B. Routes
