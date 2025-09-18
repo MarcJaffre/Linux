@@ -109,7 +109,7 @@ end
 ### C. Configuration Passerelle
 ```
 config router static
-edit "port1"
+edit 1
 set gateway 192.168.0.1
 set device "port1"
 end
