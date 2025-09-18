@@ -55,9 +55,15 @@ end
 ```
 
 ### G. Configuration du DHCP
+#### 1. Suppression du DHCP
 ```bash
 config system dhcp server
     delete 1
+end
+```
+#### 2. Création du DHCP 
+```bash
+config system dhcp server
     edit 1
         set interface "port2"
         set lease-time 86400
