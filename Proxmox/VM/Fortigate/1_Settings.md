@@ -41,6 +41,7 @@ end
 
 ### F. Configuration du LAN
 ```bash
+config system interface
 edit "port2"
     set mode static
     set ip 192.168.10.1 255.255.255.0
