@@ -157,7 +157,6 @@ set hostname fortigate
 set language french
 set timezone Europe/Paris
 end
-
 ```
 
 
