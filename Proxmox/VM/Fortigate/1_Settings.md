@@ -33,15 +33,16 @@ config system global
     set timezone Europe/Paris
 end
 
+
 # Configuration du WAN
+config system interface
 edit "port1"
-    set name WAN
     set alias "WAN"
     set role wan
 next
 end
 
-
+# Configuration de la passerelle
 config router static
 edit 1
     set gateway 192.168.0.1
@@ -53,6 +54,9 @@ config system dns
     set primary 8.8.8.8
     set secondary 8.8.4.4
 end
+
+
+
 
 # Configuration du LAN
 edit "port2"
