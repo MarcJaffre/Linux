@@ -16,13 +16,10 @@ unzip  /tmp/FGT_VM64_KVM-v7.6.4.F-build3596-FORTINET.out.kvm.zip -d /tmp;
 
 <br />
 
-### B. Transfert de fichier
-Envoyé le fichier via un client SFTP dans le dossier /tmp.
+### B. Création de la VM
+Créer une VM sans stockage.
 
-### C. Création de la VM
-Créer une VM sans stockage. 
-
-### D. Importer le Disque
+### C. Importer le Disque
 Le stockage se nomme `Data`
 ```bash
 clear;
@@ -33,7 +30,7 @@ qm importdisk $VMID /tmp/fortios.qcow2 $STORAGE;
 
 <br />
 
-### E. Attacher le Stockage
+### D. Attacher le Stockage
 Le disque dur est en status inutilisé, il faut l'attacher sur la VM.
 
 ```bash
@@ -44,8 +41,7 @@ DIRECTORY=$(cat /etc/pve/storage.cfg  | grep "dir: $STORAGE" -A1 | tail -n 1 | c
 qm set $VMID -sata1 $DIRECTORY/images/$VMID/vm-$VMID-disk-0.raw
 ```
 
-
-### F. Boot Menu
+### E. Boot Menu
 Définir le disque dur comme démarrage.
 
 ```bash
@@ -54,8 +50,7 @@ VMID=211
 qm set $VMID -boot order=sata1
 ```
 
-
-### G. Ajouter une carte-réseau
+### F. Ajouter une carte-réseau
 Pour avoir un LAN, il est nécessaire d'attacher une seconde carte réseau
 ```bash
 clear;
@@ -64,7 +59,7 @@ qm set 211 -net0 model=e1000,bridge=vmbr0
 qm set 211 -net1 model=e1000,bridge=vmbr1
 ```
 
-### H. Démarrer
+### G. Démarrer
 La VM est prête
 
 <br/>
