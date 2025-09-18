@@ -63,7 +63,7 @@ config firewall policy
         set action accept
         set schedule "always"
         set service "ALL"
-        set nat enable
+        set nat disable
     next
 end
 ```
