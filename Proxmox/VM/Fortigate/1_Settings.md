@@ -54,9 +54,10 @@ edit "port2"
 end
 ```
 
-### G. Configuration du DHCP (KO)
+### G. Configuration du DHCP
 ```bash
 config system dhcp server
+    delete 1
     edit 1
         set interface "port2"
         set lease-time 86400
@@ -78,6 +79,8 @@ Valeur relevé depuis un DHCP crée depuis le panel web:
 ```
 config system dhcp server
 get 1
+
+
 id                  : 1
 status              : enable
 lease-time          : 604800
