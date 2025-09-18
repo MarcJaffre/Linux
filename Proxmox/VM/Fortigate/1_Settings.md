@@ -25,6 +25,7 @@ end
 
 ### C. Configuration avancée
 Se connecter en SSH et injecter la configuration
+#### 1. Configuration Generique
 ```bash
 # Configuration globale
 config system global
@@ -32,17 +33,20 @@ config system global
     set language french
     set timezone Europe/Paris
 end
+```
 
-
-# Configuration du WAN
+#### 2. Définir un alias et la zone du WAN
+```
 config system interface
 edit "port1"
     set alias "WAN"
     set role wan
 next
 end
+```
 
-# Configuration de la passerelle
+#### 3. Configuration de la passerelle
+```bash
 config router static
 edit 1
     set gateway 192.168.0.1
@@ -54,11 +58,12 @@ config system dns
     set primary 8.8.8.8
     set secondary 8.8.4.4
 end
+```
 
 
 
-
-# Configuration du LAN
+#### 4. Configuration du LAN
+```bash
 edit "port2"
     set mode static
     set ip 192.168.10.1 255.255.255.0
@@ -67,9 +72,11 @@ edit "port2"
     set role lan
     set allowaccess ping ssh http https
 end
+```
 
+#### 5. Configuration du DHCP (LAN)
 
-# Configuration du DHCP
+```bash
 config system dhcp server
     edit 1
         set interface "port2"
