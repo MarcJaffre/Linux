@@ -19,7 +19,6 @@ config system interface
 edit "port1"
     set alias "WAN"
     set role wan
-next
 end
 ```
 
@@ -29,7 +28,6 @@ config router static
 edit 1
     set gateway 192.168.0.1
     set device "port1"
-next
 end
 ```
 ### E. Configuration du DNS (routeur)
@@ -67,10 +65,10 @@ config system dhcp server
             next
         end
         set default-gateway 192.168.10.1
+        set dns-service specify
         set dns-server1 8.8.8.8
         set dns-server2 8.8.4.4
         set status enable
-    next
 end
 ```
 
