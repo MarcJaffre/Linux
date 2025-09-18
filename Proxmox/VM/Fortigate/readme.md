@@ -129,12 +129,16 @@ execute factoryreset-shutdown
 config system interface
 edit "port1"
     set mode static
+    set name WAN
     set ip 192.168.0.44 255.255.255.0
     set allowaccess ping ssh
 next
+
+
 edit "port2"
     set mode static
     set ip 192.168.10.1 255.255.255.0
+    set name LAN
     set allowaccess ping https
 end
 
@@ -144,7 +148,6 @@ edit 1
     set device "port1"
 next
 end
-
 
 config system dns
     set primary 8.8.8.8
