@@ -83,7 +83,7 @@ Lors du premier démarrage, indiquer comme identifiant `admin` et comme mot de p
 execute factoryreset
 ```
 
-### C. Configuration du WAN (Interface + Passerelle)
+### C. Configuration du WAN
 
 ```
 config system interface
@@ -93,3 +93,6 @@ edit "port1"
     set allowaccess ping ssh http https
 end
 ```
+
+### D. WebUi
+Aller sur la page [Fortinet](http://192.168.0.44)
