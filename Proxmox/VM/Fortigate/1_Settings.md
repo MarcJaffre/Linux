@@ -76,8 +76,10 @@ end
 ```
 
 
+Valeur relevé depuis un DHCP crée depuis le panel web:
 ```
-fortigate (1) # get
+config system dhcp server
+get 1
 id                  : 1
 status              : enable
 lease-time          : 604800
