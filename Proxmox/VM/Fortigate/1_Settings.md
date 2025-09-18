@@ -54,7 +54,7 @@ edit "port2"
 end
 ```
 
-### G. Configuration du DHCP (LAN)
+### G. Configuration du DHCP (KO)
 ```bash
 config system dhcp server
     edit 1
@@ -73,6 +73,36 @@ config system dhcp server
         set dns-server2 8.8.4.4
         set status enable
 end
+```
+
+
+```
+fortigate (1) # get
+id                  : 1
+status              : enable
+lease-time          : 604800
+mac-acl-default-action: assign
+forticlient-on-net-status: enable
+dns-service         : default
+wifi-ac-service     : specify
+wifi-ac1            : 0.0.0.0
+wifi-ac2            : 0.0.0.0
+wifi-ac3            : 0.0.0.0
+ntp-service         : specify
+domain              :
+wins-server1        : 0.0.0.0
+wins-server2        : 0.0.0.0
+default-gateway     : 192.168.10.1
+next-server         : 0.0.0.0
+netmask             : 255.255.255.0
+interface           : port2
+ip-range:
+    == [ 1 ]
+    id:     1
+timezone-option     : disable
+tftp-server         :
+filename            :
+
 ```
 
 
