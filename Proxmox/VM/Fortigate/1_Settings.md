@@ -18,9 +18,6 @@ config system interface
 edit "port1"
     set mode static
     set ip 192.168.0.44 255.255.255.0
-    set name WAN
-    set alias "WAN"
-    set role wan
     set allowaccess ping ssh http https
 next
 
@@ -40,6 +37,7 @@ end
 ### C. Configuration avancée
 
 ```bash
+
 # Configuration globale
 config system global
     set hostname fortigate
@@ -47,8 +45,15 @@ config system global
     set timezone Europe/Paris
 end
 
+# Configuration du WAN
+edit "port1"
+    set name WAN
+    set alias "WAN"
+    set role wan
+next
+end
 
-# Configuration LAN
+# Configuration du LAN
 edit "port2"
     set mode static
     set ip 192.168.10.1 255.255.255.0
