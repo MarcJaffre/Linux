@@ -17,3 +17,17 @@ SSH port   : 22
 Language : French
 ```
 
+<br />
+
+-----------------------------------------------------------------------------------------------------------------------
+## II. Configuration du réseau
+### B. Interfaces
+Dans le bandeau de gauche, sélectionner le menu `Réseau` > `Interfaces`.
+#### 1. WAN
+Sélectionner l'interface qui correspond au `WAN` puis cliquer sur `Modifier`.
+
+
+
+<img width="869" height="344" alt="image" src="https://github.com/user-attachments/assets/e9386b81-0197-428e-ae30-89ebb9c47a0e" />
+
+
