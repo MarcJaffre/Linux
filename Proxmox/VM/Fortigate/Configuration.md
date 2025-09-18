@@ -21,7 +21,7 @@ Language : French
 
 -----------------------------------------------------------------------------------------------------------------------
 ## II. Configuration du réseau
-### B. Réseau
+### A. Réseau
 #### 1. Interfaces 
 ##### WAN
 Dans le bandeau de gauche, sélectionner le menu `Réseau` > `Interfaces`.
