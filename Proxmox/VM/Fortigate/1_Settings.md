@@ -26,10 +26,12 @@ end
 ```bash
 config router static
 edit 1
+    set dst 0.0.0.0/0
     set gateway 192.168.0.1
     set device "port1"
 end
 ```
+
 ### E. Configuration du DNS (routeur)
 ```bash
 config system dns
