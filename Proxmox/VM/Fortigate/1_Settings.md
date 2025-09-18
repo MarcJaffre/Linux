@@ -14,30 +14,18 @@ Lors du premier démarrage, indiquer comme identifiant `admin` et comme mot de p
 
 ```
 config system interface
-
 edit "port1"
     set mode static
     set ip 192.168.0.44 255.255.255.0
     set allowaccess ping ssh http https
-next
-
-config router static
-edit 1
-    set gateway 192.168.0.1
-    set device "port1"
-next
-end
-
-config system dns
-    set primary 8.8.8.8
-    set secondary 8.8.4.4
 end
 ```
 
+
+
 ### C. Configuration avancée
-
+Se connecter en SSH et injecter la configuration
 ```bash
-
 # Configuration globale
 config system global
     set hostname fortigate
@@ -51,6 +39,19 @@ edit "port1"
     set alias "WAN"
     set role wan
 next
+end
+
+
+config router static
+edit 1
+    set gateway 192.168.0.1
+    set device "port1"
+next
+end
+
+config system dns
+    set primary 8.8.8.8
+    set secondary 8.8.4.4
 end
 
 # Configuration du LAN
