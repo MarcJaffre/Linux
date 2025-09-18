@@ -25,9 +25,8 @@ end
 
 ### C. Configuration avancée
 Se connecter en SSH et injecter la configuration
-#### 1. Configuration Generique
+#### 1. Configuration Global
 ```bash
-# Configuration globale
 config system global
     set hostname fortigate
     set language french
@@ -53,7 +52,9 @@ edit 1
     set device "port1"
 next
 end
-
+```
+#### 4. Configuration du DNS (routeur)
+```bash
 config system dns
     set primary 8.8.8.8
     set secondary 8.8.4.4
@@ -61,8 +62,7 @@ end
 ```
 
 
-
-#### 4. Configuration du LAN
+#### 5. Configuration du LAN
 ```bash
 edit "port2"
     set mode static
@@ -74,7 +74,7 @@ edit "port2"
 end
 ```
 
-#### 5. Configuration du DHCP (LAN)
+#### 6. Configuration du DHCP (LAN)
 
 ```bash
 config system dhcp server
@@ -98,11 +98,7 @@ end
 
 
 
-
 ```
 https://docs.fortinet.com/document/fortigate-private-cloud/7.6.0/openstack-administration-guide/740208/deploying-a-fortigate-vm-instance-in-an-openstack-environment
 ```
-
-
-
 <br />
