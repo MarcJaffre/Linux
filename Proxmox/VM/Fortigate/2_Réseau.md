@@ -29,4 +29,4 @@ Définir l'adresse IP du routeur au sein d'un réseau LAN. (192.168.10.0/24)
 Les Paramètres DNS permet de définir le DNS que le routeur va utilisé pour résoudre les requêtes.
 
 
-<img width="860" height="190" alt="image" src="https://github.com/user-attachments/assets/60fbadad-5a03-453c-b245-89934ecab2c4" />
+<img width="860" height="220" alt="image" src="https://github.com/user-attachments/assets/60fbadad-5a03-453c-b245-89934ecab2c4" />
