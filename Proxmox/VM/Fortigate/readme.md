@@ -130,9 +130,10 @@ execute factoryreset-shutdown
 config system interface
 edit "port1"
     set mode static
+    set ip 192.168.0.44 255.255.255.0
     set name WAN
     set alias WAN
-    set ip 192.168.0.44 255.255.255.0
+    set role wan
     set allowaccess ping ssh http https
 next
 
@@ -142,8 +143,10 @@ edit "port2"
     set ip 192.168.10.1 255.255.255.0
     set name LAN
     set alias LAN
+    set role lan
     set allowaccess ping ssh http https
 end
+
 
 config router static
 edit 1
@@ -157,6 +160,24 @@ config system dns
     set secondary 8.8.4.4
 end
 
+
+config system dhcp server
+    edit 1
+        set interface "port2"
+        set lease-time 86400
+        set netmask 255.255.255.0
+        config ip-range
+            edit 1
+                set start-ip 192.168.10.2
+                set end-ip 192.168.10.10
+            next
+        end
+        set default-gateway 192.168.10.1
+        set dns-server1 8.8.8.8
+        set dns-server2 8.8.4.4
+        set status enable
+    next
+end
 
 config system global
     set hostname fortigate
