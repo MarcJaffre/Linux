@@ -46,7 +46,7 @@ end
 config system interface
 edit "port2"
     set mode static
-    set ip 192.168.10.1 255.255.255.0
+    set ip 192.168.10.1/24
     set name LAN
     set alias "LAN"
     set role lan
