@@ -5,6 +5,11 @@
 ### A. Console SSH
 Se connecter en SSH et injecter la configuration
 
+```bash
+get system interface physical
+```
+
+
 ### B. Configuration Global
 ```bash
 config system global
