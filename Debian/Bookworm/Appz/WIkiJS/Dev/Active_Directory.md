@@ -44,6 +44,8 @@ Ce paramètre
 
 Définir la valeur sur `(mail={{username}})`.
 
+<br />
+
 #### 5. Unique ID Field Mapping
 Ce paramètre 
 
