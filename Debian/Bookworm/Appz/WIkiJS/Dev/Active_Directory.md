@@ -5,13 +5,15 @@
 ### A. Active Directory
 Le domaine se nomme `Studi.local`.
 
-#### 1. Groupe
+#### 1. OU
+
+#### 2. Groupe
 Crée les Groupes `Wiki_User` et `Wiki_Admin` dans `Users`. 
 
-#### 2. User LDAP
+#### 3. User LDAP
 Créer un Compte `LDAP` dans `Users`.
 
-#### 3. User
+#### 4. User
 Créer un Compte `Marc` dans `Users` puis ajouter l'utilisateur dans le groupe `Wiki`.
 
 <br />
