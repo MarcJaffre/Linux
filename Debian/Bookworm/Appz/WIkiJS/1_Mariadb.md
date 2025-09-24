@@ -29,37 +29,37 @@ L'identifiant de la base de donnée `wikijs` est `wiki` et son mot de passe est 
 ### A. Suppression de la BDD et USER
 ```bash
 clear;
-/usr/bin/mariadb -u root -p -e "DROP DATABASE IF EXISTS wiki;DROP USER IF EXISTS 'wikijs'@'localhost';"
+/usr/bin/mariadb -u root -padmin -e "DROP DATABASE IF EXISTS wiki;DROP USER IF EXISTS 'wikijs'@'localhost';"
 ```
 
 ### B. Création de la BDD
 ```bash
 clear;
-/usr/bin/mariadb -u root -p -e "CREATE DATABASE IF NOT EXISTS wiki;"
+/usr/bin/mariadb -u root -padmin -e "CREATE DATABASE IF NOT EXISTS wiki;"
 ```
 
 ### C. Création de l'utilisateur
 ```bash
 clear;
-/usr/bin/mariadb -u root -p -e "CREATE USER  IF NOT EXISTS 'wikijs'@'localhost' IDENTIFIED BY 'wikijsrocks';"
+/usr/bin/mariadb -u root -padmin -e "CREATE USER  IF NOT EXISTS 'wikijs'@'localhost' IDENTIFIED BY 'wikijsrocks';"
 ```
 
 ### D. Permission de la BDD pour le compte
 ```bash
 clear;
-/usr/bin/mariadb -u root -p -e "GRANT ALL PRIVILEGES ON wiki.* TO 'wikijs'@'localhost';"
+/usr/bin/mariadb -u root -padmin -e "GRANT ALL PRIVILEGES ON wiki.* TO 'wikijs'@'localhost';"
 ```
 
 ### E. Permettre l'authentification pour Wiki
 ```bash
 clear;
-/usr/bin/mariadb -u root -p -e "ALTER USER wikijs@localhost IDENTIFIED VIA mysql_native_password USING PASSWORD('wikijsrocks');"
+/usr/bin/mariadb -u root -padmin -e "ALTER USER wikijs@localhost IDENTIFIED VIA mysql_native_password USING PASSWORD('wikijsrocks');"
 ```
 
 ### F. Afficher les Users 
 ```bash
 clear;
-/usr/bin/mariadb -u root -p -e "SELECT User FROM mysql.user; SHOW DATABASES;"
+/usr/bin/mariadb -u root -padmin -e "SELECT User FROM mysql.user; SHOW DATABASES;"
 ```
 
 ### G. Liste des SQL gérer par le compte USER:
