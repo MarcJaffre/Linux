@@ -5,19 +5,19 @@
 ### A. Installation du paquet
 ```bash
 clear;
-apt install mariadb-server
+apt install mariadb-server;
 ```
 
 ### B. Afficher la version de MariaDB
 ```bash
 clear;
-mariadb --version
+mariadb --version;
 ```
 
 ### C. Sécurisation de la Base De Donnée
 ```bash
 clear;
-mysql_secure_installation
+mysql_secure_installation;
 ```
 
 <br />
