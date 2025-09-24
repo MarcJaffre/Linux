@@ -6,7 +6,7 @@
 Le domaine se nomme `Studi.local`.
 
 #### 1. Groupe
-Crée les Groupes `Wiki_User` `Wiki_Admin` dans `Users`. 
+Crée les Groupes `Wiki_User` et `Wiki_Admin` dans `Users`. 
 
 #### 2. User LDAP
 Créer un Compte `LDAP` dans `Users`.
