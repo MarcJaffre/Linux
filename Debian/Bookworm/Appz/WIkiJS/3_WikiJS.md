@@ -85,7 +85,7 @@ WantedBy=multi-user.target
 ```bash
 clear;
 systemctl daemon-reload;
+systemctl enable  wiki;
 systemctl restart wiki;
 systemctl status  wiki;
-systemctl enable  wiki;
 ```
