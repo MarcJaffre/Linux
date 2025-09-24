@@ -24,6 +24,8 @@ mysql_secure_installation
 
 ------------------------------------------------------------------------------------------------------------
 ## II. Création de la Base de donnée et son utilisateur
+L'identifiant de la base de donnée `wikijs` est `wiki` et son mot de passe est `wikijsrocks`. 
+
 ### A. Suppression de la BDD et USER
 ```bash
 clear;
