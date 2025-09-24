@@ -30,35 +30,39 @@ Crée un groupe local `Wiki_Admin` avec des droits de Lectures.
 Définir la valeur sur `Active Directory`.
 
 #### 2. Admin Bind DN
-La paremètre `Admin Bind DN` est le chemin qui mène au compt AD qui permettra à WikiJS de s'authentifier.
+Ce paramètre est le chemin qui mène au compt AD qui permettra à WikiJS de s'authentifier.
 
 Définir la valeur sur `CN=LDAP,CN=Users,DC=studi,DC=local`
 
 #### 3. Search Base
-La paremètre `Search Base` est le chemin de base pour recherche dans l'AD. En prenant la racine, on autorise la recherche dans toute l'AD.
+Ce paramètre est le chemin de base pour recherche dans l'AD. En prenant la racine, on autorise la recherche dans toute l'AD.
 
 Définir la valeur sur `DC=studi,DC=local`.
 
 #### 4. Search Filter
-La paremètre `Search Filter`
+Ce paramètre 
 
 Définir la valeur sur `(mail={{username}})`.
 
 #### 5. Unique ID Field Mapping
-Le paramètre `Unique ID Field Mapping`
+Ce paramètre 
 
 Définir la valeur sur `sAMAccountName`.
 
 #### 6. Email Field mapping
-Le paramètre `Email Field mapping` permet
+Ce paramètre permet
 
 Définir la valeur sur `userPrincipalName`.
 
 
 #### 7. Display Name Field Mapping
-Le paramètre `Display Name Field Mapping` permet de récupérer le nom d'affichage dans l'AD dans le champs `displayName`.
+Ce paramètre permet de récupérer le nom d'affichage dans l'AD dans le champs `displayName`.
 
 Définir la valeur sur `displayName`.
+
+
+
+
 
 <br />
 
