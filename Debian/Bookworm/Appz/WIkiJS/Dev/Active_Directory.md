@@ -42,7 +42,7 @@ Définir la valeur sur `DC=studi,DC=local`.
 #### 4. Search Filter
 Ce paramètre 
 
-Définir la valeur sur `userPrincipalName={{username}})`.
+Définir la valeur sur `(userPrincipalName={{username}})`.
 
 <br />
 
