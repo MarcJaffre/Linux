@@ -7,7 +7,6 @@ Ma carte-réseau se nomme `eth0`. Il sera nécessaire d'adapter. Pour récupére
 
 <img width="1391" height="256" alt="image" src="https://github.com/user-attachments/assets/8a893315-2c0c-4639-9573-b38d5d65b4c9" />
 
-
 #### 1. Edition du fichier
 ```bash
 clear;
