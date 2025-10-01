@@ -3,7 +3,11 @@
 ----------------------------------------------------------------------------------------------------------------------------
 ## I. Debian
 ### A. Carte-réseau
-Ma carte-réseau se nomme `enp6s18`. Il sera nécessaire d'adapter.
+Ma carte-réseau se nomme `eth0`. Il sera nécessaire d'adapter. Pour récupérer le nom de la carte-réseau `ip address`.
+
+<img width="1391" height="256" alt="image" src="https://github.com/user-attachments/assets/8a893315-2c0c-4639-9573-b38d5d65b4c9" />
+
+
 #### 1. Edition du fichier
 ```bash
 clear;
@@ -11,9 +15,9 @@ nano /etc/network/interfaces;
 ```
 
 ```
-auto enp6s18
-allow-hotplug enp6s18
-iface enp6s18 inet static
+auto eth0
+allow-hotplug eth0
+iface eth0 inet static
    address 192.168.0.18
    netmask 255.255.255.0
    gateway 192.168.0.1
