@@ -103,6 +103,8 @@ deb-src http://ftp.fr.debian.org/debian/            bookworm-updates   main non-
 ####################################################################################################
 ```
 
+Pour enregistrer faire `CTRL+X` > Taper `Y` > Entrer.
+
 ### H. Mise à jour
 ```bash
 clear;
