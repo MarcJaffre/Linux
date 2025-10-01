@@ -26,6 +26,7 @@ iface eth0 inet static
 
 ### B. Configuration du DNS
 #### 1. Edition du fichier
+Le domaine de mon serveur est `home.lan`, à adapter en conséquence. Mon routeur est en `192.168.0.1`.
 ```bash
 clear;
 nano /etc/resolv.conf;
@@ -46,6 +47,7 @@ wikijs
 ```
 
 #### 1. Edition du fichier
+Le domaine de mon serveur est `home.lan`, à adapter en conséquence. 
 ```bash
 clear;
 nano /etc/hosts;
@@ -71,6 +73,11 @@ hostname --ip-address;
 ```
 
 ### G. Dépôt
+Pour connaitre la version de son système d'exploitation, taper la commande `lsb_release -a`. Dans mon cas c'est `bookworm` et donc dans mon fichier se sera `bookworm`.
+
+<img width="653" height="137" alt="image" src="https://github.com/user-attachments/assets/862b6088-361a-49bc-9d3e-649c90e9ef1d" />
+
+
 ```bash
 clear;
 nano /etc/apt/sources.list;
@@ -80,20 +87,20 @@ nano /etc/apt/sources.list;
 ####################################################################################################
 # Main #
 ########
-deb     http://ftp.fr.debian.org/debian/            bookworm           main non-free-firmware
-deb-src http://ftp.fr.debian.org/debian/            bookworm           main non-free-firmware
+deb     http://ftp.fr.debian.org/debian/            bookworm           main non-free
+deb-src http://ftp.fr.debian.org/debian/            bookworm           main non-free
 
 ####################################################################################################
 # Securite Patch #
 ##################
-deb     http://security.debian.org/debian-security  bookworm-security  main non-free-firmware
-deb-src http://security.debian.org/debian-security  bookworm-security  main non-free-firmware
+deb     http://security.debian.org/debian-security  bookworm-security  main non-free
+deb-src http://security.debian.org/debian-security  bookworm-security  main non-free
 
 ####################################################################################################
 # Fix #
 #######
-deb     http://ftp.fr.debian.org/debian/            bookworm-updates   main non-free-firmware
-deb-src http://ftp.fr.debian.org/debian/            bookworm-updates   main non-free-firmware
+deb     http://ftp.fr.debian.org/debian/            bookworm-updates   main non-free
+deb-src http://ftp.fr.debian.org/debian/            bookworm-updates   main non-free
 ####################################################################################################
 ```
 
