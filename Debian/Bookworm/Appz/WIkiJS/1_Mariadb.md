@@ -29,7 +29,8 @@ L'identifiant de la base de donnée `wikijs` est `wiki` et son mot de passe est 
 ### A. Suppression de la BDD et USER
 ```bash
 clear;
-/usr/bin/mariadb -u root -padmin -e "DROP DATABASE IF EXISTS wiki;DROP USER IF EXISTS 'wikijs'@'localhost';"
+/usr/bin/mariadb -u root -padmin -e "DROP DATABASE IF EXISTS wiki;"
+/usr/bin/mariadb -u root -padmin -e "DROP USER IF EXISTS 'wikijs'@'localhost';"
 ```
 
 ### B. Création de la BDD
