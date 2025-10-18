@@ -2,19 +2,40 @@
 ## <p align='center'> Installation de Linux Apache MariaDB PHP</p>
 --------------------------------------------------------------------------------------------------------------------------------
 ## I. Installation
-
+### A. Apache
 ```bash
 clear;
 apt install -y apache2 libapache2-mod-php 1>/dev/null;
 ```
 
-
+### B. MariaDB
 ```bash
 clear;
 PASS_ROOT_SQL=admin
 apt install -y mariadb-server 1>/dev/null;
 (echo ""; echo "y"; echo "y"; echo "$PASS_ROOT_SQL"; echo "$PASS_ROOT_SQL"; echo "y"; echo "y"; echo "y"; echo "y") | mysql_secure_installation | 1>/dev/null;
 ```
+
+### C. PHP
+#### 1. 
+```bash
+clear;
+apt install -y php libapache2-mod-php 1>/dev/null;
+```
+#### 2. Fuseau Horaire
+```bash
+clear;
+PHP_VERSION=$(php -version | head -n 1 | cut -d "P" -f3 | cut -c 2-4)
+sed -i -e "s/;date.timezone \=/date.timezone \= Europe\/Paris/g" /etc/php/$PHP_VERSION/apache2/php.ini;
+grep "date.timezone" /etc/php/$PHP_VERSION/apache2/php.ini;
+systemctl restart apache2;
+```
+
+
+
+
+
+
 
 ```sql
 clear;
