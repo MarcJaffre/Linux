@@ -28,8 +28,8 @@ mysql -u root -padmin -e "ALTER USER GLPI@localhost IDENTIFIED VIA mysql_native_
 <br />
 
 --------------------------------------------------------------------------------------------------------------------------------------------
-## II. Préparation Environnement
-### A. Configurer Apache
+## II. Apache
+### A. Configuration
 ```bash
 clear;
 mv /etc/apache2/sites-enabled/000-default.conf /etc/apache2/sites-enabled/000-default.conf.old;
@@ -66,26 +66,40 @@ nano /etc/apache2/sites-enabled/000-default.conf;
 </VirtualHost>
 ```
 
-### B. Télécharger GLPI
+<br />
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+## III. PHP
+### A. Activation du module Rewrite (Apache2)
+```bash
+clear;
+/usr/sbin/a2enmod rewrite;
+```
+
+<br />
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+## IV. GLPI (Partie I)
+### A. Télécharger GLPI
 ```bash
 clear;
 VERSION=10.0.9
 wget https://github.com/glpi-project/glpi/releases/download/$VERSION/glpi-$VERSION.tgz -O /tmp/glpi.tgz 2>/dev/null;
 ```
-### C. Extraire GLPI
+### B. Extraire GLPI
 ```bash
 clear;
 tar -xf /tmp/glpi.tgz -C /var/www/html;
 ```
 
-### D. Permission
+### C. Permission
 ```bash
 clear;
 chown -R www-data:www-data /var/www/html;
 chmod 755 /var/www/html/glpi;
 ```
 
-### E. Modules PHP
+### D. Modules PHP
 #### 1. Indispensable
 ```bash
 clear;
@@ -96,7 +110,7 @@ apt install -y php-curl php-gd php-intl php-mysqli php-simplexml 1>/dev/null;
 apt install -y php-bz2 php-ldap php-mbstring php-symfony-polyfill-ctype php-zip 1>/dev/null;
 ```
 
-#### F. Relance du service Apache
+#### E. Relance du service Apache
 ```bash
 clear;
 systemctl restart apache2;
@@ -105,7 +119,7 @@ systemctl restart apache2;
 <br />
 
 --------------------------------------------------------------------------------------------------------------------------------------------
-## III. Installation du site
+## III. GLPI (Partie II)
 ### A. Vérification (Prérequis, Sécurité)
 ```bash
 clear;
@@ -138,10 +152,4 @@ Le fichier install.php doit être renommé ou Supprimé.
 ```bash
 clear;
 rm /var/www/html/glpi/install/install.php;
-```
-
-### D. Activation du module Rewrite (Apache2)
-```bash
-clear;
-/usr/sbin/a2enmod rewrite;
 ```
