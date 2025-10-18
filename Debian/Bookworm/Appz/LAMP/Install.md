@@ -5,7 +5,7 @@
 ### A. Apache
 ```bash
 clear;
-apt install -y apache2 libapache2-mod-php 1>/dev/null;
+apt install -y apache2 1>/dev/null;
 ```
 
 ### B. MariaDB
@@ -17,7 +17,7 @@ apt install -y mariadb-server 1>/dev/null;
 ```
 
 ### C. PHP
-#### 1. 
+#### 1. Base
 ```bash
 clear;
 apt install -y php libapache2-mod-php 1>/dev/null;
