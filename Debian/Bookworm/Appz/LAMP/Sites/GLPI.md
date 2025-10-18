@@ -1,14 +1,8 @@
 --------------------------------------------------------------------------------------------------------------------------------------------
 ## <p align='center'> Guide de Déploiement de GLPI sous Debian </p>
-
 --------------------------------------------------------------------------------------------------------------------------------------------
-### Préparation de l'environnement
-Il faut appliquer la fiche LAMP avant d'installer GLPI.
-
-
---------------------------------------------------------------------------------------------------------------------------------------------
-#### I. Base De Donnée
-##### A. Gestion de la Base De Donnée
+## I. Base De Donnée
+### A. Gestion de la Base De Donnée
 ```bash
 clear;
 
@@ -34,41 +28,120 @@ mysql -u root -padmin -e "ALTER USER GLPI@localhost IDENTIFIED VIA mysql_native_
 <br />
 
 --------------------------------------------------------------------------------------------------------------------------------------------
-### II. Préparation Environnement
-##### A. Télécharger GLPI
+## II. Préparation Environnement
+### A. Configurer Apache
+```bash
+clear;
+mv /etc/apache2/sites-enabled/000-default.conf /etc/apache2/sites-enabled/000-default.conf.old;
+nano /etc/apache2/sites-enabled/000-default.conf;
+```
+
+```
+<VirtualHost *:80>
+ # Nom du serveur (/etc/hosts)
+ ServerName debian.lan
+
+ # Dossier Web Public
+ DocumentRoot /var/www/html/glpi/public
+        
+ # Fichier à charger par défaut (ordre)
+ <IfModule dir_module>
+   DirectoryIndex index.php index.html
+ </IfModule>
+
+ # Alias
+ Alias "/glpi" "/var/www/html/glpi/public"
+
+ # Log
+ ErrorLog ${APACHE_LOG_DIR}/error.log
+ CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+ # Repertoire
+ <Directory /var/www/html/glpi/public>
+   Require all granted
+   RewriteEngine On
+   RewriteCond %{REQUEST_FILENAME} !-f
+   RewriteRule ^(.*)$ index.php [QSA,L]
+ </Directory>
+</VirtualHost>
+```
+
+### B. Télécharger GLPI
 ```bash
 clear;
 VERSION=10.0.9
 wget https://github.com/glpi-project/glpi/releases/download/$VERSION/glpi-$VERSION.tgz -O /tmp/glpi.tgz 2>/dev/null;
 ```
-##### B. Extraire GLPI
+### C. Extraire GLPI
 ```bash
 clear;
 tar -xf /tmp/glpi.tgz -C /var/www/html;
 ```
-##### C. Permission
+
+### D. Permission
 ```bash
 clear;
 chown -R www-data:www-data /var/www/html;
 chmod 755 /var/www/html/glpi;
 ```
-##### D. Modules PHP
+
+### E. Modules PHP
+#### 1. Indispensable
 ```bash
 clear;
-
-# Indispensable:
 apt install -y php-curl php-gd php-intl php-mysqli php-simplexml 1>/dev/null;
-
-# Optionnel:
+```
+#### 2. Optionnel
+```bash
 apt install -y php-bz2 php-ldap php-mbstring php-symfony-polyfill-ctype php-zip 1>/dev/null;
 ```
-##### E. Relance du service Apache
+
+#### F. Relance du service Apache
 ```bash
 clear;
 systemctl restart apache2;
 ```
-##### F. Vérification (Prérequis, Sécurité)
+
+<br />
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+## III. Installation du site
+### A. Vérification (Prérequis, Sécurité)
 ```bash
 clear;
 /var/www/html/glpi/bin/console glpi:system:check_requirements;
+```
+
+### B. Installation du site
+```bash
+clear;
+
+LANGUE=fr_FR
+HOST=localhost
+DATABSE=GLPI
+USERNAMEDB=GLPI
+PASSDB=admin
+
+/var/www/html/glpi/bin/console db:install \
+--reconfigure \
+--default-language=$LANGUE \
+--db-host=$HOST \
+--db-port=3306 \
+--db-name=$DATABSE \
+--db-user=$USERNAMEDB \
+--db-password=$PASSDB \
+--force;
+```
+
+### C. Install.php
+Le fichier install.php doit être renommé ou Supprimé.
+```bash
+clear;
+rm /var/www/html/glpi/install/install.php;
+```
+
+### D. Activation du module Rewrite (Apache2)
+```bash
+clear;
+/usr/sbin/a2enmod rewrite;
 ```
