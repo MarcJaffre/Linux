@@ -91,6 +91,11 @@ wget https://github.com/glpi-project/glpi/releases/download/$VERSION/glpi-$VERSI
 clear;
 tar -xf /tmp/glpi.tgz -C /var/www/html;
 ```
+### D. Log
+```bash
+clear;
+mkdir -p /var/www/html/glpi/files/_log
+```
 
 ### C. Permission
 ```bash
@@ -98,6 +103,8 @@ clear;
 chown -R www-data:www-data /var/www/html;
 chmod 755 /var/www/html/glpi;
 ```
+
+
 
 ### D. Modules PHP
 #### 1. Indispensable
