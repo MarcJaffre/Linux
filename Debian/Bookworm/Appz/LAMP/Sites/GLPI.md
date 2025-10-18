@@ -76,6 +76,19 @@ clear;
 /usr/sbin/a2enmod rewrite;
 ```
 
+### B. Correctif
+#### 1. session.cookie_httponly
+```bash
+clear;
+PHP_VERSION=$(php -version | head -n 1 | cut -d "P" -f3 | cut -c 2-4)
+sed -i -e 's/^session.cookie_httponly =/session.cookie_httponly = on/g' /etc/php/$PHP_VERSION/apache2/php.ini;
+```
+#### 2. Relance Apache2
+```bash
+clear;
+systemctl restart apache2;
+```
+
 <br />
 
 --------------------------------------------------------------------------------------------------------------------------------------------
@@ -94,7 +107,7 @@ tar -xf /tmp/glpi.tgz -C /var/www/html;
 ### D. Log
 ```bash
 clear;
-mkdir -p /var/www/html/glpi/files/_log
+mkdir -p /var/www/glpi/files/_log
 ```
 
 ### C. Permission
@@ -103,7 +116,6 @@ clear;
 chown -R www-data:www-data /var/www/html;
 chmod 755 /var/www/html/glpi;
 ```
-
 
 
 ### D. Modules PHP
