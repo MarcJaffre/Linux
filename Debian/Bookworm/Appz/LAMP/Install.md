@@ -31,12 +31,11 @@ grep "date.timezone" /etc/php/$PHP_VERSION/apache2/php.ini;
 systemctl restart apache2;
 ```
 
+<br />
 
-
-
-
-
-
+--------------------------------------------------------------------------------------------------------------------------------
+## II. UTilisation
+### A. MariaDB
 ```sql
 clear;
 
