@@ -83,7 +83,7 @@ end
 
 
 ### D. Full Trafic autorisé
-```
+```bash
 config firewall policy
     edit 99
         set name "LAN_to_WAN"
