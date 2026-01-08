@@ -36,8 +36,11 @@ services:                                                    #
       - TZ=Europe/Paris                                      #
       # ---------------------------------------------------- #
       - LIBVA_DRIVER_NAME=iHD                                #
-      - VAAPI_DEVICE=/dev/dri/renderD128                     #
       - LIBVA_DRIVERS_PATH=/usr/lib/x86_64-linux-gnu/dri     #
+      # ---------------------------------------------------- #
+      - QSV_DEVICE=/dev/dri/renderD128                       #
+      # ---------------------------------------------------- #
+      #- VAAPI_DEVICE=/dev/dri/renderD128                    #
     # ------------------------------------------------------ #
     devices:                                                 #
       - '/dev/dri:/dev/dri'                                  #
@@ -82,24 +85,24 @@ x-casaos:                                                    #
 # ----------------------------------------------------------------- #
 # Activer le décodage matériel pour:                                #
 # H264             : ON                                             #
-# HEVC             : "ON"                                           #
+# HEVC             : ON                                             #
 # MPEG2            : ON                                             #
 # MPEG4            : OFF                                            #
 # VC1              : ON                                             #
 # VP8              : ON                                             #
 # VP9              : OFF                                            #
 # AV1              : OFF                                            #
-# HEVC 10bit       : "ON"                                           #
+# HEVC 10bit       : ON                                             #
 # VP9  10bit       : OFF                                            #
 # HEVC Rex 8/10bit : OFF                                            #
 # HEVC Rex 12bit   : OFF                                            #
 # ----------------------------------------------------------------- #
 # Activer l'encodage matériel                          : ON         #
 # Activer l'encodeur matériel H.264 basse consommation : ON         #
-# Activer l'encodeur matériel HEVC  basse consommation : OFF        #
+# Activer l'encodeur matériel HEVC  basse consommation : ON         #
 # ----------------------------------------------------------------- #
 # Options de format d'encodage:                                     #
-# Autoriser l'encodage au format HEVC                   : OFF       #
+# Autoriser l'encodage au format HEVC                   : ON        #
 # Autoriser l'encodage au format AV1                    : OFF       #
 # Activer le mappage ton local VPP                      : OFF       #
 # ----------------------------------------------------------------- #
@@ -132,3 +135,5 @@ x-casaos:                                                    #
 # *: Si la valeur est trop basse, le lecteur plante.                #
 #    On remarquer dans Top GPU il plante.                           #
 #####################################################################
+#
+#
