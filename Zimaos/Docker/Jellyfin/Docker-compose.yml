@@ -81,7 +81,7 @@ x-casaos:                                                    #
 # ----------------------------------------------------------------- #
 # Activer le décodage matériel pour:                                #
 # H264             : ON                                             #
-# HEVC             : OFF                                            #
+# HEVC             : "ON"                                           #
 # MPEG2            : ON                                             #
 # MPEG4            : OFF                                            #
 # VC1              : ON                                             #
