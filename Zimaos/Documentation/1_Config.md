@@ -1,8 +1,7 @@
 ----------------------------------------------------------------------------------------------------------------------------------------
-<p align='center'> 
+# <p align='center'> Configuration de ZimaOS </p>
 ----------------------------------------------------------------------------------------------------------------------------------------
-
-## I. Configuration de base 
+## I. Base 
 ### A. Settings (General)
 #### 1. Renommer la machine
 <p align='center'> <img width="852" height="491" alt="image" src="https://github.com/user-attachments/assets/2d55fc8a-fc04-4731-8a15-d59adbb535c2" </p>
