@@ -21,6 +21,8 @@ Le mode Développeur permet d'accéder au option avancé du NAS.
 
 <p align='center'> <img width="540" height="612" alt="image" src="https://github.com/user-attachments/assets/9fdf260d-3674-4c31-8d5d-433013885a97" /> </p>
 
+Le code permet d'accéder au NAS depuis l'application téléphonique sans ouvrir les ports.
+
 <p align='center'> <img width="634" height="198" alt="image" src="https://github.com/user-attachments/assets/a318a8f0-e49b-427c-9cf5-4f7a292d69de" /> </p>
 
 ### C. Settings (Applications)
