@@ -3,8 +3,14 @@
 ----------------------------------------------------------------------------------------------------------------------------------------
 ## I. Installation
 ### A. Télécharger
-Aller sur le GitHub [ZimaOS](https://github.com/IceWhaleTech/ZimaOS/releases)
-### B. Installation
+Aller sur le GitHub [ZimaOS](https://github.com/IceWhaleTech/ZimaOS/releases) puis télécharger l'iso (Méthode Rufus) ou img (balenaEtcher)
+
+### B. Création d'une clé USB
+Depuis le logiciel (Rufus ou balenaEtcher), choisissez le fichier zimaos puis sélectionner le périphérique et valider.
+
+Ceci formatera la clé.
+
+### C. Installation
 
 <p align='center'> <img width="939"  height="888" alt="image" src="https://github.com/user-attachments/assets/3345ef18-2b81-47aa-a8c4-9eac4b7d20cc" /> </p>
 
@@ -12,7 +18,7 @@ Aller sur le GitHub [ZimaOS](https://github.com/IceWhaleTech/ZimaOS/releases)
 
 <p align='center'> <img width="755"  height="444" alt="image" src="https://github.com/user-attachments/assets/34df54dd-3fe9-45aa-a47a-4c0fd49a62d8" /> </p>
 
-### C. Post-Install
+### D. Post-Install
 <p align='center'> <img width="697"  height="537" alt="image" src="https://github.com/user-attachments/assets/8415d461-c35b-4f76-93e6-5e8aa679fcd3" /> </p>
 
 <p align='center'> <img width="695"  height="529" alt="image" src="https://github.com/user-attachments/assets/1adf69d4-49e3-4c20-b57a-ce15a99adbe5" /> </p>
@@ -23,7 +29,7 @@ Aller sur le GitHub [ZimaOS](https://github.com/IceWhaleTech/ZimaOS/releases)
 
 <br />
 
-#### D. Mise à jour
+#### E. Mise à jour
 ```bash
 clear;
 zimaos -u;
@@ -41,7 +47,7 @@ Usage of zimaos:
 
 <br />
 
-#### E. Journal Système
+#### F. Journal Système
 ```bash
 root@vm65n:/root ➜ # dmesg --level 4
 [    0.085872] MDS CPU bug present and SMT on, data leak possible. See https://www.kernel.org/doc/html/latest/admin-guide/hw-vuln/mds.html for more details.
