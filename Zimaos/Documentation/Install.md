@@ -10,7 +10,10 @@ Depuis le logiciel (Rufus ou balenaEtcher), choisissez le fichier zimaos puis s�
 
 Ceci formatera la clé.
 
-### C. Installation
+### C. Obtenir l'adresse IP
+Depuis l'écran de la machine ZimaOS on peut voir l'ip ou via un outil de scan réseau (Advanced IP Scanner). La machine s'appel `ZimaOS`.
+
+### D. Installation
 
 <p align='center'> <img width="939"  height="888" alt="image" src="https://github.com/user-attachments/assets/3345ef18-2b81-47aa-a8c4-9eac4b7d20cc" /> </p>
 
