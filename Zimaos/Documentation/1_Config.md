@@ -3,8 +3,9 @@
 ----------------------------------------------------------------------------------------------------------------------------------------
 ## I. Base 
 ### A. Settings (General)
-#### 1. Renommer la machine
-<p align='center'> <img width="852" height="491" alt="image" src="https://github.com/user-attachments/assets/2d55fc8a-fc04-4731-8a15-d59adbb535c2" </p>
+#### 1. Changer le nom de la machine
+<p align='center'> <img width="852" height="491" alt="image" src="https://github.com/user-attachments/assets/2d55fc8a-fc04-4731-8a15-d59adbb535c2" /> </p>
+
 #### 2. Mode développeur
 Le mode Développeur permet d'accéder au option avancé du NAS.
 <p align='center'> <img width="848" height="606" alt="image" src="https://github.com/user-attachments/assets/5e4c39ec-ba2f-4820-a4c1-a5107c343c5c" /> </p>
@@ -12,6 +13,8 @@ Le mode Développeur permet d'accéder au option avancé du NAS.
 <p align='center'> <img width="595" height="66"  alt="image" src="https://github.com/user-attachments/assets/9f6b1aab-e534-4903-a401-9808b5c8e0df" /> </p>
 
 <p align='center'> <img width="590" height="222" alt="image" src="https://github.com/user-attachments/assets/de12e5e6-f6fb-4132-9c41-f48a02a91c3a" /> </p>
+
+<br />
 
 ### B. Settings (Réseau)
 <p align='center'> <img width="838" height="592" alt="image" src="https://github.com/user-attachments/assets/6af4f1e3-22cc-44c9-86d2-9c026b481d20" /> </p>
