@@ -1,0 +1,133 @@
+name: CN_Jellyfin
+#
+#
+##############################################################
+# VM65N: intel_gpu_top                                       #
+# GPU  : Intel Corporation HD Graphics 620                   #
+##############################################################
+services:                                                    #
+  Jellyfin:                                                  #
+    # ------------------------------------------------------ #
+    image: 'linuxserver/jellyfin:latest'                     #
+    container_name: 'Jellyfin'                               #
+    network_mode: 'bridge'                                   #
+    restart: 'unless-stopped'                                #
+    # ------------------------------------------------------ #
+    privileged: false                                        #
+    command: []                                              #
+    cap_add: []                                              #
+    # ------------------------------------------------------ #
+    group_add:                                               #
+      - '109'                                                # Render
+      - '28'                                                 # Video
+    # ------------------------------------------------------ #
+    hostname: 'Jellyfin'                                     #
+    # ------------------------------------------------------ #
+    cpus: '1.00'                                             # 2.00
+    cpuset: '0,1'                                            # 0-1
+    cpu_shares: '10'                                         #
+    # ------------------------------------------------------ #
+    mem_limit: '1024M'                                       #
+    # ------------------------------------------------------ #
+    environment:                                             #
+      # ---------------------------------------------------- #
+      - PGID=999                                             # Marc
+      - PUID=100                                             # Users
+      - TZ=Europe/Paris                                      #
+      # ---------------------------------------------------- #
+      - LIBVA_DRIVER_NAME=iHD                                #
+    # ------------------------------------------------------ #
+    devices:                                                 #
+      - '/dev/dri:/dev/dri'                                  #
+    # ------------------------------------------------------ #
+    ports:                                                   #
+      - target:    '8096'                                    #
+        published: '8097'                                    #
+        protocol:   'tcp'                                    #
+    # ------------------------------------------------------ #
+    volumes:                                                 #
+      # ---------------------------------------------------- #
+      - type: 'bind'                                         #
+        source: '/media/ZimaOS-HD/AppData/Docker/Jellyfin'   #
+        target: '/config'                                    #
+    # ------------------------------------------------------ #
+    labels:                                                  #
+      icon: https://icon.casaos.io/main/all/jellyfin.png     #
+    # ------------------------------------------------------ #
+##############################################################
+#
+##############################################################
+x-casaos:                                                    #
+  author: 'self'                                             #
+  category: 'self'                                           #
+  hostname: 'jellyfin.drthrax74.ddns.net'                    #
+  icon: 'https://icon.casaos.io/main/all/jellyfin.png'       #
+  index: '/'                                                 #
+  is_uncontrolled: 'false'                                   #
+  port_map: '443'                                            #
+  scheme: 'https'                                            #
+  store_app_id: 'Jellyfin'                                   #
+  title:                                                     #
+    custom: 'Jellyfin'                                       #
+##############################################################
+#
+#
+#
+#####################################################################
+# encoding.xml                                                      #
+# ----------------------------------------------------------------- #
+# Accélérateur matériel : Video Acceleration API (VAAPI)            #
+# Appareil VA-API: /dev/dri/renderD128                              #
+# ----------------------------------------------------------------- #
+# Activer le décodage matériel pour:                                #
+# H264             : ON                                             #
+# HEVC             : OFF                                            #
+# MPEG2            : ON                                             #
+# MPEG4            : OFF                                            #
+# VC1              : ON                                             #
+# VP8              : ON                                             #
+# VP9              : OFF                                            #
+# AV1              : OFF                                            #
+# HEVC 10bit       : "ON"                                           #
+# VP9  10bit       : OFF                                            #
+# HEVC Rex 8/10bit : OFF                                            #
+# HEVC Rex 12bit   : OFF                                            #
+# ----------------------------------------------------------------- #
+# Activer l'encodage matériel:                                      #
+# Activer l'encodeur matériel H.264 basse consommation : ON         #
+# Activer l'encodeur matériel HEVC  basse consommation : OFF        #
+# ----------------------------------------------------------------- #
+# Options de format d'encodage:                                     #
+# Autoriser l'encodage au format HEVC                   : OFF       #
+# Autoriser l'encodage au format AV1                    : OFF       #
+# Activer le mappage ton local VPP                      : OFF       #
+# ----------------------------------------------------------------- #
+# Activer le mappage tonal                              : OFF       #
+# Sélectionner l'algorithme de mappage tonal à utiliser	: Aucun     #
+# Mode de mappage tonal                                 : Auto      #
+# Gamme de mappage tonal                                : Auto      #
+# Désaturation tonale                                   : 0         #
+# Pic de mappage tonal                                  : 100       #
+# ----------------------------------------------------------------- #
+# Nombre de threads de transcodage                      : Auto      #
+# ----------------------------------------------------------------- #
+# Activer les polices de secours                        : ON        #
+# Activer l'encodage audio VBR                          : OFF       #
+# ----------------------------------------------------------------- #
+# Booster l'audio lors du rééchantillonnage             : 0.5       #
+# Algorithme de rééchantillonnage en stéréo             : Aucun     #
+# Taille maximale de la queue de multiplexage *         : 512 Mo    #
+# profil d'encodage                                     : UltraFast #
+# CRF d'encodage H265                                   : 28        #
+# CRF d'encodage H264                                   : 32        #
+# Méthode de désentrelacèrent                           : Yadif     #
+# Multiplier par 2 la fréquence d'images ....           : OFF       #
+# Autoriser l'extraction de sous titre ....             : OFF       #
+# Réduire la vitesse du transcodage                     : OFF       #
+# Supprimer les segments                                : OFF       #
+# Limiter la vitesse après                              : 10        #
+# Durée de conservation des segments                    : 3600      #
+# ----------------------------------------------------------------- #
+# *: Si la valeur est trop basse, le lecteur plante.                #
+#    On remarquer dans Top GPU il plante.                           #
+#####################################################################
