@@ -78,8 +78,7 @@ x-casaos:                                                    #
 #####################################################################
 # encoding.xml                                                      #
 # ----------------------------------------------------------------- #
-# Accélérateur matériel : Video Acceleration API (VAAPI)            #
-# Appareil VA-API: /dev/dri/renderD128                              #
+# Accélérateur matériel : Intel Quicksync (QSV)                     #
 # ----------------------------------------------------------------- #
 # Activer le décodage matériel pour:                                #
 # H264             : ON                                             #
