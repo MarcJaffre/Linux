@@ -21,7 +21,7 @@ Depuis l'écran de la machine ZimaOS on peut voir l'ip ou via un outil de scan r
 
 <p align='center'> <img width="755"  height="444" alt="image" src="https://github.com/user-attachments/assets/34df54dd-3fe9-45aa-a47a-4c0fd49a62d8" /> </p>
 
-### D. Post-Install
+### E. Post-Install
 <p align='center'> <img width="697"  height="537" alt="image" src="https://github.com/user-attachments/assets/8415d461-c35b-4f76-93e6-5e8aa679fcd3" /> </p>
 
 <p align='center'> <img width="695"  height="529" alt="image" src="https://github.com/user-attachments/assets/1adf69d4-49e3-4c20-b57a-ce15a99adbe5" /> </p>
@@ -32,7 +32,8 @@ Depuis l'écran de la machine ZimaOS on peut voir l'ip ou via un outil de scan r
 
 <br />
 
-#### E. Mise à jour
+### F. Mise à jour
+Il est nécessaire d'avoir activer la console SSH.
 ```bash
 clear;
 zimaos -u;
@@ -50,7 +51,7 @@ Usage of zimaos:
 
 <br />
 
-#### F. Journal Système
+### G. Journal Système
 ```bash
 root@vm65n:/root ➜ # dmesg --level 4
 [    0.085872] MDS CPU bug present and SMT on, data leak possible. See https://www.kernel.org/doc/html/latest/admin-guide/hw-vuln/mds.html for more details.
