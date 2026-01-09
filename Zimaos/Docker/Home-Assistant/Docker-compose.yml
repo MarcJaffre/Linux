@@ -9,6 +9,9 @@ services:
   network_mode: 'host'                                              #
   hostname: 'HA'                                                    #
   # --------------------------------------------------------------- #
+  cap_add:                                                          #
+   - 'NET_ADMIN'                                                    #
+   - 'NET_RAW'                                                      #
   environment:                                                      #
     TZ: 'Europe/Paris'                                              #
   # --------------------------------------------------------------- #
