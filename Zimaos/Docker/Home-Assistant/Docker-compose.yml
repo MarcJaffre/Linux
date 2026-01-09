@@ -35,6 +35,10 @@ services:
      source: '/run/dbus'                                            #
      target: '/run/dbus:ro'                                         #
    # -------------------------------------------------------------- #
+   - type: bind                                                     #
+     source: '/run/udev'                                            #
+     target: '/run/udev:ro'                                         #
+   # -------------------------------------------------------------- #
   labels:                                                           #
    icon: 'https://icon.casaos.io/main/all/home-assistant.png'       #
 #####################################################################
