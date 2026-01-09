@@ -1,0 +1,32 @@
+######################################################################################################
+# Matériel #
+############
+# - Machine   : Asus vm65N + 256Go + 12Go + ZimaOS
+# - Micro     : Interne au PC
+# - Bluetooth : Enceinte
+# - Zigbee    : Sonoff ZBDongle-E
+# - Téléphone : Google Pixel 8A (Micro + Enceinte)
+# 
+# Zigbee:
+#  - Lumière : Connect.2 Eglo
+# 
+# Object: HomeAssistant + ollama +  Whisper + Piper 
+# 
+######################################################################################################
+# Information #
+###############
+# 
+# ls -la /dev/ttyUSB0
+# crw-rw---- 1 root dialout 188, 0 Jan  8 18:45 ttyUSB0
+# 
+# grep dialout /etc/group
+# dialout:x:18:
+#  Gaillard, 74240 10 allée des cyclamens
+# 
+######################################################################################################
+# Configuration HA #
+####################
+# Etape 1: Profil > Mode avancé
+# Etape 2: Zigbee Home Automation
+# Paramètres > Appareils et services > Ajouter une intégration
+# Zigbee Home Automation > Installer > Conserver les paramètres réseau de la radio.
