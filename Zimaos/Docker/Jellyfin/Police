@@ -26,7 +26,14 @@ ls -la
 ````
 
 ### G. Jellyfin
-Dashboard > Lecture > Transcodage > chemin du dossier de secours des polices
+Dashboard > Lecture > Transcodage >
+
+#### 1. chemin du dossier de secours des polices
 ```
 /config/fonts
 ```
+
+#### 2. Activer les polices de secours
+Activer l'option
+
+
