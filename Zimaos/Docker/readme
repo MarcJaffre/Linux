@@ -12,6 +12,8 @@ Zigbee:
 
 Object: HomeAssistant + ollama +  Whisper + Piper 
 
+/dev/serial/by-id/usb-Itead_Sonoff_Zigbee_3.0_USB_Dongle_Plus_V2_36e7be8774c2ef11a551c8138148b910-if00-port0
+
 ######################################################################################################
 Information #
 ###############
