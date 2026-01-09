@@ -44,7 +44,7 @@ x-casaos:
   icon: 'https://icon.casaos.io/main/all/home-assistant.png'
   index: '/'
   is_uncontrolled: false
-  port_map: '8123:8123'
+  port_map: '8123'
   scheme: 'http'
   store_app_id: 'CN_HomeAssistant'
   title:
