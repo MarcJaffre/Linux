@@ -33,14 +33,14 @@ services:
   # --------------------------------------------------- #
   volumes:
    - type: bind
-    source: /media/ZimaOS-HD/AppData/Docker/HomeAssistant/config
-    target: /config
+     source: /media/ZimaOS-HD/AppData/Docker/HomeAssistant/config
+     target: /config
    - type: bind
-    source: /etc/localtime
-    target: /etc/localtime:ro
+     source: /etc/localtime
+     target: /etc/localtime:ro
    - type: bind
-    source: /run/dbus
-    target: /run/dbus:ro
+     source: /run/dbus
+     target: /run/dbus:ro
   # --------------------------------------------------- #
   labels:
    icon: https://icon.casaos.io/main/all/home-assistant.png
