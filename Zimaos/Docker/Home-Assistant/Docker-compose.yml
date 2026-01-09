@@ -10,24 +10,9 @@ services:
   hostname: 'HA'                                                    #
   # --------------------------------------------------------------- #
   privileged: 'false'                                               #
-  user: '18:18'                                                     # 
-  group_add:                                                        #
-   - '18'                                                           # dailout
-  cap_add:                                                          #
-   - 'SYS_ADMIN'                                                    #
-   - 'DAC_READ_SEARCH'                                              #
-  command: []                                                       #
-  cpu_shares: '10'                                                  #
-  # --------------------------------------------------------------- #
-  deploy:                                                           #
-   resources:                                                       #
-    limits:                                                         #
-      memory: '12412477440'                                         #
-    reservations:                                                   #
-      devices: []                                                   #
   # --------------------------------------------------------------- #
   environment:                                                      #
-    - TZ: 'Europe/Paris'                                            #
+    TZ: 'Europe/Paris'                                              #
   # --------------------------------------------------------------- #
   devices:                                                          #
     - '/dev/ttyUSB0:/dev/ttyUSB0'                                   #
@@ -46,14 +31,9 @@ services:
      source: '/run/dbus'                                            #
      target: '/run/dbus:ro'                                         #
    # -------------------------------------------------------------- #
-   #- type: bind                                                    #
-   #  source: '/run/udev'                                           #
-   #  target: '/run/udev:ro'                                        #
-  # --------------------------------------------------------------- #
-  #ports:                                                           #
-  # - target: '8123'                                                #
-  #   published: '8123'                                             #
-  #   protocol: 'tcp'                                               #
+   - type: bind                                                     #
+     source: '/run/udev'                                            #
+     target: '/run/udev:ro'                                         #
   # --------------------------------------------------------------- #
   labels:                                                           #
    icon: 'https://icon.casaos.io/main/all/home-assistant.png'       #
@@ -73,4 +53,3 @@ x-casaos:
   title:
     custom: 'HomeAssistant'
 #####################################################################
-
