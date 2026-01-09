@@ -18,7 +18,7 @@ services:
   volumes:                                                          #
    # -------------------------------------------------------------- #
    - type: bind                                                     #
-     source: '/media/ZimaOS-HD/AppData/Docker/HomeAssistant/config' #
+     source: '/media/ZimaOS-HD/AppData/Docker/HomeAssistant'        #
      target: '/config'                                              #
    # -------------------------------------------------------------- #
    - type: bind                                                     #
