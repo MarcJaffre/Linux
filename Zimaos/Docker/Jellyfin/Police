@@ -1,0 +1,32 @@
+### A. Creation du dossier
+mkdir ./Jellyfin/config/fonts
+cd    ./Jellyfin/config/fonts
+
+### B. Téléchargement des polices
+#### 1. Noto Sans (latin/français)
+wget https://github.com/googlefonts/noto-fonts/raw/main/hinted/ttf/NotoSans/NotoSans-Regular.ttf
+
+#### 2. Noto CJK (japonais/chinois pour anime)
+wget https://github.com/googlefonts/noto-fonts/raw/main/hinted/ttf/NotoSansCJKsc/NotoSansCJKsc-Regular.otf
+
+#### 3. Roboto (universel)
+wget https://github.com/googlefonts/roboto/raw/main/src/hinted/Roboto-Regular.ttf
+
+### C. Permissions
+chown -R 0:100 ./Jellyfin2/config/fonts
+chmod -R 644   ./Jellyfin2/config/fonts
+
+### D. Vérification
+ls -la
+
+
+### E. Docker-compose:
+```yml
+- "...../Jellyfin2/config/fonts:config/fonts:ro"
+````
+
+### G. Jellyfin
+Dashboard > Lecture > Transcodage > chemin du dossier de secours des polices
+```
+/config/fonts
+```
