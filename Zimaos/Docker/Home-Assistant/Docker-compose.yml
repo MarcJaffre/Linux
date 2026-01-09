@@ -2,11 +2,11 @@ name: CN_HomeAssistant
 services:
  HomeAssistant:
 #####################################################################
-  # --------------------------------------------------------------- #
   image: 'homeassistant/home-assistant:stable'                      #
   container_name: 'Homeassistant'                                   #
-  network_mode: 'host'                                              #
   restart: 'unless-stopped'                                         #
+  # --------------------------------------------------------------- #
+  network_mode: 'host'                                              #
   hostname: 'HA'                                                    #
   # --------------------------------------------------------------- #
   environment:                                                      #
