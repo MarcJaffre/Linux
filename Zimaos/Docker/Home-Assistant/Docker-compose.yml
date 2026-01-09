@@ -9,8 +9,6 @@ services:
   restart: 'unless-stopped'                                         #
   hostname: 'HA'                                                    #
   # --------------------------------------------------------------- #
-  privileged: 'false'                                               #
-  # --------------------------------------------------------------- #
   environment:                                                      #
     TZ: 'Europe/Paris'                                              #
   # --------------------------------------------------------------- #
@@ -31,10 +29,6 @@ services:
      source: '/run/dbus'                                            #
      target: '/run/dbus:ro'                                         #
    # -------------------------------------------------------------- #
-   - type: bind                                                     #
-     source: '/run/udev'                                            #
-     target: '/run/udev:ro'                                         #
-  # --------------------------------------------------------------- #
   labels:                                                           #
    icon: 'https://icon.casaos.io/main/all/home-assistant.png'       #
 #####################################################################
@@ -47,7 +41,7 @@ x-casaos:
   icon: 'https://icon.casaos.io/main/all/home-assistant.png'
   index: '/'
   is_uncontrolled: false
-  port_map: '8123'
+  port_map: '8123:8123'
   scheme: 'http'
   store_app_id: 'CN_HomeAssistant'
   title:
