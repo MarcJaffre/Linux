@@ -36,4 +36,5 @@ Dashboard > Lecture > Transcodage
 #### 2. Activer les polices de secours
 Activer l'option
 
-
+#### 3. Vérification
+docker exec -it Jellyfin ls -la /config/fonts/
