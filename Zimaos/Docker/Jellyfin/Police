@@ -22,7 +22,10 @@ ls -la
 
 ### E. Docker-compose:
 ```yml
-- "...../Jellyfin2/config/fonts:config/fonts:ro"
+environment:
+ FallbackFontPath: '/config/fonts'  # Force le chemin
+volumes:
+ - "...../Jellyfin2/config/fonts:config/fonts:ro"
 ````
 
 ### G. Jellyfin
