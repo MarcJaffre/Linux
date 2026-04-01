@@ -122,7 +122,7 @@ chmod 755 /var/www/html/glpi;
 #### 1. Indispensable
 ```bash
 clear;
-apt install -y php-curl php-gd php-intl php-mysqli php-simplexml 1>/dev/null;
+apt install -y php-bcmath php-curl php-gd php-intl php-mysqli php-simplexml 1>/dev/null;
 ```
 #### 2. Optionnel
 ```bash
@@ -140,9 +140,11 @@ systemctl restart apache2;
 --------------------------------------------------------------------------------------------------------------------------------------------
 ## III. GLPI (Partie II)
 ### A. Vérification (Prérequis, Sécurité)
+Pour la nouvelle version de GLPI, utiliser à la fin le paramètre `--allow-superuser`.
 ```bash
 clear;
 /var/www/html/glpi/bin/console glpi:system:check_requirements;
+
 ```
 
 ### B. Installation du site
