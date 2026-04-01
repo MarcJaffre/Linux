@@ -82,6 +82,8 @@ hostname --ip-address;
 ### G. Dépôt
 Pour connaitre la version de son système d'exploitation, taper la commande `lsb_release -a`. Dans mon cas c'est `bookworm` et donc dans mon fichier se sera `bookworm`.
 
+Si besoin de pilote propriétaire sur la machine, ajouter `non-free-firmware` après `non-free`.
+
 <img width="653" height="137" alt="image" src="https://github.com/user-attachments/assets/862b6088-361a-49bc-9d3e-649c90e9ef1d" />
 
 
@@ -91,24 +93,24 @@ nano /etc/apt/sources.list;
 ```
 
 ```
-####################################################################################################
+######################################################################################################
 # Main #
 ########
 deb     http://ftp.fr.debian.org/debian/            bookworm           main non-free
 deb-src http://ftp.fr.debian.org/debian/            bookworm           main non-free
 
-####################################################################################################
+######################################################################################################
 # Securite Patch #
 ##################
 deb     http://security.debian.org/debian-security  bookworm-security  main non-free
 deb-src http://security.debian.org/debian-security  bookworm-security  main non-free
 
-####################################################################################################
+######################################################################################################
 # Fix #
 #######
 deb     http://ftp.fr.debian.org/debian/            bookworm-updates   main non-free
 deb-src http://ftp.fr.debian.org/debian/            bookworm-updates   main non-free
-####################################################################################################
+######################################################################################################
 ```
 
 Pour enregistrer faire `CTRL+X` > Taper `Y` > Entrer.
