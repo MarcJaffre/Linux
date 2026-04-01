@@ -65,14 +65,12 @@ Définir la valeur sur `displayName`.
 
 
 
-
-
 <br />
 
 ### B. Map Groups
 Permettre de mapper les groupes de l'AD et les groupes dans WikiJS. (Interopérabilité)
 
-#### 1. Group Search Base
+#### 1. Group Search Base (????)
 Définir la valeur sur `CN=Wiki,CN=Users,DC=studi,DC=local`.
 
 #### 2. Groupe Search Filter
