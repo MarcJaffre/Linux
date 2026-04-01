@@ -8,22 +8,25 @@ Le domaine se nomme `Studi.local`.
 #### 1. OU
 
 #### 2. Groupe
-Crée les Groupes `Wiki_User` et `Wiki_Admin` dans `Users`. 
+Crée les Groupes `Wiki_User` et `Wiki_Admin` dans `Users`.
 
 #### 3. User LDAP
 Créer un Compte `LDAP` dans `Users`.
 
 #### 4. User
-Créer un Compte `Marc` dans `Users` puis ajouter l'utilisateur dans le groupe `Wiki`.
+Créer un Compte `Marc` dans `Users` puis ajouter l'utilisateur dans le groupe `Wiki_Admin` ou `Wiki_User` selon si c'est un utilisateur ou un admin.
 
 <br />
 
 ---------------------------------------------------------------------------------------------------------------------
 ## II. WikiJS
-### A. Groupe
-Crée un groupe local `Wiki_User` avec des droits de Lectures.
+### A. Groupe / Permission
+Sans l'ajout de groupe `Wiki_User` et `Wiki_Admin` et des permissions, ses groupes ne servent à rien.
 
-Crée un groupe local `Wiki_Admin` avec des droits de Lectures.
+Pour permettre l'ajout de permission, il faut créer un groupe local `Wiki_User` avec des droits de **Lectures**.
+
+Pour permettre l'ajout de permission, il faut créer un groupe local `Wiki_Admin` avec des droits d'**écriture**.
+
 
 ### B. Configuration de la stratégie
 #### 1. Nom d'affichage
