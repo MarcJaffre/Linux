@@ -3,7 +3,7 @@
 ----------------------------------------------------------------------------------------------------------------------------
 ## I. Debian
 ### A. Carte-réseau
-Ma carte-réseau se nomme `eth0`. Il sera nécessaire d'adapter. Pour récupérer le nom de la carte-réseau via la commande `ip address`.
+Ma carte-réseau se nomme `eth0`. Il sera nécessaire d'adapter. Pour récupérer le nom de la carte-réseau via la commande `ip address`. 
 
 <img width="1391" height="256" alt="image" src="https://github.com/user-attachments/assets/8a893315-2c0c-4639-9573-b38d5d65b4c9" />
 
@@ -14,18 +14,21 @@ nano /etc/network/interfaces;
 ```
 
 ```
+##################################################
 auto eth0
 allow-hotplug eth0
 iface eth0 inet static
-   address 192.168.0.18
-   netmask 255.255.255.0
-   gateway 192.168.0.1
-   dns-nameservers 192.168.0.1 8.8.8.8 1.1.1.1
+   address X.X.X.X # Adresse IPv4
+   netmask X.X.X.X # Masque de S/R
+   gateway X.X.X.X # Passerelle
+   dns-nameservers X.X.X.X 8.8.8.8 1.1.1.1 # DNS
+##################################################
 ```
 
 ### B. Configuration du DNS
 #### 1. Edition du fichier
 Le domaine de mon serveur est `home.lan`, à adapter en conséquence. Mon routeur est en `192.168.0.1`.
+
 ```bash
 clear;
 nano /etc/resolv.conf;
@@ -35,6 +38,7 @@ domain home.lan
 search home.lan
 nameserver 192.168.0.1
 ```
+
 
 ### C. Configuration du nom de la machine
 #### 1. Edition du fichier
