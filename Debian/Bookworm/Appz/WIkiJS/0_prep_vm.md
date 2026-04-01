@@ -58,10 +58,14 @@ nano /etc/hosts;
 
 ```
 127.0.0.1       localhost
-#127.0.0.1       wikijs.home.lan wikijs
-
 192.168.0.18    wikijs.home.lan wikijs
 ```
+
+Note:
+```
+# 127.0.0.1       wikijs.home.lan wikijs
+```
+
 ### E. Redémarrrage
 ```bash
 reboot;
