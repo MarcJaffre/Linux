@@ -46,3 +46,25 @@ patch -s -p1    < ../patch-7.0.3; make kernelversion;
 clear;
 make clean;
 ```
+
+
+#### E. Personnalisé
+```bash
+clear;
+make menuconfig;
+```
+
+#### F. Compiler
+```bash
+clear;
+make debuginfo=no -j$(nproc) all; # Retirer le mode debug
+make -j$(nproc) all;
+```
+
+
+#### G. Installer
+```bash
+clear;
+make modules_install;
+make install;
+```
