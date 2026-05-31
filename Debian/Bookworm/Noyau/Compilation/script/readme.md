@@ -1,4 +1,8 @@
 ### Note ([Doc](https://www.kernel.org/doc/html/v5.3/process/applying-patches.html#applying-patches))
+
+https://www.youtube.com/watch?v=WfvA2RRzRWA
+
+
 #### A. Télécharger (Kernel + patch) 
 ```bash
 clear;
@@ -82,7 +86,7 @@ make -j$(nproc) all;
 
 <br />
 
-#### G.
+#### G. Génération Deb
 ```bash
 clear;
 make bindeb-pkg
@@ -98,5 +102,3 @@ make modules_install;
 make install;
 ```
 
-
-https://www.youtube.com/watch?v=WfvA2RRzRWA
