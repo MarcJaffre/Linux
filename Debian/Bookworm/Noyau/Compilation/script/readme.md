@@ -4,16 +4,21 @@
 ```bash
 clear;
 cd /tmp
-mkdir /tmp/test/
-cd /tmp/test/
-rm -r /tmp/test/*
-wget https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.0.tar.xz;
-wget https://cdn.kernel.org/pub/linux/kernel/v7.x/patch-7.0.1.xz;
+rm -r /tmp/test/ 2>/dev/null;
+mkdir /tmp/test/ 2>/dev/null;
+cd    /tmp/test/ 2>/dev/null;
+
+wget -q https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.0.tar.xz;
+wget -q https://cdn.kernel.org/pub/linux/kernel/v7.x/patch-7.0.1.xz;
 
 tar -xf linux-7.0.tar.xz;
 xz -d patch-7.0.1.xz;
 cd linux-7.0
+make kernelversion
+```
 
+```
 patch -p1 -i ../patch-7.0.1;
 patch -p1 <  ../patch-7.0.1;
+```
 
