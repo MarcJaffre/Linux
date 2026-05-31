@@ -29,17 +29,9 @@ xz -d patch-7.0.3.xz;
 # ==============================================================================
 ```
 
+<br />
 
-#### B. Kernel Vanilla vers supérieur
-```bash
-clear;
-cd $DOSSIER/test/linux-7.0;
-make kernelversion;
-patch -s -p1    < ../patch-7.0.1; make kernelversion;
-patch -s -R -p1 < ../patch-7.0.1; make kernelversion;
-```
-
-#### C. kernel non-vanilla vers supérieur
+#### B. kernel non-vanilla vers supérieur
 On a le kernel 7.0.2 et on souhaite le kernel 7.0.3. Il faut downgrade pour être sur le kernel vanilla puis patché 7.0.3
 ```bash
 clear;
@@ -49,11 +41,26 @@ patch -s -R -p1 < ../patch-7.0.2; make kernelversion;
 patch -s -p1    < ../patch-7.0.3; make kernelversion;
 ```
 
+<br />
+
+#### C. Kernel Vanilla vers supérieur
+```bash
+clear;
+cd $DOSSIER/test/linux-7.0;
+make kernelversion;
+patch -s -p1    < ../patch-7.0.1; make kernelversion;
+patch -s -R -p1 < ../patch-7.0.1; make kernelversion;
+```
+
+<br />
+
 #### D. Nettoyer
 ```bash
 clear;
 make clean;
 ```
+
+<br />
 
 #### E. Personnalisé
 ```bash
@@ -63,12 +70,16 @@ cp /boot/config-$(uname -r) .config;
 make menuconfig;
 ```
 
+<br />
+
 #### F. Compiler
 ```bash
 clear;
 make debuginfo=no -j$(nproc) all; # Retirer le mode debug
 make -j$(nproc) all;
 ```
+
+<br />
 
 #### G. Installer
 ```bash
