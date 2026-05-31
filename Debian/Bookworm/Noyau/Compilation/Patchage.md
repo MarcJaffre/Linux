@@ -2,7 +2,11 @@
 
 -------------------------------------------------------------------------------------------------------
 ## II. Patch
-### A. Installation des patchs ([ici](https://www.kernel.org/doc/html/v5.3/admin-guide/README.html#installing-the-kernel-source) ou [ICI](https://www.kernel.org/doc/html/v5.3/process/applying-patches.html#applying-patches))
+### A. Installation des patchs 
+#### 1. Documentation
+Guide sur l'[application d'un patch](https://www.kernel.org/doc/html/v5.3/process/applying-patches.html#applying-patches) et sur l[installation des sources du  kernel](https://www.kernel.org/doc/html/v5.3/admin-guide/README.html#installing-the-kernel-source))
+
+
 Pour le Noyau 5, il faut appliquer le dernier patch. (Exemple: Kernel 5.0 et patch 5.0.4)
 
 Pour un kernel 5.0.2 et un patch 5.0.3 : Il faut annulé le patchage des versions précédente puis repatché.
