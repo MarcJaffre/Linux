@@ -32,10 +32,17 @@ patch -s -R -p1 < ../patch-7.0.1; make kernelversion;
 ```
 
 #### C. kernel non-vanilla vers supérieur
+On a le kernel 7.0.2 et on souhaite le kernel 7.0.3. Il faut downgrade pour être sur le kernel vanilla puis patché 7.0.3
 ```bash
 clear;
 cd /tmp/test/linux-7.0.2;
 make kernelversion;
 patch -s -R -p1 < ../patch-7.0.2; make kernelversion;
 patch -s -p1    < ../patch-7.0.3; make kernelversion;
+```
+
+#### D. Nettoyer
+```bash
+clear;
+make clean;
 ```
