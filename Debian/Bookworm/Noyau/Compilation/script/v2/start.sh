@@ -45,10 +45,12 @@ if [ ! -d $DOSSIER/linux-${BRANCHE}.0.0 ]; then
    # si la valeur de la purge est sur ON alors
    if [ $PURGE = ON ];then
       # Telecharger et extraire le kernel
-      echo "Lancement du telechargement du Kernel";
+      echo "Lancement du telechargement du Kernel et du patch";
       wget $DL_KERNEL -O $DOSSIER/linux-${BRANCHE}.0.0.tar.xz  2>/dev/null;
-      wget $DL_PATCH  -O $DOSSIER/linux-${BRANCHE}.${PATCH_MAJEUR}.${PATCH_MINEUR}.tar.xz  2>/dev/null;
-      tar -xf            $DOSSIER/linux-${BRANCHE}.0.0.tar.xz -C $DOSSIER/;
+      wget $DL_PATCH  -O $DOSSIER/linux-${BRANCHE}.${PATCH_MAJEUR}.${PATCH_MINEUR}.tar.xz     2>/dev/null;
+      echo "Extraction des fichiers";
+      tar -xf            $DOSSIER/linux-${BRANCHE}.0.0.tar.xz                                -C $DOSSIER/;
+      tar -xf            $DOSSIER/l/linux-${BRANCHE}.${PATCH_MAJEUR}.${PATCH_MINEUR}.tar.xz  -C $DOSSIER/;
    fi
    # Variable inutile pour éviter une erreur dans la console
    RC=0
@@ -60,33 +62,36 @@ fi
 ###############
 # Si le dossier existe alors
 if [ -d $DOSSIER/linux-${BRANCHE}.0.0 ]; then
-   cd  $DOSSIER/linux-${BRANCHE}.0.0;
-   
+   cd   $DOSSIER/linux-${BRANCHE}.0.0;
+
+   #patch -p1 < ../patch-6.18.1;     make kernelversion;
+
+
    # Generer le fichier de configuration
-   make menuconfig;
+   #make menuconfig;
 
    # Nettoyage
-   make clean;
+   #make clean;
 
-   START_DATE=$(date +'%Y/%m/%d')
-   START_HORAIRE=$(date +'%H H %M')
+   #START_DATE=$(date +'%Y/%m/%d')
+   #START_HORAIRE=$(date +'%H H %M')
    
-   echo "-----------------------------------------------------------------------------" >  $DOSSIER/linux-${BRANCHE}.0.0/Build.log;
-   echo "# Compilation du KERNEL "                                                      >> $DOSSIER/linux-${BRANCHE}.0.0/Build.log;
-   make ARCH=$(arch) -j$(nproc)                                                         >> $DOSSIER/linux-${BRANCHE}.0.0/Build.log 2>&1;
+   #echo "-----------------------------------------------------------------------------" >  $DOSSIER/linux-${BRANCHE}.0.0/Build.log;
+   #echo "# Compilation du KERNEL "                                                      >> $DOSSIER/linux-${BRANCHE}.0.0/Build.log;
+   #make ARCH=$(arch) -j$(nproc)                                                         >> $DOSSIER/linux-${BRANCHE}.0.0/Build.log 2>&1;
 
    # Trapper la date et heure de fin du script
-   END_DATE=$(date +'%Y/%m/%d')
-   END_HORAIRE=$(date +'%H H %M')
-   echo ""                                                                              >> $DOSSIER/linux-${BRANCHE}.0.0/Build.log;
-   echo ""                                                                              >> $DOSSIER/linux-${BRANCHE}.0.0/Build.log;
-   echo "-----------------------------------------------------------------------------" >> $DOSSIER/linux-${BRANCHE}.0.0/Build.log;
-
+   #END_DATE=$(date +'%Y/%m/%d')
+   #END_HORAIRE=$(date +'%H H %M')
+   #echo ""                                                                              >> $DOSSIER/linux-${BRANCHE}.0.0/Build.log;
+   #echo ""                                                                              >> $DOSSIER/linux-${BRANCHE}.0.0/Build.log;
+   
+   #echo "-----------------------------------------------------------------------------" >> $DOSSIER/linux-${BRANCHE}.0.0/Build.log;
    # Écriture des dates et heures de début et de fin dans le fichier de log
-   echo "Demarrage du script : $START_DATE à $START_HORAIRE"                            >> $DOSSIER/linux-${BRANCHE}.0.0/Build.log;
-   echo "Fin du script       : $END_DATE à $END_HORAIRE"                                >> $DOSSIER/linux-${BRANCHE}.0.0/Build.log;
+   #echo "Demarrage du script : $START_DATE à $START_HORAIRE"                            >> $DOSSIER/linux-${BRANCHE}.0.0/Build.log;
+   #echo "Fin du script       : $END_DATE à $END_HORAIRE"                                >> $DOSSIER/linux-${BRANCHE}.0.0/Build.log;
 
    # Renommage de la log de compilation
-   mv                          $DOSSIER/linux-${BRANCHE}.0.0/Build.log                  $DOSSIER/linux-${BRANCHE}.0.0/Build_$START_DATE_$START_HORAIRE.log;
+   #mv                          $DOSSIER/linux-${BRANCHE}.0.0/Build.log                  $DOSSIER/linux-${BRANCHE}.0.0/Build_$START_DATE_$START_HORAIRE.log;
    #########################################################################################################################################################
 fi
