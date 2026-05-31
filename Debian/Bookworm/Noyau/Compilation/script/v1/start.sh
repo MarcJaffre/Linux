@@ -75,14 +75,18 @@ if [ -d $DOSSIER/linux-${VERSION} ]; then
    # Nettoyage
    make clean;
 
-   START_DATE=$(date +'%Y/%m/%d')
-   START_HORAIRE=$(date +'%H H %M')
+   #START_DATE=$(date +'%Y/%m/%d')
+   #START_HORAIRE=$(date +'%H H %M')
+   START_DATE=$(date +'%Y_%m_%d')
+   START_HORAIRE=$(date +'%H_H_%M')
    
    echo "-----------------------------------------------------------------------------" >  $DOSSIER/linux-${VERSION}/Build.log;
    echo "# Compilation du KERNEL "                                                      >> $DOSSIER/linux-${VERSION}/Build.log;
    make ARCH=$(arch) -j$(nproc)                                                         >> $DOSSIER/linux-${VERSION}/Build.log 2>&1;
 
    # Trapper la date et heure de fin du script
+   #END_DATE=$(date +'%Y/%m/%d')
+   #END_HORAIRE=$(date +'%H H %M')
    END_DATE=$(date +'%Y/%m/%d')
    END_HORAIRE=$(date +'%H H %M')
    echo ""                                                                              >> $DOSSIER/linux-${VERSION}/Build.log;
@@ -94,6 +98,6 @@ if [ -d $DOSSIER/linux-${VERSION} ]; then
    echo "Fin du script       : $END_DATE à $END_HORAIRE"                                >> $DOSSIER/linux-${VERSION}/Build.log;
 
    # Renommage de la log de compilation
-   mv                          $DOSSIER/linux-${VERSION}/Build.log                         $DOSSIER/linux-${VERSION}/Build_$START_DATE_$START_HORAIRE.log;
+   mv $DOSSIER/linux-${VERSION}/Build.log                    $DOSSIER/linux-${VERSION}/Build_${START_DATE}_${START_HORAIRE}.log;
    #########################################################################################################################################################
 fi
