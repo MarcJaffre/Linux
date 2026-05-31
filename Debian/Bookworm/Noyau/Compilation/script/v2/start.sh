@@ -56,7 +56,10 @@ if [ ! -d $DOSSIER/linux-${BRANCHE}.0.0 ]; then
    RC=0
    # =====================================================================
 fi
-rm .config 2>/dev/null; cp /boot/config-$(uname -r) .config;
+
+
+
+
 
 #########################################################################################################################################################
 # Patchage #
@@ -76,6 +79,7 @@ fi
 # Si le dossier existe alors
 #if [ -d $DOSSIER/linux-${BRANCHE}.0.0 ]; then
    #cd   $DOSSIER/linux-${BRANCHE}.0.0;
+
    # Generer le fichier de configuration
    #make menuconfig;
 
@@ -104,3 +108,9 @@ fi
    #mv                          $DOSSIER/linux-${BRANCHE}.0.0/Build.log                  $DOSSIER/linux-${BRANCHE}.0.0/Build_$START_DATE_$START_HORAIRE.log;
    #########################################################################################################################################################
 #fi
+
+
+
+# Ancienne Configuration
+# rm .config 2>/dev/null;
+# cp /boot/config-$(uname -r) .config;
