@@ -2,7 +2,6 @@
 
 https://www.youtube.com/watch?v=WfvA2RRzRWA
 
-
 #### A. Télécharger (Kernel + patch) 
 ```bash
 clear;
