@@ -5,30 +5,56 @@ https://www.youtube.com/watch?v=WfvA2RRzRWA
 #### A. Télécharger (Kernel + patch) 
 ```bash
 clear;
-
+# ==============================================================================
 DOSSIER=/Data
-
 # ==============================================================================
-cd    $DOSSIER;
-rm -r $DOSSIER/test/ 2>/dev/null;
-mkdir $DOSSIER/test/ 2>/dev/null;
-cd    $DOSSIER/test/ 2>/dev/null;
-
+# Remove Folder
+if [ -d $DOSSIER ]; then
+ cd $HOME;
+ rm -r $DOSSIER 2>/dev/null;
+fi
 # ==============================================================================
+# Make Folder
+if [ ! -d $DOSSIER ]; then
+ mkdir $DOSSIER
+ cd    $DOSSIER;
+ mkdir $DOSSIER/test/ 2>/dev/null;
+ cd    $DOSSIER/test/ 2>/dev/null;
+fi
+# ==============================================================================
+# Download
 wget -q https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.0.tar.xz;
 wget -q https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.0.2.tar.xz;
 wget -q https://cdn.kernel.org/pub/linux/kernel/v7.x/patch-7.0.1.xz;
 wget -q https://cdn.kernel.org/pub/linux/kernel/v7.x/patch-7.0.2.xz;
 wget -q https://cdn.kernel.org/pub/linux/kernel/v7.x/patch-7.0.3.xz;
-
 # ==============================================================================
+# Extract
 tar -xf linux-7.0.tar.xz;
 tar -xf linux-7.0.2.tar.xz;
-
-# ==============================================================================
 xz -d patch-7.0.1.xz;
 xz -d patch-7.0.2.xz;
 xz -d patch-7.0.3.xz;
+# ==============================================================================
+make kernelversion;
+# ==============================================================================
+patch -s -R -p1 < ../patch-7.0.2; make kernelversion;
+patch -s -p1    < ../patch-7.0.3; make kernelversion;
+# ==============================================================================
+make clean;
+# ==============================================================================
+clear;
+rm .config 2>/dev/null;
+cp /boot/config-$(uname -r) .config;
+make menuconfig;
+make kernelversion;
+# ==============================================================================
+make debuginfo=no -j$(nproc) all; # Retirer le mode debug
+# ==============================================================================
+make modules_install;
+make install;
+# ==============================================================================
+#make bindeb-pkg; #dpkg -i ./linux-image-7.0.0.deb
 # ==============================================================================
 ```
 
