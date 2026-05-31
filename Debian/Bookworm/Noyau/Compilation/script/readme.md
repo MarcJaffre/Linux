@@ -101,3 +101,7 @@ make modules_install;
 make install;
 ```
 
+
+
+#### X. Kbuild
+La documentation [KBUILD](https://www.kernel.org/doc/html/v6.1/kbuild/kbuild.html) concerne les options : INSTALL_MOD_STRIP
