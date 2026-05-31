@@ -12,7 +12,7 @@ PATCH_MINEUR="9"
 
 
 DL_KERNEL="https://cdn.kernel.org/pub/linux/kernel/v${BRANCHE}.x/linux-${PATCH_MAJEUR}.0.0.tar.xz"
-DL_PATCH="https://cdn.kernel.org/pub/linux/kernel/v${BRANCHE}.x/patch-${PATCH_MAJEUR}.${PATCH_MAJEUR}.${PATCH_MINEUR}.tar.xz"
+DL_PATCH="https://cdn.kernel.org/pub/linux/kernel/v${BRANCHE}.x/patch-${BRANCHE}.${PATCH_MAJEUR}.${PATCH_MINEUR}.tar.xz"
 
 ############################################################################################################################################################################
 # Emplacement #
