@@ -36,23 +36,29 @@ xz -d patch-7.0.1.xz;
 xz -d patch-7.0.2.xz;
 xz -d patch-7.0.3.xz;
 # ==============================================================================
+# Kernel Folder
 cd linux-7.0.2
 # ==============================================================================
+# Check Version
 make kernelversion;
 # ==============================================================================
+# Reverse patch to 7.0.0 + Upgrade at 7.0.3
 patch -s -R -p1 < ../patch-7.0.2; make kernelversion;
 patch -s -p1    < ../patch-7.0.3; make kernelversion;
 # ==============================================================================
+# Clean Kernel
 make clean;
 # ==============================================================================
-clear;
+# Import Config kernel
 rm .config 2>/dev/null;
 cp /boot/config-$(uname -r) .config;
 make menuconfig;
 make kernelversion;
 # ==============================================================================
+# Build Kernel
 make debuginfo=no -j$(nproc) all; # Retirer le mode debug
 # ==============================================================================
+# Install
 make modules_install;
 make install;
 # ==============================================================================
