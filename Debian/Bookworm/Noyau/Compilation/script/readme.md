@@ -68,6 +68,7 @@ clear;
 rm .config 2>/dev/null;
 cp /boot/config-$(uname -r) .config;
 make menuconfig;
+make kernelversion;
 ```
 
 <br />
@@ -81,9 +82,21 @@ make -j$(nproc) all;
 
 <br />
 
-#### G. Installer
+#### G.
+```bash
+clear;
+make bindeb-pkg
+dpkg -i ./linux-image-7.0.0.deb
+```
+
+<br />
+
+#### X. Installer
 ```bash
 clear;
 make modules_install;
 make install;
 ```
+
+
+https://www.youtube.com/watch?v=WfvA2RRzRWA
