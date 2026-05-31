@@ -18,8 +18,8 @@ fi
 if [ ! -d $DOSSIER ]; then
  mkdir $DOSSIER
  cd    $DOSSIER;
- mkdir $DOSSIER/test/ 2>/dev/null;
- cd    $DOSSIER/test/ 2>/dev/null;
+ mkdir $DOSSIER/test/;
+ cd    $DOSSIER/test/;
 fi
 # ==============================================================================
 # Download
