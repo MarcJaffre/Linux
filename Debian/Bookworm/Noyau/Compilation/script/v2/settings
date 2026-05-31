@@ -16,12 +16,3 @@ DL_PATCH="https://cdn.kernel.org/pub/linux/kernel/v${BRANCHE}.x/patch-${PATCH_MA
 # Emplacement #
 ###############
 DOSSIER="/Data"
-
-############################################################################################################################################################################
-# LOG #
-#######
-# Trappe la date et heure de debut de lancement
-#START_DATE=$(date +'%Y/%m/%d')
-#START_HORAIRE=$(date +'%H H %M')
-
-
