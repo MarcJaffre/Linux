@@ -2,8 +2,9 @@
 
 https://www.youtube.com/watch?v=WfvA2RRzRWA
 
-#### A. Télécharger (Kernel + patch) 
+#### A. Télécharger (Kernel + patch)  - 1/06/2027
 ```bash
+#!/usr/bin/bash
 clear;
 # ==============================================================================
 DOSSIER=/Data
