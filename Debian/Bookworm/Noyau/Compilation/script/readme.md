@@ -1,4 +1,4 @@
-### Note ([Doc](https://www.kernel.org/doc/html/v5.3/process/applying-patches.html#applying-patches)
+### Note ([Doc](https://www.kernel.org/doc/html/v5.3/process/applying-patches.html#applying-patches))
 #### A. Télécharger (Kernel + patch) 
 ```bash
 clear;
