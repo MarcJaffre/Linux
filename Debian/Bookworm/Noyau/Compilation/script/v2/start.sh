@@ -50,23 +50,32 @@ if [ ! -d $DOSSIER/linux-${BRANCHE}.0.0 ]; then
       wget $DL_PATCH  -O $DOSSIER/linux-${BRANCHE}.${PATCH_MAJEUR}.${PATCH_MINEUR}.tar.xz     2>/dev/null;
       echo "Extraction des fichiers";
       tar -xf            $DOSSIER/linux-${BRANCHE}.0.0.tar.xz                                -C $DOSSIER/;
-      tar -xf            $DOSSIER/l/linux-${BRANCHE}.${PATCH_MAJEUR}.${PATCH_MINEUR}.tar.xz  -C $DOSSIER/;
+      tar -xf            $DOSSIER/patch-${BRANCHE}.${PATCH_MAJEUR}.${PATCH_MINEUR}.tar.xz    -C $DOSSIER/;
    fi
    # Variable inutile pour éviter une erreur dans la console
    RC=0
    # =====================================================================
 fi
+rm .config 2>/dev/null; cp /boot/config-$(uname -r) .config;
+
+#########################################################################################################################################################
+# Patchage #
+############
+# Si le dossier existe alors
+if [ -d $DOSSIER/linux-${BRANCHE}.0.0 ]; then
+   cd   $DOSSIER/linux-${BRANCHE}.0.0;
+   patch -p1 < ../$DOSSIER/patch-${BRANCHE}.${PATCH_MAJEUR}.${PATCH_MINEUR};
+   make kernelversion;
+fi
+
+
 
 #########################################################################################################################################################
 # Compilation #
 ###############
 # Si le dossier existe alors
-if [ -d $DOSSIER/linux-${BRANCHE}.0.0 ]; then
-   cd   $DOSSIER/linux-${BRANCHE}.0.0;
-
-   #patch -p1 < ../patch-6.18.1;     make kernelversion;
-
-
+#if [ -d $DOSSIER/linux-${BRANCHE}.0.0 ]; then
+   #cd   $DOSSIER/linux-${BRANCHE}.0.0;
    # Generer le fichier de configuration
    #make menuconfig;
 
@@ -94,4 +103,4 @@ if [ -d $DOSSIER/linux-${BRANCHE}.0.0 ]; then
    # Renommage de la log de compilation
    #mv                          $DOSSIER/linux-${BRANCHE}.0.0/Build.log                  $DOSSIER/linux-${BRANCHE}.0.0/Build_$START_DATE_$START_HORAIRE.log;
    #########################################################################################################################################################
-fi
+#fi
