@@ -45,8 +45,7 @@ patch -s -p1    < ../patch-7.0.3; make kernelversion;
 ```bash
 clear;
 make clean;
-```make menuconfig;make menuconfig;
-
+```
 
 #### E. Personnalisé
 ```bash
