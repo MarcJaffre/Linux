@@ -45,12 +45,14 @@ patch -s -p1    < ../patch-7.0.3; make kernelversion;
 ```bash
 clear;
 make clean;
-```
+```make menuconfig;make menuconfig;
 
 
 #### E. Personnalisé
 ```bash
 clear;
+rm .config 2>/dev/null;
+cp /boot/config-$(uname -r) .config;
 make menuconfig;
 ```
 
@@ -60,7 +62,6 @@ clear;
 make debuginfo=no -j$(nproc) all; # Retirer le mode debug
 make -j$(nproc) all;
 ```
-
 
 #### G. Installer
 ```bash
