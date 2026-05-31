@@ -1,6 +1,27 @@
+############################################################################################################################################################################
+# Reset DATA #
+##############
+PURGE="OFF"
 
-#BRANCHE="6"
-#PATCH_MAJEUR="10"
-#PATCH_MINEUR="7"
-#DL_KERNEL="https://cdn.kernel.org/pub/linux/kernel/v${BRANCHE}.x/linux-${PATCH_MAJEUR}.${PATCH_MAJEUR}.${PATCH_MINEUR}.tar.xz"
-#DL_KERNEL="https://cdn.kernel.org/pub/linux/kernel/v${BRANCHE}.x/patch-${PATCH_MAJEUR}.${PATCH_MAJEUR}.${PATCH_MINEUR}.tar.xz"
+############################################################################################################################################################################
+# Kernel.org #
+##############
+BRANCHE="7"
+PATCH_MAJEUR="0"
+PATCH_MINEUR="9"
+DL_KERNEL="https://cdn.kernel.org/pub/linux/kernel/v${BRANCHE}.x/linux-${PATCH_MAJEUR}.0.0.tar.xz"
+DL_PATCH="https://cdn.kernel.org/pub/linux/kernel/v${BRANCHE}.x/patch-${PATCH_MAJEUR}.${PATCH_MAJEUR}.${PATCH_MINEUR}.tar.xz"
+
+############################################################################################################################################################################
+# Emplacement #
+###############
+DOSSIER="/Data"
+
+############################################################################################################################################################################
+# LOG #
+#######
+# Trappe la date et heure de debut de lancement
+#START_DATE=$(date +'%Y/%m/%d')
+#START_HORAIRE=$(date +'%H H %M')
+
+
