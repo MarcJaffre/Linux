@@ -8,10 +8,10 @@ Guide sur l'[application d'un patch](https://www.kernel.org/doc/html/v5.3/proces
 
 #### 2. Grand etape
 
-| Kernel | Patch | Action 1                | Action 2                | Action 3              |
-|--------|-------|-------------------------|-------------------------|-----------------------|
-| 5.0.0  | 5.0.4 | Appliquer patch         |                         |                       |
-| 5.0.3  | 5.0.4 | Réverser le patch 5.0.X | Vérifier kernel (5.0.0) | Appliquer patch 5.0.0 |
+| Kernel | Patch | Action 1                | Action 2                | Action 3              | Action 4              |
+|--------|-------|-------------------------|-------------------------|-----------------------|-----------------------|
+| 5.0.0  | 5.0.4 | Appliquer patch 5.0.4   | Vérifier kernel         | Installer le kernel   |                       |
+| 5.0.3  | 5.0.4 | Réverser le patch 5.0.X | Vérifier kernel (5.0.0) | Appliquer patch 5.0.0 | Installer le kernel   |
 
 
 Pour le Noyau 5, il faut appliquer le dernier patch. (Exemple: Kernel 5.0 et patch 5.0.4)
