@@ -66,6 +66,10 @@ if [ -d $DOSSIER/linux-${VERSION} ]; then
 
    # Nettoyage
    make clean;
+
+   START_DATE=$(date +'%Y/%m/%d')
+   START_HORAIRE=$(date +'%H H %M')
+   
    echo "-----------------------------------------------------------------------------" >  $DOSSIER/linux-${VERSION}/Build.log;
    echo "# Compilation du KERNEL "                                                      >> $DOSSIER/linux-${VERSION}/Build.log;
    make ARCH=$(arch) -j$(nproc)                                                         >> $DOSSIER/linux-${VERSION}/Build.log 2>&1;
