@@ -20,8 +20,8 @@ clear;
 # Dossier de Travail #
 ######################
 # Si le dossier existe pas alors creer le
-if [ ! -d $DOSSIER/ ]; then
- mkdir -p $DOSSIER/;
+if [ ! -d $DOSSIER ]; then
+ mkdir -p $DOSSIER;
 fi
 
 #########################################################################################################################################################
