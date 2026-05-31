@@ -4,23 +4,29 @@
 clear;
 
 DOSSIER=/Data
+
+# ==============================================================================
 cd    $DOSSIER;
 rm -r $DOSSIER/test/ 2>/dev/null;
 mkdir $DOSSIER/test/ 2>/dev/null;
 cd    $DOSSIER/test/ 2>/dev/null;
 
+# ==============================================================================
 wget -q https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.0.tar.xz;
 wget -q https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.0.2.tar.xz;
 wget -q https://cdn.kernel.org/pub/linux/kernel/v7.x/patch-7.0.1.xz;
 wget -q https://cdn.kernel.org/pub/linux/kernel/v7.x/patch-7.0.2.xz;
 wget -q https://cdn.kernel.org/pub/linux/kernel/v7.x/patch-7.0.3.xz;
 
+# ==============================================================================
 tar -xf linux-7.0.tar.xz;
 tar -xf linux-7.0.2.tar.xz;
 
+# ==============================================================================
 xz -d patch-7.0.1.xz;
 xz -d patch-7.0.2.xz;
 xz -d patch-7.0.3.xz;
+# ==============================================================================
 ```
 
 
