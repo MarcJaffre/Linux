@@ -76,23 +76,20 @@ https://www.kernel.org/doc/html/v6.1/kbuild/kbuild.html
 #echo "# - Kernel downgrade version: $KERNEL_DOWNGRADE                     ";
 #echo "# - Kernel upgrade   version: $KERNEL_UPGRADE                     ";
 
-
-
-# ==============================================================================
-# Clean Kernel
-#make clean;
-
 # ==============================================================================
 # Import Config kernel
 #if [ -f .config ];then
-# echo "Purge du fichier config";
+#echo "# - Purge du fichier config                            #";
 # rm .config 2>/dev/null;
 # cp /boot/config-$(uname -r) .config;
-# echo "Copie du fichier config";
+#echo "# - Copie du fichier config                            #";
 #else
 # cp /boot/config-$(uname -r) .config;
-# echo "Copie du fichier config";
+#echo "# - Copie du fichier config                            #";
 #fi
+
+# ==============================================================================
+# Clean Kernel (Inutile) - #make clean 2>/dev/null;
 
 # ==============================================================================
 # custom config
