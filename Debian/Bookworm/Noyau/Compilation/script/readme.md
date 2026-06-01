@@ -7,21 +7,28 @@ https://www.kernel.org/doc/html/v6.1/kbuild/kbuild.html
 
 ```bash
 #!/usr/bin/bash
+
+# ==============================================================================
+# Clean console
 #clear;
+
 # ==============================================================================
 #DOSSIER=/Data
+
 # ==============================================================================
 # Remove Folder
 #if [ -d $DOSSIER ]; then
 # cd $HOME;
 # rm -r $DOSSIER 2>/dev/null;
 #fi
+
 # ==============================================================================
 # Make Folder
 #if [ ! -d $DOSSIER ]; then
 # mkdir -p $DOSSIER;
 # cd       $DOSSIER;
 #fi
+
 # ==============================================================================
 # Download
 #wget -q https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.0.tar.xz;
@@ -29,41 +36,63 @@ https://www.kernel.org/doc/html/v6.1/kbuild/kbuild.html
 #wget -q https://cdn.kernel.org/pub/linux/kernel/v7.x/patch-7.0.1.xz;
 #wget -q https://cdn.kernel.org/pub/linux/kernel/v7.x/patch-7.0.2.xz;
 #wget -q https://cdn.kernel.org/pub/linux/kernel/v7.x/patch-7.0.3.xz;
+
 # ==============================================================================
 # Extract
 #tar -xf linux-7.0.tar.xz;
 #tar -xf linux-7.0.2.tar.xz;
-#xz -d patch-7.0.1.xz;
-#xz -d patch-7.0.2.xz;
-#xz -d patch-7.0.3.xz;
+#xz  -d  patch-7.0.1.xz;
+#xz  -d  patch-7.0.2.xz;
+#xz  -d  patch-7.0.3.xz;
+
 # ==============================================================================
 # Kernel Folder
 #cd linux-7.0.2;
+
 # ==============================================================================
 # Check Version
 #make kernelversion;
+
 # ==============================================================================
 # Reverse patch to 7.0.0 + Upgrade at 7.0.3
 #patch -s -R -p1 < ../patch-7.0.2; make kernelversion;
 #patch -s -p1    < ../patch-7.0.3; make kernelversion;
+
 # ==============================================================================
 # Clean Kernel
 #make clean;
+
 # ==============================================================================
 # Import Config kernel
-#rm .config 2>/dev/null;
-#cp /boot/config-$(uname -r) .config;
+#if [ -f .config ];then
+# echo "Purge du fichier config";
+# rm .config 2>/dev/null;
+# cp /boot/config-$(uname -r) .config;
+# echo "Copie du fichier config";
+#else
+# cp /boot/config-$(uname -r) .config;
+# echo "Copie du fichier config";
+#fi
+
+# ==============================================================================
+# custom config
 #make menuconfig;
-#make kernelversion;
+
 # ==============================================================================
 # Build Kernel
 #make debuginfo=no -j$(nproc) all;
 # ==============================================================================
-# Install
+# Install module
 #make modules_install;
+# ==============================================================================
+# Install Kernel
 #make install;
 # ==============================================================================
-#make bindeb-pkg; #dpkg -i ./linux-image-7.0.0.deb;
+# Build deb file
+#make bindeb-pkg;
+# ==============================================================================
+# Install deb
+#dpkg -i ./linux-image-7.0.0.deb;
 # ==============================================================================
 ```
 
