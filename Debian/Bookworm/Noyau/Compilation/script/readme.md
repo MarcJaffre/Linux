@@ -197,14 +197,11 @@ rm /boot/initrd.img-7.0.0;
 rm /boot/System.map-7.0.0;
 rm /boot/vmlinuz-7.0.0;
 rm -r /lib/modules/7.0.0;
-update-grub;
-update-initramfs -u;
 ```
-
 
 <br />
 
-### X. Autre
+### X. Mettre à jour le démarrage
 ```bash
 clear;
 update-grub;
