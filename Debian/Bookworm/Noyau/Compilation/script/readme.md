@@ -7,34 +7,34 @@ https://www.kernel.org/doc/html/v6.1/kbuild/kbuild.html
 
 ```bash
 #!/usr/bin/bash
-clear;
+#clear;
 # ==============================================================================
-DOSSIER=/Data
+#DOSSIER=/Data
 # ==============================================================================
 # Remove Folder
-if [ -d $DOSSIER ]; then
- cd $HOME;
- rm -r $DOSSIER 2>/dev/null;
-fi
+#if [ -d $DOSSIER ]; then
+# cd $HOME;
+# rm -r $DOSSIER 2>/dev/null;
+#fi
 # ==============================================================================
 # Make Folder
-if [ ! -d $DOSSIER ]; then
- mkdir -p $DOSSIER;
- cd       $DOSSIER;
-fi
+#if [ ! -d $DOSSIER ]; then
+# mkdir -p $DOSSIER;
+# cd       $DOSSIER;
+#fi
 # ==============================================================================
 # Download
-wget -q https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.0.tar.xz;
-wget -q https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.0.2.tar.xz;
-wget -q https://cdn.kernel.org/pub/linux/kernel/v7.x/patch-7.0.1.xz;
-wget -q https://cdn.kernel.org/pub/linux/kernel/v7.x/patch-7.0.2.xz;
-wget -q https://cdn.kernel.org/pub/linux/kernel/v7.x/patch-7.0.3.xz;
+#wget -q https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.0.tar.xz;
+#wget -q https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.0.2.tar.xz;
+#wget -q https://cdn.kernel.org/pub/linux/kernel/v7.x/patch-7.0.1.xz;
+#wget -q https://cdn.kernel.org/pub/linux/kernel/v7.x/patch-7.0.2.xz;
+#wget -q https://cdn.kernel.org/pub/linux/kernel/v7.x/patch-7.0.3.xz;
 # ==============================================================================
 # Extract
-tar -xf linux-7.0.tar.xz;
-tar -xf linux-7.0.2.tar.xz;
-xz -d patch-7.0.1.xz;
-xz -d patch-7.0.2.xz;
+#tar -xf linux-7.0.tar.xz;
+#tar -xf linux-7.0.2.tar.xz;
+#xz -d patch-7.0.1.xz;
+#xz -d patch-7.0.2.xz;
 #xz -d patch-7.0.3.xz;
 # ==============================================================================
 # Kernel Folder
