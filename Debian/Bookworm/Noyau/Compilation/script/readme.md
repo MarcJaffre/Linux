@@ -39,9 +39,12 @@ https://www.kernel.org/doc/html/v6.1/kbuild/kbuild.html
 #wget -q https://cdn.kernel.org/pub/linux/kernel/v7.x/patch-7.0.3.xz;
 
 # ==============================================================================
-# Extract
+# Extract tar file
 #tar -xf linux-7.0.tar.xz;
 #tar -xf linux-7.0.2.tar.xz;
+
+# ==============================================================================
+# Extract xz file
 #xz  -d  patch-7.0.1.xz;
 #xz  -d  patch-7.0.2.xz;
 #xz  -d  patch-7.0.3.xz;
@@ -52,12 +55,28 @@ https://www.kernel.org/doc/html/v6.1/kbuild/kbuild.html
 
 # ==============================================================================
 # Check Version
-#make kernelversion;
+KERNEL_ORIGINAL=$(make kernelversion)
 
 # ==============================================================================
-# Reverse patch to 7.0.0 + Upgrade at 7.0.3
-#patch -s -R -p1 < ../patch-7.0.2; make kernelversion;
-#patch -s -p1    < ../patch-7.0.3; make kernelversion;
+# Apply 1st Patch (7.0.2 > 7.0.0)
+patch -s -R -p1 < ../patch-7.0.2;
+KERNEL_DOWNGRADE=$(make kernelversion)
+
+# ==============================================================================
+# Apply 2nd Patch (7.0.0 to 7.0.3
+patch -s -p1    < ../patch-7.0.3;
+KERNEL_UPGRADE=$(make kernelversion)
+
+# ==============================================================================
+# Message
+echo "########################################################";
+echo "#                  KERNEL COMPILATION                  #";
+echo "########################################################";
+echo "# - Kernel original  version: $KERNEL_ORIGINAL                     ";
+echo "# - Kernel downgrade version: $KERNEL_DOWNGRADE                     ";
+echo "# - Kernel upgrade   version: $KERNEL_UPGRADE                     ";
+
+
 
 # ==============================================================================
 # Clean Kernel
