@@ -46,11 +46,8 @@ https://www.kernel.org/doc/html/v6.1/kbuild/kbuild.html
 #wget -q $KERNEL_BASEURL/v${KERNEL_MAJEUR}.x/patch-${KERNEL_MAJEUR}.${KERNEL_MINEUR}.${KERNEL_CORRECTIF}.xz;
 
 # ====================================================================================================================
-# Extract tar file
+# Extract Files
 #tar -xf linux-${KERNEL_MAJEUR}.0.tar.xz;
-
-# ====================================================================================================================
-# Extract xz file
 #xz  -d  patch-${KERNEL_MAJEUR}.${KERNEL_MINEUR}.${KERNEL_CORRECTIF}.xz;
 
 # ====================================================================================================================
