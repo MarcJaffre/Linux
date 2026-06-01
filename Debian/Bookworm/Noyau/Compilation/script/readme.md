@@ -118,6 +118,7 @@ https://www.kernel.org/doc/html/v6.1/kbuild/kbuild.html
 # ==============================================================================
 ```
 
+
 <br />
 
 ### B. kernel non-vanilla vers supérieur
