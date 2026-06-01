@@ -78,9 +78,9 @@ https://www.kernel.org/doc/html/v6.1/kbuild/kbuild.html
 #echo "########################################################";
 #echo "#                  KERNEL COMPILATION                  #";
 #echo "########################################################";
-#echo "# - Kernel original  version: $KERNEL_ORIGINAL                     ";
-#echo "# - Kernel downgrade version: $KERNEL_DOWNGRADE                     ";
-#echo "# - Kernel upgrade   version: $KERNEL_UPGRADE                     ";
+#echo "# - Kernel original  version: $KERNEL_ORIGINAL                    #";
+#echo "# - Kernel downgrade version: $KERNEL_DOWNGRADE                    #";
+#echo "# - Kernel upgrade   version: $KERNEL_UPGRADE                    #";
 
 # ====================================================================================================================
 # Import Config kernel
