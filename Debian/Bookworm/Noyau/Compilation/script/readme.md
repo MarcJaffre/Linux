@@ -17,10 +17,10 @@ https://www.kernel.org/doc/html/v6.1/kbuild/kbuild.html
 
 # ====================================================================================================================
 # Kernel version target
-KERNEL_BASEURL="https://cdn.kernel.org/pub/linux/kernel"
-KERNEL_MAJEUR="7"
-KERNEL_MINEUR="0"
-KERNEL_CORRECTIF="9"
+#KERNEL_BASEURL="https://cdn.kernel.org/pub/linux/kernel"
+#KERNEL_MAJEUR="7"
+#KERNEL_MINEUR="0"
+#KERNEL_CORRECTIF="9"
 
 # ====================================================================================================================
 # Workdir
