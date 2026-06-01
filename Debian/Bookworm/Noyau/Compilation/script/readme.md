@@ -61,6 +61,10 @@ https://www.kernel.org/doc/html/v6.1/kbuild/kbuild.html
 #xz  -d  patch-${KERNEL_MAJEUR}.${KERNEL_MINEUR}.${KERNEL_CORRECTIF}.xz;
 
 # ====================================================================================================================
+# Delete compress files
+#rm *.xz; 
+
+# ====================================================================================================================
 # Kernel Folder
 #cd linux-${KERNEL_MAJEUR}.0;
 
