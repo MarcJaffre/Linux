@@ -73,6 +73,7 @@ https://www.kernel.org/doc/html/v6.1/kbuild/kbuild.html
 #patch -s -p1    < ../patch-${KERNEL_MAJEUR}.${KERNEL_MINEUR}.${KERNEL_CORRECTIF};
 #KERNEL_UPGRADE=$(make kernelversion)
 
+
 # ====================================================================================================================
 # Message
 #echo "########################################################";
