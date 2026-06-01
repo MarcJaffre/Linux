@@ -3,6 +3,8 @@
 https://www.youtube.com/watch?v=WfvA2RRzRWA
 
 #### A. Télécharger (Kernel + patch)  - 1/06/2027
+https://www.kernel.org/doc/html/v6.1/kbuild/kbuild.html
+
 ```bash
 #!/usr/bin/bash
 clear;
@@ -17,10 +19,8 @@ fi
 # ==============================================================================
 # Make Folder
 if [ ! -d $DOSSIER ]; then
- mkdir $DOSSIER
- cd    $DOSSIER;
- mkdir $DOSSIER/test/;
- cd    $DOSSIER/test/;
+ mkdir -p $DOSSIER;
+ cd       $DOSSIER;
 fi
 # ==============================================================================
 # Download
@@ -35,35 +35,35 @@ tar -xf linux-7.0.tar.xz;
 tar -xf linux-7.0.2.tar.xz;
 xz -d patch-7.0.1.xz;
 xz -d patch-7.0.2.xz;
-xz -d patch-7.0.3.xz;
+#xz -d patch-7.0.3.xz;
 # ==============================================================================
 # Kernel Folder
-cd linux-7.0.2
+#cd linux-7.0.2;
 # ==============================================================================
 # Check Version
-make kernelversion;
+#make kernelversion;
 # ==============================================================================
 # Reverse patch to 7.0.0 + Upgrade at 7.0.3
-patch -s -R -p1 < ../patch-7.0.2; make kernelversion;
-patch -s -p1    < ../patch-7.0.3; make kernelversion;
+#patch -s -R -p1 < ../patch-7.0.2; make kernelversion;
+#patch -s -p1    < ../patch-7.0.3; make kernelversion;
 # ==============================================================================
 # Clean Kernel
-make clean;
+#make clean;
 # ==============================================================================
 # Import Config kernel
-rm .config 2>/dev/null;
-cp /boot/config-$(uname -r) .config;
-make menuconfig;
-make kernelversion;
+#rm .config 2>/dev/null;
+#cp /boot/config-$(uname -r) .config;
+#make menuconfig;
+#make kernelversion;
 # ==============================================================================
 # Build Kernel
-make debuginfo=no -j$(nproc) all; # Retirer le mode debug
+#make debuginfo=no -j$(nproc) all;
 # ==============================================================================
 # Install
-make modules_install;
-make install;
+#make modules_install;
+#make install;
 # ==============================================================================
-#make bindeb-pkg; #dpkg -i ./linux-image-7.0.0.deb
+#make bindeb-pkg; #dpkg -i ./linux-image-7.0.0.deb;
 # ==============================================================================
 ```
 
