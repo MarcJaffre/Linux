@@ -19,8 +19,8 @@ https://www.kernel.org/doc/html/v6.1/kbuild/kbuild.html
 # ==============================================================================
 # Remove Folder
 #if [ -d $DOSSIER ]; then
-# cd $HOME;
-# rm -r $DOSSIER 2>/dev/null;
+# cd     $HOME;
+# rm -r  $DOSSIER;
 #fi
 
 # ==============================================================================
