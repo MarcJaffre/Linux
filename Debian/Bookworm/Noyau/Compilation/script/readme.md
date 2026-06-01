@@ -176,7 +176,7 @@ make -j$(nproc) all;
 ```bash
 clear;
 make bindeb-pkg
-dpkg -i ./linux-image-7.0.0.deb
+dpkg -i ./linux-image-7.0.0.deb;
 ```
 
 <br />
@@ -188,6 +188,20 @@ make modules_install;
 make install;
 ```
 
+
+### X. Désinstaller
+```bash
+clear;
+rm /boot/config-7.0.0;
+rm /boot/initrd.img-7.0.0;
+rm /boot/System.map-7.0.0;
+rm /boot/vmlinuz-7.0.0;
+rm -r /lib/modules/7.0.0;
+update-grub;
+update-initramfs -u;
+```
+
+
 <br />
 
 ### X. Autre
@@ -196,6 +210,8 @@ clear;
 update-grub;
 update-initramfs -u;
 ```
+
+
 
 
 <br />
