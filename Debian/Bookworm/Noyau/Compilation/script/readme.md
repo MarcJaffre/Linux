@@ -55,26 +55,26 @@ https://www.kernel.org/doc/html/v6.1/kbuild/kbuild.html
 
 # ==============================================================================
 # Check Version
-KERNEL_ORIGINAL=$(make kernelversion)
+#KERNEL_ORIGINAL=$(make kernelversion)
 
 # ==============================================================================
 # Apply 1st Patch (7.0.2 > 7.0.0)
-patch -s -R -p1 < ../patch-7.0.2;
-KERNEL_DOWNGRADE=$(make kernelversion)
+#patch -s -R -p1 < ../patch-7.0.2;
+#KERNEL_DOWNGRADE=$(make kernelversion)
 
 # ==============================================================================
 # Apply 2nd Patch (7.0.0 to 7.0.3
-patch -s -p1    < ../patch-7.0.3;
-KERNEL_UPGRADE=$(make kernelversion)
+#patch -s -p1    < ../patch-7.0.3;
+#KERNEL_UPGRADE=$(make kernelversion)
 
 # ==============================================================================
 # Message
-echo "########################################################";
-echo "#                  KERNEL COMPILATION                  #";
-echo "########################################################";
-echo "# - Kernel original  version: $KERNEL_ORIGINAL                     ";
-echo "# - Kernel downgrade version: $KERNEL_DOWNGRADE                     ";
-echo "# - Kernel upgrade   version: $KERNEL_UPGRADE                     ";
+#echo "########################################################";
+#echo "#                  KERNEL COMPILATION                  #";
+#echo "########################################################";
+#echo "# - Kernel original  version: $KERNEL_ORIGINAL                     ";
+#echo "# - Kernel downgrade version: $KERNEL_DOWNGRADE                     ";
+#echo "# - Kernel upgrade   version: $KERNEL_UPGRADE                     ";
 
 
 
