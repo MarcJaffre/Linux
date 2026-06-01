@@ -23,6 +23,16 @@ https://www.kernel.org/doc/html/v6.1/kbuild/kbuild.html
 #KERNEL_CORRECTIF="9"
 
 # ====================================================================================================================
+# Delete Kernel
+#if [ ! "$(uname -r | cut -c 1-6)" = "${KERNEL_MAJEUR}.${KERNEL_MINEUR}.${KERNEL_CORRECTIF}" ]; then
+#  rm    /boot/config-${KERNEL_MAJEUR}.${KERNEL_MINEUR}.${KERNEL_CORRECTIF}      2>/dev/null;
+#  rm    /boot/initrd.img-${KERNEL_MAJEUR}.${KERNEL_MINEUR}.${KERNEL_CORRECTIF}  2>/dev/null;
+#  rm    /boot/System.map-${KERNEL_MAJEUR}.${KERNEL_MINEUR}.${KERNEL_CORRECTIF}  2>/dev/null;
+#  rm    /boot/vmlinuz-${KERNEL_MAJEUR}.${KERNEL_MINEUR}.${KERNEL_CORRECTIF}     2>/dev/null;
+#  rm -r /lib/modules/${KERNEL_MAJEUR}.${KERNEL_MINEUR}.${KERNEL_CORRECTIF}      2>/dev/null;
+#fi
+
+# ====================================================================================================================
 # Workdir
 #DOSSIER=/Data
 
