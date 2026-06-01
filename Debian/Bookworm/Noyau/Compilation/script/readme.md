@@ -203,11 +203,12 @@ make install;
 ### X. Désinstaller
 ```bash
 clear;
-rm /boot/config-7.0.0;
-rm /boot/initrd.img-7.0.0;
-rm /boot/System.map-7.0.0;
-rm /boot/vmlinuz-7.0.0;
-rm -r /lib/modules/7.0.0;
+KERNEL="7.0.9"
+rm /boot/config-${KERNEL};
+rm /boot/initrd.img-${KERNEL};
+rm /boot/System.map-${KERNEL};
+rm /boot/vmlinuz-${KERNEL};
+rm -r /lib/modules/${KERNEL};
 ```
 
 <br />
