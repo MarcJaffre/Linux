@@ -1,5 +1,5 @@
 ------------------------------------------------------------------------------------------------------------------------
-# <p align='center'> Construction et personnalisation d'une VM depuis Debian Cloud </p> 
+# <p align='center'> Personnalisation d'une Image Debian Cloud</p> 
 ------------------------------------------------------------------------------------------------------------------------
 ## I. Proxmox
 ### A. Présentation
