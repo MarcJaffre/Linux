@@ -58,11 +58,11 @@ virt-customize -a "${FILE_DEBIAN_CLOUD}" \
 -timezone 'Europe/Paris'
 # --------------------------------------------------------------------------------------------------------------------
 virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "echo 'fr_FR.UTF-8 UTF-8' > /etc/locale.gen";
-virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "echo 'LANG=fr_FR.UTF-8' > /etc/default/locale";
+virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "echo 'LANG=fr_FR.UTF-8'  > /etc/default/locale";
 virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "locale-gen";
 ```
 
-### F. Paquers
+### F. Paquets
 ```bash
 clear;
 # --------------------------------------------------------------------------------------------------------------------
@@ -83,6 +83,7 @@ virt-customize -a "${FILE_DEBIAN_CLOUD}" --install qemu-guest-agent;
 ```
 
 ### G. Lister les Noyaux et entête installées
+Debian 12 utilise le Kernel `6.1.0-54`, ce qui sera capitale pour la suite.
 ```bash
 clear;
 virt-ls -a "${FILE_DEBIAN_CLOUD}" /lib/modules;
@@ -106,17 +107,24 @@ virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "DEBIAN_FRONTEND=noninter
 ```bash
 PILOTE_NVIDIA_RELEASE="580.142"
 PILOTE_NVIDIA_URL="https://fr.download.nvidia.com/XFree86/Linux-x86_64/${PILOTE_NVIDIA_RELEASE}/NVIDIA-Linux-x86_64-${PILOTE_NVIDIA_RELEASE}.run"
-PILOTE_NVIDIA_FILE="/root/NVIDIA-Linux-x86_64-${PILOTE_NVIDIA_RELEASE}.run"
-virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "wget -q  ${PILOTE_NVIDIA_URL} -O ${PILOTE_NVIDIA_FILE}";
-virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "chmod +x                         ${PILOTE_NVIDIA_FILE}"; # Tres important
+PILOTE_NVIDIA_FILE="/tmp/NVIDIA-Linux-x86_64.run"
 
-virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "rm -r /root/NVIDIA-EXTRACT";
-virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "/root/NVIDIA-Linux-x86_64-580.142.run --extract-only --target /root/NVIDIA-EXTRACT";
-virt-ls        -a "${FILE_DEBIAN_CLOUD}" "/root/NVIDIA-EXTRACT";
+# Nettoyage
+virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "rm -r /tmp/NVIDIA-EXTRACT";
+
+# Telecharger
+virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "wget -q  ${PILOTE_NVIDIA_URL} -O ${PILOTE_NVIDIA_FILE}";
+
+# Mise en Exe le binaire (Capitale)
+virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "chmod +x ${PILOTE_NVIDIA_FILE}";
+
+# Extraction
+virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "${PILOTE_NVIDIA_FILE} --extract-only --target /tmp/NVIDIA-EXTRACT";
+virt-ls        -a "${FILE_DEBIAN_CLOUD}" "/tmp/NVIDIA-EXTRACT";
 
 
 virt-customize -a "${FILE_DEBIAN_CLOUD}" \
---run-command "/root/NVIDIA-EXTRACT/nvidia-installer \
+--run-command "/tmp/NVIDIA-EXTRACT/nvidia-installer \
 --ui=none \
 --no-questions \
 --kernel-name='6.1.0-54-amd64' \
@@ -124,7 +132,7 @@ virt-customize -a "${FILE_DEBIAN_CLOUD}" \
 --kernel-output-path='/lib/modules/6.1.0-54-amd64/build' \
 ";
 
-virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "rm -r /root/NVIDIA-EXTRACT";
+virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "rm -r /tmp/NVIDIA-EXTRACT";
 ```
 
 ### X. Nettoyage
