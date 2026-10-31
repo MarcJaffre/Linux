@@ -245,7 +245,7 @@ DEBIAN_RELEASE="12"
 DISK_OS_PATH="/var/lib/vz/template/qemu/debian-${DEBIAN_RELEASE}-generic-amd64.qcow2"
 # =======================================================================================================================
 WAIT="45"
-EFI_KEY="1"
+EFI_KEY="0"
 
 # =======================================================================================================================
 # Nettoyage console
@@ -275,7 +275,7 @@ qm create     "$VMID"            \
  --serial0    "socket";
 
 # =======================================================================================================================
-# # Disque EFI (vm-X-disk-0.qcow2) - STOCKAGE
+# # Disque EFI (vm-X-disk-0.qcow2) - STOCKAGE (re-enrolled-keys=1 > NVIDIA KO)
 qm set "$VMID" --efidisk0 "$STOCKAGE":4,format=qcow2,efitype=4m,pre-enrolled-keys="$EFI_KEY";
 
 #
