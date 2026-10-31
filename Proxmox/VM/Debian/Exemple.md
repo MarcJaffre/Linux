@@ -276,7 +276,7 @@ qm create     "$VMID"            \
 
 # =======================================================================================================================
 # # Disque EFI (vm-X-disk-0.qcow2) - STOCKAGE
-qm set "$VMID" --efidisk0 "$STOCKAGE":4,format=qcow2,efitype=4m,pre-enrolled-keys=0
+qm set "$VMID" --efidisk0 "$STOCKAGE":4,format=qcow2,efitype=4m,pre-enrolled-keys="$EFI_KEY";
 
 #
 # =======================================================================================================================
