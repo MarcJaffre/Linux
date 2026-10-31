@@ -129,20 +129,17 @@ NVIDIA_FILE="/tmp/NVIDIA-Linux-x86_64.run"
 NVIDIA_EXTRACT="/tmp/NVIDIA-EXTRACT"
 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# Nettoyage
+# Nettoyage + telecharger + Mise en Exe le binaire + Extraction
 virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "rm -r ${NVIDIA_FILE}"     2>/dev/null 1>/dev/null;
 virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "rm -r ${NVIDIA_EXTRACT}"  2>/dev/null 1>/dev/null;
-
-# ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# Telecharger + Mise en Exe le binaire + Extraction + Installation
 virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "wget -q  ${NVIDIA_URL} -O ${NVIDIA_FILE}";
 virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "chmod +x ${NVIDIA_FILE}";
 virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "${NVIDIA_FILE} --extract-only --target ${NVIDIA_EXTRACT}";
 virt-ls        -a "${FILE_DEBIAN_CLOUD}" "${NVIDIA_EXTRACT}";
 
-
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Installation
+clear;
 virt-customize -a "${FILE_DEBIAN_CLOUD}" \
 --run-command "/tmp/NVIDIA-EXTRACT/nvidia-installer \
 --ui=none \
@@ -153,19 +150,14 @@ virt-customize -a "${FILE_DEBIAN_CLOUD}" \
 ";
 ```
 
+
+
 ### X. Nettoyage
 ```bash
 clear;
 DEBIAN_RELEASE="12"
 OUT="/var/lib/vz/template/qemu/debian-${DEBIAN_RELEASE}-generic-amd64.qcow2"
 NEW="/tmp/debian-${DEBIAN_RELEASE}-generic-amd64-NEW.qcow2"
-NVIDIA_FILE="/tmp/NVIDIA-Linux-x86_64.run"
-NVIDIA_EXTRACT="/tmp/NVIDIA-EXTRACT"
-
-
 rm ${OUT}                2>/dev/null;
 rm ${NEW}                2>/dev/null;
-
-rm -rf ${NVIDIA_FILE}    2>/dev/null;
-rm -rf ${NVIDIA_EXTRACT} 2>/dev/null;
 ```
