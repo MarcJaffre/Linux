@@ -153,6 +153,7 @@ virt-customize -a "${FILE_DEBIAN_CLOUD}" \
 # Blacklist pilote libre (nouveau) 
 virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command 'echo "blacklist nouveau\noptions nouveau modeset=0" > /etc/modprobe.d/blacklist-nouveau.conf';
 virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command 'update-initramfs -u';
+virt-cat       -a "${FILE_DEBIAN_CLOUD}" /etc/modprobe.d/blacklist-nouveau.conf';
 ```
 
 ### X. Nettoyage
