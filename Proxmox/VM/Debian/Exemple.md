@@ -131,13 +131,16 @@ NVIDIA_EXTRACT="/tmp/NVIDIA-EXTRACT"
 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Nettoyage + telecharger + Mise en Exe le binaire + Extraction
+# ----
 virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "rm -r ${NVIDIA_FILE}"     2>/dev/null 1>/dev/null;
 virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "rm -r ${NVIDIA_EXTRACT}"  2>/dev/null 1>/dev/null;
+# ---
 virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "wget -q  ${NVIDIA_URL} -O ${NVIDIA_FILE}";
 virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "chmod +x ${NVIDIA_FILE}";
+# ---
 virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "${NVIDIA_FILE} --extract-only --target ${NVIDIA_EXTRACT}";
-virt-ls        -a "${FILE_DEBIAN_CLOUD}" "${NVIDIA_EXTRACT}";
-
+# virt-ls        -a "${FILE_DEBIAN_CLOUD}" "${NVIDIA_EXTRACT}";
+#
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Installation
 clear;
