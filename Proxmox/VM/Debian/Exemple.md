@@ -32,10 +32,10 @@ NEW="/tmp/debian-${DEBIAN_RELEASE}-generic-amd64-NEW.qcow2"
 NEW_SIZE="10"
 
 # New Disk 10 Go (vierge)
-qemu-img create -f qcow2 -o preallocation="metadata" "${NEW}" "${NEW_SIZE}"G 1>/dev/null;
+qemu-img create -f qcow2 -o preallocation="metadata" "${NEW}" "${NEW_SIZE}"G;
 
 # Copie OS
-virt-resize --expand /dev/sda1 "${OLD}" "${NEW}" 1>/dev/null;
+virt-resize --expand /dev/sda1 "${OLD}" "${NEW}";
 
 # Supprimer l'image orinale
 rm "${OLD}"
@@ -107,11 +107,11 @@ virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "DEBIAN_FRONTEND=noninter
 PILOTE_NVIDIA_RELEASE="580.142"
 PILOTE_NVIDIA_URL="https://fr.download.nvidia.com/XFree86/Linux-x86_64/${PILOTE_NVIDIA_RELEASE}/NVIDIA-Linux-x86_64-${PILOTE_NVIDIA_RELEASE}.run"
 PILOTE_NVIDIA_FILE="/root/NVIDIA-Linux-x86_64-${PILOTE_NVIDIA_RELEASE}.run"
-virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "wget -q  ${PILOTE_NVIDIA_URL} -O ${PILOTE_NVIDIA_FILE}" 1>/dev/null;
-virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "chmod +x                         ${PILOTE_NVIDIA_FILE}" 1>/dev/null; # Tres important
+virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "wget -q  ${PILOTE_NVIDIA_URL} -O ${PILOTE_NVIDIA_FILE}";
+virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "chmod +x                         ${PILOTE_NVIDIA_FILE}"; # Tres important
 
-virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "rm -r /root/NVIDIA-EXTRACT" 1>/dev/null;
-virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "/root/NVIDIA-Linux-x86_64-580.142.run --extract-only --target /root/NVIDIA-EXTRACT" 1>/dev/null;
+virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "rm -r /root/NVIDIA-EXTRACT";
+virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "/root/NVIDIA-Linux-x86_64-580.142.run --extract-only --target /root/NVIDIA-EXTRACT";
 virt-ls        -a "${FILE_DEBIAN_CLOUD}" "/root/NVIDIA-EXTRACT";
 
 
@@ -124,7 +124,7 @@ virt-customize -a "${FILE_DEBIAN_CLOUD}" \
 --kernel-output-path='/lib/modules/6.1.0-54-amd64/build' \
 ";
 
-virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "rm -r /root/NVIDIA-EXTRACT" 1>/dev/null;
+virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "rm -r /root/NVIDIA-EXTRACT";
 ```
 
 ### X. Nettoyage
