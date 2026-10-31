@@ -11,7 +11,18 @@ clear;
 apt install -y libguestfs-tools;
 ```
 
-### C. Télécharger Image
+### C. Nettoyage
+```bash
+clear;
+DEBIAN_RELEASE="12"
+OUT="/var/lib/vz/template/qemu/debian-${DEBIAN_RELEASE}-generic-amd64.qcow2"
+NEW="/tmp/debian-${DEBIAN_RELEASE}-generic-amd64-NEW.qcow2"
+rm ${OUT}                2>/dev/null;
+rm ${NEW}                2>/dev/null;
+```
+
+
+### D. Télécharger Image
 
 | Type    | Description            | Espace Disque |
 |---------|------------------------|---------------|
@@ -32,7 +43,7 @@ wget -q "$URL" -O "$OUT";
 virt-filesystems --long --parts --blkdevs -h -a "${OLD}";
 ```
 
-### D. Agrandir l'image
+### E. Agrandir l'image
 L'image a comme taille de disque 3 Go, ce qui est trop faible.
 ```bash
 clear;
@@ -56,7 +67,7 @@ mv "${NEW}" "${OLD}";
 virt-filesystems --long --parts --blkdevs -h -a "${OLD}";
 ```
 
-### E. Modification Image
+### F. Modification Image
 ```bash
 clear;
 # -------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -80,7 +91,7 @@ virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command 'update-initramfs -u';
 virt-cat       -a "${FILE_DEBIAN_CLOUD}" /etc/modprobe.d/blacklist-nouveau.conf;
 ```
 
-### F. Paquets
+### G. Paquets
 ```bash
 clear;
 # --------------------------------------------------------------------------------------------------------------------
@@ -101,7 +112,7 @@ virt-customize --smp 8 -m 4096 --no-sync --network -a "${FILE_DEBIAN_CLOUD}" --i
 virt-customize --smp 8 -m 4096 --no-sync --network -a "${FILE_DEBIAN_CLOUD}" --install qemu-guest-agent;
 ```
 
-### G. Lister les Noyaux et entête installées
+### H. Lister les Noyaux et entête installées
 Le pilote Nvidia a besoin de l'entête. Le kernel de Debian est `6.1.0-54-amd64` et l'entête est `linux-headers-6.1.0-54-amd64`.
 ```bash
 clear;
@@ -111,9 +122,7 @@ virt-ls -a "${FILE_DEBIAN_CLOUD}" /usr/src;
 
 <img width="278" height="77" alt="image" src="https://github.com/user-attachments/assets/50402db1-90e3-423e-a09e-897b6e273d27" />
 
-
-
-### H. Clavier
+### I. Clavier
 ```bash
 clear;
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -127,7 +136,7 @@ virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "DEBIAN_FRONTEND=noninter
 virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "DEBIAN_FRONTEND=noninteractive dpkg-reconfigure console-setup";
 ```
 
-### I. Nvidia
+### J. Nvidia
 ```bash
 clear;
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -174,17 +183,8 @@ virt-customize--smp 8 -m 4096 --no-sync --network -a "${FILE_DEBIAN_CLOUD}" \
 ";
 ```
 
-### X. Nettoyage
-```bash
-clear;
-DEBIAN_RELEASE="12"
-OUT="/var/lib/vz/template/qemu/debian-${DEBIAN_RELEASE}-generic-amd64.qcow2"
-NEW="/tmp/debian-${DEBIAN_RELEASE}-generic-amd64-NEW.qcow2"
-rm ${OUT}                2>/dev/null;
-rm ${NEW}                2>/dev/null;
-```
+<br />  <br />  <br /> 
 
-<br /> 
 
 ------------------------------------------------------------------------------------------------------------------------
 ## II. Proxmox
