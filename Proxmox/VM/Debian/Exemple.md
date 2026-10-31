@@ -82,6 +82,7 @@ virt-customize -a "${FILE_DEBIAN_CLOUD}" --install build-essential;
 virt-customize -a "${FILE_DEBIAN_CLOUD}" --install ca-certificates
 virt-customize -a "${FILE_DEBIAN_CLOUD}" --install console-setup;
 virt-customize -a "${FILE_DEBIAN_CLOUD}" --install curl;
+virt-customize -a "${FILE_DEBIAN_CLOUD}" --install dkms;
 virt-customize -a "${FILE_DEBIAN_CLOUD}" --install gnupg2;
 virt-customize -a "${FILE_DEBIAN_CLOUD}" --install keyboard-configuration;
 virt-customize -a "${FILE_DEBIAN_CLOUD}" --install linux-headers-amd64;
