@@ -142,15 +142,27 @@ virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "${NVIDIA_FILE} --extract
 # virt-ls        -a "${FILE_DEBIAN_CLOUD}" "${NVIDIA_EXTRACT}";
 #
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# Installation
+# Installation (Test)
 clear;
-virt-customize -a "${FILE_DEBIAN_CLOUD}" \
+virt-customize--smp 8 -m 4096 --no-sync --network -a "${FILE_DEBIAN_CLOUD}" \
 --run-command "/tmp/NVIDIA-EXTRACT/nvidia-installer \
 --ui=none \
 --no-questions \
 --kernel-name='${KERNEL}' \
 --kernel-source-path='/lib/modules/${KERNEL}/source' \
 --kernel-output-path='/lib/modules/${KERNEL}/build' \
+";
+
+# ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Installation (Stable, fonctionnel)
+#clear;
+#virt-customize -a "${FILE_DEBIAN_CLOUD}" \
+#--run-command "/tmp/NVIDIA-EXTRACT/nvidia-installer \
+#--ui=none \
+#--no-questions \
+#--kernel-name='${KERNEL}' \
+#--kernel-source-path='/lib/modules/${KERNEL}/source' \
+#--kernel-output-path='/lib/modules/${KERNEL}/build' \
 ";
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Blacklist pilote libre (nouveau) 
