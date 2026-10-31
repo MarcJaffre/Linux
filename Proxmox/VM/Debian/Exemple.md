@@ -119,5 +119,11 @@ virt-customize -a "${FILE_DEBIAN_CLOUD}" \
 ";
 
 virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "rm -r /root/NVIDIA-EXTRACT" 1>/dev/null;
+```
 
-
+### X. Nettoyage
+```bash
+clear;
+DEBIAN_RELEASE="12"
+rm /var/lib/vz/template/qemu/debian-${DEBIAN_RELEASE}-generic-amd64.qcow2;
+```
