@@ -212,7 +212,7 @@ POOL="Linux"
 STOCKAGE="NVME"
 # pc | q35
 MACHINE="q35"
-#	seabios | ovmf
+# seabios | ovmf
 BIOS="ovmf"
 OS_TYPE="l26"
 AGENT="1"
