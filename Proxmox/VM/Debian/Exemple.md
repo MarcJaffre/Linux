@@ -15,10 +15,13 @@ apt install -y libguestfs-tools;
 ```bash
 clear;
 DEBIAN_RELEASE="12"
+VMID="1000"
 OUT="/var/lib/vz/template/qemu/debian-${DEBIAN_RELEASE}-generic-amd64.qcow2"
 NEW="/tmp/debian-${DEBIAN_RELEASE}-generic-amd64-NEW.qcow2"
 rm ${OUT}                2>/dev/null;
 rm ${NEW}                2>/dev/null;
+qm stop    "$VMID"       2>/dev/null;
+qm destroy "$VMID"       2>/dev/null;
 ```
 
 
