@@ -54,6 +54,11 @@ virt-customize -a "${FILE_DEBIAN_CLOUD}" \
 virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "echo 'fr_FR.UTF-8 UTF-8' > /etc/locale.gen";
 virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "echo 'LANG=fr_FR.UTF-8' > /etc/default/locale";
 virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "locale-gen";
+```
+
+### F. Paquers
+```bash
+clear;
 # --------------------------------------------------------------------------------------------------------------------
 virt-customize -a "${FILE_DEBIAN_CLOUD}" --update
 # --------------------------------------------------------------------------------------------------------------------
@@ -71,14 +76,14 @@ virt-customize -a "${FILE_DEBIAN_CLOUD}" --install pciutils;
 virt-customize -a "${FILE_DEBIAN_CLOUD}" --install qemu-guest-agent;
 ```
 
-### F. Lister les Noyaux et entête installées
+### G. Lister les Noyaux et entête installées
 ```bash
 clear;
 virt-ls -a "${FILE_DEBIAN_CLOUD}" /lib/modules;
 virt-ls -a "${FILE_DEBIAN_CLOUD}" /usr/src
 ```
 
-### G. Clavier
+### H. Clavier
 ```bash
 clear;
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -91,7 +96,7 @@ virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "DEBIAN_FRONTEND=noninter
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ```
 
-### H. Nvidia
+### I. Nvidia
 ```bash
 PILOTE_NVIDIA_RELEASE="580.142"
 PILOTE_NVIDIA_URL="https://fr.download.nvidia.com/XFree86/Linux-x86_64/${PILOTE_NVIDIA_RELEASE}/NVIDIA-Linux-x86_64-${PILOTE_NVIDIA_RELEASE}.run"
