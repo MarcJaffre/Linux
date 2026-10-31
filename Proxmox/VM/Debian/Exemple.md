@@ -15,11 +15,13 @@ clear;
 DEBIAN_RELEASE="12"
 URL="https://cloud.debian.org/images/cloud/bookworm/latest/debian-${DEBIAN_RELEASE}-generic-amd64.qcow2"
 OUT="/var/lib/vz/template/qemu/debian-${DEBIAN_RELEASE}-generic-amd64.qcow2"
+
+# Télécharger
 wget -q "$URL" -O "$OUT";
+
+# Vérification
 virt-filesystems --long --parts --blkdevs -h -a "${OLD}";
 ```
-
-
 
 ### D. Agrandir l'image
 L'image a comme taille de disque 3 Go, ce qui est trop faible.
@@ -41,6 +43,7 @@ rm "${OLD}"
 # Renommer la nouvelle sur l'ancienne
 mv "${NEW}" "${OLD}";
 
+# Vérification
 virt-filesystems --long --parts --blkdevs -h -a "${OLD}";
 ```
 
