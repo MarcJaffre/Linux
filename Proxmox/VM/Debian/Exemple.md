@@ -6,8 +6,10 @@
 L'objectif est de construire une image unattended de Debian Cloud.
 
 ### B. Dépendances
+```bash
 clear;
 apt install -y libguestfs-tools;
+```
 
 ### C. Télécharger Image
 ```bash
