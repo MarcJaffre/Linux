@@ -195,7 +195,6 @@ virt-customize -a "${FILE_DEBIAN_CLOUD}" --firstboot-command "mokutil --import /
 ## II. Proxmox
 ### A. Création de la VM
 ```bash
-
 # =======================================================================================================================
 # GT ou RTX (Grep XXX)
 GPU_ADD="1"
@@ -280,16 +279,16 @@ qm set "$VMID" --efidisk0 "$STOCKAGE":4,format=qcow2,efitype=4m,pre-enrolled-key
 #
 # =======================================================================================================================
 # Disque scsi0 - OS (vm-X-disk-1.qcow2) - Add Disk
-qm importdisk  "$VMID" "$DISK_OS_PATH" "$STORAGE" --format raw                   1>/dev/null;
-qm set         "$VMID" --scsi0         "$STORAGE":"$VMID"/vm-"$VMID"-disk-1.raw  1>/dev/null;
+qm importdisk  "$VMID" "$DISK_OS_PATH" "$STOCKAGE" --format raw                   1>/dev/null;
+qm set         "$VMID" --scsi0         "$STOCKAGE":"$VMID"/vm-"$VMID"-disk-1.raw  1>/dev/null;
 #
 # =======================================================================================================================
 # Disque scsi1 - Data  (vm-X-disk-2.qcow2)
-qm set         "$VMID" --scsi1 "$STORAGE":"$DISK_DATA_SIZE"         1>/dev/null;
+qm set         "$VMID" --scsi1 "$STOCKAGE":"$DISK_DATA_SIZE"         1>/dev/null;
 #
 # =======================================================================================================================
 # CloudInit - Disque ide0 
-qm set "$VMID" --ide0          "${STORAGE}":cloudinit   1>/dev/null;
+qm set "$VMID" --ide0          "${STOCKAGE}":cloudinit   1>/dev/null;
 qm set "$VMID" --sshkeys       "/root/.ssh/id_rsa.pub"  1>/dev/null;
 qm set "$VMID" --ipconfig0     "${NET_MODE}"            1>/dev/null;
 qm set "$VMID" --ciuser        "${USER_ACC}"            1>/dev/null;
