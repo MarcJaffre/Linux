@@ -75,7 +75,7 @@ virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "locale-gen";
 ```bash
 clear;
 # --------------------------------------------------------------------------------------------------------------------
-virt-customize -a "${FILE_DEBIAN_CLOUD}" --update
+virt-customize -a "${FILE_DEBIAN_CLOUD}" --update;
 # --------------------------------------------------------------------------------------------------------------------
 virt-customize -a "${FILE_DEBIAN_CLOUD}" --install apt-file;
 virt-customize -a "${FILE_DEBIAN_CLOUD}" --install build-essential;
