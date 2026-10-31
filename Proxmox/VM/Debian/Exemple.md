@@ -24,9 +24,7 @@ qm stop    "$VMID"       2>/dev/null;
 qm destroy "$VMID"       2>/dev/null;
 ```
 
-
 ### D. Télécharger Image
-
 | Type    | Description            | Espace Disque |
 |---------|------------------------|---------------|
 | generic | cloud-init requis      | 3 Go (Défaut) |  
@@ -43,7 +41,7 @@ OUT="/var/lib/vz/template/qemu/debian-${DEBIAN_RELEASE}-${TYPE}-amd64.qcow2"
 wget -q "$URL" -O "$OUT";
 
 # Vérification
-virt-filesystems --long --parts --blkdevs -h -a "${OLD}";
+virt-filesystems --long --parts --blkdevs -h -a "${OUT}";
 ```
 
 ### E. Agrandir l'image
