@@ -83,12 +83,16 @@ virt-customize -a "${FILE_DEBIAN_CLOUD}" --install qemu-guest-agent;
 ```
 
 ### G. Lister les Noyaux et entête installées
-Debian 12 utilise le Kernel `6.1.0-54`, ce qui sera capitale pour la suite.
+Le pilote Nvidia a besoin de l'entête. Le kernel de Debian est `6.1.0-54-amd64` et l'entête est `linux-headers-6.1.0-54-amd64`.
 ```bash
 clear;
 virt-ls -a "${FILE_DEBIAN_CLOUD}" /lib/modules;
-virt-ls -a "${FILE_DEBIAN_CLOUD}" /usr/src
+virt-ls -a "${FILE_DEBIAN_CLOUD}" /usr/src;
 ```
+
+<img width="278" height="77" alt="image" src="https://github.com/user-attachments/assets/50402db1-90e3-423e-a09e-897b6e273d27" />
+
+
 
 ### H. Clavier
 ```bash
