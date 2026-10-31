@@ -98,19 +98,20 @@ clear;
 # --------------------------------------------------------------------------------------------------------------------
 virt-customize -a "${FILE_DEBIAN_CLOUD}" --update;
 # --------------------------------------------------------------------------------------------------------------------
-virt-customize --smp 8 -m 4096 --no-sync --network -a "${FILE_DEBIAN_CLOUD}" --install apt-file;
-virt-customize --smp 8 -m 4096 --no-sync --network -a "${FILE_DEBIAN_CLOUD}" --install build-essential;
-virt-customize --smp 8 -m 4096 --no-sync --network -a "${FILE_DEBIAN_CLOUD}" --install ca-certificates
-virt-customize --smp 8 -m 4096 --no-sync --network -a "${FILE_DEBIAN_CLOUD}" --install console-setup;
-virt-customize --smp 8 -m 4096 --no-sync --network -a "${FILE_DEBIAN_CLOUD}" --install curl;
-virt-customize --smp 8 -m 4096 --no-sync --network -a "${FILE_DEBIAN_CLOUD}" --install dkms;
-virt-customize --smp 8 -m 4096 --no-sync --network -a "${FILE_DEBIAN_CLOUD}" --install gnupg2;
-virt-customize --smp 8 -m 4096 --no-sync --network -a "${FILE_DEBIAN_CLOUD}" --install keyboard-configuration;
-virt-customize --smp 8 -m 4096 --no-sync --network -a "${FILE_DEBIAN_CLOUD}" --install linux-headers-amd64;
-virt-customize --smp 8 -m 4096 --no-sync --network -a "${FILE_DEBIAN_CLOUD}" --install locales;
-virt-customize --smp 8 -m 4096 --no-sync --network -a "${FILE_DEBIAN_CLOUD}" --install locales-all;
-virt-customize --smp 8 -m 4096 --no-sync --network -a "${FILE_DEBIAN_CLOUD}" --install pciutils;
-virt-customize --smp 8 -m 4096 --no-sync --network -a "${FILE_DEBIAN_CLOUD}" --install qemu-guest-agent;
+virt-customize --smp 8 -m 4096 --network -a "${FILE_DEBIAN_CLOUD}" --install apt-file;
+virt-customize --smp 8 -m 4096 --network -a "${FILE_DEBIAN_CLOUD}" --install build-essential;
+virt-customize --smp 8 -m 4096 --network -a "${FILE_DEBIAN_CLOUD}" --install ca-certificates
+virt-customize --smp 8 -m 4096 --network -a "${FILE_DEBIAN_CLOUD}" --install console-setup;
+virt-customize --smp 8 -m 4096 --network -a "${FILE_DEBIAN_CLOUD}" --install curl;
+virt-customize --smp 8 -m 4096 --network -a "${FILE_DEBIAN_CLOUD}" --install dkms;
+virt-customize --smp 8 -m 4096 --network -a "${FILE_DEBIAN_CLOUD}" --install gnupg2;
+virt-customize --smp 8 -m 4096 --network -a "${FILE_DEBIAN_CLOUD}" --install keyboard-configuration;
+virt-customize --smp 8 -m 4096 --network -a "${FILE_DEBIAN_CLOUD}" --install linux-headers-amd64;
+virt-customize --smp 8 -m 4096 --network -a "${FILE_DEBIAN_CLOUD}" --install locales;
+virt-customize --smp 8 -m 4096 --network -a "${FILE_DEBIAN_CLOUD}" --install locales-all;
+virt-customize --smp 8 -m 4096 --network -a "${FILE_DEBIAN_CLOUD}" --install pciutils;
+virt-customize --smp 8 -m 4096 --network -a "${FILE_DEBIAN_CLOUD}" --install qemu-guest-agent;
+# --------------------------------------------------------------------------------------------------------------------
 ```
 
 ### H. Lister les Noyaux et entête installées
@@ -162,7 +163,7 @@ virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "${NVIDIA_FILE} --extract
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Installation (Test)
 clear;
-virt-customize--smp 8 -m 4096 --no-sync --network -a "${FILE_DEBIAN_CLOUD}" \
+virt-customize--smp 8 -m 4096 --network -a "${FILE_DEBIAN_CLOUD}" \
 --run-command "/tmp/NVIDIA-EXTRACT/nvidia-installer \
 --ui=none \
 --no-questions \
