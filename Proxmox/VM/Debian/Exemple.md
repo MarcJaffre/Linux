@@ -150,8 +150,6 @@ virt-customize -a "${FILE_DEBIAN_CLOUD}" \
 ";
 ```
 
-
-
 ### X. Nettoyage
 ```bash
 clear;
@@ -160,4 +158,129 @@ OUT="/var/lib/vz/template/qemu/debian-${DEBIAN_RELEASE}-generic-amd64.qcow2"
 NEW="/tmp/debian-${DEBIAN_RELEASE}-generic-amd64-NEW.qcow2"
 rm ${OUT}                2>/dev/null;
 rm ${NEW}                2>/dev/null;
+```
+
+<br /> 
+
+------------------------------------------------------------------------------------------------------------------------
+## II. Proxmox
+### A. Création de la VM
+```bash
+
+# =====================================================================================
+# GT ou RTX (Grep XXX)
+GPU_ADD="1"
+GPU_XVGA="0"
+
+# =====================================================================================
+USER_ACC="root"
+USER_PASS="root"
+VMID="1000"
+BOOT="1"
+NOM="Debian-ia"
+POOL="Linux"
+STOCKAGE="NVMA"
+MACHINE="q35"
+BIOS="ovmf"
+OS_TYPE="l26"
+AGENT="1"
+DISK_CONTROLEUR="virtio-scsi-pci"
+# =====================================================================================
+DISK_OS_SIZE="32"
+DISK_DATA_SIZE="16"
+# =====================================================================================
+CPU_TYPE="host"
+CPU_SOCKET="1"
+CPU_CORE="8"
+RAM="8192"
+# =====================================================================================
+NET_BRIDGE="vmbr0"
+NET_IP="192.168.0.88/24"
+NET_GW="192.168.0.1"
+NET_DNS="192.168.0.1 192.168.1.1"
+NET_DOM="home.lan"
+# =====================================================================================
+# NE PAS EDITER
+IP_DHCP="ip=dhcp"
+IP_FIXE="ip=${NET_IP},gw=${NET_GW}"
+# =====================================================================================
+# IP_DHCP ou IP_STATIC
+NET_MODE="${IP_FIXE}"
+# =====================================================================================
+GPU_PCI="$(lspci | grep VGA | grep RTX | tail -n 1 | cut -c 1-5)"
+# =====================================================================================
+DEBIAN_RELEASE="12"
+DISK_OS_PATH="/var/lib/vz/template/qemu/debian-${DEBIAN_RELEASE}-generic-amd64.qcow2"
+
+# ==============================================================================================================
+# Nettoyage console
+clear;
+
+# ==============================================================================================================
+# Destruction
+qm stop    "$VMID";
+qm destroy "$VMID";
+
+# ==========================================================================================================
+# Création VM
+qm create     "$VMID"            \
+ --bios       "$BIOS"            \
+ --machine    "$MACHINE"         \
+ --pool       "$POOL"            \
+ --name       "$NOM"             \
+ --ostype     "$OS_TYPE"         \
+ --cores      "$CPU_CORE"        \
+ --sockets    "$CPU_SOCKET"      \
+ --onboot     "$BOOT"            \
+ --agent      "$AGENT"           \
+ --cpu        "$CPU_TYPE"        \
+ --memory     "$RAM"             \
+ --scsihw     "$DISK_CONTROLEUR" \
+ --net0       virtio,bridge="$NET_BRIDGE" \
+ --serial0    "socket";
+
+# ==============================================================================================================
+# # Disque EFI (vm-X-disk-0.qcow2)
+qm set "$VMID" --efidisk0 "$STORAGE":1,format=qcow2,efitype=4m,pre-enrolled-keys=0 1>/dev/null 2>/dev/null;
+#
+# ==============================================================================================================
+# Disque scsi0 - OS (vm-X-disk-1.qcow2) - Add Disk
+qm importdisk  "$VMID" "$DISK_OS_PATH" "$STORAGE" --format raw                   1>/dev/null;
+qm set         "$VMID" --scsi0         "$STORAGE":"$VMID"/vm-"$VMID"-disk-1.raw  1>/dev/null;
+#
+# ==========================================================================================================
+# Disque scsi1 - Data  (vm-X-disk-2.qcow2)
+qm set         "$VMID" --scsi1 "$STORAGE":"$DISK_DATA_SIZE"         1>/dev/null;
+#
+# ==============================================================================================================
+# CloudInit - Disque ide0 
+qm set "$VMID" --ide0          "${STORAGE}":cloudinit   1>/dev/null;
+qm set "$VMID" --sshkeys       "/root/.ssh/id_rsa.pub"  1>/dev/null;
+qm set "$VMID" --ipconfig0     "${NET_MODE}"            1>/dev/null;
+qm set "$VMID" --ciuser        "${USER_ACC}"            1>/dev/null;
+qm set "$VMID" --cipassword    "${USER_PASS}"           1>/dev/null;
+qm set "$VMID" --nameserver    "${NET_DNS}"             1>/dev/null;
+qm set "$VMID" --searchdomain  "${DOMAINE}"             1>/dev/null;
+qm cloudinit update "$VMID"                             1>/dev/null;
+#
+# ==============================================================================================================
+# GPU
+if [ $GPU_ADD = 1 ]; then
+  qm set "$VMID" -hostpci0 "${GPU_PCI}",pcie=1,x-vga="${GPU_XVGA}"
+else
+ qm set "$VMID" -delete hostpci0;
+fi 
+#
+# ==============================================================================================================
+# Ordre de démaragge
+qm set         "$VMID" --boot c --bootdisk scsi0                     1>/dev/null;
+#
+# ==============================================================================================================
+# Démarrage de la VM
+qm start "$VMID";
+#
+# ==============================================================================================================
+sleep 15;
+# ==============================================================================================================
+qm guest exec "$VMID" nvidia-smi
 ```
