@@ -286,18 +286,18 @@ qm set         "$VMID" --scsi0         "$STOCKAGE":"$VMID"/vm-"$VMID"-disk-1.raw
 #
 # =======================================================================================================================
 # Disque scsi1 - Data  (vm-X-disk-2.qcow2)
-qm set         "$VMID" --scsi1 "$STOCKAGE":"$DISK_DATA_SIZE"         1>/dev/null;
+qm set         "$VMID" --scsi1 "$STOCKAGE":"$DISK_DATA_SIZE"                      1>/dev/null;
 #
 # =======================================================================================================================
 # CloudInit - Disque ide0 
-qm set "$VMID" --ide0          "${STOCKAGE}":cloudinit   1>/dev/null;
-qm set "$VMID" --sshkeys       "/root/.ssh/id_rsa.pub"  1>/dev/null;
-qm set "$VMID" --ipconfig0     "${NET_MODE}"            1>/dev/null;
-qm set "$VMID" --ciuser        "${USER_ACC}"            1>/dev/null;
-qm set "$VMID" --cipassword    "${USER_PASS}"           1>/dev/null;
-qm set "$VMID" --nameserver    "${NET_DNS}"             1>/dev/null;
-qm set "$VMID" --searchdomain  "${DOMAINE}"             1>/dev/null;
-qm cloudinit update "$VMID"                             1>/dev/null;
+qm set "$VMID" --ide0          "${STOCKAGE}":cloudinit                            1>/dev/null;
+qm set "$VMID" --sshkeys       "/root/.ssh/id_rsa.pub"                            1>/dev/null;
+qm set "$VMID" --ipconfig0     "${NET_MODE}"                                      1>/dev/null;
+qm set "$VMID" --ciuser        "${USER_ACC}"                                      1>/dev/null;
+qm set "$VMID" --cipassword    "${USER_PASS}"                                     1>/dev/null;
+qm set "$VMID" --nameserver    "${NET_DNS}"                                       1>/dev/null;
+qm set "$VMID" --searchdomain  "${DOMAINE}"                                       1>/dev/null;
+qm cloudinit update "$VMID"                                                       1>/dev/null;
 #
 # =======================================================================================================================
 # GPU
