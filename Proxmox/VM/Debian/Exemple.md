@@ -77,19 +77,19 @@ clear;
 # --------------------------------------------------------------------------------------------------------------------
 virt-customize -a "${FILE_DEBIAN_CLOUD}" --update;
 # --------------------------------------------------------------------------------------------------------------------
-virt-customize -a "${FILE_DEBIAN_CLOUD}" --install apt-file;
-virt-customize -a "${FILE_DEBIAN_CLOUD}" --install build-essential;
-virt-customize -a "${FILE_DEBIAN_CLOUD}" --install ca-certificates
-virt-customize -a "${FILE_DEBIAN_CLOUD}" --install console-setup;
-virt-customize -a "${FILE_DEBIAN_CLOUD}" --install curl;
-virt-customize -a "${FILE_DEBIAN_CLOUD}" --install dkms;
-virt-customize -a "${FILE_DEBIAN_CLOUD}" --install gnupg2;
-virt-customize -a "${FILE_DEBIAN_CLOUD}" --install keyboard-configuration;
-virt-customize -a "${FILE_DEBIAN_CLOUD}" --install linux-headers-amd64;
-virt-customize -a "${FILE_DEBIAN_CLOUD}" --install locales;
-virt-customize -a "${FILE_DEBIAN_CLOUD}" --install locales-all;
-virt-customize -a "${FILE_DEBIAN_CLOUD}" --install pciutils;
-virt-customize -a "${FILE_DEBIAN_CLOUD}" --install qemu-guest-agent;
+virt-customize --network -a "${FILE_DEBIAN_CLOUD}" --install apt-file;
+virt-customize --network -a "${FILE_DEBIAN_CLOUD}" --install build-essential;
+virt-customize --network -a "${FILE_DEBIAN_CLOUD}" --install ca-certificates
+virt-customize --network -a "${FILE_DEBIAN_CLOUD}" --install console-setup;
+virt-customize --network -a "${FILE_DEBIAN_CLOUD}" --install curl;
+virt-customize --network -a "${FILE_DEBIAN_CLOUD}" --install dkms;
+virt-customize --network -a "${FILE_DEBIAN_CLOUD}" --install gnupg2;
+virt-customize --network -a "${FILE_DEBIAN_CLOUD}" --install keyboard-configuration;
+virt-customize --network -a "${FILE_DEBIAN_CLOUD}" --install linux-headers-amd64;
+virt-customize --network -a "${FILE_DEBIAN_CLOUD}" --install locales;
+virt-customize --network -a "${FILE_DEBIAN_CLOUD}" --install locales-all;
+virt-customize --network -a "${FILE_DEBIAN_CLOUD}" --install pciutils;
+virt-customize --network -a "${FILE_DEBIAN_CLOUD}" --install qemu-guest-agent;
 ```
 
 ### G. Lister les Noyaux et entête installées
