@@ -208,7 +208,7 @@ VMID="1000"
 BOOT="1"
 NOM="Debian-ia"
 POOL="Linux"
-STOCKAGE="NVMA"
+STOCKAGE="NVME"
 # pc | q35
 MACHINE="q35"
 #	seabios | ovmf
@@ -274,8 +274,9 @@ qm create     "$VMID"            \
  --serial0    "socket";
 
 # =======================================================================================================================
-# # Disque EFI (vm-X-disk-0.qcow2)
-qm set "$VMID" --efidisk0 "$STORAGE":1,format=qcow2,efitype=4m,preenrolled=0;
+# # Disque EFI (vm-X-disk-0.qcow2) - STOCKAGE
+qm set "$VMID" --efidisk0 "$STOCKAGE":4,format=qcow2,efitype=4m,pre-enrolled-keys=0
+
 #
 # =======================================================================================================================
 # Disque scsi0 - OS (vm-X-disk-1.qcow2) - Add Disk
