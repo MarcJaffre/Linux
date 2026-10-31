@@ -115,7 +115,7 @@ clear:
 PILOTE_NVIDIA_RELEASE="580.142"
 PILOTE_NVIDIA_URL="https://fr.download.nvidia.com/XFree86/Linux-x86_64/${PILOTE_NVIDIA_RELEASE}/NVIDIA-Linux-x86_64-${PILOTE_NVIDIA_RELEASE}.run"
 PILOTE_NVIDIA_FILE="/tmp/NVIDIA-Linux-x86_64.run"
-
+KERNEL=$(virt-ls -a "${FILE_DEBIAN_CLOUD}" /lib/modules | grep "amd64" | tail -n 1)
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Nettoyage
 virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "rm -r /tmp/NVIDIA-EXTRACT"   2>/dev/null;
@@ -141,9 +141,9 @@ virt-customize -a "${FILE_DEBIAN_CLOUD}" \
 --run-command "/tmp/NVIDIA-EXTRACT/nvidia-installer \
 --ui=none \
 --no-questions \
---kernel-name='6.1.0-54-amd64' \
---kernel-source-path='/lib/modules/6.1.0-54-amd64/source' \
---kernel-output-path='/lib/modules/6.1.0-54-amd64/build' \
+--kernel-name='${KERNEL}' \
+--kernel-source-path='/lib/modules/${KERNEL}/source' \
+--kernel-output-path='/lib/modules/${KERNEL}/build' \
 ";
 ```
 
