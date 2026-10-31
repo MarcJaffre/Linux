@@ -163,7 +163,7 @@ virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "${NVIDIA_FILE} --extract
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Installation (Test)
 clear;
-virt-customize--smp 8 -m 4096 --network -a "${FILE_DEBIAN_CLOUD}" \
+virt-customize --smp 8 -m 4096 --network -a "${FILE_DEBIAN_CLOUD}" \
 --run-command "/tmp/NVIDIA-EXTRACT/nvidia-installer \
 --ui=none \
 --no-questions \
