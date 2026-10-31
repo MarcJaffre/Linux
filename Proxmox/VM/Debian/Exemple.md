@@ -110,29 +110,25 @@ virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "DEBIAN_FRONTEND=noninter
 
 ### I. Nvidia
 ```bash
-clear:
+clear;
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-PILOTE_NVIDIA_RELEASE="580.142"
-PILOTE_NVIDIA_URL="https://fr.download.nvidia.com/XFree86/Linux-x86_64/${PILOTE_NVIDIA_RELEASE}/NVIDIA-Linux-x86_64-${PILOTE_NVIDIA_RELEASE}.run"
-PILOTE_NVIDIA_FILE="/tmp/NVIDIA-Linux-x86_64.run"
+NVIDIA_RELEASE="580.142"
+NVIDIA_URL="https://fr.download.nvidia.com/XFree86/Linux-x86_64/${NVIDIA_RELEASE}/NVIDIA-Linux-x86_64-${NVIDIA_RELEASE}.run"
+NVIDIA_FILE="/tmp/NVIDIA-Linux-x86_64.run"
+NVIDIA_EXTRACT="/tmp/NVIDIA-EXTRACT"
 KERNEL=$(virt-ls -a "${FILE_DEBIAN_CLOUD}" /lib/modules | grep "amd64" | tail -n 1)
+
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Nettoyage
-virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "rm -r /tmp/NVIDIA-EXTRACT"   2>/dev/null;
-virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "rm -r ${PILOTE_NVIDIA_FILE}" 2>/dev/null;
+virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "rm -r ${NVIDIA_FILE}"     2>/dev/null 1>/dev/null;
+virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "rm -r ${NVIDIA_EXTRACT}"  2>/dev/null 1>/dev/null;
 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# Telecharger
-virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "wget -q  ${PILOTE_NVIDIA_URL} -O ${PILOTE_NVIDIA_FILE}";
-
-# ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# Mise en Exe le binaire (Capitale)
-virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "chmod +x ${PILOTE_NVIDIA_FILE}";
-
-# ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# Extraction
-virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "${PILOTE_NVIDIA_FILE} --extract-only --target /tmp/NVIDIA-EXTRACT";
-virt-ls        -a "${FILE_DEBIAN_CLOUD}" "/tmp/NVIDIA-EXTRACT";
+# Telecharger + Mise en Exe le binaire + Extraction + Installation
+virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "wget -q  ${NVIDIA_URL} -O ${NVIDIA_FILE}";
+virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "chmod +x ${NVIDIA_FILE}";
+virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "${NVIDIA_FILE} --extract-only --target ${NVIDIA_EXTRACT}";
+virt-ls        -a "${FILE_DEBIAN_CLOUD}" "${NVIDIA_EXTRACT}";
 
 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -151,5 +147,15 @@ virt-customize -a "${FILE_DEBIAN_CLOUD}" \
 ```bash
 clear;
 DEBIAN_RELEASE="12"
-rm /var/lib/vz/template/qemu/debian-${DEBIAN_RELEASE}-generic-amd64.qcow2;
+OUT="/var/lib/vz/template/qemu/debian-${DEBIAN_RELEASE}-generic-amd64.qcow2"
+NEW="/tmp/debian-${DEBIAN_RELEASE}-generic-amd64-NEW.qcow2"
+NVIDIA_FILE="/tmp/NVIDIA-Linux-x86_64.run"
+NVIDIA_EXTRACT="/tmp/NVIDIA-EXTRACT"
+
+
+rm ${OUT}                2>/dev/null;
+rm ${NEW}                2>/dev/null;
+
+rm -rf ${NVIDIA_FILE}    2>/dev/null;
+rm -rf ${NVIDIA_EXTRACT} 2>/dev/null;
 ```
