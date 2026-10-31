@@ -3,7 +3,7 @@
 ------------------------------------------------------------------------------------------------------------------------
 ## I. Proxmox
 ### A. Présentation
-L'objectif est de télécharger l'iso de Debian Cloud, de la retoucher et de démarrer dessus.
+L'objectif est de construire une image unattended de Debian Cloud.
 
 ### B. Dépendances
 clear;
