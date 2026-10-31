@@ -1,5 +1,5 @@
 ------------------------------------------------------------------------------------------------------------------------
-# <p align='center'> Personnalisation d'une Image Debian Cloud (Generic)</p> 
+# <p align='center'> Personnalisation d'une Image Debian Cloud (Fonctionnel) </p> 
 ------------------------------------------------------------------------------------------------------------------------
 ## I. Proxmox
 ### A. Présentation
