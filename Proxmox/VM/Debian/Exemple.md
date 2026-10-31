@@ -148,6 +148,10 @@ virt-customize -a "${FILE_DEBIAN_CLOUD}" \
 --kernel-source-path='/lib/modules/${KERNEL}/source' \
 --kernel-output-path='/lib/modules/${KERNEL}/build' \
 ";
+# ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Blacklist pilote libre (nouveau) 
+virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command 'echo -e "blacklist nouveau\noptions nouveau modeset=0" > /etc/modprobe.d/blacklist-nouveau.conf';
+virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command 'update-initramfs -u';
 ```
 
 ### X. Nettoyage
