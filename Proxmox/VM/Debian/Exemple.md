@@ -59,16 +59,25 @@ virt-filesystems --long --parts --blkdevs -h -a "${OLD}";
 ### E. Modification Image
 ```bash
 clear;
+# -------------------------------------------------------------------------------------------------------------------------------------------------------
 FILE_DEBIAN_CLOUD="/var/lib/vz/template/qemu/debian-${DEBIAN_RELEASE}-generic-amd64.qcow2"
-# --------------------------------------------------------------------------------------------------------------------
+
+# -------------------------------------------------------------------------------------------------------------------------------------------------------
 virt-customize -a "${FILE_DEBIAN_CLOUD}" \
 --run-command 'sed -i "s/main/main non-free non-free-firmware contrib/" /etc/apt/sources.list.d/debian.sources' \
 --run-command 'echo "PasswordAuthentication yes\nPermitRootLogin yes" > /etc/ssh/sshd_config.d/unlock.conf'     \
 --timezone 'Europe/Paris'
-# --------------------------------------------------------------------------------------------------------------------
+# -------------------------------------------------------------------------------------------------------------------------------------------------------
 virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "echo 'fr_FR.UTF-8 UTF-8' > /etc/locale.gen";
 virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "echo 'LANG=fr_FR.UTF-8'  > /etc/default/locale";
 virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "locale-gen";
+# -------------------------------------------------------------------------------------------------------------------------------------------------------
+# Blacklist pilote libre (nouveau) 
+virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command 'echo "blacklist nouveau\noptions nouveau modeset=0" > /etc/modprobe.d/blacklist-nouveau.conf';
+virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command 'update-initramfs -u';
+# -------------------------------------------------------------------------------------------------------------------------------------------------------
+# Check
+virt-cat       -a "${FILE_DEBIAN_CLOUD}" /etc/modprobe.d/blacklist-nouveau.conf';
 ```
 
 ### F. Paquets
@@ -128,7 +137,6 @@ NVIDIA_RELEASE="580.142"
 NVIDIA_URL="https://fr.download.nvidia.com/XFree86/Linux-x86_64/${NVIDIA_RELEASE}/NVIDIA-Linux-x86_64-${NVIDIA_RELEASE}.run"
 NVIDIA_FILE="/tmp/NVIDIA-Linux-x86_64.run"
 NVIDIA_EXTRACT="/tmp/NVIDIA-EXTRACT"
-
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Nettoyage + telecharger + Mise en Exe le binaire + Extraction
 # ----
@@ -164,11 +172,6 @@ virt-customize--smp 8 -m 4096 --no-sync --network -a "${FILE_DEBIAN_CLOUD}" \
 #--kernel-source-path='/lib/modules/${KERNEL}/source' \
 #--kernel-output-path='/lib/modules/${KERNEL}/build' \
 ";
-# ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# Blacklist pilote libre (nouveau) 
-virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command 'echo "blacklist nouveau\noptions nouveau modeset=0" > /etc/modprobe.d/blacklist-nouveau.conf';
-virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command 'update-initramfs -u';
-virt-cat       -a "${FILE_DEBIAN_CLOUD}" /etc/modprobe.d/blacklist-nouveau.conf';
 ```
 
 ### X. Nettoyage
