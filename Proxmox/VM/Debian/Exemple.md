@@ -121,11 +121,12 @@ virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "DEBIAN_FRONTEND=noninter
 ```bash
 clear;
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+KERNEL=$(virt-ls -a "${FILE_DEBIAN_CLOUD}" /lib/modules | grep "amd64" | tail -n 1)
+# ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 NVIDIA_RELEASE="580.142"
 NVIDIA_URL="https://fr.download.nvidia.com/XFree86/Linux-x86_64/${NVIDIA_RELEASE}/NVIDIA-Linux-x86_64-${NVIDIA_RELEASE}.run"
 NVIDIA_FILE="/tmp/NVIDIA-Linux-x86_64.run"
 NVIDIA_EXTRACT="/tmp/NVIDIA-EXTRACT"
-KERNEL=$(virt-ls -a "${FILE_DEBIAN_CLOUD}" /lib/modules | grep "amd64" | tail -n 1)
 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Nettoyage
