@@ -38,7 +38,7 @@ L'image a comme taille de disque 3 Go, ce qui est trop faible.
 clear;
 OLD="/var/lib/vz/template/qemu/debian-${DEBIAN_RELEASE}-generic-amd64.qcow2"
 NEW="/tmp/debian-${DEBIAN_RELEASE}-generic-amd64-NEW.qcow2"
-NEW_SIZE="10"
+NEW_SIZE="20"
 
 # New Disk 10 Go (vierge)
 qemu-img create -f qcow2 -o preallocation="metadata" "${NEW}" "${NEW_SIZE}"G;
