@@ -171,6 +171,11 @@ virt-customize--smp 8 -m 4096 --no-sync --network -a "${FILE_DEBIAN_CLOUD}" \
 ";
 
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Enregistrer la clé MOK au tout premier démarrage réel de la VM
+virt-customize -a "${FILE_DEBIAN_CLOUD}" --firstboot-command "mokutil --import /var/lib/dkms/mok.pub --password 12345678"
+#
+
+# ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Installation (Stable, fonctionnel)
 #clear;
 #virt-customize -a "${FILE_DEBIAN_CLOUD}" \
