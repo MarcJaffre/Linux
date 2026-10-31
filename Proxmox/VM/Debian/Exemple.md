@@ -13,10 +13,10 @@ apt install -y libguestfs-tools;
 
 ### C. Télécharger Image
 
-| Type    | Description           |
-|---------|------------------------|
-| generic | cloud-init requis      |      
-| nocloud | cloud-init non requis  |
+| Type    | Description            | Espace Disque |
+|---------|------------------------|---------------|
+| generic | cloud-init requis      | 3 Go (Défaut) |  
+| nocloud | cloud-init non requis  | X Go (Défaut) |
 
 ```bash
 clear;
