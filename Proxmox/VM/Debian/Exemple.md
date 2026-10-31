@@ -77,7 +77,7 @@ virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command 'echo "blacklist nouveau\
 virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command 'update-initramfs -u';
 # -------------------------------------------------------------------------------------------------------------------------------------------------------
 # Check
-virt-cat       -a "${FILE_DEBIAN_CLOUD}" /etc/modprobe.d/blacklist-nouveau.conf';
+virt-cat       -a "${FILE_DEBIAN_CLOUD}" /etc/modprobe.d/blacklist-nouveau.conf;
 ```
 
 ### F. Paquets
