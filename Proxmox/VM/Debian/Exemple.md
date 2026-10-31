@@ -95,34 +95,44 @@ virt-ls -a "${FILE_DEBIAN_CLOUD}" /usr/src
 clear;
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 KEYBOARD='echo "XKBMODEL=\"pc105\"\nXKBLAYDIRECTORY_CLOUD=\"fr\"\nXKBVARIANT=\"\"\nXKBOPTIONS=\"\"\nBACKSPACE=\"guess\"\nXKBLAYOUT=\"us\"" > /etc/default/keyboard'
+
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "$KEYBOARD";
+
 # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "DEBIAN_FRONTEND=noninteractive dpkg-reconfigure keyboard-configuration";
 virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "DEBIAN_FRONTEND=noninteractive dpkg-reconfigure console-setup";
-# ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ```
 
 ### I. Nvidia
 ```bash
+clear:
+# ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 PILOTE_NVIDIA_RELEASE="580.142"
 PILOTE_NVIDIA_URL="https://fr.download.nvidia.com/XFree86/Linux-x86_64/${PILOTE_NVIDIA_RELEASE}/NVIDIA-Linux-x86_64-${PILOTE_NVIDIA_RELEASE}.run"
 PILOTE_NVIDIA_FILE="/tmp/NVIDIA-Linux-x86_64.run"
 
+# ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Nettoyage
-virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "rm -r /tmp/NVIDIA-EXTRACT";
+virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "rm -r /tmp/NVIDIA-EXTRACT"   2>/dev/null;
+virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "rm -r ${PILOTE_NVIDIA_FILE}" 2>/dev/null;
 
+# ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Telecharger
 virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "wget -q  ${PILOTE_NVIDIA_URL} -O ${PILOTE_NVIDIA_FILE}";
 
+# ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Mise en Exe le binaire (Capitale)
 virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "chmod +x ${PILOTE_NVIDIA_FILE}";
 
+# ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Extraction
 virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "${PILOTE_NVIDIA_FILE} --extract-only --target /tmp/NVIDIA-EXTRACT";
 virt-ls        -a "${FILE_DEBIAN_CLOUD}" "/tmp/NVIDIA-EXTRACT";
 
 
+# ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Installation
 virt-customize -a "${FILE_DEBIAN_CLOUD}" \
 --run-command "/tmp/NVIDIA-EXTRACT/nvidia-installer \
 --ui=none \
@@ -131,8 +141,6 @@ virt-customize -a "${FILE_DEBIAN_CLOUD}" \
 --kernel-source-path='/lib/modules/6.1.0-54-amd64/source' \
 --kernel-output-path='/lib/modules/6.1.0-54-amd64/build' \
 ";
-
-virt-customize -a "${FILE_DEBIAN_CLOUD}" --run-command "rm -r /tmp/NVIDIA-EXTRACT";
 ```
 
 ### X. Nettoyage
