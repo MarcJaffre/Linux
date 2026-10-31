@@ -1,5 +1,5 @@
 ------------------------------------------------------------------------------------------------------------------------
-# <p align='center'> Personnalisation d'une Image Debian Cloud</p> 
+# <p align='center'> Personnalisation d'une Image Debian Cloud (Generic)</p> 
 ------------------------------------------------------------------------------------------------------------------------
 ## I. Proxmox
 ### A. Présentation
@@ -12,11 +12,18 @@ apt install -y libguestfs-tools;
 ```
 
 ### C. Télécharger Image
+
+| Type    | Description           |
+|---------|------------------------|
+| generic | cloud-init requis      |      
+| nocloud | cloud-init non requis  |
+
 ```bash
 clear;
 DEBIAN_RELEASE="12"
-URL="https://cloud.debian.org/images/cloud/bookworm/latest/debian-${DEBIAN_RELEASE}-generic-amd64.qcow2"
-OUT="/var/lib/vz/template/qemu/debian-${DEBIAN_RELEASE}-generic-amd64.qcow2"
+TYPE="generic"
+URL="https://cloud.debian.org/images/cloud/bookworm/latest/debian-${DEBIAN_RELEASE}-${TYPE}-amd64.qcow2"
+OUT="/var/lib/vz/template/qemu/debian-${DEBIAN_RELEASE}-${TYPE}-amd64.qcow2"
 
 # Télécharger
 wget -q "$URL" -O "$OUT";
