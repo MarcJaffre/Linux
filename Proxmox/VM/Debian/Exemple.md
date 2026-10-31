@@ -16,6 +16,7 @@ DEBIAN_RELEASE="12"
 URL="https://cloud.debian.org/images/cloud/bookworm/latest/debian-${DEBIAN_RELEASE}-generic-amd64.qcow2"
 OUT="/var/lib/vz/template/qemu/debian-${DEBIAN_RELEASE}-generic-amd64.qcow2"
 wget -q "$URL" -O "$OUT";
+file "$OUT";
 ```
 
 ### D. Agrandir l'image
